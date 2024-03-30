@@ -36,11 +36,12 @@ def process_placements(placements, mode):
         return length, round(avg, 1), round(top_4_percent), round(win_percent)
 
 
-def process_stats(cur, riot, server, count, days):
+def process_stats(cur, riot, server, count, days, set):
+    if set.is_integer(): set = int(set)
 
     data = {'all': {'time_spent': 0, 'player_damage': 0, 'players_eliminated': 0}, 'modes': {'standard': {'name': 'Standard', 'time_spent': 0}, 'turbo': {'name': 'Hyper Roll', 'time_spent': 0}, 'pairs': {'name': 'Double Up', 'time_spent': 0}}}
     placements = {'all': [], 'standard': [], 'turbo': [], 'pairs': []}
-    query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = 9", (riot, server))
+    query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
     matches = query.fetchall()
     
 
@@ -67,7 +68,7 @@ def process_stats(cur, riot, server, count, days):
             if not match[0] / 1000 < start_date:
                 matches.append(match)
     
-    data.update({'display_date': datetime.utcfromtimestamp(ts).strftime('%m/%d/%Y %H:%M (UTC)')})
+    data.update({'display_date': datetime.utcfromtimestamp(ts, ).strftime('%m/%d/%Y %H:%M (UTC)')})
 
 
     for match in matches:

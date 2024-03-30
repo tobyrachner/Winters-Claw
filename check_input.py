@@ -41,8 +41,10 @@ def get_arguments(inputs):
     return count, days, get_link
 
 
-def check_summoner(summ_name, server):
-    riot = summ_name.replace(' ', '%20')
+def check_summoner(riot, server):
+    if not '#' in riot:
+        raise SyntaxError("Riot id must be in the format of name#tagline.")
+    name, tagline = riot.split('#')
 
     server_list = {'br1': {'server': 'br1', 'region': 'americas'}, 'br': {'server': 'br1', 'region': 'americas'}, 'euw1': {'server': 'euw1', 'region': 'europe'}, 'euw': {'server': 'euw1', 'region': 'europe'}, 
                    'jp1': {'server': 'jp1', 'region': 'asia'}, 'jp': {'server': 'jp1', 'region': 'asia'}, 'la1': {'server': 'la1', 'region': 'americas'}, 'lan': {'server': 'la1', 'region': 'americas'}, 
@@ -57,6 +59,7 @@ def check_summoner(summ_name, server):
          'EMERALD': {'name': 'Emerald', 'emoji': '<:emerald:1146828849523478618>', 'show_tier': True}, 'DIAMOND': {'name': 'Diamond', 'emoji': '<:diamond:1146828846260297961>', 'show_tier': True}, 
          'MASTER': {'name': 'Master', 'emoji': '<:master:1146828806028533760>', 'show_tier': False}, 'GRANDMASTER': {'name': 'Grandmaster', 'emoji': '<:grandmaster:1146828803352559737>', 'show_tier': False}, 
          'CHALLENGER': {'name': 'Challenger', 'emoji': '<:challenger:1146828843085217843>', 'show_tier': False}}
+    rank_translation = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 'I': 1, 'II': 2, 'III': 3, 'IV': 4}
 
     if server in server_list.keys():
         server = server_list[server]['server']
@@ -64,25 +67,35 @@ def check_summoner(summ_name, server):
     else:
         raise SyntaxError(f'{server} is not a from the api supported server.\nFor a full list of servers type $servers.')
     
-    test = api.request(f'https://{server}.api.riotgames.com/tft/summoner/v1/summoners/by-name/{riot}?api_key=')
-    if test.status_code != 200:
-        raise SyntaxError(f"'{summ_name}' is not a valid username on {server}.")
+    account = api.request(f'https://{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{name}/{tagline}?api_key=')
+    if account.status_code != 200:
+        raise SyntaxError(f"'{name}#{tagline}' was not found on the {server} server.")
     
-    profile = test.json()
-    summ_id = profile['id']
+    puuid = account.json()['puuid']
 
-    league = api.request(f'https://{server}.api.riotgames.com/tft/league/v1/entries/by-summoner/{summ_id}?api_key=').json()
-    try:
-        tier = league[0]['tier']
-        div = league[0]['rank']
-        lp = league[0]['leaguePoints']
-    except IndexError:
+    profile = api.request(f'https://{server}.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/{puuid}?api_key=').json()
+
+    summoner_id = profile['id']
+
+    league = api.request(f'https://{server}.api.riotgames.com/tft/league/v1/entries/by-summoner/{summoner_id}?api_key=').json()
+
+    highest_rank = []
+    for queue in league:
+        if queue['queueType'] == 'RANKED_TFT_TURBO': 
+            continue
+        tier = queue['tier']
+        div = queue['rank']
+        lp = queue['leaguePoints']
+
+        if not highest_rank or list(tiers).index(tier) > list(tiers).index(highest_rank[0]) or (list(tiers).index(tier) > list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]]) or (list(tiers).index(tier) > list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]] and lp > highest_rank[2]):
+            highest_rank = [tier, div, lp]
+
+    if highest_rank:
+        rank = tiers[highest_rank[0]]['emoji'] + ' ' + tiers[highest_rank[0]]['name']
+        if tiers[highest_rank[0]]['show_tier'] == True:
+            rank = rank + ' ' + highest_rank[1]
+        rank = rank + ' - ' + str(highest_rank[2]) + ' LP'
+    else:
         rank = ''
-    else:  
-        rank = tiers[tier]['emoji'] + ' ' + tiers[tier]['name']
-        if tiers[tier]['show_tier'] == True:
-            rank = rank + ' ' + div
-        rank = rank + ' - ' + str(lp) + ' LP'
 
-
-    return riot, server, region, profile['profileIconId'], rank
+    return riot, server, region, puuid, summoner_id, profile['profileIconId'], rank
