@@ -108,6 +108,7 @@ async def update(ctx):
   
     try:
         icon_id, count, data = get_matchids(riot, server, region, puuid, cur)
+        conn.commit()
     except NameError as error:
         embed = error_embed(error, 'No games found', author)
         await ctx.send(embed=embed)

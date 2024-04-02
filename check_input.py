@@ -87,7 +87,7 @@ def check_summoner(riot, server):
         div = queue['rank']
         lp = queue['leaguePoints']
 
-        if not highest_rank or list(tiers).index(tier) > list(tiers).index(highest_rank[0]) or (list(tiers).index(tier) > list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]]) or (list(tiers).index(tier) > list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]] and lp > highest_rank[2]):
+        if (not highest_rank) or list(tiers).index(tier) > list(tiers).index(highest_rank[0]) or (list(tiers).index(tier) == list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]]) or (list(tiers).index(tier) == list(tiers).index(highest_rank[0]) and rank_translation[div] == rank_translation[highest_rank[1]] and lp > highest_rank[2]):
             highest_rank = [tier, div, lp]
 
     if highest_rank:

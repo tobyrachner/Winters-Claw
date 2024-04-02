@@ -27,9 +27,10 @@ def get_matchids(riot, server, region, puuid, cur):
         div = queue['rank']
         lp = queue['leaguePoints']
 
-        if not highest_rank or list(tiers).index(tier) > list(tiers).index(highest_rank[0]) or (list(tiers).index(tier) > list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]]) or (list(tiers).index(tier) > list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]] and lp > highest_rank[2]):
+        if (not highest_rank) or list(tiers).index(tier) > list(tiers).index(highest_rank[0]) or (list(tiers).index(tier) == list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]]) or (list(tiers).index(tier) == list(tiers).index(highest_rank[0]) and rank_translation[div] == rank_translation[highest_rank[1]] and lp > highest_rank[2]):
             highest_rank = [tier, div, lp]
 
+    print(highest_rank)
     if highest_rank:
         rank = tiers[highest_rank[0]]['emoji'] + ' ' + tiers[highest_rank[0]]['name']
         if tiers[highest_rank[0]]['show_tier'] == True:
@@ -38,6 +39,7 @@ def get_matchids(riot, server, region, puuid, cur):
     else:
         rank = ''
 
+    cur.execute("UPDATE links SET rank = ? WHERE puuid = ?", (rank, puuid))
 
     if len(data) == 0:
 
