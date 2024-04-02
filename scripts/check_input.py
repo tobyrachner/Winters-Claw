@@ -1,4 +1,4 @@
-import api
+from scripts import api
 
 def get_arguments(inputs):
     count = ''

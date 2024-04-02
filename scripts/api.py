@@ -1,6 +1,6 @@
 import requests
 import time
-import settings
+from scripts import settings
 
 API_KEY = settings.RGAPI
 

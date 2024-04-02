@@ -4,11 +4,11 @@ from discord.ext import commands
 from discord import app_commands
 from typing import Optional, List
 
-import settings
-from get_embeds import *
-from check_input import *
-from update import *
-from process_data import process_stats
+from scripts import settings
+from scripts.get_embeds import *
+from scripts.check_input import *
+from scripts.update import *
+from scripts.process_data import process_stats
 from views.statview import StatsView
 
 

@@ -1,5 +1,5 @@
 import discord
-from get_embeds import stats_embed
+from scripts.get_embeds import stats_embed
 
 class StatsView(discord.ui.View):
     

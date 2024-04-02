@@ -1,5 +1,5 @@
-import api
-from settings import SET_START_DATE
+from scripts import api
+from scripts.settings import SET_START_DATE
 
 def get_matchids(riot, server, region, puuid, cur):
     
