@@ -38,13 +38,14 @@ class StatsView(discord.ui.View):
         self.icon_id = icon_id
         self.rank = rank
         self.gamemode = ''
+        self.mode_name = 'All Modes'
         self.count = count
         self.days = days
         self.set = set
 
     def default_buttons(self):
         self.clear_items()
-        self.add_item(NavigationButton(self.set_gamemode_buttons, label='Change Gamomode'))
+        self.add_item(NavigationButton(self.set_gamemode_buttons, label='Change Gamemode'))
         self.add_item(NavigationButton(self.set_scope_buttons, label='Change Scope'))
 
     async def set_default_buttons(self, interaction):
@@ -63,6 +64,7 @@ class StatsView(discord.ui.View):
         self.add_item(NavigationButton(self.set_default_buttons))
         self.add_item(NavigationButton(self.set_count_buttons, label='Last x games'))
         self.add_item(NavigationButton(self.set_time_buttons, label='Games since'))
+        self.add_item(EditButton(self.update_message, label='Whole Set', count='all'))
         await interaction.response.edit_message(view=self)
 
     async def set_count_buttons(self, interaction):
@@ -84,6 +86,8 @@ class StatsView(discord.ui.View):
         if count or days:
             self.count = count
             self.days = days
+            if count == 'all':
+                self.count = None
         if gamemode:
             self.gamemode = gamemode
             self.mode_name = mode_name

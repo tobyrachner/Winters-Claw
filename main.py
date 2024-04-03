@@ -92,19 +92,33 @@ async def unlink(interaction: discord.Interaction):
     conn.commit()
     await interaction.response.send_message(f'Succesfully unlinked your riot account.', ephemeral=True)
 
-@bot.hybrid_group(fallback='linked', description='Update games from your linked account')
-async def update(ctx):
+@bot.hybrid_command(description='Update games from your linked account')
+async def update(ctx, riot_id: Optional[str], server: Optional[str]):
     author = ctx.message.author.name
     await ctx.defer()
 
-    try:
-        res = cur.execute('SELECT riot, server, region, puuid, rank FROM links WHERE discord = ?', (author,))
-        riot, server, region, puuid, rank = res.fetchall()[0]
+    if riot_id or server:
+        if not server or not riot_id:
+            embed = error_embed('Please enter both Riot id and server or neither.', 'Invalid input', author)
+            await ctx.send(embed=embed)
+            return
+        
+        try:
+            riot, server, region, puuid, summoner_id, icon_id, rank = check_summoner(riot_id, server)
+        except SyntaxError as e:
+            embed = error_embed(e, 'Invalid input', str(author))
+            await ctx.send(embed=embed)
+            return
+        
+    else:
+        try:
+            res = cur.execute('SELECT riot, server, region, puuid, rank FROM links WHERE discord = ?', (author,))
+            riot, server, region, puuid, rank = res.fetchall()[0]
 
-    except IndexError:
-        embed = error_embed(f"No Riot account linked to '{author}'", 'No Link', author)
-        await ctx.send(embed=embed)
-        return
+        except IndexError:
+            embed = error_embed(f"No Riot account linked to '{author}'", 'No Link', author)
+            await ctx.send(embed=embed)
+            return
   
     try:
         icon_id, count, data = get_matchids(riot, server, region, puuid, cur)
@@ -120,34 +134,8 @@ async def update(ctx):
     embed = update_embed(riot, icon_id, count)
     await ctx.send(embed=embed)
 
-@update.command(description='Enter an account to update its games')
-@app_commands.autocomplete(server=server_autocomplete)
-async def input(ctx, riot_id: str, server: str):
-    author = ctx.message.author.name
-    
-    try:
-        riot, server, region, puuid, summoner_id, icon_id, rank = check_summoner(riot_id, server)
-    except SyntaxError as e:
-        embed = error_embed(e, 'Invalid input', str(author))
-        await ctx.send(embed=embed)
-        return
-
-    try:
-        icon_id, count, data = get_matchids(riot, server, region, puuid, cur)
-    except NameError as error:
-        embed = error_embed(error, 'No games found', author)
-        await ctx.send(embed=embed)
-        return
-    
-    # await ctx.send(embed=updating_embed(riot, icon_id, count))
-    update_games(data)
-    conn.commit()
-    embed = update_embed(riot, icon_id, count)
-    await ctx.send(embed=embed)
-
-
-@bot.hybrid_group(fallback='linked', description='Shows stats for linked Account')
-async def stats(ctx, count: Optional[int], days: Optional[int], set: Optional[float] = settings.CURRENT_SET):
+@bot.hybrid_command(description='Shows stats for linked Account')
+async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optional[int], days: Optional[int], set: Optional[float] = settings.CURRENT_SET):
     await ctx.defer()
     author = ctx.message.author.name
 
@@ -155,14 +143,36 @@ async def stats(ctx, count: Optional[int], days: Optional[int], set: Optional[fl
         embed = error_embed(f"{set} is not a valid set number.", 'Invalid Set Number', author)
         await ctx.send(embed=embed)
         return
+    
+    if riot_id or server:
+        if not server or not riot_id:
+            embed = error_embed('Please enter both Riot id and server or neither.', 'Invalid input', author)
+            await ctx.send(embed=embed)
+            return
+        
+        if not server in server_list:
+            embed = error_embed(f'`{server}` is not supported a server', 'Invalid input', str(author))
+            await ctx.send(embed=embed)
+            return
+        
+        server = server_list[server]['server']
+        
+        try:
+            res = cur.execute("SELECT riot, server, icon_id, rank FROM profile WHERE riot = ? AND server = ?", (riot_id, server))
+            riot, server, icon_id, rank = res.fetchall()[0]
+        except IndexError:
+            embed = error_embed(f'No games found for `{riot_id}` on {server}. Make sure to use /update first', 'Invalid input', str(author))
+            await ctx.send(embed=embed)
+            return
 
-    try:
-        res = cur.execute('SELECT riot, server, icon_id, rank FROM links WHERE discord = ?', (author,))
-        riot, server, icon_id, rank = res.fetchall()[0]
-    except IndexError:
-        embed = error_embed(f"No Riot account linked to '{author}'", 'Nothing linked', author)
-        await ctx.send(embed=embed)
-        return
+    else:
+        try:
+            res = cur.execute('SELECT riot, server, icon_id, rank FROM links WHERE discord = ?', (author,))
+            riot, server, icon_id, rank = res.fetchall()[0]
+        except IndexError:
+            embed = error_embed(f"No Riot account linked to '{author}'", 'Nothing linked', author)
+            await ctx.send(embed=embed)
+            return
 
     try:
         data, x = process_stats(cur, riot, server, count, days, set)
@@ -173,37 +183,6 @@ async def stats(ctx, count: Optional[int], days: Optional[int], set: Optional[fl
     
     embed = stats_embed(data, author, riot, icon_id, rank, '')
     view = StatsView(cur, data, author, riot, server, icon_id, rank, count, days, set)
-    view.message = await ctx.send(embed=embed, view=view)
-
-@stats.command(description='Show stats from given account')
-@app_commands.autocomplete(server=server_autocomplete)
-async def input(ctx, riot_id: str, server: str, count: Optional[int], days: Optional[int], set: Optional[float] = settings.CURRENT_SET):
-    await ctx.defer()
-    author = ctx.message.author.name
-
-    if set > settings.CURRENT_SET:
-        embed = error_embed(f"{set} is not a valid set number.", 'Invalid Set Number', author)
-        await ctx.send(embed=embed)
-        return
-    
-    try:
-        riot, server, region, puuid, summoner_id, icon_id, rank = check_summoner(riot_id, server)
-    except SyntaxError as e:
-        embed = error_embed(e, 'Invalid input', str(author))
-        await ctx.send(embed=embed)
-        return
-
-    
-    try:
-        data, x = process_stats(cur, riot, server, count, days, set)
-    except IndexError as e:
-        embed = error_embed(f"No games from {riot_id} in set {set} found. \nMake sure to use /update first.", 'No games found', author)
-        await ctx.send(embed=embed)
-        return
-
-    embed = stats_embed(data, author, riot, icon_id, rank, '')
-    view = StatsView()
-    view.embed_data = [data, author, riot, icon_id, rank]
     view.message = await ctx.send(embed=embed, view=view)
 
 bot.run(settings.TOKEN)

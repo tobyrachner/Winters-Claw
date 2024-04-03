@@ -1,5 +1,14 @@
 from scripts import api
 
+server_list = {'br1': {'server': 'br1', 'region': 'americas'}, 'br': {'server': 'br1', 'region': 'americas'}, 'euw1': {'server': 'euw1', 'region': 'europe'}, 'euw': {'server': 'euw1', 'region': 'europe'}, 
+                   'jp1': {'server': 'jp1', 'region': 'asia'}, 'jp': {'server': 'jp1', 'region': 'asia'}, 'la1': {'server': 'la1', 'region': 'americas'}, 'lan': {'server': 'la1', 'region': 'americas'}, 
+                   'la2': {'server': 'la2', 'region': 'americas'}, 'las': {'server': 'la2', 'region': 'americas'}, 'na1': {'server': 'na1', 'region': 'americas'}, 'na': {'server': 'na1', 'region': 'americas'}, 
+                   'oc1': {'server': 'oc1', 'region': 'sea'}, 'oc': {'server': 'oc1', 'region': 'sea'}, 'ph2': {'server': 'ph2', 'region': 'sea'}, 'ph': {'server': 'ph2', 'region': 'sea'}, 
+                   'sg2': {'server': 'sg2', 'region': 'sea'}, 'sg': {'server': 'sg2', 'region': 'sea'}, 'th2': {'server': 'th2', 'region': 'sea'}, 'th': {'server': 'th2', 'region': 'sea'}, 
+                   'tr1': {'server': 'tr1', 'region': 'europe'}, 'tr': {'server': 'tr1', 'region': 'europe'}, 'tw2': {'server': 'tw2', 'region': 'sea'}, 'tw': {'server': 'tw2', 'region': 'sea'}, 
+                   'vn2': {'server': 'vn2', 'region': 'sea'}, 'vn': {'server': 'vn2', 'region': 'sea'}, 'eun1': {'server': 'eun1', 'region': 'europe'}, 'eun': {'server': 'eun1', 'region': 'europe'}, 
+                   'eune': {'server': 'eun1', 'region': 'europe'}, 'kr': {'server': 'kr', 'region': 'asia'}, 'ru': {'server': 'ru', 'region': 'europe'}}
+
 def get_arguments(inputs):
     count = ''
     days = ''
@@ -45,15 +54,7 @@ def check_summoner(riot, server):
     if not '#' in riot:
         raise SyntaxError("Riot id must be in the format of name#tagline.")
     name, tagline = riot.split('#')
-
-    server_list = {'br1': {'server': 'br1', 'region': 'americas'}, 'br': {'server': 'br1', 'region': 'americas'}, 'euw1': {'server': 'euw1', 'region': 'europe'}, 'euw': {'server': 'euw1', 'region': 'europe'}, 
-                   'jp1': {'server': 'jp1', 'region': 'asia'}, 'jp': {'server': 'jp1', 'region': 'asia'}, 'la1': {'server': 'la1', 'region': 'americas'}, 'lan': {'server': 'la1', 'region': 'americas'}, 
-                   'la2': {'server': 'la2', 'region': 'americas'}, 'las': {'server': 'la2', 'region': 'americas'}, 'na1': {'server': 'na1', 'region': 'americas'}, 'na': {'server': 'na1', 'region': 'americas'}, 
-                   'oc1': {'server': 'oc1', 'region': 'sea'}, 'oc': {'server': 'oc1', 'region': 'sea'}, 'ph2': {'server': 'ph2', 'region': 'sea'}, 'ph': {'server': 'ph2', 'region': 'sea'}, 
-                   'sg2': {'server': 'sg2', 'region': 'sea'}, 'sg': {'server': 'sg2', 'region': 'sea'}, 'th2': {'server': 'th2', 'region': 'sea'}, 'th': {'server': 'th2', 'region': 'sea'}, 
-                   'tr1': {'server': 'tr1', 'region': 'europe'}, 'tr': {'server': 'tr1', 'region': 'europe'}, 'tw2': {'server': 'tw2', 'region': 'sea'}, 'tw': {'server': 'tw2', 'region': 'sea'}, 
-                   'vn2': {'server': 'vn2', 'region': 'sea'}, 'vn': {'server': 'vn2', 'region': 'sea'}, 'eun1': {'server': 'eun1', 'region': 'europe'}, 'eun': {'server': 'eun1', 'region': 'europe'}, 
-                   'eune': {'server': 'eun1', 'region': 'europe'}, 'kr': {'server': 'kr', 'region': 'asia'}, 'ru': {'server': 'ru', 'region': 'europe'}}
+    
     tiers = {'BRONZE': {'name': 'Bronze', 'emoji': '<:bronze:1146825503710392502>', 'show_tier': True}, 'SILVER': {'name': 'Silver', 'emoji': '<:silver:1146826645332824217>', 'show_tier': True}, 
          'GOLD': {'name': 'Gold', 'emoji': '<:gold:1146828764211331188>', 'show_tier': True}, 'PLATINUM': {'name': 'Platinum', 'emoji': '<:platinum:1146828808436076656>', 'show_tier': True}, 
          'EMERALD': {'name': 'Emerald', 'emoji': '<:emerald:1146828849523478618>', 'show_tier': True}, 'DIAMOND': {'name': 'Diamond', 'emoji': '<:diamond:1146828846260297961>', 'show_tier': True}, 
