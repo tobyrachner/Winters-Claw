@@ -108,8 +108,8 @@ async def update(ctx):
   
     try:
         icon_id, count, data = get_matchids(riot, server, region, puuid, cur)
-        conn.commit()
     except NameError as error:
+        conn.commit()
         embed = error_embed(error, 'No games found', author)
         await ctx.send(embed=embed)
         return
@@ -172,8 +172,7 @@ async def stats(ctx, count: Optional[int], days: Optional[int], set: Optional[fl
         return
     
     embed = stats_embed(data, author, riot, icon_id, rank, '')
-    view = StatsView()
-    view.embed_data = [data, author, riot, icon_id, rank]
+    view = StatsView(cur, data, author, riot, server, icon_id, rank, count, days, set)
     view.message = await ctx.send(embed=embed, view=view)
 
 @stats.command(description='Show stats from given account')
