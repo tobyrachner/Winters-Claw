@@ -103,6 +103,8 @@ def process_stats(cur, riot, server, count, days, set, gamemode=None):
         else:
             data['modes'][mode].update({'count': length, 'avg': avg, 'top%': top, 'win%': win})
 
+    if gamemode == 'ranked' or gamemode == 'normal':
+        gamemode = 'standard'
     cur.execute(f"SELECT {gamemode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
     rank = cur.fetchone()[0]
     return data, rank

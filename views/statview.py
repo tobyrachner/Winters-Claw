@@ -55,7 +55,7 @@ class StatsView(discord.ui.View):
     async def set_gamemode_buttons(self, interaction):
         self.clear_items()
         self.add_item(NavigationButton(self.set_default_buttons))
-        for label, gamemode in [['All Modes', 'all'], ['Standard', 'standard'], ['Hyper Roll', 'turbo'], ['Double Up', 'pairs']]:
+        for label, gamemode in [['All Modes', 'all'], ['Ranked', 'ranked'], ['Hyper Roll', 'turbo'], ['Double Up', 'pairs'], ['Normal', 'normal']]:
             self.add_item(EditButton(self.update_message, label=label, gamemode=gamemode, mode_name=label))
         await interaction.response.edit_message(view=self)
 

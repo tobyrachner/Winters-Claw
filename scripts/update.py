@@ -107,6 +107,12 @@ def update_games(cur, data):
         player_damage = match['info']['participants'][0]['total_damage_to_players']
         players_eliminated = match['info']['participants'][0]['players_eliminated']
 
+        if gamemode == 'standard':
+            if match['info']['queue_id'] == 1100:
+                gamemode = 'ranked'
+            elif match['info']['queue_id'] == 1090:
+                gamemode = 'normal'
+
         traits = ''
         for trait in match['info']['participants'][index]['traits']:
             if trait['tier_current'] > 0:
