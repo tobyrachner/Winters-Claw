@@ -4,15 +4,16 @@ from scripts.get_embeds import stats_embed
 from scripts.process_data import process_stats
 
 class EditButton(discord.ui.Button):
-    def __init__(self, function, style=discord.ButtonStyle.blurple, label='X', gamemode=None, count=None, days=None):
+    def __init__(self, function, style=discord.ButtonStyle.blurple, label='X', gamemode=None, mode_name=None, count=None, days=None):
         super().__init__(style=style, label=label)
         self.function = function
         self.gamemode = gamemode
+        self.mode_name = mode_name
         self.count = count
         self.days = days
 
     async def callback(self, interaction: discord.Interaction):
-        await self.function(gamemode=self.gamemode, count=self.count, days=self.days)
+        await self.function(gamemode=self.gamemode, mode_name=self.mode_name, count=self.count, days=self.days)
         await interaction.response.edit_message()
 
 class NavigationButton(discord.ui.Button):
@@ -54,7 +55,7 @@ class StatsView(discord.ui.View):
         self.clear_items()
         self.add_item(NavigationButton(self.set_default_buttons))
         for label, gamemode in [['All Modes', 'all'], ['Standard', 'standard'], ['Hyper Roll', 'turbo'], ['Double Up', 'pairs']]:
-            self.add_item(EditButton(self.update_message, label=label, gamemode=gamemode))
+            self.add_item(EditButton(self.update_message, label=label, gamemode=gamemode, mode_name=label))
         await interaction.response.edit_message(view=self)
 
     async def set_scope_buttons(self, interaction):
@@ -79,16 +80,22 @@ class StatsView(discord.ui.View):
         await interaction.response.edit_message(view=self)
     
 
-    async def update_message(self, gamemode=None, count=None, days=None):
+    async def update_message(self, mode_name=None, gamemode=None, count=None, days=None):
         if count or days:
             self.count = count
             self.days = days
         if gamemode:
             self.gamemode = gamemode
+            self.mode_name = mode_name
+            if gamemode == 'all':
+                self.gamemode = None
 
-        self.data = process_stats(self.cur, self.riot, self.server, self.count, self.days, self.set)
+        self.data, rank = process_stats(self.cur, self.riot, self.server, self.count, self.days, self.set, gamemode=self.gamemode)
+        self.rank = rank
+        if not rank:
+            self.rank = 'Unranked'
 
-        embed = stats_embed(self.data, self.author, self.riot, self.icon_id, self.rank, self.gamemode)
+        embed = stats_embed(self.data, self.author, self.riot, self.icon_id, self.rank, self.gamemode, mode_name=self.mode_name)
         await self.message.edit(embed=embed, view=self)
 
     async def disable_all_items(self):

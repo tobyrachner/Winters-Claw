@@ -36,14 +36,17 @@ def process_placements(placements, mode):
         return length, round(avg, 1), round(top_4_percent), round(win_percent)
 
 
-def process_stats(cur, riot, server, count, days, set):
+def process_stats(cur, riot, server, count, days, set, gamemode=None):
     if set.is_integer(): set = int(set)
 
     data = {'all': {'time_spent': 0, 'player_damage': 0, 'players_eliminated': 0}, 'modes': {'standard': {'name': 'Standard', 'time_spent': 0}, 'turbo': {'name': 'Hyper Roll', 'time_spent': 0}, 'pairs': {'name': 'Double Up', 'time_spent': 0}}}
     placements = {'all': [], 'standard': [], 'turbo': [], 'pairs': []}
-    query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
-    matches = query.fetchall()
+    if gamemode:
+        query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, gamemode))
+    else:
+        query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
     
+    matches = query.fetchall()
 
     #get requested count of games
     if count != None:
@@ -100,7 +103,9 @@ def process_stats(cur, riot, server, count, days, set):
         else:
             data['modes'][mode].update({'count': length, 'avg': avg, 'top%': top, 'win%': win})
 
-    return data
+    cur.execute(f"SELECT {gamemode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
+    rank = cur.fetchone()[0]
+    return data, rank
     
 def process_traits(cur, riot, server, count, days):
 

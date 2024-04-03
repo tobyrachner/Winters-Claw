@@ -43,13 +43,13 @@ def traits_embed(data, author):
     embed.set_footer(text=f"Requested by {author}")
     return embed
 
-def stats_embed(data, author, riot, icon_id, rank, display_mode):
+def stats_embed(data, author, riot, icon_id, rank, display_mode, mode_name='All Modes'):
     rank_icon = rank.split(' ')[0]
     name = riot.replace('%20', ' ')
     
     embed=discord.Embed(title=name + ' ' + rank_icon, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
-    embed.add_field(name=f"General - {data['all']['count']} games", 
+    embed.add_field(name=f"{mode_name} - {data['all']['count']} games", 
                     value=f"""{rank}
 Avg Placement - {data['all']['avg']} 
 Top% - {data['all']['top%']}% 
@@ -57,24 +57,6 @@ Win% - {data['all']['win%']}%
 Total damage to players - {data['all']['player_damage']}
 Total players eliminated - {data['all']['players_eliminated']}
 Time spent ingame - {data['all']['time_spent']}h""", inline=False)
-    
-    if display_mode == 'all':
-        for mode in data['modes']:
-            embed.add_field(name=f"{data['modes'][mode]['name']} - {data['modes'][mode]['count']} games", 
-                        value=f"""Avg Placement - {data['modes'][mode]['avg']} 
-Top% - {data['modes'][mode]['top%']}% 
-Win% - {data['modes'][mode]['win%']}%
-Time spent - {data['modes'][mode]['time_spent']}h""", inline=False)
-            
-    elif display_mode == '':
-        pass    
-    
-    else:
-        embed.add_field(name=f"{data['modes'][display_mode]['name']} - {data['modes'][display_mode]['count']} games", 
-                        value=f"""Avg Placement - {data['modes'][display_mode]['avg']} 
-Top% - {data['modes'][display_mode]['top%']}% 
-Win% - {data['modes'][display_mode]['win%']}%
-Time spent - {data['modes'][display_mode]['time_spent']}h""", inline=False)
 
     embed.set_footer(text=f'Games since: {data["display_date"]}')
     return embed

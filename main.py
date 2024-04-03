@@ -15,7 +15,7 @@ from views.statview import StatsView
 conn = sqlite3.connect("wclaw.db")
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS links ('discord', 'riot', 'server', 'region', 'puuid', 'summoner_id', 'icon_id', 'rank')")
-cur.execute("CREATE TABLE IF NOT EXISTS profile ('puuid', 'riot', 'server', 'region', 'icon_id', 'rank', 'last_processed')")
+cur.execute("CREATE TABLE IF NOT EXISTS profile ('puuid', 'riot', 'server', 'region', 'icon_id', 'rank', 'standard', 'turbo', 'pairs', 'last_processed')")
 cur.execute("CREATE TABLE IF NOT EXISTS matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'time_spent', 'player_damage', 'players_eliminated', 'traits')")
 
 intents = discord.Intents.all()
@@ -165,7 +165,7 @@ async def stats(ctx, count: Optional[int], days: Optional[int], set: Optional[fl
         return
 
     try:
-        data = process_stats(cur, riot, server, count, days, set)
+        data, x = process_stats(cur, riot, server, count, days, set)
     except IndexError as e:
         embed = error_embed(f"No games from {riot} found. \nMake sure to use /update first.", 'No games found', author)
         await ctx.send(embed=embed)
@@ -195,7 +195,7 @@ async def input(ctx, riot_id: str, server: str, count: Optional[int], days: Opti
 
     
     try:
-        data = process_stats(cur, riot, server, count, days, set)
+        data, x = process_stats(cur, riot, server, count, days, set)
     except IndexError as e:
         embed = error_embed(f"No games from {riot_id} in set {set} found. \nMake sure to use /update first.", 'No games found', author)
         await ctx.send(embed=embed)

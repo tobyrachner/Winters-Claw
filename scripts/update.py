@@ -19,16 +19,29 @@ def get_matchids(riot, server, region, puuid, cur):
 
     league = api.request(f'https://{server}.api.riotgames.com/tft/league/v1/entries/by-summoner/{summoner_id}?api_key=').json()
 
+    ranks = {'standard': '', 'pairs': '', 'turbo': ''}
     highest_rank = []
     for queue in league:
         if queue['queueType'] == 'RANKED_TFT_TURBO': 
             continue
+
+        if queue['queueType'] == 'RANKED_TFT':
+            queue_id = 'standard'
+        else:
+            queue_id = 'pairs'
+
         tier = queue['tier']
         div = queue['rank']
         lp = queue['leaguePoints']
 
         if (not highest_rank) or list(tiers).index(tier) > list(tiers).index(highest_rank[0]) or (list(tiers).index(tier) == list(tiers).index(highest_rank[0]) and rank_translation[div] > rank_translation[highest_rank[1]]) or (list(tiers).index(tier) == list(tiers).index(highest_rank[0]) and rank_translation[div] == rank_translation[highest_rank[1]] and lp > highest_rank[2]):
             highest_rank = [tier, div, lp]
+
+        rank = tiers[tier]['emoji'] + ' ' + tiers[tier]['name']
+        if tiers[tier]['show_tier'] == True:
+            rank = rank + ' ' + div
+        rank = rank + ' - ' + str(lp) + ' LP'
+        ranks[queue_id] = rank
 
     if highest_rank:
         rank = tiers[highest_rank[0]]['emoji'] + ' ' + tiers[highest_rank[0]]['name']
@@ -43,15 +56,12 @@ def get_matchids(riot, server, region, puuid, cur):
     if len(data) == 0:
 
         cur.execute("""
-            INSERT INTO profile ('riot', 'server', 'puuid', 'icon_id', 'rank')
-            VALUES (?, ?, ?, ?, ?)""", (riot, server, puuid, icon_id, rank))
-        
+            INSERT INTO profile ('riot', 'server', 'puuid', 'icon_id', 'rank', 'standard', 'pairs', 'turbo')
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, puuid, icon_id, rank, ranks['standard'], ranks['pairs'], ranks['turbo']))
         last_processed = ''
 
     else:
-
-        cur.execute("UPDATE profile SET icon_id = ?, rank = ? WHERE puuid = ?", (icon_id, rank, puuid))
-        
+        cur.execute("UPDATE profile SET icon_id = ?, rank = ?, standard = ?, pairs = ?, turbo = ? WHERE puuid = ?", (icon_id, rank, ranks['standard'], ranks['pairs'], ranks['turbo'], puuid))
         last_processed = data[0][0]
 
     start = 0
