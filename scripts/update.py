@@ -2,7 +2,6 @@ from scripts import api
 from scripts.settings import SET_START_DATE
 
 def get_matchids(riot, server, region, puuid, cur):
-    t = {'GREY': {'name': 'Grey', 'emoji': '<:grey:1225237248929304661>'}, 'GREEN': {'name': 'Green', 'emoji': '<:green:1225237895850492035>'}, 'BLUE': {'name': 'Blue', 'emoji': '<:blue:1225237918109532272>'}, 'PURPLE': {'name': 'Purple', 'emoji': '<:purple:1225237931472588900>'}, 'ORANGE': {'name': 'Hyper', 'emoji': '<:hyper:1225237946773405746>'}}
     tiers = {'BRONZE': {'name': 'Bronze', 'emoji': '<:bronze:1146825503710392502>', 'show_tier': True}, 'SILVER': {'name': 'Silver', 'emoji': '<:silver:1146826645332824217>', 'show_tier': True}, 
          'GOLD': {'name': 'Gold', 'emoji': '<:gold:1146828764211331188>', 'show_tier': True}, 'PLATINUM': {'name': 'Platinum', 'emoji': '<:platinum:1146828808436076656>', 'show_tier': True}, 
          'EMERALD': {'name': 'Emerald', 'emoji': '<:emerald:1146828849523478618>', 'show_tier': True}, 'DIAMOND': {'name': 'Diamond', 'emoji': '<:diamond:1146828846260297961>', 'show_tier': True}, 

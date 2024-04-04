@@ -59,7 +59,9 @@ def check_summoner(riot, server):
          'GOLD': {'name': 'Gold', 'emoji': '<:gold:1146828764211331188>', 'show_tier': True}, 'PLATINUM': {'name': 'Platinum', 'emoji': '<:platinum:1146828808436076656>', 'show_tier': True}, 
          'EMERALD': {'name': 'Emerald', 'emoji': '<:emerald:1146828849523478618>', 'show_tier': True}, 'DIAMOND': {'name': 'Diamond', 'emoji': '<:diamond:1146828846260297961>', 'show_tier': True}, 
          'MASTER': {'name': 'Master', 'emoji': '<:master:1146828806028533760>', 'show_tier': False}, 'GRANDMASTER': {'name': 'Grandmaster', 'emoji': '<:grandmaster:1146828803352559737>', 'show_tier': False}, 
-         'CHALLENGER': {'name': 'Challenger', 'emoji': '<:challenger:1146828843085217843>', 'show_tier': False}}
+         'CHALLENGER': {'name': 'Challenger', 'emoji': '<:challenger:1146828843085217843>', 'show_tier': False}, 'GREY': {'name': 'Grey', 'emoji': '<:grey:1225237248929304661>'}, 
+         'GREEN': {'name': 'Green', 'emoji': '<:green:1225237895850492035>'}, 'BLUE': {'name': 'Blue', 'emoji': '<:blue:1225237918109532272>'}, 
+         'PURPLE': {'name': 'Purple', 'emoji': '<:purple:1225237931472588900>'}, 'ORANGE': {'name': 'Hyper', 'emoji': '<:hyper:1225237946773405746>'}}
     rank_translation = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 'I': 1, 'II': 2, 'III': 3, 'IV': 4}
 
     if server in server_list.keys():
