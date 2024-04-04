@@ -83,7 +83,10 @@ def check_summoner(riot, server):
     highest_rank = []
     for queue in league:
         if queue['queueType'] == 'RANKED_TFT_TURBO': 
-            continue
+            tier  = queue['ratedTier']
+            rating = queue['ratedRating']
+            turbo = f"{tiers[tier]['emoji']} {tiers[tier]['name']} {rating}"
+
         tier = queue['tier']
         div = queue['rank']
         lp = queue['leaguePoints']
@@ -96,6 +99,8 @@ def check_summoner(riot, server):
         if tiers[highest_rank[0]]['show_tier'] == True:
             rank = rank + ' ' + highest_rank[1]
         rank = rank + ' - ' + str(highest_rank[2]) + ' LP'
+    elif turbo:
+        rank = turbo
     else:
         rank = ''
 
