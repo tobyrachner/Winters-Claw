@@ -83,6 +83,7 @@ class StatsView(discord.ui.View):
     
 
     async def update_message(self, mode_name=None, gamemode=None, count=None, days=None):
+        self.default_buttons()
         if count or days:
             self.count = count
             self.days = days
@@ -94,7 +95,7 @@ class StatsView(discord.ui.View):
             if gamemode == 'all':
                 self.gamemode = None
 
-        self.data, rank = process_stats(self.cur, self.riot, self.server, self.count, self.days, self.set, gamemode=self.gamemode)
+        self.data, rank = process_stats(self.cur, self.riot, self.server, self.count, self.days, self.set, display_mode=self.gamemode)
         self.rank = rank
         if not rank:
             self.rank = 'Unranked'

@@ -49,14 +49,14 @@ def stats_embed(data, author, riot, icon_id, rank, display_mode, mode_name='All 
     
     embed=discord.Embed(title=name + ' ' + rank_icon, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
-    embed.add_field(name=f"{mode_name} - {data['all']['count']} games", 
+    embed.add_field(name=f"{mode_name} - {data['count']} games", 
                     value=f"""{rank}
-Avg Placement - {data['all']['avg']} 
-Top% - {data['all']['top%']}% 
-Win% - {data['all']['win%']}%
-Total damage to players - {data['all']['player_damage']}
-Total players eliminated - {data['all']['players_eliminated']}
-Time spent ingame - {data['all']['time_spent']}h""", inline=False)
+Avg Placement - {data['avg']} 
+Top% - {data['top%']}% 
+Win% - {data['win%']}%
+Total damage to players - {data['player_damage']}
+Total players eliminated - {data['players_eliminated']}
+Time spent ingame - {data['time_spent']}h""", inline=False)
 
     embed.set_footer(text=f'Games since: {data["display_date"]}')
     return embed

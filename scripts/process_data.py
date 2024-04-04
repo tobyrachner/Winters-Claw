@@ -7,9 +7,9 @@ from math import ceil
 def process_placements(placements, mode):
         #making sure to get top 2% for double up games
         if mode == 'pairs':
-            set_range = 2
+            set_range = 3
         else: 
-            set_range = 4
+            set_range = 5
 
         #setting avg as 10 so the best traits can be calculated with min() but leaving it at 0 for others so unplayed modes don't get displayed as 10
         if mode == 'trait':
@@ -24,7 +24,7 @@ def process_placements(placements, mode):
         win_percent = 0
         for n in placements:
             length += 1
-            if n in range(0, set_range):
+            if n in range(1, set_range):
                 top_4_count += 1
                 if n == 1:
                     win_count += 1
@@ -36,20 +36,20 @@ def process_placements(placements, mode):
         return length, round(avg, 1), round(top_4_percent), round(win_percent)
 
 
-def process_stats(cur, riot, server, count, days, set, gamemode=None):
+def process_stats(cur, riot, server, count, days, set, display_mode=None):
     if set.is_integer(): set = int(set)
 
-    data = {'all': {'time_spent': 0, 'player_damage': 0, 'players_eliminated': 0}, 'modes': {'standard': {'name': 'Standard', 'time_spent': 0}, 'turbo': {'name': 'Hyper Roll', 'time_spent': 0}, 'pairs': {'name': 'Double Up', 'time_spent': 0}}}
-    placements = {'all': [], 'standard': [], 'turbo': [], 'pairs': []}
-    if gamemode:
-        query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, gamemode))
+    data = {'time_spent': 0, 'player_damage': 0, 'players_eliminated': 0}
+    placements = []
+    if display_mode:
+        query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, display_mode))
     else:
         query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
     
     matches = query.fetchall()
 
     #get requested count of games
-    if count != None:
+    if count:
         matches = matches[-count:]
     
 
@@ -58,7 +58,7 @@ def process_stats(cur, riot, server, count, days, set, gamemode=None):
     
 
     #if given filter all games before given date
-    if days != None:
+    if days:
         old_matches = matches
         matches = []
 
@@ -80,28 +80,21 @@ def process_stats(cur, riot, server, count, days, set, gamemode=None):
 
         #reformatting placement to placement of team instead of single player if game was Double Up
         if gamemode == 'pairs':
-            mode_placement = ceil(int(placement) / 2)
-        else:
-            mode_placement = placement
+            if display_mode == 'pairs':
+                placement = ceil(int(placement) / 2)
+            else:
+                if placement == 2: placement = 1
 
-        placements['all'].append(placement)
-        placements[gamemode].append(mode_placement)
+        placements.append(placement)
 
-        data['all']['time_spent'] += match[3]
-        data['all']['player_damage'] += match[4]
-        data['all']['players_eliminated'] += match[5]
-        data['modes'][gamemode]['time_spent'] += match[3]
+        data['time_spent'] += match[3]
+        data['player_damage'] += match[4]
+        data['players_eliminated'] += match[5]
 
-    data['all']['time_spent'] = round(data['all']['time_spent'] / 3600, 1)
-    for mode in data['modes']:
-        data['modes'][mode]['time_spent'] = round(data['modes'][mode]['time_spent'] / 3600, 1)
+    data['time_spent'] = round(data['time_spent'] / 3600, 1)
 
-    for mode in placements:
-        length, avg, top, win = process_placements(placements[mode], mode)
-        if mode == 'all':
-            data[mode].update({'count': length, 'avg': avg, 'top%': top, 'win%': win})
-        else:
-            data['modes'][mode].update({'count': length, 'avg': avg, 'top%': top, 'win%': win})
+    length, avg, top, win = process_placements(placements, display_mode)
+    data.update({'count': length, 'avg': avg, 'top%': top, 'win%': win})
 
     if gamemode == 'ranked' or gamemode == 'normal':
         gamemode = 'standard'
