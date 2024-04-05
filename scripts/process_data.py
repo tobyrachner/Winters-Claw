@@ -106,9 +106,9 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None):
 
     traits_dict = {}
     if display_mode:
-        query = cur.execute("SELECT timestamp, placement, traits FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, display_mode))
+        query = cur.execute("SELECT timestamp, placement, traits, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, display_mode))
     else:
-        query = cur.execute("SELECT timestamp, placement, traits FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
+        query = cur.execute("SELECT timestamp, placement, traits, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
     matches = query.fetchall()
     
 
@@ -137,6 +137,13 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None):
     for match in matches:
         placement = match[1]
         traits_fielded = match[2].split('-')
+        gamemode = match[3]
+
+        if gamemode == 'pairs':
+            if display_mode == 'pairs':
+                placement = ceil(int(placement) / 2)
+            else:
+                if placement == 2: placement = 1
 
         for trait in traits_fielded:
             name, level = trait.split('/')

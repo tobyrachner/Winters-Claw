@@ -128,7 +128,6 @@ async def update(ctx, riot_id: Optional[str], server: Optional[str]):
         await ctx.send(embed=embed)
         return
     
-    #await ctx.send(embed=updating_embed(riot, icon_id, count))
     update_games(cur, data)
     conn.commit()
     embed = update_embed(riot, icon_id, count)
@@ -185,4 +184,4 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
     view = StatsView(cur, data, author, riot, server, icon_id, rank, count, days, set)
     view.message = await ctx.send(embed=embed, view=view)
 
-bot.run(settings.DISCORD_TOKEN)
+bot.run(settings.TOKEN)
