@@ -1,5 +1,7 @@
 import discord
 
+from scripts.settings import trait_emoji
+
 def linked_embed(riot, icon_id, rank, text):
     name = riot.replace('%20', ' ')
     embed=discord.Embed(title=f"{name} {rank.split(' ')[0]}", description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
@@ -27,27 +29,44 @@ def update_embed(riot, icon_id, count):
     embed.add_field(name='Your profile is up to date.', value='')
     return embed
 
-def traits_embed(data, author):
-    lolchess_name = data['name'].replace(' ', '')
-    lolchess_name = lolchess_name.lower()
+def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
+    rank_icon = rank.split(' ')[0]
 
-    embed=discord.Embed(title=data['name'], description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{lolchess_name}')
-    embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{data["icon_id"]}.jpg')
-    embed.add_field(name='Best Traits:', value='',inline=False)
-    for trait in data['best_traits']:
-        embed.add_field(name=f"{trait} - {data['traits'][trait]['count']} games",
-                        value=f"""Avg Placement - {data['traits'][trait]['avg']}
-                        Top 4% - {data['traits'][trait]['top4%']}%
-                        Win% - {data['traits'][trait]['win%']}%""",
-                        inline=False)
-    embed.set_footer(text=f"Requested by {author}")
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
+    embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
+    embed.add_field(name=f"{mode_name} - {data['count']} games", value='', inline=False)
+    for i in range(2):
+        if index < len(data['traits']):
+            trait = data['traits'][index][0]
+            embed.add_field(name=f"{trait_emoji[trait]} {trait} - {data['traits'][index][1]['count']}",
+                            value=f"""{' '.join([trait_emoji['level'][str(level)] + str(amount) for level, amount in data['traits'][index][1]['level'].items()])}
+                            Avg Placement - {data['traits'][index][1]['avg']}
+                            Top 4% - {data['traits'][index][1]['top4%']}%
+                            Win% - {data['traits'][index][1]['win%']}%""",
+                            inline=True)
+        else:
+            embed.add_field(name='  ', value='', inline=True)
+
+        embed.add_field(name='  ', value='', inline=True)
+
+        if index + 1 < len(data['traits']):
+            trait2 = data['traits'][index + 1][0]
+            embed.add_field(name=f"{trait_emoji[trait2]} {trait2} - {data['traits'][index + 1][1]['count']}",
+                            value=f"""{' '.join([trait_emoji['level'][str(level)] + str(amount) + '' for level, amount in data['traits'][index + 1][1]['level'].items()])}
+                            Avg Placement - {data['traits'][index + 1][1]['avg']}
+                            Top 4% - {data['traits'][index + 1][1]['top4%']}%
+                            Win% - {data['traits'][index + 1][1]['win%']}%""",
+                            inline=True)
+        else:
+            embed.add_field(name='  ', value='', inline=True)
+        index += 2
+    embed.set_footer(text=f'Games since: {data["display_date"]}')
     return embed
 
-def stats_embed(data, author, riot, icon_id, rank, display_mode, mode_name='All Modes'):
+def stats_embed(data, author, riot, icon_id, rank, mode_name='All Modes', index=None):
     rank_icon = rank.split(' ')[0]
-    name = riot.replace('%20', ' ')
     
-    embed=discord.Embed(title=name + ' ' + rank_icon, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"{mode_name} - {data['count']} games", 
                     value=f"""{rank}

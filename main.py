@@ -8,7 +8,7 @@ from scripts import settings
 from scripts.get_embeds import *
 from scripts.check_input import *
 from scripts.update import *
-from scripts.process_data import process_stats
+from scripts.process_data import process_stats, process_traits
 from views.statview import StatsView
 
 
@@ -92,7 +92,7 @@ async def unlink(interaction: discord.Interaction):
     conn.commit()
     await interaction.response.send_message(f'Succesfully unlinked your riot account.', ephemeral=True)
 
-@bot.hybrid_command(description='Update games from your linked account')
+@bot.hybrid_command(description='Update games from linked or specified account')
 async def update(ctx, riot_id: Optional[str], server: Optional[str]):
     author = ctx.message.author.name
     await ctx.defer()
@@ -134,7 +134,7 @@ async def update(ctx, riot_id: Optional[str], server: Optional[str]):
     embed = update_embed(riot, icon_id, count)
     await ctx.send(embed=embed)
 
-@bot.hybrid_command(description='Shows stats for linked Account')
+@bot.hybrid_command(description='Shows stats for linked or specified Account')
 async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optional[int], days: Optional[int], set: Optional[float] = settings.CURRENT_SET):
     await ctx.defer()
     author = ctx.message.author.name
@@ -181,7 +181,7 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
         await ctx.send(embed=embed)
         return
     
-    embed = stats_embed(data, author, riot, icon_id, rank, '')
+    embed = stats_embed(data, author, riot, icon_id, rank)
     view = StatsView(cur, data, author, riot, server, icon_id, rank, count, days, set)
     view.message = await ctx.send(embed=embed, view=view)
 
