@@ -185,4 +185,4 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
     view = StatsView(cur, data, author, riot, server, icon_id, rank, count, days, set)
     view.message = await ctx.send(embed=embed, view=view)
 
-bot.run(settings.TOKEN)
+bot.run(settings.DISCORD_TOKEN)
