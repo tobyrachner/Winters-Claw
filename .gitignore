@@ -3,3 +3,4 @@ __pycache__/
 .env
 test.py
 wclaw.db
+missing_data.txt

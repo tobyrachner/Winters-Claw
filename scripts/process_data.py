@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 from math import ceil
 
-from scripts.settings import trait_list, unique_traits
+from scripts.settings import trait_list, unique_traits, augment_list
 
 #function to calculate avg placement, top4%, win%, taking a list of placements
 def process_placements(placements, mode):
@@ -146,6 +146,8 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None):
                 if placement == 2: placement = 1
 
         for trait in traits_fielded:
+            if trait == '':
+                continue
             name, level = trait.split('/')
             name = trait_list[name]['name']
             level = int(level)
@@ -177,3 +179,78 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None):
     rank = cur.fetchone()[0]
 
     return {'count': len(matches), 'traits': traits_dict, 'display_date': display_date}, rank
+
+def process_augments(cur, riot, server, count, days, set, display_mode=None):
+    if set.is_integer(): set = int(set)
+
+    augment_dict = {}
+    if display_mode:
+        query = cur.execute("SELECT timestamp, placement, augments, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, display_mode))
+    else:
+        query = cur.execute("SELECT timestamp, placement, augments, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
+    matches = query.fetchall()
+    
+
+    if count:
+        matches = matches[-count:]
+
+    #returning date of the oldest game to display in message
+    ts = matches[0][0] / 1000
+
+    #if given filter all games before given date
+    if days:
+        old_matches = matches
+        matches = []
+
+        current = round(time.time())
+        start_date = current - days * 86400
+        #if start date is givne instead return the given date
+        ts = start_date
+
+        for match in old_matches:
+            if not match[0] / 1000 < start_date:
+                matches.append(match)
+    
+    display_date = datetime.utcfromtimestamp(ts, ).strftime('%m/%d/%Y %H:%M (UTC)')
+
+    for match in matches:
+        placement = match[1]
+        augments_picked = match[2].split('-')
+        gamemode = match[3]
+
+        if gamemode == 'pairs':
+            if display_mode == 'pairs':
+                placement = ceil(int(placement) / 2)
+            else:
+                if placement == 2: placement = 1
+
+        for augment in augments_picked:
+            if augment == '':
+                continue
+            if not augment in augment_list:
+                print('MISSING', augment)
+                with open('missing_data.txt', 'r+') as f:
+                    if 'augment: ' + augment + '\n' not in f.readlines():
+                        f.write('augment: ' + augment + '\n')
+                continue
+            name = augment_list[augment]['name']
+
+            if name in augment_dict:
+                augment_dict[name]['placements'].append(placement)
+            else:
+                augment_dict[name] = {'placements': [placement], 'level': {}}
+
+    for augment in augment_dict:
+        count, avg, top, win = process_placements(augment_dict[augment]['placements'], display_mode)
+        augment_dict[augment].update({'count': count, 'avg': avg, 'top4%': top, 'win%': win})
+
+    augment_dict = sorted(augment_dict.items(), key=lambda x:x[1]['count'], reverse=True)
+
+    if display_mode == 'ranked' or display_mode == 'normal':
+        display_mode = 'standard'
+    elif not display_mode:
+        display_mode = 'rank'
+    cur.execute(f"SELECT {display_mode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
+    rank = cur.fetchone()[0]
+
+    return {'count': len(matches), 'augments': augment_dict, 'display_date': display_date}, rank

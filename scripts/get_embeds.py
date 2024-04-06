@@ -1,10 +1,10 @@
 import discord
 
-from scripts.settings import trait_emoji
+from scripts.settings import trait_emoji, augment_emoji
 
 def linked_embed(riot, icon_id, rank, text):
     name = riot.replace('%20', ' ')
-    embed=discord.Embed(title=f"{name} {rank.split(' ')[0]}", description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
+    embed=discord.Embed(title=f"{name} {rank.split(' ')[0]}", description='', color=0x7011d0, url=f'')
     embed.set_author(name=f'{text} linked:')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name='to your Discord account.', value='')
@@ -12,7 +12,7 @@ def linked_embed(riot, icon_id, rank, text):
 
 def updating_embed(riot, icon_id, count):
     name = riot.replace('%20', ' ')
-    embed=discord.Embed(title=name, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
+    embed=discord.Embed(title=name, description='', color=0x7011d0, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.set_author(name=f'Downloading {count} games ...')
     embed.add_field(name='(This might take a while)', value='')
@@ -20,7 +20,7 @@ def updating_embed(riot, icon_id, count):
 
 def update_embed(riot, icon_id, count):
     name = riot.replace('%20', ' ')
-    embed=discord.Embed(title=name, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
+    embed=discord.Embed(title=name, description='', color=0x7011d0, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     if count == 0:
         embed.set_author(name=f'No new games to add to:')
@@ -32,7 +32,7 @@ def update_embed(riot, icon_id, count):
 def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
     rank_icon = rank.split(' ')[0]
 
-    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"{mode_name} - {data['count']} games", value='', inline=False)
     for i in range(2):
@@ -63,10 +63,43 @@ def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mode
     embed.set_footer(text=f'Games since: {data["display_date"]}')
     return embed
 
+def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
+    rank_icon = rank.split(' ')[0]
+
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
+    embed.add_field(name=f"{mode_name} - {data['count']} games", value='', inline=False)
+    for i in range(2):
+        if index < len(data['augments']):
+            augment = data['augments'][index][0]
+            embed.add_field(name=f"{augment_emoji[augment]} {augment} - {data['augments'][index][1]['count']}",
+                            value=f""" Avg Placement - {data['augments'][index][1]['avg']}
+                            Top 4% - {data['augments'][index][1]['top4%']}%
+                            Win% - {data['augments'][index][1]['win%']}%""",
+                            inline=True)
+        else:
+            embed.add_field(name='  ', value='', inline=True)
+
+        embed.add_field(name='  ', value='', inline=True)
+
+        index += 1
+        if index < len(data['augments']):
+            augment = data['augments'][index][0]
+            embed.add_field(name=f"{augment_emoji[augment]} {augment} - {data['augments'][index][1]['count']}",
+                            value=f""" Avg Placement - {data['augments'][index][1]['avg']}
+                            Top 4% - {data['augments'][index][1]['top4%']}%
+                            Win% - {data['augments'][index][1]['win%']}%""",
+                            inline=True)
+        else:
+            embed.add_field(name='  ', value='', inline=True)
+        index += 1
+    embed.set_footer(text=f'Games since: {data["display_date"]}')
+    return embed
+
 def stats_embed(data, author, riot, icon_id, rank, mode_name='All Modes', index=None):
     rank_icon = rank.split(' ')[0]
     
-    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'https://lolchess.gg/profile/euw/{riot}')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"{mode_name} - {data['count']} games", 
                     value=f"""{rank}
@@ -91,10 +124,10 @@ def server_embed(author):
 
     embed.add_field(name="Europe", inline=True, value="""
 ```fix
-Europe West         - > EUW 
-Europe Northeast    - > EUNE
-Turkey              - > TR
-Russia              - > RU```""")
+Europe West       - > EUW 
+Europe Northeast  - > EUNE    
+Turkey            - > TR
+Russia            - > RU```""")
     
     embed.add_field(name='America', inline=True, value="""
 ```fix
@@ -104,12 +137,7 @@ Latinamerica South  - > LAS
 Brasil              - > BR```""")
     
     embed.add_field(name='', value='', inline=True)
-    
-    embed.add_field(name='Asia', inline=True, value="""
-```fix
-Japan               - > JP
-Korea               - > KR```""")
-    
+
     embed.add_field(name='Sea', inline=True, value="""
 ```fix
 Oceania             - > OC
@@ -117,6 +145,12 @@ Philippines         - > PH
 Singapoure          - > SG
 Taiwan              - > TW
 Thailand            - > TH```""")
+    
+    embed.add_field(name='Asia', inline=True, value="""
+```fix
+Japan               - > JP
+Korea               - > KR```""")
+
     
     embed.add_field(name='', value='', inline=True)
     return embed

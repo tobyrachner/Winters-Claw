@@ -118,9 +118,11 @@ def update_games(cur, data):
             if trait['tier_current'] > 0:
                 traits += f"{trait['name']}/{trait['tier_current']}-"
 
+        augments = '-'.join(match['info']['participants'][index]['augments'])
 
-        cur.execute("""INSERT INTO matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'time_spent', 'player_damage', 'players_eliminated', 'traits')
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, set_number, timestamp, placement, gamemode, time_spent, player_damage, players_eliminated, traits[:-1]))
+
+        cur.execute("""INSERT INTO matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'augments')
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, set_number, timestamp, placement, gamemode, time_spent, player_damage, players_eliminated, traits[:-1], augments))
         
     cur.execute("UPDATE profile SET last_processed = ? WHERE puuid = ?", (latest_match, puuid))
 

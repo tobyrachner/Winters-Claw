@@ -1,7 +1,7 @@
 from typing import Any
 import discord
-from scripts.get_embeds import stats_embed, traits_embed
-from scripts.process_data import process_stats, process_traits
+from scripts.get_embeds import stats_embed, traits_embed, augments_embed
+from scripts.process_data import process_stats, process_traits, process_augments
 
 class EditButton(discord.ui.Button):
     def __init__(self, function, style=discord.ButtonStyle.blurple, label='X', gamemode=None, mode_name=None, count=None, days=None, stat_type=None):
@@ -50,6 +50,7 @@ class StatsView(discord.ui.View):
         
         self.process_function = process_stats
         self.embed_function = stats_embed
+        self.stat_type = 'general'
         self.page_index = 0
         self.gamemode = ''
         self.mode_name = 'All Modes'
@@ -58,7 +59,7 @@ class StatsView(discord.ui.View):
 
     def add_default_buttons(self, style=discord.ButtonStyle.blurple):
         self.clear_items()
-        if self.process_function == process_traits:
+        if self.stat_type in ['traits', 'augments']:
             #style = discord.ButtonStyle.gray
             self.add_page_buttons()
         self.add_item(NavigationButton(self.set_gamemode_buttons, label='Gamemode', style=style))
@@ -76,7 +77,7 @@ class StatsView(discord.ui.View):
     async def set_gamemode_buttons(self, interaction):
         self.clear_items()
         self.add_item(NavigationButton(self.set_default_buttons))
-        for label, gamemode in [['All Modes', 'all'], ['Ranked', 'ranked'], ['Hyper Roll', 'turbo'], ['Double Up', 'pairs'], ['Normal', 'normal']]:
+        for label, gamemode in [['All Modes', 'all'], ['Ranked', 'ranked'], ['Hyper Roll', 'turbo'], ['Double Up', 'pairs']]:   # add ['Normal', 'normal'] for only unranked games
             self.add_item(EditButton(self.update_message, label=label, gamemode=gamemode, mode_name=label))
         await interaction.response.edit_message(view=self)
 
@@ -85,6 +86,7 @@ class StatsView(discord.ui.View):
         self.add_item(NavigationButton(self.set_default_buttons))
         self.add_item(EditButton(self.update_message, label='General', stat_type='general'))
         self.add_item(EditButton(self.update_message, label='Traits', stat_type='traits'))
+        self.add_item(EditButton(self.update_message, label='Augments', stat_type='augments'))
         await interaction.response.edit_message(view=self)
 
     async def set_scope_buttons(self, interaction):
@@ -122,12 +124,16 @@ class StatsView(discord.ui.View):
             if gamemode == 'all':
                 self.gamemode = None
         if stat_type:
+            self.stat_type = stat_type
             if stat_type == 'general':
                 self.process_function = process_stats
                 self.embed_function = stats_embed
             elif stat_type == 'traits':
                 self.process_function = process_traits
                 self.embed_function = traits_embed
+            elif stat_type == 'augments':
+                self.process_function = process_augments
+                self.embed_function = augments_embed
                 
         self.page_index = 0
 
@@ -141,7 +147,7 @@ class StatsView(discord.ui.View):
         await interaction.response.edit_message(embed=embed, view=self)
 
     async def change_page(self, interaction, delta):
-        if 0 <= self.page_index + delta < len(self.data['traits']):
+        if 0 <= self.page_index + delta < len(self.data[self.stat_type]):
             self.page_index += delta
             embed = self.embed_function(self.data, self.author, self.riot, self.icon_id, self.rank, mode_name=self.mode_name, index=self.page_index) 
             await interaction.response.edit_message(embed=embed, view=self)
