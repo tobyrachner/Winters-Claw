@@ -16,7 +16,7 @@ conn = sqlite3.connect("wclaw.db")
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS links ('discord', 'riot', 'server', 'region', 'puuid', 'summoner_id', 'icon_id', 'rank')")
 cur.execute("CREATE TABLE IF NOT EXISTS profile ('puuid', 'riot', 'server', 'region', 'icon_id', 'rank', 'standard', 'turbo', 'pairs', 'last_processed')")
-cur.execute("CREATE TABLE IF NOT EXISTS matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'augments')")
+cur.execute("CREATE TABLE IF NOT EXISTS matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')")
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="$", intents=intents)

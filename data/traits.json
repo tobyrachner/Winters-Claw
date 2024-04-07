@@ -2,141 +2,141 @@
   "TFT11_Altruist": {
     "id": "TFT11_Altruist",
     "name": "Altruist",
-    "image": "Trait_Icon_11_Altruist.TFT_Set11.png"
+    "image": "trait_icon_11_altruist.tft_set11.png"
   },
   "TFT11_Arcanist": {
     "id": "TFT11_Arcanist",
     "name": "Arcanist",
-    "image": "Trait_Icon_6_Arcanist.png"
+    "image": "trait_icon_6_arcanist.png"
   },
   "TFT11_Artist": {
     "id": "TFT11_Artist",
     "name": "Artist",
-    "image": "Trait_Icon_11_Artist.TFT_Set11.png"
+    "image": "trait_icon_11_artist.tft_set11.png"
   },
   "TFT11_Behemoth": {
     "id": "TFT11_Behemoth",
     "name": "Behemoth",
-    "image": "Trait_Icon_11_Behemoth.TFT_Set11.png"
+    "image": "trait_icon_11_behemoth.tft_set11.png"
   },
   "TFT11_Bruiser": {
     "id": "TFT11_Bruiser",
     "name": "Bruiser",
-    "image": "Trait_Icon_6_Bruiser.png"
+    "image": "trait_icon_6_bruiser.png"
   },
   "TFT11_Dragonlord": {
     "id": "TFT11_Dragonlord",
     "name": "Dragonlord",
-    "image": "Trait_Icon_11_Dragonlord.TFT_Set11.png"
+    "image": "trait_icon_11_dragonlord.tft_set11.png"
   },
   "TFT11_Dryad": {
     "id": "TFT11_Dryad",
     "name": "Dryad",
-    "image": "Trait_Icon_11_Dryad.TFT_Set11.png"
+    "image": "trait_icon_11_dryad.tft_set11.png"
   },
   "TFT11_Duelist": {
     "id": "TFT11_Duelist",
     "name": "Duelist",
-    "image": "Trait_Icon_8_Duelist.png"
+    "image": "trait_icon_8_duelist.png"
   },
   "TFT11_Exalted": {
     "id": "TFT11_Exalted",
     "name": "Exalted",
-    "image": "Trait_Icon_11_Exalted.TFT_Set11.png"
+    "image": "trait_icon_11_exalted.tft_set11.png"
   },
   "TFT11_Fated": {
     "id": "TFT11_Fated",
     "name": "Fated",
-    "image": "Trait_Icon_11_Fated.TFT_Set11.png"
+    "image": "trait_icon_11_fated.tft_set11.png"
   },
   "TFT11_Fortune": {
     "id": "TFT11_Fortune",
     "name": "Fortune",
-    "image": "Trait_Icon_4_Fortune.png"
+    "image": "trait_icon_4_fortune.png"
   },
   "TFT11_Ghostly": {
     "id": "TFT11_Ghostly",
     "name": "Ghostly",
-    "image": "Trait_Icon_11_Ghostly.TFT_Set11.png"
+    "image": "trait_icon_11_ghostly.tft_set11.png"
   },
   "TFT11_Great": {
     "id": "TFT11_Great",
     "name": "Great",
-    "image": "Trait_Icon_11_Great.TFT_Set11.png"
+    "image": "trait_icon_11_great.tft_set11.png"
   },
   "TFT11_Heavenly": {
     "id": "TFT11_Heavenly",
     "name": "Heavenly",
-    "image": "Trait_Icon_11_Heavenly.TFT_Set11.png"
+    "image": "trait_icon_11_heavenly.tft_set11.png"
   },
   "TFT11_InkShadow": {
     "id": "TFT11_InkShadow",
     "name": "Inkshadow",
-    "image": "Trait_Icon_11_Ink_Shadow.TFT_Set11.png"
+    "image": "trait_icon_11_ink_shadow.tft_set11.png"
   },
   "TFT11_Invoker": {
     "id": "TFT11_Invoker",
     "name": "Invoker",
-    "image": "Trait_Icon_9_Preserver.png"
+    "image": "trait_icon_9_preserver.png"
   },
   "TFT11_Lovers": {
     "id": "TFT11_Lovers",
     "name": "Lovers",
-    "image": "Trait_Icon_11_Lovers.TFT_Set11.png"
+    "image": "trait_icon_11_lovers.tft_set11.png"
   },
   "TFT11_Mythic": {
     "id": "TFT11_Mythic",
     "name": "Mythic",
-    "image": "Trait_Icon_11_Mythic.TFT_Set11.png"
+    "image": "trait_icon_11_mythic.tft_set11.png"
   },
   "TFT11_Porcelain": {
     "id": "TFT11_Porcelain",
     "name": "Porcelain",
-    "image": "Trait_Icon_11_Porcelain.TFT_Set11.png"
+    "image": "trait_icon_11_porcelain.tft_set11.png"
   },
   "TFT11_Reaper": {
     "id": "TFT11_Reaper",
     "name": "Reaper",
-    "image": "Trait_Icon_11_Reaper.TFT_Set11.png"
+    "image": "trait_icon_11_reaper.tft_set11.png"
   },
   "TFT11_Sage": {
     "id": "TFT11_Sage",
     "name": "Sage",
-    "image": "Trait_Icon_11_Sage.TFT_Set11.png"
+    "image": "trait_icon_11_sage.tft_set11.png"
   },
   "TFT11_Sniper": {
     "id": "TFT11_Sniper",
     "name": "Sniper",
-    "image": "Trait_Icon_6_Sniper.png"
+    "image": "trait_icon_6_sniper.png"
   },
   "TFT11_SpiritWalker": {
     "id": "TFT11_SpiritWalker",
     "name": "Spirit Walker",
-    "image": "Trait_Icon_11_Spirit_Walker.TFT_Set11.png"
+    "image": "trait_icon_11_spirit_walker.tft_set11.png"
   },
   "TFT11_Storyweaver": {
     "id": "TFT11_Storyweaver",
     "name": "Storyweaver",
-    "image": "Trait_Icon_11_Storyweaver.TFT_Set11.png"
+    "image": "trait_icon_11_storyweaver.tft_set11.png"
   },
   "TFT11_Trickshot": {
     "id": "TFT11_Trickshot",
     "name": "Trickshot",
-    "image": "Trait_Icon_4_Sharpshooter.png"
+    "image": "trait_icon_4_sharpshooter.png"
   },
   "TFT11_TrickshotAltruist": {
     "id": "TFT11_TrickshotAltruist",
     "name": "Trickshot/Altruist",
-    "image": "Trait_Icon_11_Altruist_Trickshot.TFT_Set11.png"
+    "image": "trait_icon_11_altruist_trickshot.tft_set11.png"
   },
   "TFT11_Umbral": {
     "id": "TFT11_Umbral",
     "name": "Umbral",
-    "image": "Trait_Icon_11_Umbral.TFT_Set11.png"
+    "image": "trait_icon_11_umbral.tft_set11.png"
   },
   "TFT11_Warden": {
     "id": "TFT11_Warden",
     "name": "Warden",
-    "image": "Trait_Icon_11_Warden.TFT_Set11.png"
+    "image": "trait_icon_11_warden.tft_set11.png"
   }
 }

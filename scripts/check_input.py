@@ -65,7 +65,6 @@ def check_summoner(riot, server):
     else:
         raise SyntaxError(f'{server} is not a from the api supported server.\nFor a full list of servers type $servers.')
     
-    print(f'https://{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{name}/{tagline}?api_key=')
     account = api.request(f'https://{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{name}/{tagline}?api_key=')
     if account.status_code != 200:
         raise SyntaxError(f"'{name}#{tagline}' was not found on the {server} server.")

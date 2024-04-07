@@ -2,1296 +2,1296 @@
   "TFTTutorial_Augment_BackRowAS1": {
     "id": "TFTTutorial_Augment_BackRowAS1",
     "name": "Swift Strike",
-    "image": "Tutorial-Swift-Strike-I.png"
+    "image": "tutorial-swift-strike-i.png"
   },
   "TFTTutorial_Augment_FrontRowHealth1": {
     "id": "TFTTutorial_Augment_FrontRowHealth1",
     "name": "Bulwark",
-    "image": "Tutorial-Bulwark-I.png"
+    "image": "tutorial-bulwark-i.png"
   },
   "TFTTutorial_Augment_FrontRowMana1": {
     "id": "TFTTutorial_Augment_FrontRowMana1",
     "name": "Splash Zone",
-    "image": "Tutorial-Splash-Zone-I.png"
+    "image": "tutorial-splash-zone-i.png"
   },
   "TFTTutorial_Augment_WithItemAS2": {
     "id": "TFTTutorial_Augment_WithItemAS2",
     "name": "Elite Vanguard",
-    "image": "Tutorial-Elite-Vanguard-II.png"
+    "image": "tutorial-elite-vanguard-ii.png"
   },
   "TFTTutorial_Augment_WithItemHealth2": {
     "id": "TFTTutorial_Augment_WithItemHealth2",
     "name": "Cybernetic Mass",
-    "image": "Cybernetic-Bulk-II.png"
+    "image": "cybernetic-bulk-ii.png"
   },
   "TFTTutorial_Augment_WithoutItemAS2": {
     "id": "TFTTutorial_Augment_WithoutItemAS2",
     "name": "Unhindered",
-    "image": "Unladen-Airspeed-Velocity-II.png"
+    "image": "unladen-airspeed-velocity-ii.png"
   },
   "TFT6_Augment_SalvageBin": {
     "id": "TFT6_Augment_SalvageBin",
     "name": "Salvage Bin",
-    "image": "Salvage2.png"
+    "image": "salvage2.png"
   },
   "TFT6_Augment_SlowAndSteady": {
     "id": "TFT6_Augment_SlowAndSteady",
     "name": "March of Progress",
-    "image": "SlowAndSteady3.png"
+    "image": "slowandsteady3.png"
   },
   "TFT6_Augment_PortableForge": {
     "id": "TFT6_Augment_PortableForge",
     "name": "Portable Forge",
-    "image": "PortableForge2.png"
+    "image": "portableforge2.png"
   },
   "TFT6_Augment_BinaryAirdrop": {
     "id": "TFT6_Augment_BinaryAirdrop",
     "name": "Binary Airdrop",
-    "image": "BinaryAirdrop3.png"
+    "image": "binaryairdrop3.png"
   },
   "TFT6_Augment_Recombobulator": {
     "id": "TFT6_Augment_Recombobulator",
     "name": "Recombobulator",
-    "image": "Recombobulator-I.png"
+    "image": "recombobulator-i.png"
   },
   "TFT9_Augment_JeweledLotus": {
     "id": "TFT9_Augment_JeweledLotus",
     "name": "Jeweled Lotus II",
-    "image": "Jeweled-Lotus-II.png"
+    "image": "jeweled-lotus-ii.png"
   },
   "TFT6_Augment_ThreesCompany": {
     "id": "TFT6_Augment_ThreesCompany",
     "name": "Three's Company",
-    "image": "Threes-Company-II.png"
+    "image": "threes-company-ii.png"
   },
   "TFT7_Augment_LivingForge": {
     "id": "TFT7_Augment_LivingForge",
     "name": "Living Forge",
-    "image": "Living-Forge-III.png"
+    "image": "living-forge-iii.png"
   },
   "TFT7_Augment_BirthdayPresents": {
     "id": "TFT7_Augment_BirthdayPresents",
     "name": "Birthday Present",
-    "image": "Golden-Gifts-III.png"
+    "image": "golden-gifts-iii.png"
   },
   "TFT6_Augment_GachaAddict": {
     "id": "TFT6_Augment_GachaAddict",
     "name": "Prismatic Ticket",
-    "image": "GoldenTicket3.png"
+    "image": "goldenticket3.png"
   },
   "TFT9_Augment_YoungAndWildAndFree": {
     "id": "TFT9_Augment_YoungAndWildAndFree",
     "name": "Young and Wild and Free",
-    "image": "Young-and-wild-and-free-I.png"
+    "image": "young-and-wild-and-free-i.png"
   },
   "TFT9_Augment_PhreakyFriday": {
     "id": "TFT9_Augment_PhreakyFriday",
     "name": "Phreaky Friday",
-    "image": "Phreaky-Friday-III.png"
+    "image": "phreaky-friday-iii.png"
   },
   "TFT9_Augment_CapriciousForge": {
     "id": "TFT9_Augment_CapriciousForge",
     "name": "Capricious Forge",
-    "image": "Prototype-Forge-II.png"
+    "image": "prototype-forge-ii.png"
   },
   "TFT9_Augment_StarterKit": {
     "id": "TFT9_Augment_StarterKit",
     "name": "Starter Kit",
-    "image": "Starter-Kit-III.png"
+    "image": "starter-kit-iii.png"
   },
   "TFT9_Augment_LongTimeCrafting": {
     "id": "TFT9_Augment_LongTimeCrafting",
     "name": "Latent Forge",
-    "image": "Long-time-Crafting-I.png"
+    "image": "long-time-crafting-i.png"
   },
   "TFT9_Augment_Formation2": {
     "id": "TFT9_Augment_Formation2",
     "name": "Unified Resistance II",
-    "image": "Red-Rover-II.png"
+    "image": "red-rover-ii.png"
   },
   "TFT9_Augment_TonsOfStats": {
     "id": "TFT9_Augment_TonsOfStats",
     "name": "Tons of Stats!",
-    "image": "Tons-of-Stats-II.png"
+    "image": "tons-of-stats-ii.png"
   },
   "TFT9_Augment_Formation1": {
     "id": "TFT9_Augment_Formation1",
     "name": "Unified Resistance I",
-    "image": "Red-Rover-I.png"
+    "image": "red-rover-i.png"
   },
   "TFT9_Augment_SilverSpoon": {
     "id": "TFT9_Augment_SilverSpoon",
     "name": "Silver Spoon",
-    "image": "Silver-Spoon-I.png"
+    "image": "silver-spoon-i.png"
   },
   "TFT9_Augment_CustomerIsAlwaysRight": {
     "id": "TFT9_Augment_CustomerIsAlwaysRight",
     "name": "Component Buffet",
-    "image": "The-customer-is-always-right-I.png"
+    "image": "the-customer-is-always-right-i.png"
   },
   "TFT9_Augment_IronAssets": {
     "id": "TFT9_Augment_IronAssets",
     "name": "Iron Assets",
-    "image": "Iron-Assets-I.png"
+    "image": "iron-assets-i.png"
   },
   "TFT9_Augment_StarsAreBorn": {
     "id": "TFT9_Augment_StarsAreBorn",
     "name": "Stars are Born",
-    "image": "Stars-are-born-II.png"
+    "image": "stars-are-born-ii.png"
   },
   "TFT9_Augment_OneTwosThree": {
     "id": "TFT9_Augment_OneTwosThree",
     "name": "Ones Twos Three",
-    "image": "Threes-Company-I.png"
+    "image": "threes-company-i.png"
   },
   "TFT9_Augment_MissedConnections": {
     "id": "TFT9_Augment_MissedConnections",
     "name": "Missed Connections",
-    "image": "Missed-Connections-I.png"
+    "image": "missed-connections-i.png"
   },
   "TFT9_Augment_RollTheDice": {
     "id": "TFT9_Augment_RollTheDice",
     "name": "Roll The Dice",
-    "image": "Roll-the-Dice-III.png"
+    "image": "roll-the-dice-iii.png"
   },
   "TFT9_Augment_Sleightofhand": {
     "id": "TFT9_Augment_Sleightofhand",
     "name": "Sleight of Hand",
-    "image": "Sleight-of-Hand-II.png"
+    "image": "sleight-of-hand-ii.png"
   },
   "TFT9_Augment_ACutAbove": {
     "id": "TFT9_Augment_ACutAbove",
     "name": "A Cut Above",
-    "image": "A-Cut-Above-II.png"
+    "image": "a-cut-above-ii.png"
   },
   "TFT9_Augment_Idealism": {
     "id": "TFT9_Augment_Idealism",
     "name": "Idealism",
-    "image": "Idealism-II.png"
+    "image": "idealism-ii.png"
   },
   "TFT9_Augment_HealingOrbsI": {
     "id": "TFT9_Augment_HealingOrbsI",
     "name": "Healing Orbs I",
-    "image": "Healing-Orbs-I.png"
+    "image": "healing-orbs-i.png"
   },
   "TFT9_Augment_HealingOrbsII": {
     "id": "TFT9_Augment_HealingOrbsII",
     "name": "Healing Orbs II",
-    "image": "Healing-Orbs-II.png"
+    "image": "healing-orbs-ii.png"
   },
   "TFT9_Augment_GargantuanResolve": {
     "id": "TFT9_Augment_GargantuanResolve",
     "name": "Gargantuan Resolve",
-    "image": "Gargantuan-Resolve-II.png"
+    "image": "gargantuan-resolve-ii.png"
   },
   "TFT9_Augment_GiftsFromTheFallen": {
     "id": "TFT9_Augment_GiftsFromTheFallen",
     "name": "Gifts from the Fallen",
-    "image": "Gifts-from-the-Fallen-II.png"
+    "image": "gifts-from-the-fallen-ii.png"
   },
   "TFT9_Augment_HedgeFund": {
     "id": "TFT9_Augment_HedgeFund",
     "name": "Hedge Fund",
-    "image": "RichGetRicher3.png"
+    "image": "richgetricher3.png"
   },
   "TFT9_Augment_HedgeFundPlus": {
     "id": "TFT9_Augment_HedgeFundPlus",
     "name": "Hedge Fund+",
-    "image": "RichGetRicher3.png"
+    "image": "richgetricher3.png"
   },
   "TFT9_Augment_Martyr": {
     "id": "TFT9_Augment_Martyr",
     "name": "Martyr",
-    "image": "Martyr-II.png"
+    "image": "martyr-ii.png"
   },
   "TFT9_Augment_LongDistanceRelationship2": {
     "id": "TFT9_Augment_LongDistanceRelationship2",
     "name": "Long Distance Pals",
-    "image": "Long-Distance-Relationship-II.png"
+    "image": "long-distance-relationship-ii.png"
   },
   "TFT9_Augment_GreaterJeweledLotus": {
     "id": "TFT9_Augment_GreaterJeweledLotus",
     "name": "Jeweled Lotus III",
-    "image": "Jeweled-Lotus-III.png"
+    "image": "jeweled-lotus-iii.png"
   },
   "TFT9_Augment_BronzeTicket": {
     "id": "TFT9_Augment_BronzeTicket",
     "name": "Silver Ticket",
-    "image": "GoldenTicket1.png"
+    "image": "goldenticket1.png"
   },
   "TFT9_Augment_BuildingACollection": {
     "id": "TFT9_Augment_BuildingACollection",
     "name": "Buried Treasures I",
-    "image": "Buried-Treasures-I.png"
+    "image": "buried-treasures-i.png"
   },
   "TFT9_Augment_BuildingACollectionPlus": {
     "id": "TFT9_Augment_BuildingACollectionPlus",
     "name": "Buried Treasures II",
-    "image": "Buried-Treasures-II.png"
+    "image": "buried-treasures-ii.png"
   },
   "TFT9_Augment_BuildingACollectionPlusPlus": {
     "id": "TFT9_Augment_BuildingACollectionPlusPlus",
     "name": "Buried Treasures III",
-    "image": "Buried-Treasures-III.png"
+    "image": "buried-treasures-iii.png"
   },
   "TFT9_Augment_KnowYourEnemy": {
     "id": "TFT9_Augment_KnowYourEnemy",
     "name": "Know Your Enemy",
-    "image": "Know-Your-Enemy-II.png"
+    "image": "know-your-enemy-ii.png"
   },
   "TFT6_Augment_TinyTitans": {
     "id": "TFT6_Augment_TinyTitans",
     "name": "Tiny Titans",
-    "image": "Tiny-Titans-I.png"
+    "image": "tiny-titans-i.png"
   },
   "TFT6_Augment_MetabolicAccelerator": {
     "id": "TFT6_Augment_MetabolicAccelerator",
     "name": "Metabolic Accelerator",
-    "image": "MetabolicAccel2.png"
+    "image": "metabolicaccel2.png"
   },
   "TFT9_Augment_Harmacist1": {
     "id": "TFT9_Augment_Harmacist1",
     "name": "Harmacist I",
-    "image": "Harmacist-1-2-3-I.png"
+    "image": "harmacist-1-2-3-i.png"
   },
   "TFT9_Augment_Harmacist2": {
     "id": "TFT9_Augment_Harmacist2",
     "name": "Harmacist II",
-    "image": "Harmacist-1-2-3-II.png"
+    "image": "harmacist-1-2-3-ii.png"
   },
   "TFT9_Augment_Harmacist3": {
     "id": "TFT9_Augment_Harmacist3",
     "name": "Harmacist III",
-    "image": "Harmacist-1-2-3-III.png"
+    "image": "harmacist-1-2-3-iii.png"
   },
   "TFT6_Augment_PandorasItems": {
     "id": "TFT6_Augment_PandorasItems",
     "name": "Pandora's Items",
-    "image": "Pandora1.png"
+    "image": "pandora1.png"
   },
   "TFT9_Augment_PandorasRadiantBox": {
     "id": "TFT9_Augment_PandorasRadiantBox",
     "name": "Pandora's Items III",
-    "image": "Pandora3.png"
+    "image": "pandora3.png"
   },
   "TFT9_Augment_PandorasItems2": {
     "id": "TFT9_Augment_PandorasItems2",
     "name": "Pandora's Items II",
-    "image": "Pandora2.png"
+    "image": "pandora2.png"
   },
   "TFT9_Augment_WhatDoesntKillYou": {
     "id": "TFT9_Augment_WhatDoesntKillYou",
     "name": "What Doesn't Kill You",
-    "image": "What-Doesn_t-Kill-You-II.png"
+    "image": "what-doesn_t-kill-you-ii.png"
   },
   "TFT9_Augment_ArmyBuilding": {
     "id": "TFT9_Augment_ArmyBuilding",
     "name": "Team Building",
-    "image": "Building-an-army-I.png"
+    "image": "building-an-army-i.png"
   },
   "TFT9_Augment_RiskyMoves": {
     "id": "TFT9_Augment_RiskyMoves",
     "name": "Risky Moves",
-    "image": "Risky-Moves-I.png"
+    "image": "risky-moves-i.png"
   },
   "TFT9_Augment_NotToday": {
     "id": "TFT9_Augment_NotToday",
     "name": "Not Today",
-    "image": "Not-Today-II.png"
+    "image": "not-today-ii.png"
   },
   "TFT6_Augment_OneTwoFive": {
     "id": "TFT6_Augment_OneTwoFive",
     "name": "One, Two, Five!",
-    "image": "One-Two-Five-I.png"
+    "image": "one-two-five-i.png"
   },
   "TFT9_Augment_PumpingUp": {
     "id": "TFT9_Augment_PumpingUp",
     "name": "Pumping Up I",
-    "image": "Pumping-Up-I.png"
+    "image": "pumping-up-i.png"
   },
   "TFT9_Augment_PumpingUp2": {
     "id": "TFT9_Augment_PumpingUp2",
     "name": "Pumping Up II",
-    "image": "Pumping-Up-II.png"
+    "image": "pumping-up-ii.png"
   },
   "TFT9_Augment_PumpingUp3": {
     "id": "TFT9_Augment_PumpingUp3",
     "name": "Pumping Up III",
-    "image": "Pumping-Up-III.png"
+    "image": "pumping-up-iii.png"
   },
   "TFT9_Augment_TiniestTitan": {
     "id": "TFT9_Augment_TiniestTitan",
     "name": "Tiniest Titan",
-    "image": "Tiniest-TitanIII.png"
+    "image": "tiniest-titaniii.png"
   },
   "TFT9_Augment_YouHaveMySword": {
     "id": "TFT9_Augment_YouHaveMySword",
     "name": "You Have My Sword",
-    "image": "You-Have-My-Sword-II.png"
+    "image": "you-have-my-sword-ii.png"
   },
   "TFT9_Augment_YouHaveMyBow": {
     "id": "TFT9_Augment_YouHaveMyBow",
     "name": "You Have My Bow",
-    "image": "You-Have-My-Bow-II.png"
+    "image": "you-have-my-bow-ii.png"
   },
   "TFT9_Augment_OldMansWalkingStick": {
     "id": "TFT9_Augment_OldMansWalkingStick",
     "name": "Magic Wand",
-    "image": "Old-Man_s-Walking-Stick-II.png"
+    "image": "old-man_s-walking-stick-ii.png"
   },
   "TFT9_Augment_EscortQuest": {
     "id": "TFT9_Augment_EscortQuest",
     "name": "Escort Quest",
-    "image": "Escort-Quest-II.png"
+    "image": "escort-quest-ii.png"
   },
   "TFT9_Augment_ThreesACrowd": {
     "id": "TFT9_Augment_ThreesACrowd",
     "name": "Three's a Crowd",
-    "image": "Three_s-a-Crowd-II.png"
+    "image": "three_s-a-crowd-ii.png"
   },
   "TFT9_Augment_TwoHealthy": {
     "id": "TFT9_Augment_TwoHealthy",
     "name": "Two Healthy",
-    "image": "Two-Healthy-II.png"
+    "image": "two-healthy-ii.png"
   },
   "TFT9_Augment_RedBuff": {
     "id": "TFT9_Augment_RedBuff",
     "name": "Blistering Strikes",
-    "image": "Red-Buff-I.png"
+    "image": "red-buff-i.png"
   },
   "TFT9_Augment_LearningFromExperience2": {
     "id": "TFT9_Augment_LearningFromExperience2",
     "name": "Patient Study",
-    "image": "Learning-From-Experience-II.png"
+    "image": "learning-from-experience-ii.png"
   },
   "TFT6_Augment_RadiantRelics": {
     "id": "TFT6_Augment_RadiantRelics",
     "name": "Radiant Relics",
-    "image": "RadiantRelic-III.png"
+    "image": "radiantrelic-iii.png"
   },
   "TFT6_Augment_ItemGrabBag1": {
     "id": "TFT6_Augment_ItemGrabBag1",
     "name": "Item Grab Bag I",
-    "image": "ItemGrabBag1.png"
+    "image": "itemgrabbag1.png"
   },
   "TFT9_Augment_CombatCaster": {
     "id": "TFT9_Augment_CombatCaster",
     "name": "Combat Caster",
-    "image": "Combat-Caster-II.png"
+    "image": "combat-caster-ii.png"
   },
   "TFT9_Augment_BlindingSpeed": {
     "id": "TFT9_Augment_BlindingSpeed",
     "name": "Blinding Speed",
-    "image": "Berserk-III.png"
+    "image": "berserk-iii.png"
   },
   "TFT9_Augment_ImpenetrableBulwark": {
     "id": "TFT9_Augment_ImpenetrableBulwark",
     "name": "Impenetrable Bulwark",
-    "image": "StandBehind3.png"
+    "image": "standbehind3.png"
   },
   "TFT9_Augment_UnleashedArcana": {
     "id": "TFT9_Augment_UnleashedArcana",
     "name": "Unleashed Arcana",
-    "image": "LifelongLearner3.png"
+    "image": "lifelonglearner3.png"
   },
   "TFT9_Augment_OverwhelmingForce": {
     "id": "TFT9_Augment_OverwhelmingForce",
     "name": "Overwhelming Force",
-    "image": "Eagle-Eye-III.png"
+    "image": "eagle-eye-iii.png"
   },
   "TFT7_Augment_LategameSpecialist": {
     "id": "TFT7_Augment_LategameSpecialist",
     "name": "Lategame Specialist",
-    "image": "Late-Game-Specialist-I.png"
+    "image": "late-game-specialist-i.png"
   },
   "TFT9_Augment_InfernalContract": {
     "id": "TFT9_Augment_InfernalContract",
     "name": "Infernal Contract",
-    "image": "Infernal-Contract-III.png"
+    "image": "infernal-contract-iii.png"
   },
   "TFT9_Augment_HedgeFundPlusPlus": {
     "id": "TFT9_Augment_HedgeFundPlusPlus",
     "name": "Hedge Fund++",
-    "image": "RichGetRicher3.png"
+    "image": "richgetricher3.png"
   },
   "TFT8_Augment_SalvageBinPlus": {
     "id": "TFT8_Augment_SalvageBinPlus",
     "name": "Salvage Bin+",
-    "image": "Salvage2.png"
+    "image": "salvage2.png"
   },
   "TFT10_Augment_CrashTestDummies": {
     "id": "TFT10_Augment_CrashTestDummies",
     "name": "Crash Test Dummies",
-    "image": "Crash-Test-Dummies-II.png"
+    "image": "crash-test-dummies-ii.png"
   },
   "TFT10_Augment_LuckyStreak": {
     "id": "TFT10_Augment_LuckyStreak",
     "name": "Lucky Streak",
-    "image": "Lucky-Streak-II.png"
+    "image": "lucky-streak-ii.png"
   },
   "TFT7_Augment_BestFriends1": {
     "id": "TFT7_Augment_BestFriends1",
     "name": "Best Friends I",
-    "image": "Best-Friends-I.png"
+    "image": "best-friends-i.png"
   },
   "TFT10_Augment_TwinTerror1": {
     "id": "TFT10_Augment_TwinTerror1",
     "name": "Twin Terror I",
-    "image": "Twin-Terror-II.png"
+    "image": "twin-terror-ii.png"
   },
   "TFT7_Augment_BestFriends2": {
     "id": "TFT7_Augment_BestFriends2",
     "name": "Best Friends II",
-    "image": "Best-Friends-II.png"
+    "image": "best-friends-ii.png"
   },
   "TFT10_Augment_TwinTerror2": {
     "id": "TFT10_Augment_TwinTerror2",
     "name": "Twin Terror II",
-    "image": "Twin-Terror-III.png"
+    "image": "twin-terror-iii.png"
   },
   "TFT10_Augment_LearningToSpell": {
     "id": "TFT10_Augment_LearningToSpell",
     "name": "Learning to Spell",
-    "image": "Learning-To-Spell-II.png"
+    "image": "learning-to-spell-ii.png"
   },
   "TFT10_Augment_HeavyHitters": {
     "id": "TFT10_Augment_HeavyHitters",
     "name": "Heavy Hitters",
-    "image": "Heavy-Hitters-II.png"
+    "image": "heavy-hitters-ii.png"
   },
   "TFT10_Augment_BigGains": {
     "id": "TFT10_Augment_BigGains",
     "name": "Big Gains",
-    "image": "Big-Gains-II.png"
+    "image": "big-gains-ii.png"
   },
   "TFT10_Augment_InspiringEpitaph": {
     "id": "TFT10_Augment_InspiringEpitaph",
     "name": "Inspiring Epitaph",
-    "image": "Inspiring-Epitaph-II.png"
+    "image": "inspiring-epitaph-ii.png"
   },
   "TFT6_Augment_ForceOfNature": {
     "id": "TFT6_Augment_ForceOfNature",
     "name": "New Recruit",
-    "image": "NewRecruit3.png"
+    "image": "newrecruit3.png"
   },
   "TFT10_Augment_ShockTreatment": {
     "id": "TFT10_Augment_ShockTreatment",
     "name": "Shock Treatment",
-    "image": "Shock-Treatment-II.png"
+    "image": "shock-treatment-ii.png"
   },
   "TFT10_Augment_LowInterestRates": {
     "id": "TFT10_Augment_LowInterestRates",
     "name": "Low Interest Rates",
-    "image": "Low-Interest-Rates-II.png"
+    "image": "low-interest-rates-ii.png"
   },
   "TFT10_Augment_SwitchingGears": {
     "id": "TFT10_Augment_SwitchingGears",
     "name": "Switching Gears",
-    "image": "Switching-Gears-I.png"
+    "image": "switching-gears-i.png"
   },
   "TFT10_Augment_HeroicGrabBag": {
     "id": "TFT10_Augment_HeroicGrabBag",
     "name": "Heroic Grab Bag",
-    "image": "Heroic-Grab-Bag-II.png"
+    "image": "heroic-grab-bag-ii.png"
   },
   "TFT10_Augment_FullyAdapted": {
     "id": "TFT10_Augment_FullyAdapted",
     "name": "Fully Adapted",
-    "image": "Fully-Adapted-II.png"
+    "image": "fully-adapted-ii.png"
   },
   "TFT9_Augment_Commander_Ascension": {
     "id": "TFT9_Augment_Commander_Ascension",
     "name": "Ascension",
-    "image": "Ascension2.png"
+    "image": "ascension2.png"
   },
   "TFT6_Augment_ClearMind": {
     "id": "TFT6_Augment_ClearMind",
     "name": "Clear Mind",
-    "image": "ClearMind2.png"
+    "image": "clearmind2.png"
   },
   "TFT7_Augment_ClutteredMind": {
     "id": "TFT7_Augment_ClutteredMind",
     "name": "Cluttered Mind",
-    "image": "Dizzy-II.png"
+    "image": "dizzy-ii.png"
   },
   "TFT10_Augment_GoingLong": {
     "id": "TFT10_Augment_GoingLong",
     "name": "Going Long",
-    "image": "Going-Long-III.png"
+    "image": "going-long-iii.png"
   },
   "TFT10_Augment_SticksAndStones": {
     "id": "TFT10_Augment_SticksAndStones",
     "name": "Sticks And Stones",
-    "image": "Sticks-And-Stones-I.png"
+    "image": "sticks-and-stones-i.png"
   },
   "TFT10_Augment_Scapegoat": {
     "id": "TFT10_Augment_Scapegoat",
     "name": "Scapegoat",
-    "image": "The-Scapegoat-II.png"
+    "image": "the-scapegoat-ii.png"
   },
   "TFT10_Augment_GoodForSomethingSilver": {
     "id": "TFT10_Augment_GoodForSomethingSilver",
     "name": "Good For Something I",
-    "image": "Good-For-Something-I.png"
+    "image": "good-for-something-i.png"
   },
   "TFT10_Augment_CrownGuarded": {
     "id": "TFT10_Augment_CrownGuarded",
     "name": "Crown Guarded",
-    "image": "Crown-Guarded-II.png"
+    "image": "crown-guarded-ii.png"
   },
   "TFT10_Augment_SilverVeil": {
     "id": "TFT10_Augment_SilverVeil",
     "name": "Silver Veil",
-    "image": "The-Silver-Veil-I.png"
+    "image": "the-silver-veil-i.png"
   },
   "TFT10_Augment_HelpIsOnTheWay": {
     "id": "TFT10_Augment_HelpIsOnTheWay",
     "name": "Help Is On The Way",
-    "image": "Help-Is-On-The-Way-I.png"
+    "image": "help-is-on-the-way-i.png"
   },
   "TFT10_Augment_Stimpack": {
     "id": "TFT10_Augment_Stimpack",
     "name": "Stimpack",
-    "image": "Stimpack-I.png"
+    "image": "stimpack-i.png"
   },
   "TFT9_Augment_SupportCache": {
     "id": "TFT9_Augment_SupportCache",
     "name": "Support Cache",
-    "image": "Support-Cache-II.png"
+    "image": "support-cache-ii.png"
   },
   "TFT9_Augment_StationarySupport2": {
     "id": "TFT9_Augment_StationarySupport2",
     "name": "Stationary Support II",
-    "image": "Stationary-Support-II.png"
+    "image": "stationary-support-ii.png"
   },
   "TFT7_Augment_LuckyGloves": {
     "id": "TFT7_Augment_LuckyGloves",
     "name": "Lucky Gloves",
-    "image": "Lucky-Gloves-III.png"
+    "image": "lucky-gloves-iii.png"
   },
   "TFT7_Augment_LuckyGlovesPlus": {
     "id": "TFT7_Augment_LuckyGlovesPlus",
     "name": "Lucky Gloves+",
-    "image": "Lucky-Gloves-III.png"
+    "image": "lucky-gloves-iii.png"
   },
   "TFT9_Augment_StationarySupport3": {
     "id": "TFT9_Augment_StationarySupport3",
     "name": "Stationary Support III",
-    "image": "Stationary-Support-III.png"
+    "image": "stationary-support-iii.png"
   },
   "TFT9_Augment_TiniestTitanPlus": {
     "id": "TFT9_Augment_TiniestTitanPlus",
     "name": "Tiniest Titan+",
-    "image": "Tiniest-TitanIII.png"
+    "image": "tiniest-titaniii.png"
   },
   "TFT9_Augment_BalancedBudget2": {
     "id": "TFT9_Augment_BalancedBudget2",
     "name": "Balanced Budget",
-    "image": "Balanced-Budget-II.png"
+    "image": "balanced-budget-ii.png"
   },
   "TFT6_Augment_PortableForgePlus": {
     "id": "TFT6_Augment_PortableForgePlus",
     "name": "Portable Forge+",
-    "image": "PortableForge2.png"
+    "image": "portableforge2.png"
   },
   "TFT6_Augment_PortableForgePlusPlus": {
     "id": "TFT6_Augment_PortableForgePlusPlus",
     "name": "Portable Forge++",
-    "image": "PortableForge2.png"
+    "image": "portableforge2.png"
   },
   "TFT9_Augment_StationarySupport1": {
     "id": "TFT9_Augment_StationarySupport1",
     "name": "Stationary Support I",
-    "image": "Stationary-Support-I.png"
+    "image": "stationary-support-i.png"
   },
   "TFT9_Augment_BigGrabBag": {
     "id": "TFT9_Augment_BigGrabBag",
     "name": "Big Grab Bag",
-    "image": "Grab-Bag-II.png"
+    "image": "grab-bag-ii.png"
   },
   "TFT10_Augment_LittleBuddies": {
     "id": "TFT10_Augment_LittleBuddies",
     "name": "Little Buddies",
-    "image": "Little-Buddies-II.png"
+    "image": "little-buddies-ii.png"
   },
   "TFT9_Augment_BalancedBudgetPlus": {
     "id": "TFT9_Augment_BalancedBudgetPlus",
     "name": "Balanced Budget+",
-    "image": "Balanced-Budget-II.png"
+    "image": "balanced-budget-ii.png"
   },
   "TFT6_Augment_Distancing": {
     "id": "TFT6_Augment_Distancing",
     "name": "Exiles I",
-    "image": "Exiles1.png"
+    "image": "exiles1.png"
   },
   "TFT6_Augment_Featherweights1": {
     "id": "TFT6_Augment_Featherweights1",
     "name": "Featherweights I",
-    "image": "Featherweights1.png"
+    "image": "featherweights1.png"
   },
   "TFT6_Augment_TriForce1": {
     "id": "TFT6_Augment_TriForce1",
     "name": "Tri Force I",
-    "image": "Tri-Force-I.png"
+    "image": "tri-force-i.png"
   },
   "TFT6_Augment_Traitless2": {
     "id": "TFT6_Augment_Traitless2",
     "name": "Built Different II",
-    "image": "BuiltDifferent2.png"
+    "image": "builtdifferent2.png"
   },
   "TFT6_Augment_Diversify2": {
     "id": "TFT6_Augment_Diversify2",
     "name": "Stand United II",
-    "image": "StandUnited2.png"
+    "image": "standunited2.png"
   },
   "TFT7_Augment_BandOfThieves1": {
     "id": "TFT7_Augment_BandOfThieves1",
     "name": "Band of Thieves I",
-    "image": "BandThieves1.png"
+    "image": "bandthieves1.png"
   },
   "TFT9_Augment_WanderingTrainer": {
     "id": "TFT9_Augment_WanderingTrainer",
     "name": "Wandering Trainer II",
-    "image": "Wandering-Trainer-III.png"
+    "image": "wandering-trainer-iii.png"
   },
   "TFT11_Augment_TooMuchCandy": {
     "id": "TFT11_Augment_TooMuchCandy",
     "name": "Too Much Candy",
-    "image": "TooMuchCandy_II.TFT_Set11.png"
+    "image": "toomuchcandy_ii.tft_set11.png"
   },
   "TFT_Augment_BranchingOut": {
     "id": "TFT_Augment_BranchingOut",
     "name": "Branching Out",
-    "image": "Branching-Out-I.png"
+    "image": "branching-out-i.png"
   },
   "TFT11_Augment_WanderingTrainerGold": {
     "id": "TFT11_Augment_WanderingTrainerGold",
     "name": "Wandering Trainer I",
-    "image": "Wandering-Trainer-II.png"
+    "image": "wandering-trainer-ii.png"
   },
   "TFT11_Augment_DragonSpirit": {
     "id": "TFT11_Augment_DragonSpirit",
     "name": "Dragon's Spirit",
-    "image": "DragonsSpirit_II.TFT_Set11.png"
+    "image": "dragonsspirit_ii.tft_set11.png"
   },
   "TFT11_Augment_RainingGold": {
     "id": "TFT11_Augment_RainingGold",
     "name": "Raining Gold",
-    "image": "RainingGold_II.TFT_Set11.png"
+    "image": "raininggold_ii.tft_set11.png"
   },
   "TFT11_Augment_RainingGoldPlus": {
     "id": "TFT11_Augment_RainingGoldPlus",
     "name": "Raining Gold+",
-    "image": "RainingGold_II.TFT_Set11.png"
+    "image": "raininggold_ii.tft_set11.png"
   },
   "TFT11_Augment_GoldenRemover": {
     "id": "TFT11_Augment_GoldenRemover",
     "name": " The Golden Remover",
-    "image": "GoldenRemover_I.TFT_Set11.png"
+    "image": "goldenremover_i.tft_set11.png"
   },
   "TFT11_Augment_BaBoom": {
     "id": "TFT11_Augment_BaBoom",
     "name": "Ba-BOOM!",
-    "image": "BaBoom_III.TFT_Set11.png"
+    "image": "baboom_iii.tft_set11.png"
   },
   "TFT11_Augment_PickOfTheLitter": {
     "id": "TFT11_Augment_PickOfTheLitter",
     "name": "Pick of the Litter",
-    "image": "PickOfTheLitter_I.TFT_Set11.png"
+    "image": "pickofthelitter_i.tft_set11.png"
   },
   "TFT11_Augment_PickOfTheLitter_Plus": {
     "id": "TFT11_Augment_PickOfTheLitter_Plus",
     "name": "Pick of the Litter+",
-    "image": "PickOfTheLitter_I.TFT_Set11.png"
+    "image": "pickofthelitter_i.tft_set11.png"
   },
   "TFT11_Augment_Common_EverythingMustGo": {
     "id": "TFT11_Augment_Common_EverythingMustGo",
     "name": "Everything Must Go!",
-    "image": "EverythingMustGo_II.TFT_Set11.png"
+    "image": "everythingmustgo_ii.tft_set11.png"
   },
   "TFT9_Augment_CyberneticBulk2": {
     "id": "TFT9_Augment_CyberneticBulk2",
     "name": "Cybernetic Bulk II",
-    "image": "Cybernetic-Bulk-II.png"
+    "image": "cybernetic-bulk-ii.png"
   },
   "TFT9_Augment_CyberneticBulk1": {
     "id": "TFT9_Augment_CyberneticBulk1",
     "name": "Cybernetic Bulk I",
-    "image": "Cybernetic-Bulk-I.png"
+    "image": "cybernetic-bulk-i.png"
   },
   "TFT9_Augment_CyberneticBulk3": {
     "id": "TFT9_Augment_CyberneticBulk3",
     "name": "Cybernetic Bulk III",
-    "image": "Cybernetic-Bulk-III.png"
+    "image": "cybernetic-bulk-iii.png"
   },
   "TFT6_Augment_TradeSector": {
     "id": "TFT6_Augment_TradeSector",
     "name": "Trade Sector",
-    "image": "Trade2.png"
+    "image": "trade2.png"
   },
   "TFT6_Augment_MaxLevel10": {
     "id": "TFT6_Augment_MaxLevel10",
     "name": "Level Up!",
-    "image": "LevelUp3.png"
+    "image": "levelup3.png"
   },
   "TFT6_Augment_TheGoldenEgg": {
     "id": "TFT6_Augment_TheGoldenEgg",
     "name": "The Golden Egg",
-    "image": "The-Golden-Egg-III.png"
+    "image": "the-golden-egg-iii.png"
   },
   "TFT9_Augment_HighEndSector": {
     "id": "TFT9_Augment_HighEndSector",
     "name": "Shopping Spree",
-    "image": "Trade3.png"
+    "image": "trade3.png"
   },
   "TFT9_Augment_BardPlaybook1": {
     "id": "TFT9_Augment_BardPlaybook1",
     "name": "Caretaker's Ally",
-    "image": "Caretaker_s-Chosen-I.png"
+    "image": "caretaker_s-chosen-i.png"
   },
   "TFT9_Augment_BardPlaybook2": {
     "id": "TFT9_Augment_BardPlaybook2",
     "name": "Caretaker's Favor",
-    "image": "Caretaker_s-Chosen-II.png"
+    "image": "caretaker_s-chosen-ii.png"
   },
   "TFT9_Augment_BardPlaybook3": {
     "id": "TFT9_Augment_BardPlaybook3",
     "name": "Caretaker's Chosen",
-    "image": "Caretaker_s-Chosen-III.png"
+    "image": "caretaker_s-chosen-iii.png"
   },
   "TFT9_Augment_PhreakyFridayPlus": {
     "id": "TFT9_Augment_PhreakyFridayPlus",
     "name": "Phreaky Friday +",
-    "image": "Phreaky-Friday-III.png"
+    "image": "phreaky-friday-iii.png"
   },
   "TFT6_Augment_Keepers1": {
     "id": "TFT6_Augment_Keepers1",
     "name": "Keepers I",
-    "image": "Keepers-I.png"
+    "image": "keepers-i.png"
   },
   "TFT6_Augment_Keepers2": {
     "id": "TFT6_Augment_Keepers2",
     "name": "Keepers II",
-    "image": "Keepers-II.png"
+    "image": "keepers-ii.png"
   },
   "TFT9_Augment_Commander_FinalAscension": {
     "id": "TFT9_Augment_Commander_FinalAscension",
     "name": "Final Ascension",
-    "image": "Ascension3.png"
+    "image": "ascension3.png"
   },
   "TFT9_Augment_Commander_PartialAscension": {
     "id": "TFT9_Augment_Commander_PartialAscension",
     "name": "Partial Ascension",
-    "image": "Ascension1.png"
+    "image": "ascension1.png"
   },
   "TFT9_Augment_Commander_TeamingUp2": {
     "id": "TFT9_Augment_Commander_TeamingUp2",
     "name": "Teaming Up II",
-    "image": "Teaming-Up-II.png"
+    "image": "teaming-up-ii.png"
   },
   "TFT9_Augment_Commander_TeamingUp1": {
     "id": "TFT9_Augment_Commander_TeamingUp1",
     "name": "Teaming Up I",
-    "image": "Teaming-Up-I.png"
+    "image": "teaming-up-i.png"
   },
   "TFT9_Augment_Commander_RollingForDays": {
     "id": "TFT9_Augment_Commander_RollingForDays",
     "name": "Rolling For Days I",
-    "image": "Rolling-For-Days-I.png"
+    "image": "rolling-for-days-i.png"
   },
   "TFT6_Augment_CyberneticUplink2": {
     "id": "TFT6_Augment_CyberneticUplink2",
     "name": "Cybernetic Uplink II",
-    "image": "Cybernetic-Uplink-II.png"
+    "image": "cybernetic-uplink-ii.png"
   },
   "TFT6_Augment_CyberneticUplink3": {
     "id": "TFT6_Augment_CyberneticUplink3",
     "name": "Cybernetic Uplink III",
-    "image": "Cybernetic-Uplink-III.png"
+    "image": "cybernetic-uplink-iii.png"
   },
   "TFT11_Augment_AltruistCrest": {
     "id": "TFT11_Augment_AltruistCrest",
     "name": "Altruist Crest",
-    "image": "Crest_Altruist_II.TFT_Set11.png"
+    "image": "crest_altruist_ii.tft_set11.png"
   },
   "TFT11_Augment_AltruistCrown": {
     "id": "TFT11_Augment_AltruistCrown",
     "name": "Altruist Crown",
-    "image": "Crown_Altruist_III.TFT_Set11.png"
+    "image": "crown_altruist_iii.tft_set11.png"
   },
   "TFT11_Augment_ArcanistCrest": {
     "id": "TFT11_Augment_ArcanistCrest",
     "name": "Arcanist Crest",
-    "image": "Crest_Arcanist_II.TFT_Set11.png"
+    "image": "crest_arcanist_ii.tft_set11.png"
   },
   "TFT11_Augment_ArcanistCrown": {
     "id": "TFT11_Augment_ArcanistCrown",
     "name": "Arcanist Crown",
-    "image": "Crown_Arcanist_III.TFT_Set11.png"
+    "image": "crown_arcanist_iii.tft_set11.png"
   },
   "TFT11_Augment_BehemothCrest": {
     "id": "TFT11_Augment_BehemothCrest",
     "name": "Behemoth Crest",
-    "image": "Crest_Behemoth_II.TFT_Set11.png"
+    "image": "crest_behemoth_ii.tft_set11.png"
   },
   "TFT11_Augment_BehemothCrown": {
     "id": "TFT11_Augment_BehemothCrown",
     "name": "Behemoth Crown",
-    "image": "Crown_Behemoth_III.TFT_Set11.png"
+    "image": "crown_behemoth_iii.tft_set11.png"
   },
   "TFT11_Augment_BrawlerCrest": {
     "id": "TFT11_Augment_BrawlerCrest",
     "name": "Bruiser Crest",
-    "image": "Crest_Bruiser_II.TFT_Set11.png"
+    "image": "crest_bruiser_ii.tft_set11.png"
   },
   "TFT11_Augment_BrawlerCrown": {
     "id": "TFT11_Augment_BrawlerCrown",
     "name": "Bruiser Crown",
-    "image": "Crown_Bruiser_III.TFT_Set11.png"
+    "image": "crown_bruiser_iii.tft_set11.png"
   },
   "TFT11_Augment_DragonlordCrest": {
     "id": "TFT11_Augment_DragonlordCrest",
     "name": "Dragonlord Crest",
-    "image": "Crest_Dragonlord_II.TFT_Set11.png"
+    "image": "crest_dragonlord_ii.tft_set11.png"
   },
   "TFT11_Augment_DragonlordCrown": {
     "id": "TFT11_Augment_DragonlordCrown",
     "name": "Dragonlord Crown",
-    "image": "Crown_Dragonlord_III.TFT_Set11.png"
+    "image": "crown_dragonlord_iii.tft_set11.png"
   },
   "TFT11_Augment_DryadCrest": {
     "id": "TFT11_Augment_DryadCrest",
     "name": "Dryad Crest",
-    "image": "Crest_Dryad_II.TFT_Set11.png"
+    "image": "crest_dryad_ii.tft_set11.png"
   },
   "TFT11_Augment_DryadCrown": {
     "id": "TFT11_Augment_DryadCrown",
     "name": "Dryad Crown",
-    "image": "Crown_Dryad_III.TFT_Set11.png"
+    "image": "crown_dryad_iii.tft_set11.png"
   },
   "TFT11_Augment_DuelistCrest": {
     "id": "TFT11_Augment_DuelistCrest",
     "name": "Duelist Crest",
-    "image": "Crest_Duelist_II.TFT_Set11.png"
+    "image": "crest_duelist_ii.tft_set11.png"
   },
   "TFT11_Augment_DuelistCrown": {
     "id": "TFT11_Augment_DuelistCrown",
     "name": "Duelist Crown",
-    "image": "Crown_Duelist_III.TFT_Set11.png"
+    "image": "crown_duelist_iii.tft_set11.png"
   },
   "TFT11_Augment_FatedCrest": {
     "id": "TFT11_Augment_FatedCrest",
     "name": "Fated Crest",
-    "image": "Crest_Fated_II.TFT_Set11.png"
+    "image": "crest_fated_ii.tft_set11.png"
   },
   "TFT11_Augment_FatedCrown": {
     "id": "TFT11_Augment_FatedCrown",
     "name": "Fated Crown",
-    "image": "Crown_Fated_III.TFT_Set11.png"
+    "image": "crown_fated_iii.tft_set11.png"
   },
   "TFT11_Augment_FortuneCrest": {
     "id": "TFT11_Augment_FortuneCrest",
     "name": "Fortune Crest",
-    "image": "Crest_Fortune_II.TFT_Set11.png"
+    "image": "crest_fortune_ii.tft_set11.png"
   },
   "TFT11_Augment_FortuneCrown": {
     "id": "TFT11_Augment_FortuneCrown",
     "name": "Fortune Crown",
-    "image": "Crown_Fortune_III.TFT_Set11.png"
+    "image": "crown_fortune_iii.tft_set11.png"
   },
   "TFT11_Augment_GhostlyCrest": {
     "id": "TFT11_Augment_GhostlyCrest",
     "name": "Ghostly Crest",
-    "image": "Crest_Ghostly_II.TFT_Set11.png"
+    "image": "crest_ghostly_ii.tft_set11.png"
   },
   "TFT11_Augment_GhostlyCrown": {
     "id": "TFT11_Augment_GhostlyCrown",
     "name": "Ghostly Crown",
-    "image": "Crown_Ghostly_III.TFT_Set11.png"
+    "image": "crown_ghostly_iii.tft_set11.png"
   },
   "TFT11_Augment_HeavenlyCrest": {
     "id": "TFT11_Augment_HeavenlyCrest",
     "name": "Heavenly Crest",
-    "image": "Crest_Heavenly_II.TFT_Set11.png"
+    "image": "crest_heavenly_ii.tft_set11.png"
   },
   "TFT11_Augment_HeavenlyCrown": {
     "id": "TFT11_Augment_HeavenlyCrown",
     "name": "Heavenly Crown",
-    "image": "Crown_Heavenly_III.TFT_Set11.png"
+    "image": "crown_heavenly_iii.tft_set11.png"
   },
   "TFT11_Augment_InkshadowCrest": {
     "id": "TFT11_Augment_InkshadowCrest",
     "name": "Inkshadow Crest",
-    "image": "Crest_Inkshadow_II.TFT_Set11.png"
+    "image": "crest_inkshadow_ii.tft_set11.png"
   },
   "TFT11_Augment_InkshadowCrown": {
     "id": "TFT11_Augment_InkshadowCrown",
     "name": "Inkshadow Crown",
-    "image": "Crown_Inkshadow_III.TFT_Set11.png"
+    "image": "crown_inkshadow_iii.tft_set11.png"
   },
   "TFT11_Augment_InvokerCrest": {
     "id": "TFT11_Augment_InvokerCrest",
     "name": "Invoker Crest",
-    "image": "Crest_Invoker_II.TFT_Set11.png"
+    "image": "crest_invoker_ii.tft_set11.png"
   },
   "TFT11_Augment_InvokerCrown": {
     "id": "TFT11_Augment_InvokerCrown",
     "name": "Invoker Crown",
-    "image": "Crown_Invoker_III.TFT_Set11.png"
+    "image": "crown_invoker_iii.tft_set11.png"
   },
   "TFT11_Augment_MythicCrest": {
     "id": "TFT11_Augment_MythicCrest",
     "name": "Mythic Crest",
-    "image": "Crest_Mythic_II.TFT_Set11.png"
+    "image": "crest_mythic_ii.tft_set11.png"
   },
   "TFT11_Augment_MythicCrown": {
     "id": "TFT11_Augment_MythicCrown",
     "name": "Mythic Crown",
-    "image": "Crown_Mythic_III.TFT_Set11.png"
+    "image": "crown_mythic_iii.tft_set11.png"
   },
   "TFT11_Augment_PorcelainCrest": {
     "id": "TFT11_Augment_PorcelainCrest",
     "name": "Porcelain Crest",
-    "image": "Crest_Porcelain_II.TFT_Set11.png"
+    "image": "crest_porcelain_ii.tft_set11.png"
   },
   "TFT11_Augment_PorcelainCrown": {
     "id": "TFT11_Augment_PorcelainCrown",
     "name": "Porcelain Crown",
-    "image": "Crown_Porcelain_III.TFT_Set11.png"
+    "image": "crown_porcelain_iii.tft_set11.png"
   },
   "TFT11_Augment_ReaperCrest": {
     "id": "TFT11_Augment_ReaperCrest",
     "name": "Reaper Crest",
-    "image": "Crest_Reaper_II.TFT_Set11.png"
+    "image": "crest_reaper_ii.tft_set11.png"
   },
   "TFT11_Augment_ReaperCrown": {
     "id": "TFT11_Augment_ReaperCrown",
     "name": "Reaper Crown",
-    "image": "Crown_Reaper_III.TFT_Set11.png"
+    "image": "crown_reaper_iii.tft_set11.png"
   },
   "TFT11_Augment_SageCrest": {
     "id": "TFT11_Augment_SageCrest",
     "name": "Sage Crest",
-    "image": "Crest_Sage_II.TFT_Set11.png"
+    "image": "crest_sage_ii.tft_set11.png"
   },
   "TFT11_Augment_SageCrown": {
     "id": "TFT11_Augment_SageCrown",
     "name": "Sage Crown",
-    "image": "Crown_Sage_III.TFT_Set11.png"
+    "image": "crown_sage_iii.tft_set11.png"
   },
   "TFT11_Augment_SniperCrest": {
     "id": "TFT11_Augment_SniperCrest",
     "name": "Sniper Crest",
-    "image": "Crest_Sniper_II.TFT_Set11.png"
+    "image": "crest_sniper_ii.tft_set11.png"
   },
   "TFT11_Augment_SniperCrown": {
     "id": "TFT11_Augment_SniperCrown",
     "name": "Sniper Crown",
-    "image": "Crown_Sniper_III.TFT_Set11.png"
+    "image": "crown_sniper_iii.tft_set11.png"
   },
   "TFT11_Augment_StoryweaverCrest": {
     "id": "TFT11_Augment_StoryweaverCrest",
     "name": "Storyweaver Crest",
-    "image": "Crest_Storyweaver_II.TFT_Set11.png"
+    "image": "crest_storyweaver_ii.tft_set11.png"
   },
   "TFT11_Augment_StoryweaverCrown": {
     "id": "TFT11_Augment_StoryweaverCrown",
     "name": "Storyweaver Crown",
-    "image": "Crown_Storyweaver_III.TFT_Set11.png"
+    "image": "crown_storyweaver_iii.tft_set11.png"
   },
   "TFT11_Augment_UmbralCrest": {
     "id": "TFT11_Augment_UmbralCrest",
     "name": "Umbral Crest",
-    "image": "Crest_Umbral_II.TFT_Set11.png"
+    "image": "crest_umbral_ii.tft_set11.png"
   },
   "TFT11_Augment_UmbralCrown": {
     "id": "TFT11_Augment_UmbralCrown",
     "name": "Umbral Crown",
-    "image": "Crown_Umbral_III.TFT_Set11.png"
+    "image": "crown_umbral_iii.tft_set11.png"
   },
   "TFT11_Augment_WardenCrest": {
     "id": "TFT11_Augment_WardenCrest",
     "name": "Warden Crest",
-    "image": "Crest_Warden_II.TFT_Set11.png"
+    "image": "crest_warden_ii.tft_set11.png"
   },
   "TFT11_Augment_WardenCrown": {
     "id": "TFT11_Augment_WardenCrown",
     "name": "Warden Crown",
-    "image": "Crown_Warden_III.TFT_Set11.png"
+    "image": "crown_warden_iii.tft_set11.png"
   },
   "TFT11_Augment_Buildabud": {
     "id": "TFT11_Augment_Buildabud",
     "name": "Build a Bud!",
-    "image": "BuildABud_III.TFT_Set11.png"
+    "image": "buildabud_iii.tft_set11.png"
   },
   "TFT11_Augment_SharingIsCaring": {
     "id": "TFT11_Augment_SharingIsCaring",
     "name": "Sharing Is Caring",
-    "image": "SharingIsCaring_I.TFT_Set11.png"
+    "image": "sharingiscaring_i.tft_set11.png"
   },
   "TFT11_Augment_Reinfourcement": {
     "id": "TFT11_Augment_Reinfourcement",
     "name": "ReinFOURcement",
-    "image": "Reinfourcement_II.TFT_Set11.png"
+    "image": "reinfourcement_ii.tft_set11.png"
   },
   "TFT11_Augment_Epoch": {
     "id": "TFT11_Augment_Epoch",
     "name": "Epoch",
-    "image": "Epoch_II.TFT_Set11.png"
+    "image": "epoch_ii.tft_set11.png"
   },
   "TFT11_Augment_TinyButDeadly": {
     "id": "TFT11_Augment_TinyButDeadly",
     "name": "Tiny, but Deadly",
-    "image": "TinyButDeadly_III.TFT_Set11.png"
+    "image": "tinybutdeadly_iii.tft_set11.png"
   },
   "TFT11_Augment_OverEncumbered": {
     "id": "TFT11_Augment_OverEncumbered",
     "name": "Over Encumbered",
-    "image": "OverEncumbered_I.TFT_Set11.png"
+    "image": "overencumbered_i.tft_set11.png"
   },
   "TFT11_Augment_FineVintage": {
     "id": "TFT11_Augment_FineVintage",
     "name": "Fine Vintage",
-    "image": "FineVintage_I.TFT_Set11.png"
+    "image": "finevintage_i.tft_set11.png"
   },
   "TFT11_Augment_BloodBank": {
     "id": "TFT11_Augment_BloodBank",
     "name": "Lunch Money",
-    "image": "BloodBank_I.TFT_Set11.png"
+    "image": "bloodbank_i.tft_set11.png"
   },
   "TFT11_Augment_ScoreboardScrapper": {
     "id": "TFT11_Augment_ScoreboardScrapper",
     "name": "Scoreboard Scrapper",
-    "image": "ScoreboardScrapper_II.TFT_Set11.png"
+    "image": "scoreboardscrapper_ii.tft_set11.png"
   },
   "TFT11_Augment_TrashToTreasure": {
     "id": "TFT11_Augment_TrashToTreasure",
     "name": "Trash to Treasure",
-    "image": "TrashToTreasure_III.TFT_Set11.png"
+    "image": "trashtotreasure_iii.tft_set11.png"
   },
   "TFT11_Augment_Accomplice": {
     "id": "TFT11_Augment_Accomplice",
     "name": "Accomplice",
-    "image": "Accomplice_III.TFT_Set11.png"
+    "image": "accomplice_iii.tft_set11.png"
   },
   "TFT11_Augment_Slammin": {
     "id": "TFT11_Augment_Slammin",
     "name": "Slammin'",
-    "image": "Slammin_II.TFT_Set11.png"
+    "image": "slammin_ii.tft_set11.png"
   },
   "TFT11_Augment_Calltochaos": {
     "id": "TFT11_Augment_Calltochaos",
     "name": "Call to Chaos",
-    "image": "CallToChaos_III.TFT_Set11.png"
+    "image": "calltochaos_iii.tft_set11.png"
   },
   "TFT11_Augment_Prizefighter": {
     "id": "TFT11_Augment_Prizefighter",
     "name": "Prizefighter",
-    "image": "PrizeFighter_II.TFT_Set11.png"
+    "image": "prizefighter_ii.tft_set11.png"
   },
   "TFT11_Augment_DynamicDuo": {
     "id": "TFT11_Augment_DynamicDuo",
     "name": "Dynamic Duo",
-    "image": "DynamicDuo_II.TFT_Set11.png"
+    "image": "dynamicduo_ii.tft_set11.png"
   },
   "TFT11_Augment_Dragonlord": {
     "id": "TFT11_Augment_Dragonlord",
     "name": "Enter the Dragon",
-    "image": "EnterTheDragon_II.TFT_Set11.png"
+    "image": "enterthedragon_ii.tft_set11.png"
   },
   "TFT11_Augment_Ghostly": {
     "id": "TFT11_Augment_Ghostly",
     "name": "Haunted House",
-    "image": "HauntedHouse_II.TFT_Set11.png"
+    "image": "hauntedhouse_ii.tft_set11.png"
   },
   "TFT11_Augment_Heavenly": {
     "id": "TFT11_Augment_Heavenly",
     "name": "Divine Rolls",
-    "image": "DivineRolls_II.TFT_Set11.png"
+    "image": "divinerolls_ii.tft_set11.png"
   },
   "TFT11_Augment_TwoforOne": {
     "id": "TFT11_Augment_TwoforOne",
     "name": "Two for One",
-    "image": "TwoForOne_III.TFT_Set11.png"
+    "image": "twoforone_iii.tft_set11.png"
   },
   "TFT11_Augment_RadiantRefactor": {
     "id": "TFT11_Augment_RadiantRefactor",
     "name": "Radiant Refactor",
-    "image": "RadiantRefactor_III.TFT_Set11.png"
+    "image": "radiantrefactor_iii.tft_set11.png"
   },
   "TFT11_Augment_Storyweaver": {
     "id": "TFT11_Augment_Storyweaver",
     "name": "Call to Adventure",
-    "image": "CallToAdventure_II.TFT_Set11.png"
+    "image": "calltoadventure_ii.tft_set11.png"
   },
   "TFT11_Augment_Slammin_Plus": {
     "id": "TFT11_Augment_Slammin_Plus",
     "name": "Slammin'+",
-    "image": "Slammin_II.TFT_Set11.png"
+    "image": "slammin_ii.tft_set11.png"
   },
   "TFT11_Augment_Sniper": {
     "id": "TFT11_Augment_Sniper",
     "name": "Long Shot",
-    "image": "LongShot_II.TFT_Set11.png"
+    "image": "longshot_ii.tft_set11.png"
   },
   "TFT11_Augment_Sage": {
     "id": "TFT11_Augment_Sage",
     "name": "The Road Less Traveled",
-    "image": "TheRoadLessTraveled_II.TFT_Set11.png"
+    "image": "theroadlesstraveled_ii.tft_set11.png"
   },
   "TFT11_Augment_Arcanist": {
     "id": "TFT11_Augment_Arcanist",
     "name": "Mind Over Matter",
-    "image": "MindOverMatter_II.TFT_Set11.png"
+    "image": "mindovermatter_ii.tft_set11.png"
   },
   "TFT11_Augment_Porcelain": {
     "id": "TFT11_Augment_Porcelain",
     "name": "Boiling Point",
-    "image": "BoilingPoint_II.TFT_Set11.png"
+    "image": "boilingpoint_ii.tft_set11.png"
   },
   "TFT11_Augment_Invoker": {
     "id": "TFT11_Augment_Invoker",
     "name": "Mana Shield",
-    "image": "ManaShield_II.TFT_Set11.png"
+    "image": "manashield_ii.tft_set11.png"
   },
   "TFT11_Augment_Reaper": {
     "id": "TFT11_Augment_Reaper",
     "name": "Grim Harvest",
-    "image": "GrimHarvest_II.TFT_Set11.png"
+    "image": "grimharvest_ii.tft_set11.png"
   },
   "TFT11_Augment_Exalted": {
     "id": "TFT11_Augment_Exalted",
     "name": "Venerable Piggy Bank",
-    "image": "VenerablePiggyBank_II.TFT_Set11.png"
+    "image": "venerablepiggybank_ii.tft_set11.png"
   },
   "TFT11_Augment_Mythic": {
     "id": "TFT11_Augment_Mythic",
     "name": "It's Going to be Epic",
-    "image": "GoingToBeEpic_II.TFT_Set11.png"
+    "image": "goingtobeepic_ii.tft_set11.png"
   },
   "TFT11_Augment_KobukoCarry": {
     "id": "TFT11_Augment_KobukoCarry",
     "name": "Lucky Paws",
-    "image": "LuckyPaws_II.TFT_Set11.png"
+    "image": "luckypaws_ii.tft_set11.png"
   },
   "TFT11_Augment_Trickshot": {
     "id": "TFT11_Augment_Trickshot",
     "name": "Lucky Ricochet",
-    "image": "LuckyRicochet_II.TFT_Set11.png"
+    "image": "luckyricochet_ii.tft_set11.png"
   },
   "TFT11_Augment_Warden": {
     "id": "TFT11_Augment_Warden",
     "name": "Spirit Guardians",
-    "image": "SpiritGuardians_II.TFT_Set11.png"
+    "image": "spiritguardians_ii.tft_set11.png"
   },
   "TFT11_Augment_GarenCarry": {
     "id": "TFT11_Augment_GarenCarry",
     "name": "Storied Champion",
-    "image": "StoriedChampion_II.TFT_Set11.png"
+    "image": "storiedchampion_ii.tft_set11.png"
   },
   "TFT11_Augment_Umbral": {
     "id": "TFT11_Augment_Umbral",
     "name": "Wrath of the Moon",
-    "image": "WrathOfTheMoon_II.TFT_Set11.png"
+    "image": "wrathofthemoon_ii.tft_set11.png"
   },
   "TFT11_Augment_ShenCarry": {
     "id": "TFT11_Augment_ShenCarry",
     "name": "Ethereal Blades",
-    "image": "EtherealBlades_II.TFT_Set11.png"
+    "image": "etherealblades_ii.tft_set11.png"
   },
   "TFT11_Augment_YorickCarry": {
     "id": "TFT11_Augment_YorickCarry",
     "name": "Midnight Siphon",
-    "image": "MidnightSiphon_II.TFT_Set11.png"
+    "image": "midnightsiphon_ii.tft_set11.png"
   },
   "TFT11_Augment_Behemoth": {
     "id": "TFT11_Augment_Behemoth",
     "name": "Raid Boss",
-    "image": "RaidBoss_II.TFT_Set11.png"
+    "image": "raidboss_ii.tft_set11.png"
   },
   "TFT11_Augment_Dryad": {
     "id": "TFT11_Augment_Dryad",
     "name": "Mulched",
-    "image": "Mulched_II.TFT_Set11.png"
+    "image": "mulched_ii.tft_set11.png"
   },
   "TFT11_Augment_Bruiser": {
     "id": "TFT11_Augment_Bruiser",
     "name": "Well Fed",
-    "image": "WellFed_II.TFT_Set11.png"
+    "image": "wellfed_ii.tft_set11.png"
   },
   "TFT11_Augment_Duelist": {
     "id": "TFT11_Augment_Duelist",
     "name": "Extended Duel",
-    "image": "Gadget-Expert-II.png"
+    "image": "gadget-expert-ii.png"
   },
   "TFT11_Augment_EpochPlus": {
     "id": "TFT11_Augment_EpochPlus",
     "name": "Epoch+",
-    "image": "Epoch_II.TFT_Set11.png"
+    "image": "epoch_ii.tft_set11.png"
   },
   "TFT11_Augment_NeekoCarry": {
     "id": "TFT11_Augment_NeekoCarry",
     "name": "Drop Blossom!",
-    "image": "DropBlossom_II.TFT_Set11.png"
+    "image": "dropblossom_ii.tft_set11.png"
   },
   "TFT11_Augment_ShenCarryPlus": {
     "id": "TFT11_Augment_ShenCarryPlus",
     "name": "Ethereal Blades+",
-    "image": "EtherealBlades_II.TFT_Set11.png"
+    "image": "etherealblades_ii.tft_set11.png"
   },
   "TFT11_Augment_NeekoCarryPlus": {
     "id": "TFT11_Augment_NeekoCarryPlus",
     "name": "Drop Blossom!+",
-    "image": "DropBlossom_II.TFT_Set11.png"
+    "image": "dropblossom_ii.tft_set11.png"
   },
   "TFT11_Augment_YorickCarryPlus": {
     "id": "TFT11_Augment_YorickCarryPlus",
     "name": "Midnight Siphon+",
-    "image": "MidnightSiphon_II.TFT_Set11.png"
+    "image": "midnightsiphon_ii.tft_set11.png"
   },
   "TFT7_Augment_LivingForgeHR": {
     "id": "TFT7_Augment_LivingForgeHR",
     "name": "Living Forge",
-    "image": "Living-Forge-III.png"
+    "image": "living-forge-iii.png"
   },
   "TFT9_Augment_PhreakyFridayHR": {
     "id": "TFT9_Augment_PhreakyFridayHR",
     "name": "Phreaky Friday",
-    "image": "Phreaky-Friday-III.png"
+    "image": "phreaky-friday-iii.png"
   },
   "TFT9_Augment_LongTimeCraftingHR": {
     "id": "TFT9_Augment_LongTimeCraftingHR",
     "name": "Latent Forge",
-    "image": "Long-time-Crafting-I.png"
+    "image": "long-time-crafting-i.png"
   },
   "TFT9_Augment_ACutAboveHR": {
     "id": "TFT9_Augment_ACutAboveHR",
     "name": "A Cut Above",
-    "image": "A-Cut-Above-II.png"
+    "image": "a-cut-above-ii.png"
   },
   "TFT9_Augment_ArmyBuildingHR": {
     "id": "TFT9_Augment_ArmyBuildingHR",
     "name": "Team Building",
-    "image": "Building-an-army-I.png"
+    "image": "building-an-army-i.png"
   },
   "TFT9_Augment_PhreakyFridayPlusHR": {
     "id": "TFT9_Augment_PhreakyFridayPlusHR",
     "name": "Phreaky Friday +",
-    "image": "Phreaky-Friday-III.png"
+    "image": "phreaky-friday-iii.png"
   },
   "TFT10_Augment_LuckyStreak_HR": {
     "id": "TFT10_Augment_LuckyStreak_HR",
     "name": "Lucky Streak",
-    "image": "Lucky-Streak-II.png"
+    "image": "lucky-streak-ii.png"
   },
   "TFT6_Augment_TheGoldenEggHR": {
     "id": "TFT6_Augment_TheGoldenEggHR",
     "name": "The Golden Egg",
-    "image": "The-Golden-Egg-III.png"
+    "image": "the-golden-egg-iii.png"
   },
   "TFT11_Augment_AtWhatCost": {
     "id": "TFT11_Augment_AtWhatCost",
     "name": "At What Cosr",
-    "image": "AtwWatCost_III.TFT_Set11.png"
+    "image": "atwwatcost_iii.tft_set11.png"
   }
 }

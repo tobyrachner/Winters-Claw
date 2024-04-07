@@ -1,6 +1,6 @@
 import discord
 
-from scripts.settings import trait_emoji, augment_emoji
+from scripts.settings import trait_emoji, augment_emoji, unit_emoji, item_emoji, misc_emoji
 
 def linked_embed(riot, icon_id, rank, text):
     name = riot.replace('%20', ' ')
@@ -42,7 +42,8 @@ def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mode
                             value=f"""{' '.join([trait_emoji['level'][str(level)] + str(amount) for level, amount in data['traits'][index][1]['level'].items()])}
                             Avg Placement - {data['traits'][index][1]['avg']}
                             Top 4% - {data['traits'][index][1]['top4%']}%
-                            Win% - {data['traits'][index][1]['win%']}%""",
+                            Win% - {data['traits'][index][1]['win%']}%
+                            ⠀""",
                             inline=True)
         else:
             embed.add_field(name='  ', value='', inline=True)
@@ -89,6 +90,47 @@ def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mo
                             value=f""" Avg Placement - {data['augments'][index][1]['avg']}
                             Top 4% - {data['augments'][index][1]['top4%']}%
                             Win% - {data['augments'][index][1]['win%']}%""",
+                            inline=True)
+        else:
+            embed.add_field(name='  ', value='', inline=True)
+        index += 1
+    embed.set_footer(text=f'Games since: {data["display_date"]}')
+    return embed
+
+def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
+    rank_icon = rank.split(' ')[0]
+
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
+    embed.add_field(name=f"{mode_name} - {data['count']} games", value='', inline=False)
+    for i in range(2):
+        if index < len(data['units']):
+            unit = data['units'][index][1]
+            name = data['units'][index][0]
+            embed.add_field(name=f"{unit_emoji[name]} {name} - {unit['count']}",
+                            value=f"""{' '.join([f"{misc_emoji['star_level'][str(level)]} {unit['level'][level]}" for level in unit['level']])}
+                            {'⠀'.join([item_emoji[item] + ' ' + str(unit['items'][item]) for item in unit['items']])}
+                            Avg Placement - {unit['avg']}
+                            Top 4% - {unit['top4%']}%
+                            Win% - {unit['win%']}%
+                            ⠀""", # invisible charcter to add more vertical space between rows
+                            inline=True)
+        else:
+            embed.add_field(name='  ', value='', inline=True)
+
+        embed.add_field(name='  ', value='', inline=True)
+
+        index += 1
+        if index < len(data['units']):
+            unit = data['units'][index][1]
+            name = data['units'][index][0]
+
+            embed.add_field(name=f"{unit_emoji[name]} {name} - {unit['count']}",
+                            value=f"""{' '.join([f"{misc_emoji['star_level'][str(level)]} {unit['level'][level]}" for level in unit['level']])}
+                            {'⠀'.join([item_emoji[item] + '' +  str(unit['items'][item]) for item in unit['items']])}
+                            Avg Placement - {unit['avg']}
+                            Top 4% - {unit['top4%']}%
+                            Win% - {unit['win%']}%""",
                             inline=True)
         else:
             embed.add_field(name='  ', value='', inline=True)
