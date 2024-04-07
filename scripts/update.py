@@ -103,6 +103,7 @@ def update_games(cur, data):
         timestamp = match['info']['game_datetime']
         placement = match['info']['participants'][index]['placement']
         gamemode = match['info']['tft_game_type']
+        level = match['info']['participants'][index]['level']
         time_spent = match['info']['participants'][index]['time_eliminated']
         player_damage = match['info']['participants'][0]['total_damage_to_players']
         players_eliminated = match['info']['participants'][0]['players_eliminated']
@@ -125,8 +126,8 @@ def update_games(cur, data):
             units.append(f"{unit['character_id']}/{unit['tier']}/{'.'.join(unit['itemNames'])}")
 
 
-        cur.execute("""INSERT INTO matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, set_number, timestamp, placement, gamemode, time_spent, player_damage, players_eliminated, '-'.join(traits), '-'.join(units), augments))
+        cur.execute("""INSERT INTO matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'level', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, set_number, timestamp, placement, gamemode, level, time_spent, player_damage, players_eliminated, '-'.join(traits), '-'.join(units), augments))
         
     cur.execute("UPDATE profile SET last_processed = ? WHERE puuid = ?", (latest_match, puuid))
 

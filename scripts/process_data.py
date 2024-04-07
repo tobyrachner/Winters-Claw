@@ -300,3 +300,52 @@ def process_augments(cur, riot, server, count, days, set, display_mode=None, fil
     rank = cur.fetchone()[0]
 
     return {'count': len(matches), 'augments': augment_dict, 'display_date': display_date}, rank
+
+def process_single_match(cur, riot, server, id=None):
+    if id:
+        match = cur.execute('SELECT * FROM matches WHERE id = ? AND riot = ? AND server = ?', {id, riot, server}).fetchone()
+    else:
+        match = cur.execute('SELECT gamemode, placement, level, augments, units FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (riot, server)).fetchone()
+
+    data = {}
+
+    gamemode = match[0]
+
+    data['gamemode'] = gamemode[0].upper() + gamemode[1:]
+    data['placement'] = match[1]
+    data['level'] = match[2]
+
+    if gamemode == 'ranked' or gamemode == 'normal':
+        gamemode = 'standard'
+    cur.execute(f"SELECT {gamemode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
+    data['rank'] = cur.fetchone()[0]
+
+    data['augments'] = []
+    for augment in match[3].split('-'):
+        if augment == '':
+            continue
+        if not augment in augment_list:
+            print('MISSING', augment)
+            with open('missing_data.txt', 'r+') as f:
+                if 'augment: ' + augment + '\n' not in f.readlines():
+                    f.write('augment: ' + augment + '\n')
+                continue
+        data['augments'].append(augment_list[augment]['name'])
+
+    data['units'] = {}
+    for unit in match[4].split('-'):
+        if unit == '':
+            continue
+        name, level, items = unit.split('/')
+        name = unit_list[name]['name']
+        level = str(level)
+
+        processed_items = []
+        for item in items.split('.'):
+            if item == '':
+                continue
+            item = item_list[item]['name']
+            processed_items.append(item)
+        data['units'][name] = {'level': level, 'items': processed_items}
+
+    return data

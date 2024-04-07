@@ -67,7 +67,12 @@ def get_current_items():
 
     new_items = {}
     for item in items:
+        if '/' in item:
+            item = item.split('/')[1]
         new_items[item] = {'id': item, 'name': items[item]['name'], 'image': items[item]['image']['full']}
+
+    with open('data/items.json', 'w') as f:
+        json.dump(new_items, f, indent=2)
 
     with open('data/items.json', 'w') as f:
         json.dump(new_items, f, indent=2)

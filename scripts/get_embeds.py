@@ -2,6 +2,8 @@ import discord
 
 from scripts.settings import trait_emoji, augment_emoji, unit_emoji, item_emoji, misc_emoji
 
+placements = {1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th', 6: '6th', 7: '7th', 8: '8th'}
+
 def linked_embed(riot, icon_id, rank, text):
     name = riot.replace('%20', ' ')
     embed=discord.Embed(title=f"{name} {rank.split(' ')[0]}", description='', color=0x7011d0, url=f'')
@@ -195,4 +197,27 @@ Korea               - > KR```""")
 
     
     embed.add_field(name='', value='', inline=True)
+    return embed
+
+def single_match_embed(data, author, riot, icon_id, rank, index=None):
+    rank_icon = rank.split(' ')[0]
+    
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
+    embed.add_field(name=f"Info", 
+                    value=f"""{data['rank']}
+                    {data['gamemode']}
+                    {placements[data['placement']]}
+                    Level {data['level']}""", inline=False)
+    embed.add_field(name="Augments",
+                    value='\n'.join([augment_emoji[augment] + ' ' + augment for augment in data['augments']]), inline=False)
+    embed.add_field(name="Units", value='')
+    for unit in data['units']:
+        items = ''
+        if len(data['units'][unit]["items"]) > 0:
+            items = '⠀'.join([item_emoji[item] for item in data['units'][unit]['items']])
+        embed.add_field(name=f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data["units"][unit]["level"]]}',
+                        value=items, inline=False)
+
+    #embed.set_footer(text=f'Games since: {data["display_date"]}')
     return embed
