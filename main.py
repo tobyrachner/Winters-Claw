@@ -10,7 +10,8 @@ from scripts.get_embeds import *
 from scripts.check_input import *
 from scripts.update import *
 from scripts.process_data import process_stats, process_single_match
-from views.statview import StatsView, MatchView
+from views.statview import StatsView
+from views.matchview import MatchView
 
 
 conn = sqlite3.connect("wclaw.db")

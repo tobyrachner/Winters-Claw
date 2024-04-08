@@ -1,53 +1,10 @@
 from typing import Any
+
 import discord
-from scripts.get_embeds import stats_embed, traits_embed, augments_embed, units_embed, single_match_embed
-from scripts.process_data import process_stats, process_traits, process_augments, process_units, process_single_match
 
-class EditButton(discord.ui.Button):
-    def __init__(self, function, style=discord.ButtonStyle.blurple, label='X', row=None, gamemode=None, mode_name=None, count=None, days=None, stat_type=None, sort_by=None, descending=None):
-        super().__init__(style=style, label=label, row=row)
-        self.function = function
-        self.gamemode = gamemode
-        self.mode_name = mode_name
-        self.count = count
-        self.days = days
-        self.stat_type = stat_type
-        self.sort_by = sort_by
-        self.descending = descending
-
-    async def callback(self, interaction: discord.Interaction):
-        await self.function(interaction, gamemode=self.gamemode, mode_name=self.mode_name, count=self.count, days=self.days, stat_type=self.stat_type, sort_by=self.sort_by, descending=self.descending)
-
-class NavigationButton(discord.ui.Button):
-    def __init__(self, function, label='X', style=discord.ButtonStyle.gray, row=None):
-        super().__init__(style=style, label=label, row=row)
-        self.function = function
-
-    async def callback(self, interaction: discord.Interaction):
-        await self.function(interaction)
-
-class PageButton(discord.ui.Button):
-    def __init__(self, function, label, delta, style=discord.ButtonStyle.green, row=None):
-        super().__init__(style=style, label=label, row=row)
-        self.function = function
-        self.delta = delta
-
-    async def callback(self, interaction: discord.Interaction):
-        await self.function(interaction, self.delta)
-
-class View(discord.ui.View):
-    def __init__(self):
-        super().__init__()
-
-    async def disable_all_items(self):
-        for item in self.children:
-            item.disabled = True
-        await self.interaction.edit_original_response(view=self)
-    
-    async def on_timeout(self):
-        for item in self.children:
-            item.disabled = True
-        await self.message.edit(view=self)
+from scripts.get_embeds import stats_embed, traits_embed, augments_embed, units_embed
+from scripts.process_data import process_stats, process_traits, process_augments, process_units
+from views.view import View, EditButton, PageButton, NavigationButton
 
 class StatsView(View):
     def __init__(self, cur, data, author, riot, server, icon_id, rank, count, days, set):
@@ -194,31 +151,3 @@ class StatsView(View):
             await interaction.response.edit_message(embed=embed, view=self)
         else:
             await interaction.response.edit_message()
-
-class MatchView(View):
-    def __init__(self, cur, match_ids, riot, server, icon_id, rank, id_index=0):
-        super().__init__()
-
-        self.cur = cur
-        self.match_ids = match_ids
-        self.server = server
-        self.riot = riot
-        self.icon_id = icon_id
-        self.rank = rank
-        self.id_index = id_index
-
-        self.add_page_butons()
-
-    def add_page_butons(self):
-        self.add_item(PageButton(self.change_page, '<', -1))
-        self.add_item(PageButton(self.change_page, '>', 1))
-
-    async def change_page(self, interaction, delta):
-        if 0 <= self.id_index + delta < len(self.match_ids):
-            self.id_index += delta
-
-        data = process_single_match(self.cur, self.riot, self.server, self.match_ids[self.id_index])
-
-        embed = single_match_embed(data, None, self.riot, self.icon_id, self.rank)
-
-        await interaction.response.edit_message(embed=embed)
