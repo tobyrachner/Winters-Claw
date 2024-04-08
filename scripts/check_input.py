@@ -52,7 +52,7 @@ def get_arguments(inputs):
     return count, days, get_link
 
 
-def check_summoner(riot, server):
+async def check_summoner(session, riot, server):
     if not '#' in riot:
         raise SyntaxError("Riot id must be in the format of name#tagline.")
     name, tagline = riot.split('#')
@@ -65,17 +65,18 @@ def check_summoner(riot, server):
     else:
         raise SyntaxError(f'{server} is not a from the api supported server.\nFor a full list of servers type $servers.')
     
-    account = api.request(f'https://{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{name}/{tagline}?api_key=')
-    if account.status_code != 200:
+    try:
+        account = await api.request(session, f'https://{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{name}/{tagline}?api_key=')
+    except Exception:
         raise SyntaxError(f"'{name}#{tagline}' was not found on the {server} server.")
     
-    puuid = account.json()['puuid']
+    puuid = account['puuid']
 
-    profile = api.request(f'https://{server}.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/{puuid}?api_key=').json()
+    profile = await api.request(session, f'https://{server}.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/{puuid}?api_key=')
 
     summoner_id = profile['id']
 
-    league = api.request(f'https://{server}.api.riotgames.com/tft/league/v1/entries/by-summoner/{summoner_id}?api_key=').json()
+    league = await api.request(session, f'https://{server}.api.riotgames.com/tft/league/v1/entries/by-summoner/{summoner_id}?api_key=')
 
     highest_rank = []
     for queue in league:

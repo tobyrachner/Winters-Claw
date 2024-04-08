@@ -1,4 +1,5 @@
 import sqlite3
+import aiohttp
 import discord
 from discord.ext import commands
 from discord import app_commands
@@ -21,11 +22,10 @@ cur.execute("CREATE TABLE IF NOT EXISTS matches ('match_id' INTEGER PRIMARY KEY,
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="$", intents=intents)
 
-
-
 @bot.event
 async def on_ready():
     print('online')
+    bot.session = aiohttp.ClientSession()
     await bot.tree.sync()
 
 
@@ -37,18 +37,10 @@ async def server_autocomplete(interaction: discord.Interaction, current: str) ->
             data.append(app_commands.Choice(name=server, value=server))
     return data
 
-@bot.event
-async def on_message(ctx):
-    if ctx.content == 'was geht':
-        embed = single_match_embed('ghosty', '2', 'fuck my life', 4 ,4)
-        await ctx.channel.send(embed=embed)
-
 @bot.hybrid_command(description='Shows list of all supported servers')
 async def servers(ctx):
     embed = server_embed(ctx.message.author.name)
     await ctx.send(embed=embed, ephemeral=True)
-
-
 
 @bot.hybrid_command(description='Link Riot account to your discord account')
 @app_commands.autocomplete(server=server_autocomplete)
@@ -57,7 +49,7 @@ async def link(ctx, riot_id: str, server: str):
     author = ctx.message.author.name
 
     try:
-        riot, server, region, puuid, summoner_id, icon_id, rank = check_summoner(riot_id, server)
+        riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
     except SyntaxError as e:
         embed = error_embed(e, 'Invalid input', str(author))
         await ctx.send(embed=embed)
@@ -108,7 +100,7 @@ async def update(ctx, riot_id: Optional[str], server: Optional[str]):
             return
         
         try:
-            riot, server, region, puuid, summoner_id, icon_id, rank = check_summoner(riot_id, server)
+            riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
         except SyntaxError as e:
             embed = error_embed(e, 'Invalid input', str(author))
             await ctx.send(embed=embed)
@@ -125,14 +117,14 @@ async def update(ctx, riot_id: Optional[str], server: Optional[str]):
             return
   
     try:
-        icon_id, count, data = get_matchids(riot, server, region, puuid, cur)
+        icon_id, count, data = await get_matchids(bot.session, riot, server, region, puuid, cur)
     except NameError as error:
         conn.commit()
         embed = error_embed(error, 'No games found', author)
         await ctx.send(embed=embed)
         return
     
-    update_games(cur, data)
+    await update_games(bot.session, cur, data)
     conn.commit()
     embed = update_embed(riot, icon_id, count)
     await ctx.send(embed=embed)
@@ -161,10 +153,9 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
         server = server_list[server]['server']
         
         try:
-            res = cur.execute("SELECT riot, server, icon_id, rank FROM profile WHERE riot = ? AND server = ?", (riot_id, server))
-            riot, server, icon_id, rank = res.fetchall()[0]
-        except IndexError:
-            embed = error_embed(f'No games found for `{riot_id}` on {server}. Make sure to use /update first', 'Invalid input', str(author))
+            riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
+        except Exception as e:
+            embed = error_embed(e, 'Invalid input', str(author))
             await ctx.send(embed=embed)
             return
 
@@ -206,10 +197,9 @@ async def single_game(ctx, match_id: Optional[int], riot_id: Optional[str], serv
         server = server_list[server]['server']
         
         try:
-            res = cur.execute("SELECT riot, server, icon_id, rank FROM profile WHERE riot = ? AND server = ?", (riot_id, server))
-            riot, server, icon_id, rank = res.fetchall()[0]
-        except IndexError:
-            embed = error_embed(f'No games found for `{riot_id}` on {server}. Make sure to use /update first', 'Invalid input', str(author))
+            riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
+        except Exception as e:
+            embed = error_embed(e, 'Invalid input', str(author))
             await ctx.send(embed=embed)
             return
 

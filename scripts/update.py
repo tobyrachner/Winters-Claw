@@ -2,17 +2,17 @@ from scripts import api
 from scripts.settings import SET_START_DATE
 from scripts.settings import ranked_tiers as tiers
 
-def get_matchids(riot, server, region, puuid, cur):
+async def get_matchids(session, riot, server, region, puuid, cur):
     rank_translation = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 'I': 1, 'II': 2, 'III': 3, 'IV': 4}
 
 
     data = cur.execute("SELECT last_processed FROM profile WHERE puuid = ?", (puuid,)).fetchall()
 
-    profile = api.request(f'https://{server}.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/{puuid}?api_key=').json()
+    profile = await api.request(session, f'https://{server}.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/{puuid}?api_key=')
     icon_id = profile['profileIconId']
     summoner_id = profile['id']
 
-    league = api.request(f'https://{server}.api.riotgames.com/tft/league/v1/entries/by-summoner/{summoner_id}?api_key=').json()
+    league = await api.request(session, f'https://{server}.api.riotgames.com/tft/league/v1/entries/by-summoner/{summoner_id}?api_key=')
 
     ranks = {'standard': '', 'pairs': '', 'turbo': ''}
     highest_rank = []
@@ -70,7 +70,7 @@ def get_matchids(riot, server, region, puuid, cur):
     match_ids = []
 
     while True:
-        resp = api.request(f'https://{region}.api.riotgames.com/tft/match/v1/matches/by-puuid/{puuid}/ids?start={start}&startTime={SET_START_DATE}&count=200&api_key=').json()
+        resp = await api.request(session, f'https://{region}.api.riotgames.com/tft/match/v1/matches/by-puuid/{puuid}/ids?start={start}&startTime={SET_START_DATE}&count=200&api_key=')
 
         #check if requested list of matches is empty
         if resp == []:
@@ -90,11 +90,11 @@ def get_matchids(riot, server, region, puuid, cur):
     data = (region, puuid, riot, server, match_ids[-1], match_ids)
     return icon_id, len(match_ids), data
 
-def update_games(cur, data):
+async def update_games(session, cur, data):
     region, puuid, riot, server, latest_match, match_ids = data
 
     for match_id in match_ids:
-        match = api.request(f'https://{region}.api.riotgames.com/tft/match/v1/matches/{match_id}?api_key=').json()
+        match = await api.request(session, f'https://{region}.api.riotgames.com/tft/match/v1/matches/{match_id}?api_key=')
 
         index = match['metadata']['participants'].index(puuid)      #gets participant number of player
 

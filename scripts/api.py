@@ -1,16 +1,20 @@
 import requests
 import time
+import aiohttp
+import asyncio
+
 from scripts.settings import RGAPI
 
-def request(url):
+async def request(session, url):
     while True:
-        resp = requests.get(url + RGAPI)
-        if resp.status_code == 429:
-            print('rate limit')
-            time.sleep(5)
-            continue
-        break
-    if resp.status_code == 401:
-        print('APi key expired')
-        raise PermissionError('Api key expired')
-    return resp
+        async with session.get(url + RGAPI) as resp:
+            if resp.status == 429:
+                print('rate limit')
+                await asyncio.sleep(5)
+                continue
+            elif resp.status == 200:
+                data = await resp.json()
+            else:
+                 raise Exception()
+            break
+    return data
