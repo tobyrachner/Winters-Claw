@@ -1,5 +1,3 @@
-from typing import Any
-
 import discord
 
 from scripts.get_embeds import stats_embed, traits_embed, augments_embed, units_embed

@@ -7,12 +7,10 @@
 import requests
 import json
 from time import sleep
-
 from io import BytesIO
 
 import discord
 from discord.ext import commands
-from discord import app_commands
 
 from scripts import settings
 

@@ -1,5 +1,5 @@
-import discord
 import datetime
+import discord
 
 from scripts.settings import trait_emoji, augment_emoji, unit_emoji, item_emoji, misc_emoji
 

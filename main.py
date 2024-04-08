@@ -1,9 +1,10 @@
+from typing import Optional, List
+
 import sqlite3
 import aiohttp
 import discord
 from discord.ext import commands
 from discord import app_commands
-from typing import Optional, List
 
 from scripts import settings
 from scripts.get_embeds import *
