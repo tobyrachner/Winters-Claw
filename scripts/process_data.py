@@ -49,13 +49,15 @@ def filter_games(matches, count, days):
 
         current = round(time.time())
         start_date = current - days * 86400
-        #if start date is givne instead return the given date
+        #if start date is given instead return the given date
         ts = start_date
 
         for match in old_matches:
             if not match[0] / 1000 < start_date:
                 matches.append(match)
-    return matches, ts
+
+    # the timestamp is currently not displayed in the final embed but still kept in the function if needed for future use
+    return matches, int(ts)
 
 def process_stats(cur, riot, server, count, days, set, display_mode=None, filter='count', descending=True):
     if set.is_integer(): set = int(set)
@@ -70,9 +72,6 @@ def process_stats(cur, riot, server, count, days, set, display_mode=None, filter
     matches = query.fetchall()
 
     matches, ts = filter_games(matches, count, days)
-    
-    data.update({'display_date': datetime.utcfromtimestamp(ts, ).strftime('%m/%d/%Y %H:%M (UTC)')})
-
 
     for match in matches:
         placement = match[1]
@@ -115,8 +114,6 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None, filte
     matches = query.fetchall()
     
     matches, ts = filter_games(matches, count, days)
-    
-    display_date = datetime.utcfromtimestamp(ts, ).strftime('%m/%d/%Y %H:%M (UTC)')
 
     for match in matches:
         placement = match[1]
@@ -162,7 +159,7 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None, filte
     cur.execute(f"SELECT {display_mode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
     rank = cur.fetchone()[0]
 
-    return {'count': len(matches), 'traits': traits_dict, 'display_date': display_date}, rank
+    return {'count': len(matches), 'traits': traits_dict}, rank
 
 def process_units(cur, riot, server, count, days, set, display_mode=None, filter='count', descending=True):
     if set.is_integer(): set = int(set)
@@ -175,8 +172,6 @@ def process_units(cur, riot, server, count, days, set, display_mode=None, filter
     matches = query.fetchall()
     
     matches, ts = filter_games(matches, count, days)
-    
-    display_date = datetime.utcfromtimestamp(ts, ).strftime('%m/%d/%Y %H:%M (UTC)')
 
     for match in matches:
         placement = match[1]
@@ -243,7 +238,7 @@ def process_units(cur, riot, server, count, days, set, display_mode=None, filter
     cur.execute(f"SELECT {display_mode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
     rank = cur.fetchone()[0]
 
-    return {'count': len(matches), 'units': units_dict, 'display_date': display_date}, rank
+    return {'count': len(matches), 'units': units_dict}, rank
 
 def process_augments(cur, riot, server, count, days, set, display_mode=None, filter='count', descending=True):
     if set.is_integer(): set = int(set)
@@ -256,8 +251,6 @@ def process_augments(cur, riot, server, count, days, set, display_mode=None, fil
     matches = query.fetchall()
     
     matches, ts = filter_games(matches, count, days)
-    
-    display_date = datetime.utcfromtimestamp(ts, ).strftime('%m/%d/%Y %H:%M (UTC)')
 
     for match in matches:
         placement = match[1]
@@ -299,7 +292,7 @@ def process_augments(cur, riot, server, count, days, set, display_mode=None, fil
     cur.execute(f"SELECT {display_mode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
     rank = cur.fetchone()[0]
 
-    return {'count': len(matches), 'augments': augment_dict, 'display_date': display_date}, rank
+    return {'count': len(matches), 'augments': augment_dict}, rank
 
 def process_single_match(cur, riot, server, id=None):
     if id:
@@ -342,7 +335,7 @@ def process_single_match(cur, riot, server, id=None):
         name, level, num_units = trait.split('/')
         name = trait_list[name]['name']
         if name in unique_traits:
-            level = 5
+            level = '5'
         traits[name] = {'level': level, 'num_units': num_units}
 
     data['traits'] = dict(sorted(traits.items(), key=lambda x: (x[1]['level'], x[1]['num_units']), reverse=True))

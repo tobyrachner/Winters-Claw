@@ -82,8 +82,8 @@ class StatsView(View):
             self.add_page_buttons(row=2)
             self.add_item(NavigationButton(self.set_sort_buttons, label='Sort', style=style, row=2))
             style = discord.ButtonStyle.gray
-            sata_style = discord.ButtonStyle.gray
-        self.add_item(NavigationButton(self.set_data_buttons, label='Data', style=sata_style, row=row))
+            data_style = discord.ButtonStyle.gray
+        self.add_item(NavigationButton(self.set_data_buttons, label='Data', style=data_style, row=row))
         self.add_item(NavigationButton(self.set_gamemode_buttons, label='Gamemode', style=style, row=row))
         self.add_item(NavigationButton(self.set_scope_buttons, label='Scope', style=style, row=row))
 

@@ -1,4 +1,5 @@
 import discord
+import datetime
 
 from scripts.settings import trait_emoji, augment_emoji, unit_emoji, item_emoji, misc_emoji
 
@@ -10,6 +11,7 @@ def linked_embed(riot, icon_id, rank, text):
     embed.set_author(name=f'{text} linked:')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name='to your Discord account.', value='')
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
 
 def updating_embed(riot, icon_id, count):
@@ -18,6 +20,7 @@ def updating_embed(riot, icon_id, count):
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.set_author(name=f'Downloading {count} games ...')
     embed.add_field(name='(This might take a while)', value='')
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
 
 def update_embed(riot, icon_id, count):
@@ -29,6 +32,7 @@ def update_embed(riot, icon_id, count):
     else:
         embed.set_author(name=f'Succesfully added {count} games to:')
     embed.add_field(name='Your profile is up to date.', value='')
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
 
 def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
@@ -63,7 +67,7 @@ def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mode
         else:
             embed.add_field(name='  ', value='', inline=True)
         index += 2
-    embed.set_footer(text=f'Games since: {data["display_date"]}')
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
 
 def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
@@ -96,7 +100,7 @@ def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mo
         else:
             embed.add_field(name='  ', value='', inline=True)
         index += 1
-    embed.set_footer(text=f'Games since: {data["display_date"]}')
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
 
 def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
@@ -137,7 +141,7 @@ def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes
         else:
             embed.add_field(name='  ', value='', inline=True)
         index += 1
-    embed.set_footer(text=f'Games since: {data["display_date"]}')
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
 
 def stats_embed(data, author, riot, icon_id, rank, mode_name='All Modes', index=None):
@@ -154,7 +158,7 @@ Total damage to players - {data['player_damage']}
 Total players eliminated - {data['players_eliminated']}
 Time spent ingame - {data['time_spent']}h""", inline=False)
 
-    embed.set_footer(text=f'Games since: {data["display_date"]}')
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
 
 def error_embed(message, error_type, author):
@@ -206,8 +210,8 @@ def single_match_embed(data, author, riot, icon_id, rank):
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"Game Info", 
                     value=f"""{data['gamemode']}
-                    Level {data['level']}
-                    {placements[data['placement']]}""", inline=False)
+Level {data['level']}
+{placements[data['placement']]}""", inline=False)
     embed.add_field(name="Augments",
                     value='\n'.join([augment_emoji[augment] + ' ' + augment for augment in data['augments']]), inline=False)
     embed.add_field(name="Traits", inline=False, value='\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data['traits'][trait]['level']]} {data['traits'][trait]['num_units']}" for trait in data['traits']]))
@@ -215,9 +219,9 @@ def single_match_embed(data, author, riot, icon_id, rank):
     for unit in data['units']:
         items = ''
         if len(data['units'][unit]["items"]) > 0:
-            items = '⠀'.join([item_emoji[item] for item in data['units'][unit]['items']])
-        embed.add_field(name=f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data["units"][unit]["level"]]}',
-                        value=items, inline=False)
+            items = '⠀|⠀' + ' '.join([item_emoji[item] for item in data['units'][unit]['items']])
+        embed.add_field(name='',
+                        value=f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data["units"][unit]["level"]]}' + items, inline=False)
 
-    #embed.set_footer(text=f'Games since: {data["display_date"]}')
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
