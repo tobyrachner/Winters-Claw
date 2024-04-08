@@ -1,7 +1,7 @@
 from typing import Any
 import discord
-from scripts.get_embeds import stats_embed, traits_embed, augments_embed, units_embed
-from scripts.process_data import process_stats, process_traits, process_augments, process_units
+from scripts.get_embeds import stats_embed, traits_embed, augments_embed, units_embed, single_match_embed
+from scripts.process_data import process_stats, process_traits, process_augments, process_units, process_single_match
 
 class EditButton(discord.ui.Button):
     def __init__(self, function, style=discord.ButtonStyle.blurple, label='X', row=None, gamemode=None, mode_name=None, count=None, days=None, stat_type=None, sort_by=None, descending=None):
@@ -35,7 +35,21 @@ class PageButton(discord.ui.Button):
     async def callback(self, interaction: discord.Interaction):
         await self.function(interaction, self.delta)
 
-class StatsView(discord.ui.View):
+class View(discord.ui.View):
+    def __init__(self):
+        super().__init__()
+
+    async def disable_all_items(self):
+        for item in self.children:
+            item.disabled = True
+        await self.interaction.edit_original_response(view=self)
+    
+    async def on_timeout(self):
+        for item in self.children:
+            item.disabled = True
+        await self.message.edit(view=self)
+
+class StatsView(View):
     def __init__(self, cur, data, author, riot, server, icon_id, rank, count, days, set):
         super().__init__()
 
@@ -63,12 +77,14 @@ class StatsView(discord.ui.View):
 
     def add_default_buttons(self, style=discord.ButtonStyle.blurple, row=None):
         self.clear_items()
+        data_style = discord.ButtonStyle.green
         if self.stat_type in ['traits', 'augments', 'units']:
             self.add_page_buttons(row=2)
             self.add_item(NavigationButton(self.set_sort_buttons, label='Sort', style=style, row=2))
             style = discord.ButtonStyle.gray
+            sata_style = discord.ButtonStyle.gray
+        self.add_item(NavigationButton(self.set_data_buttons, label='Data', style=sata_style, row=row))
         self.add_item(NavigationButton(self.set_gamemode_buttons, label='Gamemode', style=style, row=row))
-        self.add_item(NavigationButton(self.set_data_buttons, label='Data', style=style, row=row))
         self.add_item(NavigationButton(self.set_scope_buttons, label='Scope', style=style, row=row))
 
     def add_page_buttons(self, row=None):
@@ -179,13 +195,30 @@ class StatsView(discord.ui.View):
         else:
             await interaction.response.edit_message()
 
+class MatchView(View):
+    def __init__(self, cur, match_ids, riot, server, icon_id, rank, id_index=0):
+        super().__init__()
 
-    async def disable_all_items(self):
-        for item in self.children:
-            item.disabled = True
-        await self.interaction.edit_original_response(view=self)
-    
-    async def on_timeout(self):
-        for item in self.children:
-            item.disabled = True
-        await self.message.edit(view=self)
+        self.cur = cur
+        self.match_ids = match_ids
+        self.server = server
+        self.riot = riot
+        self.icon_id = icon_id
+        self.rank = rank
+        self.id_index = id_index
+
+        self.add_page_butons()
+
+    def add_page_butons(self):
+        self.add_item(PageButton(self.change_page, '<', -1))
+        self.add_item(PageButton(self.change_page, '>', 1))
+
+    async def change_page(self, interaction, delta):
+        if 0 <= self.id_index + delta < len(self.match_ids):
+            self.id_index += delta
+
+        data = process_single_match(self.cur, self.riot, self.server, self.match_ids[self.id_index])
+
+        embed = single_match_embed(data, None, self.riot, self.icon_id, self.rank)
+
+        await interaction.response.edit_message(embed=embed)

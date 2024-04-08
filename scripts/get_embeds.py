@@ -199,19 +199,19 @@ Korea               - > KR```""")
     embed.add_field(name='', value='', inline=True)
     return embed
 
-def single_match_embed(data, author, riot, icon_id, rank, index=None):
+def single_match_embed(data, author, riot, icon_id, rank):
     rank_icon = rank.split(' ')[0]
     
     embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
-    embed.add_field(name=f"Info", 
-                    value=f"""{data['rank']}
-                    {data['gamemode']}
-                    {placements[data['placement']]}
-                    Level {data['level']}""", inline=False)
+    embed.add_field(name=f"Game Info", 
+                    value=f"""{data['gamemode']}
+                    Level {data['level']}
+                    {placements[data['placement']]}""", inline=False)
     embed.add_field(name="Augments",
                     value='\n'.join([augment_emoji[augment] + ' ' + augment for augment in data['augments']]), inline=False)
-    embed.add_field(name="Units", value='')
+    embed.add_field(name="Traits", inline=False, value='\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data['traits'][trait]['level']]} {data['traits'][trait]['num_units']}" for trait in data['traits']]))
+    embed.add_field(name="Units", value='', inline=False)
     for unit in data['units']:
         items = ''
         if len(data['units'][unit]["items"]) > 0:

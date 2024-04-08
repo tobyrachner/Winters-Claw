@@ -8,8 +8,8 @@ from scripts import settings
 from scripts.get_embeds import *
 from scripts.check_input import *
 from scripts.update import *
-from scripts.process_data import process_stats, process_traits, process_single_match
-from views.statview import StatsView
+from scripts.process_data import process_stats, process_single_match
+from views.statview import StatsView, MatchView
 
 
 conn = sqlite3.connect("wclaw.db")
@@ -189,7 +189,7 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
     view.message = await ctx.send(embed=embed, view=view)
 
 @bot.hybrid_command(description='Show details about specific match. Get match ids from /matchhistory (defaults to most recent match)')
-async def single_game(ctx, match_id: Optional[str], riot_id: Optional[str], server: Optional[str]):
+async def single_game(ctx, match_id: Optional[int], riot_id: Optional[str], server: Optional[str]):
     author = ctx.message.author.name
 
     if riot_id or server:
@@ -223,13 +223,22 @@ async def single_game(ctx, match_id: Optional[str], riot_id: Optional[str], serv
             return
         
     try:
+        match_ids = cur.execute('SELECT match_id FROM matches WHERE riot = ? AND server = ? ORDER BY timestamp DESC', (riot, server)).fetchall()
+        match_ids = [id[0] for id in match_ids]
+        if len(match_ids) == 0:
+            raise IndexError()
+        if match_id:
+            id_index = match_ids.index(match_id)
+        else:
+            id_index = 0
         data = process_single_match(cur, riot, server, match_id)
     except IndexError as e:
-        embed = error_embed(f"No games from {riot} found. \nMake sure to use /update first.", 'No games found', author)
+        embed = error_embed(e, 'Game not found', author)
         await ctx.send(embed=embed)
         return
     
     embed = single_match_embed(data, author, riot, icon_id, rank)
-    await ctx.send(embed=embed)
+    view = MatchView(cur, match_ids, riot, server, icon_id, rank, id_index=id_index)
+    view.message = await ctx.send(embed=embed, view=view)
 
 bot.run(settings.TOKEN)

@@ -132,7 +132,7 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None, filte
         for trait in traits_fielded:
             if trait == '':
                 continue
-            name, level = trait.split('/')
+            name, level, num_units = trait.split('/')
             name = trait_list[name]['name']
             level = int(level)
             if name in unique_traits:
@@ -192,7 +192,7 @@ def process_units(cur, riot, server, count, days, set, display_mode=None, filter
         for unit in units_fielded:
             if unit == '':
                 continue
-            name, level, items = unit.split('/')
+            name, level, rarity, items = unit.split('/')
             name = unit_list[name]['name']
             level = int(level)
 
@@ -303,9 +303,12 @@ def process_augments(cur, riot, server, count, days, set, display_mode=None, fil
 
 def process_single_match(cur, riot, server, id=None):
     if id:
-        match = cur.execute('SELECT * FROM matches WHERE id = ? AND riot = ? AND server = ?', {id, riot, server}).fetchone()
+        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits FROM matches WHERE match_id = ? AND riot = ? AND server = ?', (id, riot, server))
+        match = match.fetchone()
+        if match is None:
+            raise IndexError('Could not find match with given id')
     else:
-        match = cur.execute('SELECT gamemode, placement, level, augments, units FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (riot, server)).fetchone()
+        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (riot, server)).fetchone()
 
     data = {}
 
@@ -332,13 +335,25 @@ def process_single_match(cur, riot, server, id=None):
                 continue
         data['augments'].append(augment_list[augment]['name'])
 
-    data['units'] = {}
+    traits = {}
+    for trait in match[5].split('-'):
+        if trait == '':
+            continue
+        name, level, num_units = trait.split('/')
+        name = trait_list[name]['name']
+        if name in unique_traits:
+            level = 5
+        traits[name] = {'level': level, 'num_units': num_units}
+
+    data['traits'] = dict(sorted(traits.items(), key=lambda x: (x[1]['level'], x[1]['num_units']), reverse=True))
+
+    units = {}
     for unit in match[4].split('-'):
         if unit == '':
             continue
-        name, level, items = unit.split('/')
+        name, level, rarity, items = unit.split('/')
         name = unit_list[name]['name']
-        level = str(level)
+        rarity = int(rarity)
 
         processed_items = []
         for item in items.split('.'):
@@ -346,6 +361,8 @@ def process_single_match(cur, riot, server, id=None):
                 continue
             item = item_list[item]['name']
             processed_items.append(item)
-        data['units'][name] = {'level': level, 'items': processed_items}
+        units[name] = {'level': level, 'items': processed_items, 'rarity': rarity}
+
+    data['units'] = dict(sorted(units.items(), key=lambda x: (-int(x[1]['level']), -x[1]['rarity'])))
 
     return data

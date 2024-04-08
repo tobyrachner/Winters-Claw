@@ -117,13 +117,13 @@ def update_games(cur, data):
         traits = []
         for trait in match['info']['participants'][index]['traits']:
             if trait['tier_current'] > 0:
-                traits.append(f"{trait['name']}/{trait['tier_current']}")
+                traits.append(f"{trait['name']}/{trait['tier_current']}/{trait['num_units']}")
 
         augments = '-'.join(match['info']['participants'][index]['augments'])
 
         units = []
         for unit in match['info']['participants'][index]['units']:
-            units.append(f"{unit['character_id']}/{unit['tier']}/{'.'.join(unit['itemNames'])}")
+            units.append(f"{unit['character_id']}/{unit['tier']}/{unit['rarity']}/{'.'.join(unit['itemNames'])}")
 
 
         cur.execute("""INSERT INTO matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'level', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')
