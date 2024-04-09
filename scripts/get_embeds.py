@@ -209,7 +209,8 @@ def single_match_embed(data, author, riot, icon_id, rank):
     embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"Game Info", 
-                    value=f"""{data['gamemode']}
+                    value=f"""<t:{data['timestamp']}>
+{data['gamemode']}
 Level {data['level']}
 {placements[data['placement']]}""", inline=False)
     embed.add_field(name="Augments",

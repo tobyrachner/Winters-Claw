@@ -1,6 +1,3 @@
-import requests
-import time
-import aiohttp
 import asyncio
 
 from scripts.settings import RGAPI

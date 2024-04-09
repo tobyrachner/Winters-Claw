@@ -133,6 +133,11 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None, filte
             level = int(level)
             if name in unique_traits:
                 level = 5
+            if name == 'Heavenly' and level > 3:
+                if level < 6:
+                    level = 3
+                else:
+                    level = 4
 
             if name in traits_dict:
                 traits_dict[name]['placements'].append(placement)
@@ -295,14 +300,14 @@ def process_augments(cur, riot, server, count, days, set, display_mode=None, fil
 
 def process_single_match(cur, riot, server, id=None):
     if id:
-        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits FROM matches WHERE match_id = ? AND riot = ? AND server = ?', (id, riot, server))
+        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits, timestamp FROM matches WHERE match_id = ? AND riot = ? AND server = ?', (id, riot, server))
         match = match.fetchone()
         if match is None:
             raise IndexError('Could not find match with given id')
     else:
-        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (riot, server)).fetchone()
+        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits, timestamp FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (riot, server)).fetchone()
 
-    data = {}
+    data = {'timestamp': int(match[6] / 1000)}
 
     gamemode = match[0]
 
@@ -335,6 +340,11 @@ def process_single_match(cur, riot, server, id=None):
         name = trait_list[name]['name']
         if name in unique_traits:
             level = '5'
+        if name == 'Heavenly' and int(level) > 3:
+            if int(level) < 6:
+                level = '3'
+            else:
+                level = '4'
         traits[name] = {'level': level, 'num_units': num_units}
 
     data['traits'] = dict(sorted(traits.items(), key=lambda x: (x[1]['level'], x[1]['num_units']), reverse=True))
@@ -355,6 +365,6 @@ def process_single_match(cur, riot, server, id=None):
             processed_items.append(item)
         units[name] = {'level': level, 'items': processed_items, 'rarity': rarity}
 
-    data['units'] = dict(sorted(units.items(), key=lambda x: (-int(x[1]['level']), -x[1]['rarity'])))
+    data['units'] = dict(sorted(units.items(), key=lambda x: (int(x[1]['level']), x[1]['rarity'], len(x[1]['items'])), reverse=True))
 
     return data
