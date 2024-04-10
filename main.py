@@ -10,9 +10,10 @@ from scripts import settings
 from scripts.get_embeds import *
 from scripts.check_input import *
 from scripts.update import *
-from scripts.process_data import process_stats, process_single_match
+from scripts.process_data import process_stats, process_single_match, process_history
 from views.statview import StatsView
 from views.matchview import MatchView
+from views.historyview import HistoryView
 
 
 conn = sqlite3.connect("wclaw.db")
@@ -182,7 +183,7 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
     view.message = await ctx.send(embed=embed, view=view)
 
 @bot.hybrid_command(description='Show details about specific match. Get match ids from /matchhistory (defaults to most recent match)')
-async def single_game(ctx, match_id: Optional[int], riot_id: Optional[str], server: Optional[str]):
+async def singlematch(ctx, match_id: Optional[int], riot_id: Optional[str], server: Optional[str]):
     author = ctx.message.author.name
 
     if riot_id or server:
@@ -231,6 +232,44 @@ async def single_game(ctx, match_id: Optional[int], riot_id: Optional[str], serv
     
     embed = single_match_embed(data, author, riot, icon_id, rank)
     view = MatchView(cur, match_ids, riot, server, icon_id, rank, id_index=id_index)
+    view.message = await ctx.send(embed=embed, view=view)
+
+@bot.hybrid_command(description='Shows general information about most recent games played')
+async def matchhistory(ctx, riot_id: Optional[str], server: Optional[str]):
+    author = ctx.message.author.name
+
+    if riot_id or server:
+        if not server or not riot_id:
+            embed = error_embed('Please enter both Riot id and server or neither.', 'Invalid input', author)
+            await ctx.send(embed=embed)
+            return
+        
+        if not server in server_list:
+            embed = error_embed(f'`{server}` is not supported a server', 'Invalid input', str(author))
+            await ctx.send(embed=embed)
+            return
+        
+        server = server_list[server]['server']
+        
+        try:
+            riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
+        except Exception as e:
+            embed = error_embed(e, 'Invalid input', str(author))
+            await ctx.send(embed=embed)
+            return
+
+    else:
+        try:
+            res = cur.execute('SELECT riot, server, icon_id, rank FROM links WHERE discord = ?', (author,))
+            riot, server, icon_id, rank = res.fetchall()[0]
+        except IndexError:
+            embed = error_embed(f"No Riot account linked to '{author}'", 'Nothing linked', author)
+            await ctx.send(embed=embed)
+            return
+        
+    data = process_history(cur, riot, server)
+    embed = history_embed(data, riot, icon_id, rank)
+    view = HistoryView(cur, data, riot, server, icon_id, rank)
     view.message = await ctx.send(embed=embed, view=view)
 
 bot.run(settings.TOKEN)

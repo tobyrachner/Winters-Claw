@@ -1,6 +1,6 @@
 from scripts.process_data import process_single_match
 from scripts.get_embeds import single_match_embed
-from views.view import View, PageButton
+from views.baseview import View, PageButton
 
 class MatchView(View):
     def __init__(self, cur, match_ids, riot, server, icon_id, rank, id_index=0):

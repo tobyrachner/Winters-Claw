@@ -212,7 +212,7 @@ def single_match_embed(data, author, riot, icon_id, rank):
                     value=f"""<t:{data['timestamp']}>
 {data['gamemode']}
 Level {data['level']}
-{placements[data['placement']]}""", inline=False)
+{placements[data['placement']]} Place""", inline=False)
     embed.add_field(name="Augments",
                     value='\n'.join([augment_emoji[augment] + ' ' + augment for augment in data['augments']]), inline=False)
     embed.add_field(name="Traits", inline=False, value='\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data['traits'][trait]['level']]} {data['traits'][trait]['num_units']}" for trait in data['traits']]))
@@ -226,3 +226,48 @@ Level {data['level']}
 
     embed.timestamp = datetime.datetime.utcnow()
     return embed
+
+def history_embed(data, riot, icon_id, rank, stat_type='general', index=0, show_ids=False):
+    rank_icon = rank.split(' ')[0]
+
+    function_class = HistoryEmbed()
+    functions = {'general': function_class.general, 'traits': function_class.traits, 'augments': function_class.augments, 'units': function_class.units}
+    rows = {'general': 4, 'augments': 4, 'units': 2, 'traits': 3}
+    
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
+    for i in range(3):
+        if len(data) > index:
+            id = ''
+            if show_ids:
+                id = f"ID: {data[index]['id']}\n"
+            functions[stat_type](embed, data, index, id)
+        embed.add_field(name='', value='', inline=True)
+        index += 1
+        if len(data) > index:
+            id = ''
+            if show_ids:
+                id = f"ID: {data[index]['id']}\n"
+            functions[stat_type](embed, data, index, id)
+        index += 1
+    embed.timestamp = datetime.datetime.utcnow()
+    return embed
+
+class HistoryEmbed():
+    def __init__(self):
+        pass
+
+    def general(self, embed, data, index, id):
+        embed.add_field(name=placements[data[index]['placement']] + ' Place', value=f'''{id} <t:{data[index]['timestamp']}>
+{data[index]['gamemode']}
+Level {data[index]['level']}''', inline=True)
+        
+    def augments(self, embed, data, index, id):
+        embed.add_field(name=placements[data[index]['placement']] + ' Place', value=id + '\n'.join([augment_emoji[augment] + ' ' + augment for augment in data[index]['augments']]), inline=True)
+    
+    def traits(self, embed, data, index, id):
+        embed.add_field(name=placements[data[index]['placement']] + ' Place', inline=True, value=id + '\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data[index]['traits'][trait]['level']]} {data[index]['traits'][trait]['num_units']}" for trait in data[index]['traits']]))
+
+    def units(self, embed, data, index, id):
+        text = '\n'.join([f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data[index]["units"][unit]["level"]]}' for unit in data[index]['units']])
+        embed.add_field(name=placements[data[index]['placement']] + ' Place', value=id + text, inline=True)

@@ -368,3 +368,72 @@ def process_single_match(cur, riot, server, id=None):
     data['units'] = dict(sorted(units.items(), key=lambda x: (int(x[1]['level']), x[1]['rarity'], len(x[1]['items'])), reverse=True))
 
     return data
+
+def process_history(cur, riot, server, stat_type='general', gamemode=None):
+    if gamemode:
+        matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE gamemode = ? AND riot = ? AND server = ? ORDER BY timestamp DESC', (gamemode, riot, server)).fetchall()
+    else:
+        matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (riot, server)).fetchall()
+    
+    if len(matches) == 0:
+        raise NameError()
+    
+    data = []
+    for match in matches:
+        match_id, gamemode, placement, level, timestamp, traits, units, augments = match
+
+        game = {'id': match_id, 'placement': placement}
+        if stat_type == 'general':
+            game = {
+                'id': match_id,
+                'timestamp': int(timestamp / 1000), 
+                'gamemode': gamemode[0].upper() + gamemode[1:],
+                'placement': placement,
+                'level': level
+                }
+            
+        elif stat_type == 'traits':
+            game['traits'] = {}
+            for trait in traits.split('-'):
+                if trait == '':
+                    continue
+                name, level, num_units = trait.split('/')
+                name = trait_list[name]['name']
+                if name in unique_traits:
+                    level = '5'
+                if name == 'Heavenly' and int(level) > 3:
+                    if int(level) < 6:
+                        level = '3'
+                    else:
+                        level = '4'
+                game['traits'][name] = {'level': level, 'num_units': num_units}
+
+            game['traits'] = dict(sorted(game['traits'].items(), key=lambda x: (x[1]['level'], x[1]['num_units']), reverse=True))
+
+        elif stat_type == 'units':
+            game['units'] = {}
+            for unit in units.split('-'):
+                if unit == '':
+                    continue
+                name, level, rarity, items = unit.split('/')
+                name = unit_list[name]['name']
+                rarity = int(rarity)
+                game['units'][name] = {'level': level, 'rarity': rarity}
+
+            game['units'] = dict(sorted(game['units'].items(), key=lambda x: (int(x[1]['level']), x[1]['rarity']), reverse=True))
+
+        elif stat_type == 'augments':
+            game['augments'] = []
+            for augment in augments.split('-'):
+                if augment == '':
+                    continue
+                if not augment in augment_list:
+                    print('MISSING', augment)
+                    with open('missing_data.txt', 'r+') as f:
+                        if 'augment: ' + augment + '\n' not in f.readlines():
+                            f.write('augment: ' + augment + '\n')
+                        continue
+                game['augments'].append(augment_list[augment]['name'])
+        data.append(game)
+        
+    return data

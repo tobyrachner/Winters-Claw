@@ -2,7 +2,7 @@ import discord
 
 from scripts.get_embeds import stats_embed, traits_embed, augments_embed, units_embed
 from scripts.process_data import process_stats, process_traits, process_augments, process_units
-from views.view import View, EditButton, PageButton, NavigationButton
+from views.baseview import View, EditButton, PageButton, NavigationButton
 
 class StatsView(View):
     def __init__(self, cur, data, author, riot, server, icon_id, rank, count, days, set):
@@ -98,7 +98,7 @@ class StatsView(View):
         await interaction.response.edit_message(view=self)
     
 
-    async def update_message(self, interaction, mode_name=None, gamemode=None, count=None, days=None, stat_type=None, sort_by=None, descending=None):
+    async def update_message(self, interaction, mode_name=None, gamemode=None, count=None, days=None, stat_type=None, sort_by=None, descending=None, toggle_match_ids=None):
         if count or days:
             self.count = count
             self.days = days

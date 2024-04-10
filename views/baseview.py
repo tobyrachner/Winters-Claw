@@ -1,7 +1,7 @@
 import discord
 
 class EditButton(discord.ui.Button):
-    def __init__(self, function, style=discord.ButtonStyle.blurple, label='X', row=None, gamemode=None, mode_name=None, count=None, days=None, stat_type=None, sort_by=None, descending=None):
+    def __init__(self, function, style=discord.ButtonStyle.blurple, label='X', row=None, gamemode=None, mode_name=None, count=None, days=None, stat_type=None, sort_by=None, descending=None, toggle_match_ids=None):
         super().__init__(style=style, label=label, row=row)
         self.function = function
         self.gamemode = gamemode
@@ -11,9 +11,10 @@ class EditButton(discord.ui.Button):
         self.stat_type = stat_type
         self.sort_by = sort_by
         self.descending = descending
+        self.toggle_match_ids = toggle_match_ids
 
     async def callback(self, interaction: discord.Interaction):
-        await self.function(interaction, gamemode=self.gamemode, mode_name=self.mode_name, count=self.count, days=self.days, stat_type=self.stat_type, sort_by=self.sort_by, descending=self.descending)
+        await self.function(interaction, gamemode=self.gamemode, mode_name=self.mode_name, count=self.count, days=self.days, stat_type=self.stat_type, sort_by=self.sort_by, descending=self.descending, toggle_match_ids=self.toggle_match_ids)
 
 class NavigationButton(discord.ui.Button):
     def __init__(self, function, label='X', style=discord.ButtonStyle.gray, row=None):
