@@ -13,10 +13,12 @@ RGAPI = os.getenv('RGAPI')
 TOKEN = os.getenv('DISCORD_TOKEN')
 ADMIN_TOKEN = os.getenv('DISCORD_ADMIN_TOKEN')
 
+guild_ids = json.loads(os.getenv('GUILD_IDS'))
+
 setup = {
-    'augments': {'img_path': 'https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/augments/choiceui/', 'guild_ids': [1226021957963743262, 1226022008643518526, 1226022064897392660, 1226022118664437872, 1226022170291867669, 1226022232007114823]},
-    'units': {'img_path': 'https://raw.communitydragon.org/latest/game/assets/characters/', 'guild_ids': [1226197363589124238, 1226197423727317143]},
-    'items': {'img_path': 'https://ddragon.leagueoflegends.com/cdn/14.7.1/img/tft-item/', 'guild_ids': [1226317902458785843, 1226281674296266873, 1226281740494966874, 1226281789283237918, 1226281841217241139]}
+    'augments': {'img_path': 'https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/augments/choiceui/', 'guild_ids': guild_ids['augments']},
+    'units': {'img_path': 'https://raw.communitydragon.org/latest/game/assets/characters/', 'guild_ids': guild_ids['units']},
+    'items': {'img_path': 'https://ddragon.leagueoflegends.com/cdn/14.7.1/img/tft-item/', 'guild_ids': guild_ids['items']}
     }
 
 with open('data/ranked_tiers.json') as f:

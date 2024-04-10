@@ -218,11 +218,11 @@ Level {data['level']}
     embed.add_field(name="Traits", inline=False, value='\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data['traits'][trait]['level']]} {data['traits'][trait]['num_units']}" for trait in data['traits']]))
     embed.add_field(name="Units", value='', inline=False)
     for unit in data['units']:
-        items = ''
+        text = f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data["units"][unit]["level"]]}⠀|⠀'
         if len(data['units'][unit]["items"]) > 0:
-            items = '⠀|⠀' + ' '.join([item_emoji[item] for item in data['units'][unit]['items']])
+            text += ' '.join([item_emoji[item] for item in data['units'][unit]['items']])
         embed.add_field(name='',
-                        value=f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data["units"][unit]["level"]]}' + items, inline=False)
+                        value=text, inline=False)
 
     embed.timestamp = datetime.datetime.utcnow()
     return embed

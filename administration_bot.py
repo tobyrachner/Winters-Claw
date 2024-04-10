@@ -26,9 +26,7 @@ guild_ids = []
 @bot.event
 async def on_message(ctx):
     if ctx.content == 'wc create emoji':
-        await add_emoji(ctx, 'items')
-        get__emoji_ids('items')
-
+        print(bot.get_guild(settings.setup['augments']['guild_ids'][5]).name)
 
 
 def get_current_untis():
@@ -116,13 +114,6 @@ async def add_emoji(ctx, type):
 
                     sleep(5.1)  # waiting to avoid discord rate limit
 
-
-
-                    if guild_count >= 10 and guild.name.endswith('3'):
-                        break
-
-
-
                     if guild_count >= 50:
                         break
                 except Exception as e:
@@ -132,7 +123,7 @@ async def add_emoji(ctx, type):
         with open(f'data/temp_{type}.json', 'w') as f:
             json.dump(new_objects, f, indent=2)
 
-def get__emoji_ids(type):
+def get_emoji_ids(type):
     guild_ids = settings.setup[type]['guild_ids']
 
     with open(f'data/{type}.json', 'r') as f:
