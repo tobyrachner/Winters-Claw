@@ -271,3 +271,45 @@ Level {data[index]['level']}''', inline=True)
     def units(self, embed, data, index, id):
         text = '\n'.join([f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data[index]["units"][unit]["level"]]}' for unit in data[index]['units']])
         embed.add_field(name=placements[data[index]['placement']] + ' Place', value=id + text, inline=True)
+
+def help_embed():
+    embed=discord.Embed(title='/help', description='''Use `/commands` for a list of commands''', color=0x7011d0)
+    embed.add_field(name='Quickstart', value='''1. `/link`   to link your Riot account to your discord
+2. `/update` to download games into database
+3. `/stats`  for overall stats on your account''', inline=False)
+    embed.add_field(name='Note', value='''- All stat commands take an optional input for Riot accounts. If not given it defaults to your linked account.
+- `riotId` must be in the format of `user#0000` 
+- use `/servers` for a list of all supported servers
+- Capitalization for Riot IDs **matters**''')
+    return embed
+
+def commands_embed(command):
+    embed = discord.Embed(title='Winter\'s Claw commands', description='''Use `/commands [command]` for more information''', color=0x7011d0)
+    embed.add_field(name='Stat commands', value='''- `/stats`  - >  Shows general statistics for your account
+- `/singlematch`  - >  Show detailed data for a single match
+- `/matchhistory`  - >  Show data for most recent matches played
+''', inline=False)
+    embed.add_field(name='Other commands', value='''- `/commands`  - >  Shows this message
+- `/help`  - >  For general help
+- `/servers`  - >  Shows a list of all supported servers
+- `/link`  - >  Link a summoner to your discord account
+- `/linked`  - >  Show summoner linked to your discord account
+- `/unlink`  - >  Delete all data linked to your discord account
+- `/update`  - >  Download new games from your account into database
+''', inline=True)
+    return embed
+
+def alt(x):
+    embed = discord.Embed(title='Winter\'s Claw commands', description='''Use `/commands [command]` for more information''', color=0x7011d0)
+    embed.add_field(name='Stat commands', value='`/stats`  - >  General statistics for your account', inline=False)
+    embed.add_field(name='', value='`/singlematch`  - >  Detailed data for a single match', inline=False)
+    embed.add_field(name='', value='`/matchhistory`  - >  Data for most recent matches played', inline=False)
+    embed.add_field(name='Other commands', value='`/commands`  - >  Shows this message', inline=True)
+    for command in ['`/help`  - >  For general help', 
+                    '`/servers`  - >  Shows a list of all supported servers', 
+                    '`/link`  - >  Link a summoner to your discord account', 
+                    '`/linked`  - >  Show summoner linked to your discord account', 
+                    '`/unlink`  - >  Delete all data linked to your discord account', 
+                    '`/update`  - >  Download new games from your account into database']:
+        embed.add_field(name='', value=command, inline=False)
+    return embed

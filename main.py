@@ -24,6 +24,7 @@ cur.execute("CREATE TABLE IF NOT EXISTS matches ('match_id' INTEGER PRIMARY KEY,
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="$", intents=intents)
+bot.remove_command('help')
 
 @bot.event
 async def on_ready():
@@ -39,6 +40,25 @@ async def server_autocomplete(interaction: discord.Interaction, current: str) ->
         if current.lower() in server.lower():
             data.append(app_commands.Choice(name=server, value=server))
     return data
+
+async def command_autocomplete(interaction: discord.Interaction, current: str) -> List[app_commands.Choice[str]]:
+    data = []
+    commands = ['help', 'link', 'linked', 'matchhistory', 'servers', 'singlematch', 'stats', 'unlink', 'update']
+    for command in commands:
+        if current.lower() in command.lower():
+            data.append(app_commands.Choice(name=command, value=command))
+    return data
+
+@bot.hybrid_command(description='If you ever need help')
+async def help(ctx):
+    embed = help_embed()
+    await ctx.send(embed=embed, ephemeral=True)
+
+@bot.hybrid_command(description='List of all available commands')
+@app_commands.autocomplete(command=command_autocomplete)
+async def commands(ctx, command: Optional[str]):
+    embed = alt(command)
+    await ctx.send(embed=embed, ephemeral=True)
 
 @bot.hybrid_command(description='Shows list of all supported servers')
 async def servers(ctx):
