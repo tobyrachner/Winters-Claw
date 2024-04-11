@@ -161,13 +161,13 @@ Time spent ingame - {data['time_spent']}h""", inline=False)
     embed.timestamp = datetime.datetime.utcnow()
     return embed
 
-def error_embed(message, error_type, author):
+def error_embed(message, error_type):
     embed=discord.Embed(title=error_type, description=message, color=0x7011d0,)
     embed.set_thumbnail(url='https://www.seekpng.com/png/detail/334-3345964_error-icon-download-attention-symbol.png')
-    embed.set_footer(text=f"Requested by {author}")
+    embed.timestamp = datetime.datetime.utcnow()
     return embed
 
-def server_embed(author):
+def server_embed():
     embed = discord.Embed(title = 'Server', color=0x7011d0)
 
     embed.add_field(name="Europe", inline=True, value="""
@@ -203,10 +203,10 @@ Korea               - > KR```""")
     embed.add_field(name='', value='', inline=True)
     return embed
 
-def single_match_embed(data, author, riot, icon_id, rank):
+def single_match_embed(data, riot, icon_id, rank):
     rank_icon = rank.split(' ')[0]
     
-    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"Game Info", 
                     value=f"""<t:{data['timestamp']}>

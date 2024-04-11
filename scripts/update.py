@@ -51,13 +51,11 @@ async def get_matchids(session, riot, server, region, puuid, cur):
     else:
         rank = ''
 
-    cur.execute("UPDATE links SET rank = ? WHERE puuid = ?", (rank, puuid))
-
     if len(data) == 0:
 
         cur.execute("""
-            INSERT INTO profile ('riot', 'server', 'puuid', 'icon_id', 'rank', 'standard', 'pairs', 'turbo')
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, puuid, icon_id, rank, ranks['standard'], ranks['pairs'], ranks['turbo']))
+            INSERT INTO profile ('riot', 'server', 'region', 'puuid', 'icon_id', 'rank', 'standard', 'pairs', 'turbo')
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, region, puuid, icon_id, rank, ranks['standard'], ranks['pairs'], ranks['turbo']))
         last_processed = ''
 
     else:
@@ -65,8 +63,6 @@ async def get_matchids(session, riot, server, region, puuid, cur):
         last_processed = data[0][0]
 
     start = 0
-    run = True
-    matches = []
     match_ids = []
 
     while True:

@@ -26,6 +26,6 @@ class MatchView(View):
 
         data = process_single_match(self.cur, self.riot, self.server, self.match_ids[self.id_index])
 
-        embed = single_match_embed(data, None, self.riot, self.icon_id, self.rank)
+        embed = single_match_embed(data, self.riot, self.icon_id, self.rank)
 
         await interaction.response.edit_message(embed=embed)
