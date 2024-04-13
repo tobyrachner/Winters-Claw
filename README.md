@@ -2,7 +2,7 @@
 
 ## 📝 Description
 Welcome to Winter's Claw, a Discord Bot showing you all kinds of personal and global statistics for Riot Games' Teamfight Tactics, utilizing the discord.py library.
-To host the bot yourself see [Installation](https://github.com/tobyrachner/Winter-s-Claw/edit/main/README.md#installation). Official hosting might be added in the future
+To host the bot yourself see [Installation](#installation). Official hosting might be added in the future
 - **Motivation:** When I first started this Bot as my first bigger project I was just looking for a fun way to engage more into programming, while combining it with something I already loved. 
 It started out as just a nice little tool for me and a few friends to keep track of all our statistics inside the Discord 
 server we were always in anyways and after Set 9 ended and we stopped playing it also ended as that.
@@ -44,3 +44,6 @@ Delete all information linked to your discord username
 ## Installation
 1. Rename `.env.example` to `.env` and start filling the values as detailed below:
 2. Sign Up or Login with your Riot account in their [Developer Portal](https://developer.riotgames.com/), request a developer API Key and add insert it into `RGAPI`. This key will have to be renewed every 24h.
+
+## 📜 License
+This project is licensed under the GNU General Public License v3.0. For more information view the [License}(LICENSE)
