@@ -46,4 +46,4 @@ Delete all information linked to your discord username
 2. Sign Up or Login with your Riot account in their [Developer Portal](https://developer.riotgames.com/), request a developer API Key and add insert it into `RGAPI`. This key will have to be renewed every 24h.
 
 ## 📜 License
-This project is licensed under the GNU General Public License v3.0. For more information view the [License}(LICENSE)
+This project is licensed under the GNU General Public License v3.0. For more information view the [License](LICENSE)
