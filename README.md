@@ -3,7 +3,7 @@
 **Right where you need them.** <br> <br>
 Useful links:
 - [Add the Bot](https://discord.com/oauth2/authorize?client_id=1137848588521713674)
-- [Official Website](https://wintersclaw-lo.vercel.app)
+- [Official Website](https://wintersclaw-lol.vercel.app)
 - Join the official [support server](https://discord.com/invite/Z3nc6b4nWv)
 ## 📝 Description
 Welcome to Winter's Claw, a Discord Bot showing you all kinds of personal and global statistics for Riot Games' Teamfight Tactics, utilizing the discord.py library.
