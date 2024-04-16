@@ -15,6 +15,7 @@ from views.statview import StatsView
 from views.matchview import MatchView
 from views.historyview import HistoryView
 
+COMMANDS = ['help', 'commands', 'servers', 'link', 'linked', 'unlink', 'stats', 'update', 'matchhistory', 'singlematch']
 
 conn = sqlite3.connect("wclaw.db")
 cur = conn.cursor()
@@ -42,8 +43,7 @@ async def server_autocomplete(interaction: discord.Interaction, current: str) ->
 
 async def command_autocomplete(interaction: discord.Interaction, current: str) -> List[app_commands.Choice[str]]:
     data = []
-    commands = ['help', 'link', 'linked', 'matchhistory', 'servers', 'singlematch', 'stats', 'unlink', 'update']
-    for command in commands:
+    for command in COMMANDS:
         if current.lower() in command.lower():
             data.append(app_commands.Choice(name=command, value=command))
     return data
@@ -56,8 +56,12 @@ async def help(ctx):
 @bot.hybrid_command(description='List of all available commands')
 @app_commands.autocomplete(command=command_autocomplete)
 async def commands(ctx, command: Optional[str]):
-    embed, ephemeral = commands_embed(command)
-    await ctx.send(embed=embed, ephemeral=ephemeral)
+    if not command in COMMANDS:
+        embed = error_embed('Please enter a valid command name.', 'Invalid command')
+        await ctx.send(embed=embed, ephemeral=True)
+    else:
+        embed, ephemeral = commands_embed(command)
+        await ctx.send(embed=embed, ephemeral=ephemeral)
 
 @bot.hybrid_command(description='Shows list of all supported servers')
 async def servers(ctx):
@@ -102,7 +106,7 @@ async def linked(ctx):
         puuid = cur.execute('SELECT puuid FROM links WHERE discord = ?', (discord_id,)).fetchone()[0]
         linked = cur.execute('SELECT riot, icon_id, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
         embed = linked_embed(linked[0], linked[1], linked[2], 'Currently')
-    except IndexError:
+    except TypeError or ValueError:
         embed = error_embed(f"No Riot account linked to '{ctx.message.author.name}'", 'Not linked')
     await ctx.send(embed=embed)
 
@@ -134,7 +138,7 @@ async def update(ctx, riot_id: Optional[str], server: Optional[str]):
         try:
             puuid = cur.execute('SELECT puuid FROM links WHERE discord = ?', (ctx.message.author.id,)).fetchone()[0]
             riot, server, region, rank = cur.execute('SELECT riot, server, region, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
-        except ValueError:
+        except TypeError:
             embed = error_embed(f"No Riot account linked to your discord", 'Nothing linked')
             await ctx.send(embed=embed)
             return
@@ -186,7 +190,7 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
         try:
             puuid = cur.execute('SELECT puuid FROM links WHERE discord = ?', (ctx.message.author.id,)).fetchone()[0]
             riot, server, icon_id, rank = cur.execute('SELECT riot, server, icon_id, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
-        except ValueError:
+        except TypeError:
             embed = error_embed(f"No Riot account linked to your discord", 'Nothing linked')
             await ctx.send(embed=embed)
             return
@@ -228,7 +232,7 @@ async def singlematch(ctx, match_id: Optional[int], riot_id: Optional[str], serv
         try:
             puuid = cur.execute('SELECT puuid FROM links WHERE discord = ?', (ctx.message.author.id,)).fetchone()[0]
             riot, server, icon_id, rank = cur.execute('SELECT riot, server, icon_id, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
-        except ValueError:
+        except ValueError or TypeError:
             embed = error_embed(f"No Riot account linked to your discord", 'Nothing linked')
             await ctx.send(embed=embed)
             return
@@ -280,7 +284,7 @@ async def matchhistory(ctx, riot_id: Optional[str], server: Optional[str]):
         try:
             puuid = cur.execute('SELECT puuid FROM links WHERE discord = ?', (ctx.message.author.id,)).fetchone()[0]
             riot, server, icon_id, rank = cur.execute('SELECT riot, server, icon_id, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
-        except ValueError:
+        except ValueError or TypeError:
             embed = error_embed(f"No Riot account linked to your discord", 'Nothing linked')
             await ctx.send(embed=embed)
             return
