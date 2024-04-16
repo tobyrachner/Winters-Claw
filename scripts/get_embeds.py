@@ -3,11 +3,21 @@ import discord
 
 from scripts.settings import trait_emoji, augment_emoji, unit_emoji, item_emoji, misc_emoji
 
-placements = {1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th', 6: '6th', 7: '7th', 8: '8th'}
+PLACEMENTS = {1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th', 6: '6th', 7: '7th', 8: '8th'}
+ALL_COMMANDS = {'help': ['`/help`', 'Offers general help'],
+                'commands': ['`/commands [command]`', 'Shows a list of all available commands or more information about the given command.'],
+                'servers': ['`/servers`', 'Shows a list of all supported servers'],
+                'link': ['`/link [riotId] [server]`', ' Link a summoner to your discord username to quickly use all other commands. \n Riot IDs must be in the format of sample#000 \n A list of all supported servers can be found with `/servers`.'],
+                'linked': ['`/linked`', 'Shows summoner currently linked to your discord username.'],
+                'unlink': ['`/unlink`', 'Delete all information linked to your discord username.'],
+                'update': ['`/update [riotId] [server]`', 'Download all games for entered summoner (defaults to linked summoner). \n Downloads all games played in the current set or since the last time used. \n This may take 1 or 2 minutes if more than 100 games are getting downloaded.'],
+                'stats': ['`/stats [days] [count] [set] [riotId] [server]`', 'Shows all your statistics for gamemodes, traits, units and augments. \n Parameters can be used to only show data from the last x games or days or a specific set. \n More information can be viewed using the buttons provided.'],
+                'matchhistory': ['`/matchhistory [riotId] [server]`', 'Shows information about the recent 6 matches from a summoner. \n More games can be viewed by using the buttons.'],
+                'singlematch': ['`/singlematch [matchId] [riotId] [server]`', 'Shows details about a specfic match for given or linked summoner. \n Match IDs are obtainable through `/match_history` (defaults to last match played)']}
 
 def linked_embed(riot, icon_id, rank, text):
     name = riot.replace('%20', ' ')
-    embed=discord.Embed(title=f"{name} {rank.split(' ')[0]}", description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=f"{name} {rank.split(' ')[0]}", description='', color=0x1386ec, url=f'')
     embed.set_author(name=f'{text} linked:')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name='to your Discord account.', value='')
@@ -16,7 +26,7 @@ def linked_embed(riot, icon_id, rank, text):
 
 def updating_embed(riot, icon_id, count):
     name = riot.replace('%20', ' ')
-    embed=discord.Embed(title=name, description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=name, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.set_author(name=f'Downloading {count} games ...')
     embed.add_field(name='(This might take a while)', value='')
@@ -25,7 +35,7 @@ def updating_embed(riot, icon_id, count):
 
 def update_embed(riot, icon_id, count):
     name = riot.replace('%20', ' ')
-    embed=discord.Embed(title=name, description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=name, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     if count == 0:
         embed.set_author(name=f'No new games to add to:')
@@ -38,7 +48,7 @@ def update_embed(riot, icon_id, count):
 def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
     rank_icon = rank.split(' ')[0]
 
-    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"{mode_name} - {data['count']} games", value='', inline=False)
     for i in range(2):
@@ -73,7 +83,7 @@ def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mode
 def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
     rank_icon = rank.split(' ')[0]
 
-    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"{mode_name} - {data['count']} games", value='', inline=False)
     for i in range(2):
@@ -106,7 +116,7 @@ def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mo
 def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
     rank_icon = rank.split(' ')[0]
 
-    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"{mode_name} - {data['count']} games", value='', inline=False)
     for i in range(2):
@@ -147,7 +157,7 @@ def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes
 def stats_embed(data, author, riot, icon_id, rank, mode_name='All Modes', index=None):
     rank_icon = rank.split(' ')[0]
     
-    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"{mode_name} - {data['count']} games", 
                     value=f"""{rank}
@@ -168,7 +178,7 @@ def error_embed(message, error_type):
     return embed
 
 def server_embed():
-    embed = discord.Embed(title = 'Server', color=0x7011d0)
+    embed = discord.Embed(title = 'Server', color=0x1386ec)
 
     embed.add_field(name="Europe", inline=True, value="""
 ```fix
@@ -212,7 +222,7 @@ def single_match_embed(data, riot, icon_id, rank):
                     value=f"""<t:{data['timestamp']}>
 {data['gamemode']}
 Level {data['level']}
-{placements[data['placement']]} Place""", inline=False)
+{PLACEMENTS[data['placement']]} Place""", inline=False)
     embed.add_field(name="Augments",
                     value='\n'.join([augment_emoji[augment] + ' ' + augment for augment in data['augments']]), inline=False)
     embed.add_field(name="Traits", inline=False, value='\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data['traits'][trait]['level']]} {data['traits'][trait]['num_units']}" for trait in data['traits']]))
@@ -234,7 +244,7 @@ def history_embed(data, riot, icon_id, rank, stat_type='general', index=0, show_
     functions = {'general': function_class.general, 'traits': function_class.traits, 'augments': function_class.augments, 'units': function_class.units}
     rows = {'general': 4, 'augments': 4, 'units': 2, 'traits': 3}
     
-    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x7011d0, url=f'')
+    embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     for i in range(3):
         if len(data) > index:
@@ -258,22 +268,22 @@ class HistoryEmbed():
         pass
 
     def general(self, embed, data, index, id):
-        embed.add_field(name=placements[data[index]['placement']] + ' Place', value=f'''{id} <t:{data[index]['timestamp']}>
+        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', value=f'''{id} <t:{data[index]['timestamp']}>
 {data[index]['gamemode']}
 Level {data[index]['level']}''', inline=True)
         
     def augments(self, embed, data, index, id):
-        embed.add_field(name=placements[data[index]['placement']] + ' Place', value=id + '\n'.join([augment_emoji[augment] + ' ' + augment for augment in data[index]['augments']]), inline=True)
+        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', value=id + '\n'.join([augment_emoji[augment] + ' ' + augment for augment in data[index]['augments']]), inline=True)
     
     def traits(self, embed, data, index, id):
-        embed.add_field(name=placements[data[index]['placement']] + ' Place', inline=True, value=id + '\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data[index]['traits'][trait]['level']]} {data[index]['traits'][trait]['num_units']}" for trait in data[index]['traits']]))
+        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', inline=True, value=id + '\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data[index]['traits'][trait]['level']]} {data[index]['traits'][trait]['num_units']}" for trait in data[index]['traits']]))
 
     def units(self, embed, data, index, id):
         text = '\n'.join([f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data[index]["units"][unit]["level"]]}' for unit in data[index]['units']])
-        embed.add_field(name=placements[data[index]['placement']] + ' Place', value=id + text, inline=True)
+        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', value=id + text, inline=True)
 
 def help_embed():
-    embed=discord.Embed(title='/help', description='''Use `/commands` for a list of commands''', color=0x7011d0)
+    embed=discord.Embed(title='/help', description='''Use `/commands` for a list of commands''', color=0x1386ec)
     embed.add_field(name='Quickstart', value='''1. `/link`   to link your Riot account to your discord
 2. `/update` to download games into database
 3. `/stats`  for overall stats on your account''', inline=False)
@@ -284,32 +294,23 @@ def help_embed():
     return embed
 
 def commands_embed(command):
-    embed = discord.Embed(title='Winter\'s Claw commands', description='''Use `/commands [command]` for more information''', color=0x7011d0)
-    embed.add_field(name='Stat commands', value='''- `/stats`  - >  Shows general statistics for your account
-- `/singlematch`  - >  Show detailed data for a single match
-- `/matchhistory`  - >  Show data for most recent matches played
-''', inline=False)
-    embed.add_field(name='Other commands', value='''- `/commands`  - >  Shows this message
-- `/help`  - >  For general help
-- `/servers`  - >  Shows a list of all supported servers
-- `/link`  - >  Link a summoner to your discord account
-- `/linked`  - >  Show summoner linked to your discord account
-- `/unlink`  - >  Delete all data linked to your discord account
-- `/update`  - >  Download new games from your account into database
-''', inline=True)
-    return embed
-
-def alt(x):
-    embed = discord.Embed(title='Winter\'s Claw commands', description='''Use `/commands [command]` for more information''', color=0x7011d0)
-    embed.add_field(name='Stat commands', value='`/stats`  - >  General statistics for your account', inline=False)
-    embed.add_field(name='', value='`/singlematch`  - >  Detailed data for a single match', inline=False)
-    embed.add_field(name='', value='`/matchhistory`  - >  Data for most recent matches played', inline=False)
-    embed.add_field(name='Other commands', value='`/commands`  - >  Shows this message', inline=True)
-    for command in ['`/help`  - >  For general help', 
-                    '`/servers`  - >  Shows a list of all supported servers', 
-                    '`/link`  - >  Link a summoner to your discord account', 
-                    '`/linked`  - >  Show summoner linked to your discord account', 
-                    '`/unlink`  - >  Delete all data linked to your discord account', 
-                    '`/update`  - >  Download new games from your account into database']:
-        embed.add_field(name='', value=command, inline=False)
-    return embed
+    if command is None:
+        ephemeral = False
+        embed = discord.Embed(title='Winter\'s Claw commands', description='''Use `/commands [command]` for more information on a single command''', color=0x1386ec)
+        embed.add_field(name='Stat commands', value='`/stats`  - >  General statistics for your account', inline=False)
+        embed.add_field(name='', value='`/singlematch`  - >  Detailed data for a single match', inline=False)
+        embed.add_field(name='', value='`/matchhistory`  - >  Data for most recent matches played', inline=False)
+        embed.add_field(name='Other commands', value='`/commands`  - >  Shows this message', inline=True)
+        for command in ['`/help`  - >  For general help', 
+                        '`/servers`  - >  Shows a list of all supported servers', 
+                        '`/link`  - >  Link a summoner to your discord account', 
+                        '`/linked`  - >  Show summoner linked to your discord account', 
+                        '`/unlink`  - >  Delete all data linked to your discord account', 
+                        '`/update`  - >  Download new games from your account into database']:
+            embed.add_field(name='', value=command, inline=False)
+    else:
+        ephemeral = True
+        title, field = ALL_COMMANDS[command]
+        embed = discord.Embed(title=title, description='', color=0x1386ec)
+        embed.add_field(name='', value=field, inline=False)
+    return embed, ephemeral

@@ -56,8 +56,8 @@ async def help(ctx):
 @bot.hybrid_command(description='List of all available commands')
 @app_commands.autocomplete(command=command_autocomplete)
 async def commands(ctx, command: Optional[str]):
-    embed = alt(command)
-    await ctx.send(embed=embed, ephemeral=True)
+    embed, ephemeral = commands_embed(command)
+    await ctx.send(embed=embed, ephemeral=ephemeral)
 
 @bot.hybrid_command(description='Shows list of all supported servers')
 async def servers(ctx):
