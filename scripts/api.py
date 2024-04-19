@@ -5,6 +5,9 @@ from scripts.settings import RGAPI
 async def request(session, url):
     while True:
         async with session.get(url + RGAPI) as resp:
+            print(url)
+            print(resp)
+            print(resp.status)
             if resp.status == 429:
                 print('rate limit')
                 await asyncio.sleep(5)

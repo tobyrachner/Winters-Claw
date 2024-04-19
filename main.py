@@ -31,6 +31,11 @@ bot.remove_command('help')
 async def on_ready():
     print('online')
     bot.session = aiohttp.ClientSession()
+
+    t = await api.request(bot.session, 'https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/Samvardhan/dalla?api_key=')
+    print(t)
+
+
     await bot.tree.sync()
 
 async def server_autocomplete(interaction: discord.Interaction, current: str) -> List[app_commands.Choice[str]]:
@@ -77,7 +82,7 @@ async def link(ctx, riot_id: str, server: str):
     try:
         riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
     except SyntaxError as e:
-        embed = error_embed(e, 'Invalid input', str(ctx.message.author.name))
+        embed = error_embed(e, 'Invalid input')
         await ctx.send(embed=embed)
         return
 

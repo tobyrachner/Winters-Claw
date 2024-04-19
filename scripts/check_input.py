@@ -66,7 +66,8 @@ async def check_summoner(session, riot, server):
         raise SyntaxError(f'{server} is not a from the api supported server.\nFor a full list of servers type $servers.')
     
     try:
-        account = await api.request(session, f'https://{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{name}/{tagline}?api_key=')
+        account = await api.request(session, f'https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{name}/{tagline}?api_key=')
+        # Note: SEA routing does not exist for account V1, so region is set to europe
     except Exception:
         raise SyntaxError(f"'{name}#{tagline}' was not found on the {server} server.")
     
@@ -79,6 +80,7 @@ async def check_summoner(session, riot, server):
     league = await api.request(session, f'https://{server}.api.riotgames.com/tft/league/v1/entries/by-summoner/{summoner_id}?api_key=')
 
     highest_rank = []
+    turbo = None
     for queue in league:
         if queue['queueType'] == 'RANKED_TFT_TURBO': 
             tier  = queue['ratedTier']
