@@ -31,11 +31,6 @@ bot.remove_command('help')
 async def on_ready():
     print('online')
     bot.session = aiohttp.ClientSession()
-
-    t = await api.request(bot.session, 'https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/Samvardhan/dalla?api_key=')
-    print(t)
-
-
     await bot.tree.sync()
 
 async def server_autocomplete(interaction: discord.Interaction, current: str) -> List[app_commands.Choice[str]]:
