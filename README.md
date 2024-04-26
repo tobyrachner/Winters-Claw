@@ -30,6 +30,9 @@ If you ever need help
 - `/commands [command]` - >
 Shows a list of all commands or more detailed information on given command
 
+- `/servers` - >
+Shows a list of all servers supported by the API
+
 - `/link [riotId] [server]` -> 
 Link a summoner to your discord username to quickly use all other commands
 
