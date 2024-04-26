@@ -5,9 +5,10 @@ from scripts.process_data import process_history
 from scripts.get_embeds import history_embed
 
 class HistoryView(View):
-    def __init__(self, cur, matches, riot, server, icon_id, rank, index=0):
+    def __init__(self, cur, author_id, matches, riot, server, icon_id, rank, index=0):
         super().__init__()
         self.cur = cur
+        self.author_id = author_id
         self.matches = matches
         self.riot = riot
         self.server = server
@@ -31,10 +32,16 @@ class HistoryView(View):
         self.add_item(EditButton(self.update_message, style=discord.ButtonStyle.grey, label='Match IDs', toggle_match_ids=True))
 
     async def set_default_buttons(self, interaction):
+        if interaction.user.id != self.author_id:
+            await interaction.response.edit_message()
+            return
         self.add_default_butons()
         await interaction.response.edit_message(view=self)
 
     async def set_data_buttons(self, interaction):
+        if interaction.user.id != self.author_id:
+            await interaction.response.edit_message()
+            return
         self.clear_items()
         self.add_item(NavigationButton(self.set_default_buttons))
         self.add_item(EditButton(self.update_message, label='General', stat_type='general'))
@@ -44,6 +51,9 @@ class HistoryView(View):
         await interaction.response.edit_message(view=self)
 
     async def set_gamemode_buttons(self, interaction):
+        if interaction.user.id != self.author_id:
+            await interaction.response.edit_message()
+            return
         self.clear_items()
         self.add_item(NavigationButton(self.set_default_buttons))
         for label, gamemode in [['All Modes', 'all'], ['Ranked', 'ranked'], ['Hyper Roll', 'turbo'], ['Double Up', 'pairs']]:   # add ['Normal', 'normal'] for only unranked games
@@ -51,6 +61,9 @@ class HistoryView(View):
         await interaction.response.edit_message(view=self)
 
     async def change_page(self, interaction, delta):
+        if interaction.user.id != self.author_id:
+            await interaction.response.edit_message()
+            return
         if 0 <= self.index + delta < len(self.matches):
             self.index += delta
 
@@ -59,6 +72,9 @@ class HistoryView(View):
         await interaction.response.edit_message(embed=embed)
 
     async def update_message(self, interaction, mode_name=None, gamemode=None, count=None, days=None, stat_type=None, sort_by=None, descending=None, toggle_match_ids=None):
+        if interaction.user.id != self.author_id:
+            await interaction.response.edit_message()
+            return
         self.add_default_butons()
         if gamemode:
             self.index = 0

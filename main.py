@@ -203,7 +203,7 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
         return
     
     embed = stats_embed(data, author, riot, icon_id, rank)
-    view = StatsView(cur, data, author, riot, server, icon_id, rank, count, days, set)
+    view = StatsView(cur, author, ctx.message.author.id, data, riot, server, icon_id, rank, count, days, set)
     view.message = await ctx.send(embed=embed, view=view)
 
 @bot.hybrid_command(description='Show details about specific match. Get match ids from /matchhistory (defaults to most recent match)')
@@ -253,7 +253,7 @@ async def singlematch(ctx, match_id: Optional[int], riot_id: Optional[str], serv
         return
     
     embed = single_match_embed(data, riot, icon_id, rank)
-    view = MatchView(cur, match_ids, riot, server, icon_id, rank, id_index=id_index)
+    view = MatchView(cur, ctx.message.author.id, match_ids, riot, server, icon_id, rank, id_index=id_index)
     view.message = await ctx.send(embed=embed, view=view)
 
 @bot.hybrid_command(description='Shows general information about most recent games played')
@@ -291,7 +291,7 @@ async def matchhistory(ctx, riot_id: Optional[str], server: Optional[str]):
         
     data = process_history(cur, riot, server)
     embed = history_embed(data, riot, icon_id, rank)
-    view = HistoryView(cur, data, riot, server, icon_id, rank)
+    view = HistoryView(cur, ctx.message.author.id, data, riot, server, icon_id, rank)
     view.message = await ctx.send(embed=embed, view=view)
 
 bot.run(settings.TOKEN)
