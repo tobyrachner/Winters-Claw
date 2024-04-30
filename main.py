@@ -56,7 +56,7 @@ async def help(ctx):
 @bot.hybrid_command(description='List of all available commands')
 @app_commands.autocomplete(command=command_autocomplete)
 async def commands(ctx, command: Optional[str]):
-    if not command in COMMANDS:
+    if command and not command in COMMANDS:
         embed = error_embed('Please enter a valid command name.', 'Invalid command')
         await ctx.send(embed=embed, ephemeral=True)
     else:

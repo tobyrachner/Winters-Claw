@@ -224,6 +224,11 @@ def process_units(cur, riot, server, count, days, set, display_mode=None, filter
                 units_dict[name] = {'placements': [placement], 'level': {}, 'items': {}}
                 units_dict[name]['level'][level] = 1
                 for item in items:
+                    if not item in item_list:
+                        with open('missing_data.txt', 'r+') as f:
+                            if not 'Item' + item + '\n' in f.readlines():
+                                f.write('Item' + item + '\n')
+                        continue
                     item = item_list[item]['name']
                     units_dict[name]['items'][item] = 1
 

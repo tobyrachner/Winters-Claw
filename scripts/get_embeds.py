@@ -113,8 +113,8 @@ Win% - {data['win%']}%
 Total damage to players - {data['player_damage']}
 Total players eliminated - {data['players_eliminated']}
 Time spent ingame - {data['time_spent']}h""", inline=False)
-
-    embed.timestamp = datetime.datetime.utcnow()
+ 
+    embed.set_footer(text='Use buttons to customize data')
     return embed
 
 def update_embed(riot, icon_id, count):
@@ -161,7 +161,7 @@ def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mode
         else:
             embed.add_field(name='  ', value='', inline=True)
         index += 2
-    embed.timestamp = datetime.datetime.utcnow()
+    embed.set_footer(text='Use buttons to customize data')
     return embed
 
 def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
@@ -194,7 +194,7 @@ def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mo
         else:
             embed.add_field(name='  ', value='', inline=True)
         index += 1
-    embed.timestamp = datetime.datetime.utcnow()
+    embed.set_footer(text='Use buttons to customize data')
     return embed
 
 def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes'):
@@ -235,7 +235,7 @@ def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes
         else:
             embed.add_field(name='  ', value='', inline=True)
         index += 1
-    embed.timestamp = datetime.datetime.utcnow()
+    embed.set_footer(text='Use buttons to customize data')
     return embed
 
 def single_match_embed(data, riot, icon_id, rank):
@@ -259,7 +259,7 @@ Level {data['level']}
         embed.add_field(name='',
                         value=text, inline=False)
 
-    embed.timestamp = datetime.datetime.utcnow()
+    embed.set_footer(text='Use buttons to customize data')
     return embed
 
 def history_embed(data, riot, icon_id, rank, stat_type='general', index=0, show_ids=False):
@@ -285,7 +285,7 @@ def history_embed(data, riot, icon_id, rank, stat_type='general', index=0, show_
                 id = f"ID: {data[index]['id']}\n"
             functions[stat_type](embed, data, index, id)
         index += 1
-    embed.timestamp = datetime.datetime.utcnow()
+    embed.set_footer(text='Use buttons to customize data')
     return embed
 
 class HistoryEmbed():
