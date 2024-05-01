@@ -7,6 +7,7 @@ CURRENT_SET = 11.0
 SET_START_DATE = 1710932400   # March 20th, 2024, 11:00:00 GMT 
 
 CURRENT_PATCH = '14.7.1' #required for ddragon endpoints
+MIN_SUPPORTED_SET = 11
 
 load_dotenv()
 RGAPI = os.getenv('RGAPI')

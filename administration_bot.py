@@ -6,6 +6,8 @@
 
 import requests
 import json
+import os
+from math import ceil
 from time import sleep
 from io import BytesIO
 
@@ -22,35 +24,79 @@ bot = commands.Bot(command_prefix="$", intents=intents)
 async def on_ready():
     print('online')
     await bot.tree.sync()
-guild_ids = []
+    await get_guild_ids(231)
+
 @bot.event
 async def on_message(ctx):
-    if ctx.content == 'wc create emoji':
-        print(bot.get_guild(settings.setup['augments']['guild_ids'][5]).name)
+    if ctx.content == 'wc test':
+        get_current_augments()
 
 
 def get_current_untis():
-    champ_data = requests.get('https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/tftchampions.json').json()
+    if 'units.json' in os.listdir('data/'):
+        with open('data/units.json', 'r') as f:
+            units = json.load(f)
+    else:
+        units = {}
+
+    unit_data = requests.get('https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/tftchampions.json').json()
 
     set11 = []
-    for champ in champ_data:
-        if champ['name'].startswith('TFT11'):
-            set11.append(champ)
+    for unit in unit_data:
+        if unit['name'].startswith('TFT11'):
+            set11.append(unit)
 
-    champions = {}
-    for champ in set11:
-        champions[champ['name']] = {
-            'id': champ['name'],
-            'name': champ['character_record']['display_name'], 
-            'image': champ['character_record']['squareIconPath'].split('Characters/')[1]
+    new = {}
+    for unit in set11:
+        entry = {
+            'name': unit['character_record']['display_name'], 
+            'image': unit['character_record']['squareIconPath'].split('Characters/')[1].lower(),
         }
 
+        if not unit['name'] in units:
+            new[unit['name']] = entry
+
+        units[unit['name']] = entry
     with open('data/units.json', 'w') as f:
-        json.dump(champions, f, indent=2)
+        json.dump(units, f, indent=2)
     with open('data/temp_units.json', 'w') as f:
-        json.dump(champions, f, indent=2)
+        json.dump(new, f, indent=2)
 
 def get_current_augments():
+    if 'augments.json' in os.listdir('data/'):
+        with open('data/augments.json', 'r') as f:
+            augments = json.load(f)
+    else:
+        augments = {}
+
+    item_data = requests.get('https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/tftitems.json').json()
+
+    augment_list = []
+    for item in item_data:
+        name = item['nameId']
+        if 'Augment' in name:
+            set_num = name.split('_')[0][3:]
+            if set_num.isnumeric() and int(set_num) >= settings.MIN_SUPPORTED_SET:
+                augment_list.append(item)
+
+    new = []
+    for augment in augment_list:
+        entry = {
+            'name': augment['name'], 
+            'image': augment['squareIconPath'].lower().split('hexcore/')[-1],
+        }
+
+        if not augment['nameId'] in augments:
+            new[augment['nameId']] = entry
+
+        augments[augment['nameId']] = entry
+
+    with open('data/augments.json', 'w') as f:
+        json.dump(augments, f, indent=2)
+    with open('data/temp_augments.json', 'w') as f:
+        json.dump(new, f, indent=2)
+
+def get_current_augments_old():
     augments = requests.get(f'https://ddragon.leagueoflegends.com/cdn/{settings.CURRENT_PATCH}/data/en_US/tft-augments.json').json()['data']
 
     with open('data/augments.json', 'w') as f:
@@ -74,6 +120,49 @@ def get_current_items():
         json.dump(new_items, f, indent=2)
     with open('data/temp_items.json', 'w') as f:
         json.dump(new_items, f, indent=2)
+
+async def setup():
+    # get list of all missing objects
+
+    # get number of required emoji slots + guild ids
+
+    # add emoji
+
+    # get emoji ids
+    pass
+
+async def get_guild_ids(slots):
+    last_guild = bot.get_guild(settings.guild_ids['augments'][-1])
+    available = last_guild.emoji_limit - len(last_guild.emojis)
+    
+    guild_ids = []
+    while True:
+        guilds_needed = ceil((slots - available) / 50) 
+        if guilds_needed <= 0:
+            return guild_ids
+        
+        input_guilds = await input(f"You need {guilds_needed} more servers. Enter them individually or seperated by commas. \nTo get the server ids, right click the server icon and press 'Copy Server ID' \nPress 'c' to cancel the process\n")
+        if input_guilds == 'c':
+            print('successfully cancelled process')
+            return 'c'
+
+        errors = []
+        for id in input_guilds.split(', '):
+            if not id.isnumeric():
+                errors.append(id)
+                continue
+
+            guild = bot.get_guild(int(id))
+            if not guild:
+                errors.append(id)
+                continue
+
+            guild_ids.append(id)
+            available += guild.emoji_limit - len(guild.emojis)
+
+        if errors:
+            print('Following server IDs are invalid or the Bot is not added to the servers: \n' + ', '.join(errors))
+
 
 async def add_emoji(ctx, type):
     img_path = settings.setup[type]['img_path']
