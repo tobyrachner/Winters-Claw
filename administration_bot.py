@@ -41,13 +41,14 @@ def get_current_untis():
 
     unit_data = requests.get('https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/tftchampions.json').json()
 
-    set11 = []
+    supported = []
     for unit in unit_data:
-        if unit['name'].startswith('TFT11'):
-            set11.append(unit)
+        set_num = unit['name'].split('_')[0][3:]
+        if set_num.isnumeric() and int(set_num) => settings.MIN_SET_SUPPORTED:
+            supported.append(unit)
 
     new = {}
-    for unit in set11:
+    for unit in supported:
         entry = {
             'name': unit['character_record']['display_name'], 
             'image': unit['character_record']['squareIconPath'].split('Characters/')[1].lower(),
@@ -75,9 +76,7 @@ def get_current_augments():
     for item in item_data:
         name = item['nameId']
         if 'Augment' in name:
-            set_num = name.split('_')[0][3:]
-            if set_num.isnumeric() and int(set_num) >= settings.MIN_SUPPORTED_SET:
-                augment_list.append(item)
+            augment_list.append(item)
 
     new = []
     for augment in augment_list:
@@ -164,6 +163,61 @@ async def get_guild_ids(slots):
             print('Following server IDs are invalid or the Bot is not added to the servers: \n' + ', '.join(errors))
 
 
+async def new_add_emoji(ctx, type):
+    img_path = settings.setup[type]['img_path']
+    guild_ids = settings.setup[type]['guild_ids']
+
+    if type + '_emoji.json' in os.listdir('data/'):
+        with open(f'data/{type}_emoji.json', 'r') as f:
+            added = set(json.load(f))
+    else:
+        added = set({})
+
+    overall_count = 0
+
+    with open(f'data/temp_{type}.json', 'r') as f:
+        objects = json.load(f)
+        new_objects = objects.copy()
+
+    if not ctx.author.guild_permissions.manage_emojis:
+        return
+        
+    for id in guild_ids:
+        guild = bot.get_guild(id)
+        guild_count = 0
+        guild_objects = new_objects.copy()
+        
+        for object in guild_objects:
+            if  object['name'] in added:
+                del new_objects[object]
+                continue
+
+            url = objects[object]['image']
+            img = BytesIO(requests.get(img_path + url).content)
+
+            # replacing all the special characters used in Augment Names [',', '+', '-', '!', ''', '&', '.', '_', '/'] with letters because discord emojis do not accept special characters
+            name = objects[object]['name'].replace(' ', '').replace(',', 'AAA').replace('+', 'BBB').replace('-', 'CCC').replace('!', 'DDD').replace("'", 'EEE')
+            name = name.replace('&', 'FFF').replace('.', 'GGG').replace('_', 'HHH').replace('/', 'JJJ')
+
+            try:
+                await guild.create_custom_emoji(image=img.getvalue(), name=name)
+                del new_objects[object]
+                added.add(object['name'])
+                overall_count += 1
+                guild_count += 1
+                print(overall_count, guild_count, '-', objects[object]['name'])
+
+                sleep(5.1)  # waiting to avoid discord rate limit
+
+                if guild_count >= 50:
+                    break
+            except Exception as e:
+                print(e)
+                break
+
+    with open(f'data/temp_{type}.json', 'w') as f:
+        json.dump(new_objects, f, indent=2)
+
 async def add_emoji(ctx, type):
     img_path = settings.setup[type]['img_path']
     guild_ids = settings.setup[type]['guild_ids']
@@ -180,9 +234,6 @@ async def add_emoji(ctx, type):
         
         for id in guild_ids:
             guild = bot.get_guild(id)
-            if guild.name.endswith('1') or guild.name.endswith('2'):
-                print('skipped', guild.name)
-                continue
             guild_count = 0
             guild_objects = new_objects.copy()
         
