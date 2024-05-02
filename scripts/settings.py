@@ -14,12 +14,13 @@ RGAPI = os.getenv('RGAPI')
 TOKEN = os.getenv('DISCORD_TOKEN')
 ADMIN_TOKEN = os.getenv('DISCORD_ADMIN_TOKEN')
 
-guild_ids = json.loads(os.getenv('GUILD_IDS'))
+guild_ids = os.getenv('GUILD_IDS').split(', ')[:-1]
 
 setup = {
-    'augments': {'img_path': 'https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/augments/choiceui/', 'guild_ids': guild_ids['augments']},
-    'units': {'img_path': 'https://raw.communitydragon.org/latest/game/assets/characters/', 'guild_ids': guild_ids['units']},
-    'items': {'img_path': 'https://ddragon.leagueoflegends.com/cdn/14.7.1/img/tft-item/', 'guild_ids': guild_ids['items']}
+    'augments': 'https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/augments/choiceui/',
+    'units': 'https://raw.communitydragon.org/latest/game/assets/characters/',
+    'traits': 'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/ux/traiticons/',
+    'items': 'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/maps/particles/tft/item_icons/',
     }
 
 with open('data/ranked_tiers.json') as f:
