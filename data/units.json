@@ -1,352 +1,352 @@
 {
   "TFT11_Aatrox": {
-    "id": "TFT11_Aatrox",
     "name": "Aatrox",
-    "image": "tft11_aatrox/hud/tft11_aatrox_square.tft_set11.png"
+    "image": "tft11_aatrox/hud/tft11_aatrox_square.tft_set11.png",
+    "emoji": "<:TFT11_Aatrox:1236035829986754691>"
   },
   "TFT11_Ahri": {
-    "id": "TFT11_Ahri",
     "name": "Ahri",
-    "image": "tft11_ahri/hud/tft11_ahri_square.tft_set11.png"
+    "image": "tft11_ahri/hud/tft11_ahri_square.tft_set11.png",
+    "emoji": "<:TFT11_Ahri:1236035833044406332>"
   },
   "TFT11_Amumu": {
-    "id": "TFT11_Amumu",
     "name": "Amumu",
-    "image": "tft11_amumu/hud/tft11_amumu_square.tft_set11.png"
+    "image": "tft11_amumu/hud/tft11_amumu_square.tft_set11.png",
+    "emoji": "<:TFT11_Amumu:1236035835913179306>"
   },
   "TFT11_Annie": {
-    "id": "TFT11_Annie",
     "name": "Annie",
-    "image": "tft11_annie/hud/tft11_annie_square.tft_set11.png"
+    "image": "tft11_annie/hud/tft11_annie_square.tft_set11.png",
+    "emoji": "<:TFT11_Annie:1236035838987604009>"
   },
   "TFT11_Aphelios": {
-    "id": "TFT11_Aphelios",
     "name": "Aphelios",
-    "image": "tft11_aphelios/hud/tft11_aphelios_square.tft_set11.png"
+    "image": "tft11_aphelios/hud/tft11_aphelios_square.tft_set11.png",
+    "emoji": "<:TFT11_Aphelios:1236035841864892449>"
   },
   "TFT11_Ashe": {
-    "id": "TFT11_Ashe",
     "name": "Ashe",
-    "image": "tft11_ashe/hud/tft11_ashe_square.tft_set11.png"
+    "image": "tft11_ashe/hud/tft11_ashe_square.tft_set11.png",
+    "emoji": "<:TFT11_Ashe:1236035845572661289>"
   },
   "TFT11_Alune": {
-    "id": "TFT11_Alune",
     "name": "Alune",
-    "image": "tft11_alune/hud/tft11_alune_square.tft_set11.png"
+    "image": "tft11_alune/hud/tft11_alune_square.tft_set11.png",
+    "emoji": "<:TFT11_Alune:1236035848441692170>"
   },
   "TFT11_Bard": {
-    "id": "TFT11_Bard",
     "name": "Bard",
-    "image": "tft11_bard/hud/tft11_bard_square.tft_set11.png"
+    "image": "tft11_bard/hud/tft11_bard_square.tft_set11.png",
+    "emoji": "<:TFT11_Bard:1236035851616784385>"
   },
   "TFT11_Caitlyn": {
-    "id": "TFT11_Caitlyn",
     "name": "Caitlyn",
-    "image": "tft11_caitlyn/hud/tft11_caitlyn_square.tft_set11.png"
+    "image": "tft11_caitlyn/hud/tft11_caitlyn_square.tft_set11.png",
+    "emoji": "<:TFT11_Caitlyn:1236035855605563453>"
   },
   "TFT11_ChoGath": {
-    "id": "TFT11_ChoGath",
     "name": "Cho'Gath",
-    "image": "tft11_chogath/hud/tft11_chogath_square.tft_set11.png"
+    "image": "tft11_chogath/hud/tft11_chogath_square.tft_set11.png",
+    "emoji": "<:TFT11_ChoGath:1236035858474336317>"
   },
   "TFT11_Darius": {
-    "id": "TFT11_Darius",
     "name": "Darius",
-    "image": "tft11_darius/hud/tft11_darius_square.tft_set11.png"
+    "image": "tft11_darius/hud/tft11_darius_square.tft_set11.png",
+    "emoji": "<:TFT11_Darius:1236035861762801814>"
   },
   "TFT11_Galio": {
-    "id": "TFT11_Galio",
     "name": "Galio",
-    "image": "tft11_galio/hud/tft11_galio_square.tft_set11.png"
+    "image": "tft11_galio/hud/tft11_galio_square.tft_set11.png",
+    "emoji": "<:TFT11_Galio:1236035864807735307>"
   },
   "TFT11_Garen": {
-    "id": "TFT11_Garen",
     "name": "Garen",
-    "image": "tft11_garen/hud/tft11_garen_square.tft_set11.png"
+    "image": "tft11_garen/hud/tft11_garen_square.tft_set11.png",
+    "emoji": "<:TFT11_Garen:1236035867601014856>"
   },
   "TFT11_Hwei": {
-    "id": "TFT11_Hwei",
     "name": "Hwei",
-    "image": "tft11_hwei/hud/tft11_hwei_square.tft_set11.png"
+    "image": "tft11_hwei/hud/tft11_hwei_square.tft_set11.png",
+    "emoji": "<:TFT11_Hwei:1236035871090675833>"
   },
   "TFT11_Illaoi": {
-    "id": "TFT11_Illaoi",
     "name": "Illaoi",
-    "image": "tft11_illaoi/hud/tft11_illaoi_square.tft_set11.png"
+    "image": "tft11_illaoi/hud/tft11_illaoi_square.tft_set11.png",
+    "emoji": "<:TFT11_Illaoi:1236035874391855114>"
   },
   "TFT11_Irelia": {
-    "id": "TFT11_Irelia",
     "name": "Irelia",
-    "image": "tft11_irelia/hud/tft11_irelia_square.tft_set11.png"
+    "image": "tft11_irelia/hud/tft11_irelia_square.tft_set11.png",
+    "emoji": "<:TFT11_Irelia:1236035877516611645>"
   },
   "TFT11_Janna": {
-    "id": "TFT11_Janna",
     "name": "Janna",
-    "image": "tft11_janna/hud/tft11_janna_square.tft_set11.png"
+    "image": "tft11_janna/hud/tft11_janna_square.tft_set11.png",
+    "emoji": "<:TFT11_Janna:1236035880418803773>"
   },
   "TFT11_Kaisa": {
-    "id": "TFT11_Kaisa",
     "name": "Kai'Sa",
-    "image": "tft11_kaisa/hud/tft11_kaisa_square.tft_set11.png"
+    "image": "tft11_kaisa/hud/tft11_kaisa_square.tft_set11.png",
+    "emoji": "<:TFT11_Kaisa:1236035883447353414>"
   },
   "TFT11_Kayn": {
-    "id": "TFT11_Kayn",
     "name": "Kayn",
-    "image": "tft11_kayn/hud/tft11_kayn_square.tft_set11.png"
+    "image": "tft11_kayn/hud/tft11_kayn_square.tft_set11.png",
+    "emoji": "<:TFT11_Kayn:1236035886844743785>"
   },
   "TFT11_KhaZix": {
-    "id": "TFT11_KhaZix",
     "name": "Kha'Zix",
-    "image": "tft11_khazix/hud/tft11_khazix_square.tft_set11.png"
+    "image": "tft11_khazix/hud/tft11_khazix_square.tft_set11.png",
+    "emoji": "<:TFT11_KhaZix:1236035890036478063>"
   },
   "TFT11_Kindred": {
-    "id": "TFT11_Kindred",
     "name": "Kindred",
-    "image": "tft11_kindred/hud/tft11_kindred_square.tft_set11.png"
+    "image": "tft11_kindred/hud/tft11_kindred_square.tft_set11.png",
+    "emoji": "<:TFT11_Kindred:1236035893291258018>"
   },
   "TFT11_KogMaw": {
-    "id": "TFT11_KogMaw",
     "name": "Kog'Maw",
-    "image": "tft11_kogmaw/hud/tft11_kogmaw_square.tft_set11.png"
+    "image": "tft11_kogmaw/hud/tft11_kogmaw_square.tft_set11.png",
+    "emoji": "<:TFT11_KogMaw:1236035896294379562>"
   },
   "TFT11_LeeSin": {
-    "id": "TFT11_LeeSin",
     "name": "Lee Sin",
-    "image": "tft11_leesin/hud/tft11_leesin_square.tft_set11.png"
+    "image": "tft11_leesin/hud/tft11_leesin_square.tft_set11.png",
+    "emoji": "<:TFT11_LeeSin:1236035899498954752>"
   },
   "TFT11_Lillia": {
-    "id": "TFT11_Lillia",
     "name": "Lillia",
-    "image": "tft11_lillia/hud/tft11_lillia_square.tft_set11.png"
+    "image": "tft11_lillia/hud/tft11_lillia_square.tft_set11.png",
+    "emoji": "<:TFT11_Lillia:1236035902254350432>"
   },
   "TFT11_Lissandra": {
-    "id": "TFT11_Lissandra",
     "name": "Lissandra",
-    "image": "tft11_lissandra/hud/tft11_lissandra_square.tft_set11.png"
+    "image": "tft11_lissandra/hud/tft11_lissandra_square.tft_set11.png",
+    "emoji": "<:TFT11_Lissandra:1236035905295356026>"
   },
   "TFT11_Lux": {
-    "id": "TFT11_Lux",
     "name": "Lux",
-    "image": "tft11_lux/hud/tft11_lux_square.tft_set11.png"
+    "image": "tft11_lux/hud/tft11_lux_square.tft_set11.png",
+    "emoji": "<:TFT11_Lux:1236035908369645690>"
   },
   "TFT11_Malphite": {
-    "id": "TFT11_Malphite",
     "name": "Malphite",
-    "image": "tft11_malphite/hud/tft11_malphite_square.tft_set11.png"
+    "image": "tft11_malphite/hud/tft11_malphite_square.tft_set11.png",
+    "emoji": "<:TFT11_Malphite:1236035911943323760>"
   },
   "TFT11_Morgana": {
-    "id": "TFT11_Morgana",
     "name": "Morgana",
-    "image": "tft11_morgana/hud/tft11_morgana_square.tft_set11.png"
+    "image": "tft11_morgana/hud/tft11_morgana_square.tft_set11.png",
+    "emoji": "<:TFT11_Morgana:1236035915131125792>"
   },
   "TFT11_Neeko": {
-    "id": "TFT11_Neeko",
     "name": "Neeko",
-    "image": "tft11_neeko/hud/tft11_neeko_square.tft_set11.png"
+    "image": "tft11_neeko/hud/tft11_neeko_square.tft_set11.png",
+    "emoji": "<:TFT11_Neeko:1236035918201229363>"
   },
   "TFT11_Ornn": {
-    "id": "TFT11_Ornn",
     "name": "Ornn",
-    "image": "tft11_ornn/hud/tft11_ornn_square.tft_set11.png"
+    "image": "tft11_ornn/hud/tft11_ornn_square.tft_set11.png",
+    "emoji": "<:TFT11_Ornn:1236035921300820059>"
   },
   "TFT11_Qiyana": {
-    "id": "TFT11_Qiyana",
     "name": "Qiyana",
-    "image": "tft11_qiyana/hud/tft11_qiyana_square.tft_set11.png"
+    "image": "tft11_qiyana/hud/tft11_qiyana_square.tft_set11.png",
+    "emoji": "<:TFT11_Qiyana:1236035924312461352>"
   },
   "TFT11_Senna": {
-    "id": "TFT11_Senna",
     "name": "Senna",
-    "image": "tft11_senna/hud/tft11_senna_square.tft_set11.png"
+    "image": "tft11_senna/hud/tft11_senna_square.tft_set11.png",
+    "emoji": "<:TFT11_Senna:1236035927311122462>"
   },
   "TFT11_Sett": {
-    "id": "TFT11_Sett",
     "name": "Sett",
-    "image": "tft11_sett/hud/tft11_sett_square.tft_set11.png"
+    "image": "tft11_sett/hud/tft11_sett_square.tft_set11.png",
+    "emoji": "<:TFT11_Sett:1236035930062585867>"
   },
   "TFT11_Shen": {
-    "id": "TFT11_Shen",
     "name": "Shen",
-    "image": "tft11_shen/hud/tft11_shen_square.tft_set11.png"
+    "image": "tft11_shen/hud/tft11_shen_square.tft_set11.png",
+    "emoji": "<:TFT11_Shen:1236035933372153887>"
   },
   "TFT11_Riven": {
-    "id": "TFT11_Riven",
     "name": "Riven",
-    "image": "tft11_riven/hud/tft11_riven_square.tft_set11.png"
+    "image": "tft11_riven/hud/tft11_riven_square.tft_set11.png",
+    "emoji": "<:TFT11_Riven:1236035936681328691>"
   },
   "TFT11_Sivir": {
-    "id": "TFT11_Sivir",
     "name": "Sivir",
-    "image": "tft11_sivir/hud/tft11_sivir_square.tft_set11.png"
+    "image": "tft11_sivir/hud/tft11_sivir_square.tft_set11.png",
+    "emoji": "<:TFT11_Sivir:1236035939998896199>"
   },
   "TFT11_Soraka": {
-    "id": "TFT11_Soraka",
     "name": "Soraka",
-    "image": "tft11_soraka/hud/tft11_soraka_square.tft_set11.png"
+    "image": "tft11_soraka/hud/tft11_soraka_square.tft_set11.png",
+    "emoji": "<:TFT11_Soraka:1236035943094288406>"
   },
   "TFT11_Sylas": {
-    "id": "TFT11_Sylas",
     "name": "Sylas",
-    "image": "tft11_sylas/hud/tft11_sylas_square.tft_set11.png"
+    "image": "tft11_sylas/hud/tft11_sylas_square.tft_set11.png",
+    "emoji": "<:TFT11_Sylas:1236035946340945970>"
   },
   "TFT11_Syndra": {
-    "id": "TFT11_Syndra",
     "name": "Syndra",
-    "image": "tft11_syndra/hud/tft11_syndra_square.tft_set11.png"
+    "image": "tft11_syndra/hud/tft11_syndra_square.tft_set11.png",
+    "emoji": "<:TFT11_Syndra:1236035950560280656>"
   },
   "TFT11_TahmKench": {
-    "id": "TFT11_TahmKench",
     "name": "Tahm Kench",
-    "image": "tft11_tahmkench/hud/tft11_tahmkench_square.tft_set11.png"
+    "image": "tft11_tahmkench/hud/tft11_tahmkench_square.tft_set11.png",
+    "emoji": "<:TFT11_TahmKench:1236035953781375097>"
   },
   "TFT11_Teemo": {
-    "id": "TFT11_Teemo",
     "name": "Teemo",
-    "image": "tft11_teemo/hud/tft11_teemo_square.tft_set11.png"
+    "image": "tft11_teemo/hud/tft11_teemo_square.tft_set11.png",
+    "emoji": "<:TFT11_Teemo:1236035958466416730>"
   },
   "TFT11_Thresh": {
-    "id": "TFT11_Thresh",
     "name": "Thresh",
-    "image": "tft11_thresh/hud/tft11_thresh_square.tft_set11.png"
+    "image": "tft11_thresh/hud/tft11_thresh_square.tft_set11.png",
+    "emoji": "<:TFT11_Thresh:1236035961264275589>"
   },
   "TFT11_Tristana": {
-    "id": "TFT11_Tristana",
     "name": "Tristana",
-    "image": "tft11_tristana/hud/tft11_tristana_square.tft_set11.png"
+    "image": "tft11_tristana/hud/tft11_tristana_square.tft_set11.png",
+    "emoji": "<:TFT11_Tristana:1236035964703346808>"
   },
   "TFT11_Udyr": {
-    "id": "TFT11_Udyr",
     "name": "Udyr",
-    "image": "tft11_udyr/hud/tft11_udyr_square.tft_set11.png"
+    "image": "tft11_udyr/hud/tft11_udyr_square.tft_set11.png",
+    "emoji": "<:TFT11_Udyr:1236035968847446136>"
   },
   "TFT11_Volibear": {
-    "id": "TFT11_Volibear",
     "name": "Volibear",
-    "image": "tft11_volibear/hud/tft11_volibear_square.tft_set11.png"
+    "image": "tft11_volibear/hud/tft11_volibear_square.tft_set11.png",
+    "emoji": "<:TFT11_Volibear:1236035972316266597>"
   },
   "TFT11_WuKong": {
-    "id": "TFT11_WuKong",
     "name": "Wukong",
-    "image": "tft11_wukong/hud/tft11_wukong_square.tft_set11.png"
+    "image": "tft11_wukong/hud/tft11_wukong_square.tft_set11.png",
+    "emoji": "<:TFT11_WuKong:1236035975428182179>"
   },
   "TFT11_Yasuo": {
-    "id": "TFT11_Yasuo",
     "name": "Yasuo",
-    "image": "tft11_yasuo/hud/tft11_yasuo_square.tft_set11.png"
+    "image": "tft11_yasuo/hud/tft11_yasuo_square.tft_set11.png",
+    "emoji": "<:TFT11_Yasuo:1236035978527768647>"
   },
   "TFT11_Yone": {
-    "id": "TFT11_Yone",
     "name": "Yone",
-    "image": "tft11_yone/hud/tft11_yone_square.tft_set11.png"
+    "image": "tft11_yone/hud/tft11_yone_square.tft_set11.png",
+    "emoji": "<:TFT11_Yone:1236035981845463111>"
   },
   "TFT11_Yorick": {
-    "id": "TFT11_Yorick",
     "name": "Yorick",
-    "image": "tft11_yorick/hud/tft11_yorick_square.tft_set11.png"
+    "image": "tft11_yorick/hud/tft11_yorick_square.tft_set11.png",
+    "emoji": "<:TFT11_Yorick:1236035985226334308>"
   },
   "TFT11_Zoe": {
-    "id": "TFT11_Zoe",
     "name": "Zoe",
-    "image": "tft11_zoe/hud/tft11_zoe_square.tft_set11.png"
+    "image": "tft11_zoe/hud/tft11_zoe_square.tft_set11.png",
+    "emoji": "<:TFT11_Zoe:1236035988653080707>"
   },
   "TFT11_Zyra": {
-    "id": "TFT11_Zyra",
     "name": "Zyra",
-    "image": "tft11_zyra/hud/tft11_zyra_square.tft_set11.png"
+    "image": "tft11_zyra/hud/tft11_zyra_square.tft_set11.png",
+    "emoji": "<:TFT11_Zyra:1236035991698145421>"
   },
   "TFT11_FortuneYord": {
-    "id": "TFT11_FortuneYord",
     "name": "Kobuko",
-    "image": "tft11_fortuneyord/hud/tft11_kobuko_square.tft_set11.png"
+    "image": "tft11_fortuneyord/hud/tft11_kobuko_square.tft_set11.png",
+    "emoji": "<:TFT11_FortuneYord:1236035994487095348>"
   },
   "TFT11_RekSai": {
-    "id": "TFT11_RekSai",
     "name": "Rek'Sai",
-    "image": "tft11_reksai/hud/tft11_reksai_square.tft_set11.png"
+    "image": "tft11_reksai/hud/tft11_reksai_square.tft_set11.png",
+    "emoji": "<:TFT11_RekSai:1236035997788143807>"
   },
   "TFT11_Tibbers": {
-    "id": "TFT11_Tibbers",
     "name": "Tibbers",
-    "image": "tft11_tibbers/hud/tft11_tibbers_square.tft_set11.png"
+    "image": "tft11_tibbers/hud/tft11_tibbers_square.tft_set11.png",
+    "emoji": "<:TFT11_Tibbers:1236036001810354186>"
   },
   "TFT11_Kayle": {
-    "id": "TFT11_Kayle",
     "name": "Kayle",
-    "image": "tft11_kayle/hud/tft11_kayle_square.tft_set11.png"
+    "image": "tft11_kayle/hud/tft11_kayle_square.tft_set11.png",
+    "emoji": "<:TFT11_Kayle:1236036004914401290>"
   },
   "TFT11_Xayah": {
-    "id": "TFT11_Xayah",
     "name": "Xayah",
-    "image": "tft11_xayah/hud/tft11_xayah_square.tft_set11.png"
+    "image": "tft11_xayah/hud/tft11_xayah_square.tft_set11.png",
+    "emoji": "<:TFT11_Xayah:1236036008005472317>"
   },
   "TFT11_Gnar": {
-    "id": "TFT11_Gnar",
     "name": "Gnar",
-    "image": "tft11_gnar/hud/tft11_gnar_square.tft_set11.png"
+    "image": "tft11_gnar/hud/tft11_gnar_square.tft_set11.png",
+    "emoji": "<:TFT11_Gnar:1236036010786160772>"
   },
   "TFT11_Rakan": {
-    "id": "TFT11_Rakan",
     "name": "Rakan",
-    "image": "tft11_rakan/hud/tft11_rakan_square.tft_set11.png"
+    "image": "tft11_rakan/hud/tft11_rakan_square.tft_set11.png",
+    "emoji": "<:TFT11_Rakan:1236036013936083015>"
   },
   "TFT11_Jax": {
-    "id": "TFT11_Jax",
     "name": "Jax",
-    "image": "tft11_jax/hud/tft11_jax_square.tft_set11.png"
+    "image": "tft11_jax/hud/tft11_jax_square.tft_set11.png",
+    "emoji": "<:TFT11_Jax:1236036017501241466>"
   },
   "TFT11_Diana": {
-    "id": "TFT11_Diana",
     "name": "Diana",
-    "image": "tft11_diana/hud/tft11_diana_square.tft_set11.png"
+    "image": "tft11_diana/hud/tft11_diana_square.tft_set11.png",
+    "emoji": "<:TFT11_Diana:1236036020697563227>"
   },
   "TFT11_Azir": {
-    "id": "TFT11_Azir",
     "name": "Azir",
-    "image": "tft11_azir/hud/tft11_azir_square.tft_set11.png"
+    "image": "tft11_azir/hud/tft11_azir_square.tft_set11.png",
+    "emoji": "<:TFT11_Azir:1236036024459595918>"
   },
   "TFT11_Nautilus": {
-    "id": "TFT11_Nautilus",
     "name": "Nautilus",
-    "image": "tft11_nautilus/hud/tft11_nautilus_square.tft_set11.png"
+    "image": "tft11_nautilus/hud/tft11_nautilus_square.tft_set11.png",
+    "emoji": "<:TFT11_Nautilus:1236036027647266901>"
   },
   "TFT11_XayahRakanDummy": {
-    "id": "TFT11_XayahRakanDummy",
     "name": "Xayah & Rakan",
-    "image": "tft11_xayahrakandummy/hud/tft11_xayahrakan_square.tft_set11.png"
+    "image": "tft11_xayahrakandummy/hud/tft11_xayahrakan_square.tft_set11.png",
+    "emoji": "<:TFT11_XayahRakanDummy:1236036032265457717>"
   },
   "TFT11_ExaltedCore": {
-    "id": "TFT11_ExaltedCore",
     "name": "SightWard",
-    "image": "tft11_exaltedcore/hud/tft11_exaltedcore_circle.tft_set11.png"
+    "image": "tft11_exaltedcore/hud/tft11_exaltedcore_circle.tft_set11.png",
+    "emoji": "<:TFT11_ExaltedCore:1236036036203774083>"
   },
   "TFT11_FortuneProp": {
-    "id": "TFT11_FortuneProp",
-    "name": "SightWard",
-    "image": "tft11_fortuneprop/skins/base/tft11_fortuneprop_square.tft_set11.png"
+    "name": "Golden Tree",
+    "image": "tft11_fortuneprop/skins/base/tft11_fortuneprop_square.tft_set11.png",
+    "emoji": "<:TFT11_FortuneProp:1236036041102590004>"
   },
   "TFT11_DragonlordFlames": {
-    "id": "TFT11_DragonlordFlames",
     "name": "Dragonlord Flames",
-    "image": "tft11_dragonlordflames/hud/tft11_dragonlordflames_square.tft_set11.png"
+    "image": "tft11_dragonlordflames/hud/tft11_dragonlordflames_square.tft_set11.png",
+    "emoji": "<:TFT11_DragonlordFlames:1236036045821186080>"
   },
   "TFT11_XayahBenchDummy": {
-    "id": "TFT11_XayahBenchDummy",
     "name": "Xayah",
-    "image": "tft11_xayahbenchdummy/hud/tft11_xayahbenchdummy_square.tft_set11.png"
+    "image": "tft11_xayahbenchdummy/hud/tft11_xayahbenchdummy_square.tft_set11.png",
+    "emoji": "<:TFT11_XayahBenchDummy:1236036050644897824>"
   },
   "TFT11_RakanBenchDummy": {
-    "id": "TFT11_RakanBenchDummy",
     "name": "Rakan",
-    "image": "tft11_rakanbenchdummy/hud/tft11_rakanbenchdummy_square.tft_set11.png"
+    "image": "tft11_rakanbenchdummy/hud/tft11_rakanbenchdummy_square.tft_set11.png",
+    "emoji": "<:TFT11_RakanBenchDummy:1236036055224815657>"
   },
   "TFT11_AzirSoldier": {
-    "id": "TFT11_AzirSoldier",
     "name": "AzirSoldier",
-    "image": "tft11_azirsoldier/hud/tft11_azirsoldier_square.tft_set11.png"
+    "image": "tft11_azirsoldier/hud/tft11_azirsoldier_square.tft_set11.png",
+    "emoji": "<:TFT11_AzirSoldier:1236036059691880580>"
   },
   "TFT11_Augment": {
-    "id": "TFT11_Augment",
-    "name": "Hexcore",
-    "image": "tft11_augment/hud/tft11_augment_square.tft_set11.png"
+    "name": "Golden Tree",
+    "image": "tft11_augment/hud/tft11_augment_square.tft_set11.png",
+    "emoji": "<:TFT11_Augment:1236036064653873172>"
   }
 }

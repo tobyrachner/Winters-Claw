@@ -1,7 +1,7 @@
 import datetime
 import discord
 
-from scripts.settings import trait_emoji, augment_emoji, unit_emoji, item_emoji, misc_emoji
+from scripts.settings import trait_list, augment_list, unit_list, item_list, trait_emoji, augment_emoji, unit_emoji, item_emoji, misc_emoji
 
 PLACEMENTS = {1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th', 6: '6th', 7: '7th', 8: '8th'}
 ALL_COMMANDS = {'help': ['`/help`', 'Offers general help'],
@@ -138,7 +138,7 @@ def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mode
     for i in range(2):
         if index < len(data['traits']):
             trait = data['traits'][index][0]
-            embed.add_field(name=f"{trait_emoji[trait]} {trait} - {data['traits'][index][1]['count']}",
+            embed.add_field(name=f"{trait_list[trait]['emoji']} {trait_list[trait]['name']} - {data['traits'][index][1]['count']}",
                             value=f"""{' '.join([trait_emoji['level'][str(level)] + str(amount) for level, amount in data['traits'][index][1]['level'].items()])}
                             Avg Placement - {data['traits'][index][1]['avg']}
                             Top 4% - {data['traits'][index][1]['top4%']}%
@@ -151,8 +151,8 @@ def traits_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mode
         embed.add_field(name='  ', value='', inline=True)
 
         if index + 1 < len(data['traits']):
-            trait2 = data['traits'][index + 1][0]
-            embed.add_field(name=f"{trait_emoji[trait2]} {trait2} - {data['traits'][index + 1][1]['count']}",
+            trait = data['traits'][index + 1][0]
+            embed.add_field(name=f"{trait_list[trait]['emoji']} {trait_list[trait]['name']} - {data['traits'][index + 1][1]['count']}",
                             value=f"""{' '.join([trait_emoji['level'][str(level)] + str(amount) + '' for level, amount in data['traits'][index + 1][1]['level'].items()])}
                             Avg Placement - {data['traits'][index + 1][1]['avg']}
                             Top 4% - {data['traits'][index + 1][1]['top4%']}%
@@ -173,7 +173,7 @@ def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mo
     for i in range(2):
         if index < len(data['augments']):
             augment = data['augments'][index][0]
-            embed.add_field(name=f"{augment_emoji[augment]} {augment} - {data['augments'][index][1]['count']}",
+            embed.add_field(name=f"{augment_list[augment]['emoji']} {augment_list[augment]['name']} - {data['augments'][index][1]['count']}",
                             value=f""" Avg Placement - {data['augments'][index][1]['avg']}
                             Top 4% - {data['augments'][index][1]['top4%']}%
                             Win% - {data['augments'][index][1]['win%']}%""",
@@ -186,7 +186,7 @@ def augments_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Mo
         index += 1
         if index < len(data['augments']):
             augment = data['augments'][index][0]
-            embed.add_field(name=f"{augment_emoji[augment]} {augment} - {data['augments'][index][1]['count']}",
+            embed.add_field(name=f"{augment_list[augment]['emoji']} {augment_list[augment]['name']} - {data['augments'][index][1]['count']}",
                             value=f""" Avg Placement - {data['augments'][index][1]['avg']}
                             Top 4% - {data['augments'][index][1]['top4%']}%
                             Win% - {data['augments'][index][1]['win%']}%""",
@@ -207,9 +207,9 @@ def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes
         if index < len(data['units']):
             unit = data['units'][index][1]
             name = data['units'][index][0]
-            embed.add_field(name=f"{unit_emoji[name]} {name} - {unit['count']}",
+            embed.add_field(name=f"{unit_list[name]['emoji']} {unit_list[name]['name']} - {unit['count']}",
                             value=f"""{' '.join([f"{misc_emoji['star_level'][str(level)]} {unit['level'][level]}" for level in unit['level']])}
-                            {'⠀'.join([item_emoji[item] + ' ' + str(unit['items'][item]) for item in unit['items']])}
+                            {'⠀'.join([item_list[item]['emoji'] + ' ' + str(unit['items'][item]) for item in unit['items']])}
                             Avg Placement - {unit['avg']}
                             Top 4% - {unit['top4%']}%
                             Win% - {unit['win%']}%
@@ -225,9 +225,9 @@ def units_embed(data, author, riot, icon_id, rank, index=0, mode_name='All Modes
             unit = data['units'][index][1]
             name = data['units'][index][0]
 
-            embed.add_field(name=f"{unit_emoji[name]} {name} - {unit['count']}",
+            embed.add_field(name=f"{unit_list[name]['emoji']} {unit_list[name]['name']} - {unit['count']}",
                             value=f"""{' '.join([f"{misc_emoji['star_level'][str(level)]} {unit['level'][level]}" for level in unit['level']])}
-                            {'⠀'.join([item_emoji[item] + '' +  str(unit['items'][item]) for item in unit['items']])}
+                            {'⠀'.join([item_list[item]['emoji'] + '' + str(unit['items'][item]) for item in unit['items']])}
                             Avg Placement - {unit['avg']}
                             Top 4% - {unit['top4%']}%
                             Win% - {unit['win%']}%""",
@@ -249,13 +249,13 @@ def single_match_embed(data, riot, icon_id, rank):
 Level {data['level']}
 {PLACEMENTS[data['placement']]} Place""", inline=False)
     embed.add_field(name="Augments",
-                    value='\n'.join([augment_emoji[augment] + ' ' + augment for augment in data['augments']]), inline=False)
-    embed.add_field(name="Traits", inline=False, value='\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data['traits'][trait]['level']]} {data['traits'][trait]['num_units']}" for trait in data['traits']]))
+                    value='\n'.join([augment_list[augment]['emoji'] + ' ' + augment_list[augment]['name'] for augment in data['augments']]), inline=False)
+    embed.add_field(name="Traits", inline=False, value='\n'.join([f"{trait_list[trait]['emoji']} {trait_list[trait]['name']} | {trait_emoji['level'][data['traits'][trait]['level']]} {data['traits'][trait]['num_units']}" for trait in data['traits']]))
     embed.add_field(name="Units", value='', inline=False)
     for unit in data['units']:
-        text = f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data["units"][unit]["level"]]}⠀|⠀'
+        text = f'{unit_list[unit]["emoji"]} {unit_list[unit]["name"]} {misc_emoji["star_level"][data["units"][unit]["level"]]}⠀|⠀'
         if len(data['units'][unit]["items"]) > 0:
-            text += ' '.join([item_emoji[item] for item in data['units'][unit]['items']])
+            text += ' '.join([item_list[item]['emoji'] for item in data['units'][unit]['items']])
         embed.add_field(name='',
                         value=text, inline=False)
 
@@ -298,11 +298,11 @@ class HistoryEmbed():
 Level {data[index]['level']}''', inline=True)
         
     def augments(self, embed, data, index, id):
-        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', value=id + '\n'.join([augment_emoji[augment] + ' ' + augment for augment in data[index]['augments']]), inline=True)
+        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', value=id + '\n'.join([augment_list[augment]['emoji'] + ' ' + augment_list[augment]['name'] for augment in data[index]['augments']]), inline=True)
     
     def traits(self, embed, data, index, id):
-        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', inline=True, value=id + '\n'.join([f"{trait_emoji[trait]} {trait} | {trait_emoji['level'][data[index]['traits'][trait]['level']]} {data[index]['traits'][trait]['num_units']}" for trait in data[index]['traits']]))
+        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', inline=True, value=id + '\n'.join([f"{trait_list[trait]['emoji']} {trait_list[trait]['name']} | {trait_emoji['level'][data[index]['traits'][trait]['level']]} {data[index]['traits'][trait]['num_units']}" for trait in data[index]['traits']]))
 
     def units(self, embed, data, index, id):
-        text = '\n'.join([f'{unit_emoji[unit]} {unit} {misc_emoji["star_level"][data[index]["units"][unit]["level"]]}' for unit in data[index]['units']])
+        text = '\n'.join([f'{unit_list[unit]["emoji"]} {unit_list[unit]["name"]} {misc_emoji["star_level"][data[index]["units"][unit]["level"]]}' for unit in data[index]['units']])
         embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', value=id + text, inline=True)

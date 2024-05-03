@@ -14,7 +14,7 @@ RGAPI = os.getenv('RGAPI')
 TOKEN = os.getenv('DISCORD_TOKEN')
 ADMIN_TOKEN = os.getenv('DISCORD_ADMIN_TOKEN')
 
-guild_ids = os.getenv('GUILD_IDS').split(', ')[:-1]
+guild_ids = [int(id) for id in os.getenv('GUILD_IDS').split(', ')[:-1]]
 
 setup = {
     'augments': 'https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/augments/choiceui/',
@@ -44,4 +44,4 @@ with open('data/items_emoji.json', 'r') as f:
 with open('data/misc_emoji.json', 'r') as f:
     misc_emoji = json.load(f)
 
-unique_traits = ['Artist', 'Great', 'Lovers', 'Spirit Walker', 'Trickshot/Altruist']
+unique_traits = ['TFT11_Artist', 'TFT11_Great', 'TFT11_Lovers', 'TFT11_SpiritWalker', 'TFT11_TrickshotAltruist']

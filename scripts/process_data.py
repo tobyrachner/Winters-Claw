@@ -129,11 +129,10 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None, filte
             if trait == '':
                 continue
             name, level, num_units = trait.split('/')
-            name = trait_list[name]['name']
             level = int(level)
             if name in unique_traits:
                 level = 5
-            if name == 'Heavenly' and level > 3:
+            if name == 'TFT11_Heavenly' and level > 3:
                 if level < 6:
                     level = 3
                 else:
@@ -192,7 +191,6 @@ def process_units(cur, riot, server, count, days, set, display_mode=None, filter
             if unit == '':
                 continue
             name, level, rarity, items = unit.split('/')
-            name = unit_list[name]['name']
             level = int(level)
 
             items = items.split('.')
@@ -214,7 +212,6 @@ def process_units(cur, riot, server, count, days, set, display_mode=None, filter
                                 f.write('Item' + item + '\n')
                         continue
 
-                    item = item_list[item]['name']
                     if item in units_dict[name]['items']:
                         units_dict[name]['items'][item] += 1
                     else:
@@ -229,7 +226,6 @@ def process_units(cur, riot, server, count, days, set, display_mode=None, filter
                             if not 'Item' + item + '\n' in f.readlines():
                                 f.write('Item' + item + '\n')
                         continue
-                    item = item_list[item]['name']
                     units_dict[name]['items'][item] = 1
 
     for unit in units_dict:
@@ -278,15 +274,14 @@ def process_augments(cur, riot, server, count, days, set, display_mode=None, fil
             if not augment in augment_list:
                 print('MISSING', augment)
                 with open('missing_data.txt', 'r+') as f:
-                    if 'augment: ' + augment + '\n' not in f.readlines():
-                        f.write('augment: ' + augment + '\n')
+                    if augment + '\n' not in f.readlines():
+                        f.write(augment + '\n')
                 continue
-            name = augment_list[augment]['name']
 
-            if name in augment_dict:
-                augment_dict[name]['placements'].append(placement)
+            if augment in augment_dict:
+                augment_dict[augment]['placements'].append(placement)
             else:
-                augment_dict[name] = {'placements': [placement], 'level': {}}
+                augment_dict[augment] = {'placements': [placement], 'level': {}}
 
     for augment in augment_dict:
         count, avg, top, win = process_placements(augment_dict[augment]['placements'], display_mode)
@@ -335,17 +330,16 @@ def process_single_match(cur, riot, server, id=None):
                 if 'augment: ' + augment + '\n' not in f.readlines():
                     f.write('augment: ' + augment + '\n')
                 continue
-        data['augments'].append(augment_list[augment]['name'])
+        data['augments'].append(augment)
 
     traits = {}
     for trait in match[5].split('-'):
         if trait == '':
             continue
         name, level, num_units = trait.split('/')
-        name = trait_list[name]['name']
         if name in unique_traits:
             level = '5'
-        if name == 'Heavenly' and int(level) > 3:
+        if name == 'TFT11_Heavenly' and int(level) > 3:
             if int(level) < 6:
                 level = '3'
             else:
@@ -359,14 +353,12 @@ def process_single_match(cur, riot, server, id=None):
         if unit == '':
             continue
         name, level, rarity, items = unit.split('/')
-        name = unit_list[name]['name']
         rarity = int(rarity)
 
         processed_items = []
         for item in items.split('.'):
             if item == '':
                 continue
-            item = item_list[item]['name']
             processed_items.append(item)
         units[name] = {'level': level, 'items': processed_items, 'rarity': rarity}
 
@@ -403,10 +395,9 @@ def process_history(cur, riot, server, stat_type='general', gamemode=None):
                 if trait == '':
                     continue
                 name, level, num_units = trait.split('/')
-                name = trait_list[name]['name']
                 if name in unique_traits:
                     level = '5'
-                if name == 'Heavenly' and int(level) > 3:
+                if name == 'TFT11_Heavenly' and int(level) > 3:
                     if int(level) < 6:
                         level = '3'
                     else:
@@ -421,7 +412,6 @@ def process_history(cur, riot, server, stat_type='general', gamemode=None):
                 if unit == '':
                     continue
                 name, level, rarity, items = unit.split('/')
-                name = unit_list[name]['name']
                 rarity = int(rarity)
                 game['units'][name] = {'level': level, 'rarity': rarity}
 
@@ -438,7 +428,7 @@ def process_history(cur, riot, server, stat_type='general', gamemode=None):
                         if 'augment: ' + augment + '\n' not in f.readlines():
                             f.write('augment: ' + augment + '\n')
                         continue
-                game['augments'].append(augment_list[augment]['name'])
+                game['augments'].append(augment)
         data.append(game)
         
     return data

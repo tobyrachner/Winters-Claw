@@ -7,6 +7,7 @@
 import requests
 import json
 import os
+import dotenv
 from math import ceil
 from time import sleep
 from io import BytesIO
@@ -29,6 +30,12 @@ async def on_ready():
 async def on_message(ctx):
     if ctx.content == 'wc emoji_setup':
         await setup()
+
+    if ctx.content == 'wc clear_emoji':
+        await ctx.channel.send('clearing emoji...')
+        for id in settings.guild_ids:
+            for emoji in bot.get_guild(id).emojis:
+                await emoji.delete()
 
 
 def get_current_units():
@@ -59,13 +66,11 @@ def get_current_units():
 
         units[unit['name']] = entry
         
-    with open('data/units.json', 'w') as f:
-        json.dump(units, f, indent=2)
-    return new
+    return new, units
 
 def get_current_traits():
     if 'traits.json' in os.listdir('data/'):
-        with open('data/units.json', 'r') as f:
+        with open('data/traits.json', 'r') as f:
             traits = json.load(f)
     else:
         traits = {}
@@ -91,9 +96,7 @@ def get_current_traits():
 
         traits[trait['trait_id']] = entry
 
-    with open('data/traits.json', 'w') as f:
-        json.dump(traits, f, indent=2)
-    return new
+    return new, traits
 
 def get_current_augments():
     if 'augments.json' in os.listdir('data/'):
@@ -123,10 +126,7 @@ def get_current_augments():
 
         augments[augment['nameId']] = entry
 
-    with open('data/augments.json', 'w') as f:
-        json.dump(augments, f, indent=2)
-
-    return new
+    return new, augments
 
 def get_current_items():
     if 'items.json' in os.listdir('data/'):
@@ -156,12 +156,10 @@ def get_current_items():
 
         items[item['nameId']] = entry
 
-    with open('data/items.json', 'w') as f:
-        json.dump(items, f, indent=2)
-
-    return new
+    return new, items
 
 async def get_guild_ids(slots):
+    print('in guild')
     guild_ids = []
 
     if len(settings.guild_ids) > 0:
@@ -173,7 +171,7 @@ async def get_guild_ids(slots):
     
     while True:
         guilds_needed = ceil((slots - available) / 50) 
-        if guilds_needed <= slots - available:
+        if slots - available <= 0:
             return guild_ids
         
         input_guilds = input(f"You need {slots - available} more slots ({guilds_needed} empty servers). Enter them individually or seperated by commas. \nTo get the server ids, right click the server icon and press 'Copy Server ID' \nPress 'c' to cancel the process\n")
@@ -182,6 +180,7 @@ async def get_guild_ids(slots):
 
         errors = []
         for id in input_guilds.split(', '):
+            print(int(id))
             if not id.isnumeric():
                 errors.append(id)
                 continue
@@ -195,19 +194,19 @@ async def get_guild_ids(slots):
                 errors.append(id)
                 continue
 
-            guild_ids.append(id)
+            guild_ids.append(int(id))
             available += guild.emoji_limit - len(guild.emojis)
 
         if errors:
             print('Following server IDs are invalid, already in use or the Bot is not added to the servers: \n' + ', '.join(errors))
 
-async def add_emoji(type, new, duplicates, added_emoji, guild_ids):
+async def add_emoji(type, new, total_count, duplicates, added_emoji, guild_ids, translated):
     img_path = settings.setup[type]
     new_objects = new[type].copy()
 
     this_cycle = {}
 
-    overall_count = 0
+    total_count = 0
 
     for id in guild_ids:
         guild = bot.get_guild(id)
@@ -215,6 +214,7 @@ async def add_emoji(type, new, duplicates, added_emoji, guild_ids):
         guild_objects = new_objects.copy()
         
         for object in guild_objects:
+
             if guild_slots <= 0:
                 break
 
@@ -230,75 +230,64 @@ async def add_emoji(type, new, duplicates, added_emoji, guild_ids):
 
             # image has not been used before
 
+            # changing name if longer than 32 (maximumn length for discord emoji)
+            name = object
+            if len(object) > 32:
+                name = object.split('_')[-1]
+                if len(name) > 32:
+                    name = name[:32]
+                translated[name] = object
+
             url = guild_objects[object]['image']
             img = BytesIO(requests.get(img_path + url).content)
 
             try:
-                await guild.create_custom_emoji(image=img.getvalue(), name=object)
+                await guild.create_custom_emoji(image=img.getvalue(), name=name)
                 del new_objects[object]
-                this_cycle[object['image']] = object
-                overall_count += 1
+                this_cycle[guild_objects[object]['image']] = object
+                total_count += 1
                 guild_slots -= 1
-                print(overall_count, guild_slots, '-', guild_objects[object]['name'])
+                print(total_count, guild_slots, '-', guild_objects[object]['name'])
 
                 #sleep(5.1)  # waiting to avoid discord rate limit
             except Exception as e:
                 print(e)
                 break
 
-    return new, duplicates
+    return new, total_count, duplicates, translated
 
-def get_emoji_ids(guild_ids, new, duplicates):
+def get_emoji_ids(guild_ids, new, duplicates, translated):
     for id in guild_ids:
         guild = bot.get_guild(id)
         print('Guild:', guild.name)
 
         for emoji in guild.emojis:
-            if emoji.name in new:
-                new[emoji.name]['emoji'] =f'<:{emoji.name}:{emoji.id}>'
+            name = emoji.name
+            if emoji.name in translated:
+                name = translated[emoji.name]
+
+            for type in new:
+                if name in new[type]:
+                    new[type][name]['emoji'] =f'<:{name}:{emoji.id}>'
     
     for object in duplicates:
-        new[object]['emoji'] = new[duplicates[object]]['emoji']
+        for type in new:
+            if object in new[type]:
+                new[type][object]['emoji'] = new[type][duplicates[object]]['emoji']
 
     return new
 
-def old_get_emoji_ids(type):
-    guild_ids = settings.setup[type]['guild_ids']
-
-    with open(f'data/{type}.json', 'r') as f:
-        objects = json.load(f)
-
-    with open(f'data/{type}_emoji.json', 'r') as f:
-        object_emoji = json.load(f)
-
-    names = {}
-    for object in objects:
-        name = objects[object]['name'].replace(' ', '').replace(',', 'AAA').replace('+', 'BBB').replace('-', 'CCC').replace('!', 'DDD')
-        name = name.replace("'", 'EEE').replace('&', 'FFF').replace('.', 'GGG').replace('_', 'HHH').replace('/', 'JJJ')
-        names[name] = objects[object]['name']
-
-    for id in guild_ids:
-        guild = bot.get_guild(id)
-        print(guild.name)
-        for emoji in guild.emojis:
-            if emoji.name in names:
-                name = names[emoji.name]
-                object_emoji[name] = f'<:{emoji.name}:{emoji.id}>'
-
-    with open(f'data/{type}_emoji.json', 'w') as f:
-        json.dump(object_emoji, f, indent=2)
-
-    return
-
-
 async def setup():
     new = {}
+    data = {}
     duplicates = {}
+    translated = {}
+    total_count = 0
 
-    new['traits'] = get_current_traits()
-    new['units'] = get_current_units()
-    new['augments'] = get_current_augments()
-    new['items'] = get_current_items()
+    new['traits'], data['traits'] = get_current_traits()
+    new['units'], data['units'] = get_current_units()
+    new['augments'], data['augments'] = get_current_augments()
+    new['items'], data['items'] = get_current_items()
 
     slots_required = 0
     for key in new:
@@ -313,26 +302,37 @@ async def setup():
     
     print('Adding emojis to these guilds:', guild_ids)
 
-    with open('data/added_emoji.json', 'r') as f:
-        added_emoji = json.load(f)
+    if 'added_emoji.json' in os.listdir('data/'):
+        with open('data/added_emoji.json', 'r') as f:
+            added_emoji = json.load(f)
 
     for type in ['traits', 'units', 'augments', 'items']:
-        new, duplicates = await add_emoji(type, new, duplicates, added_emoji, guild_ids)
+        new, total_count, duplicates, translated = await add_emoji(type, new, total_count, duplicates, added_emoji, guild_ids, translated)
 
     print('Successfully added all emojis. Just finishing up...')
     
-    new = get_emoji_ids(guild_ids, new, duplicates)
+    new = get_emoji_ids(guild_ids, new, duplicates, translated)
 
     for type in new:
-        with open(f'data/{type}.json', 'r') as f:
-            data = json.load(f)
-        
         for object in new[type]:
-            data[object] = new[type][object]
+            data[type][object] = new[type][object]
+            added_emoji[new[type][object]['image']] = new[type][object]['emoji']
 
         with open(f'data/{type}.json', 'w') as f:
-            json.dump(data, f, indent=2)
+            json.dump(data[type], f, indent=2)
+
+    with open(f'data/added_emoji.json', 'w') as f:
+        json.dump(added_emoji, f, indent=2)
+
+    env_file = dotenv.find_dotenv()
+    dotenv.load_dotenv()
+    old_guild_ids = os.getenv('GUILD_IDS')
+    if not old_guild_ids == '':
+        guild_ids = old_guild_ids + ', '.join(guild_ids) + ', '
+    print(guild_ids)
+    dotenv.set_key(env_file, 'GUILD_IDS', guild_ids)
+
 
     print(f'Successfully added {slots_required} abjects! \nYour Bot is now got to go!')
 
-bot.run(settings.ADMIN_TOKEN)
+bot.run(settings.TOKEN)

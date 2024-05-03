@@ -1,4 +1,4 @@
-from typing import Optional, List
+from typing import Optional, List, Literal
 
 import sqlite3
 import aiohttp
@@ -31,7 +31,6 @@ bot.remove_command('help')
 async def on_ready():
     print('online')
     bot.session = aiohttp.ClientSession()
-    await bot.tree.sync()
 
 async def server_autocomplete(interaction: discord.Interaction, current: str) -> List[app_commands.Choice[str]]:
     data = []
