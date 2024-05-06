@@ -21,7 +21,7 @@ conn = sqlite3.connect("wclaw.db")
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS links ('discord', 'puuid')")
 cur.execute("CREATE TABLE IF NOT EXISTS profile ('puuid', 'riot', 'server', 'region', 'icon_id', 'rank', 'standard', 'turbo', 'pairs', 'last_processed')")
-cur.execute("CREATE TABLE IF NOT EXISTS matches ('match_id' INTEGER PRIMARY KEY, 'riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'level', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')")
+cur.execute("CREATE TABLE IF NOT EXISTS matches ('match_id' INTEGER PRIMARY KEY, 'puuid', 'set_number', 'timestamp', 'placement', 'gamemode', 'level', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')")
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="$", intents=intents)
@@ -31,6 +31,41 @@ bot.remove_command('help')
 async def on_ready():
     print('online')
     bot.session = aiohttp.ClientSession()
+
+@bot.command()
+@commands.guild_only()
+@commands.is_owner()
+async def sync(ctx: commands.Context, guilds: commands.Greedy[discord.Object], spec: Optional[Literal["~", "*", "^"]] = None) -> None:
+    print('syncing')
+    if not guilds:
+
+        if spec == "~":
+            synced = await ctx.bot.tree.sync(guild=ctx.guild)
+        elif spec == "*":
+            ctx.bot.tree.copy_global_to(guild=ctx.guild)
+            synced = await ctx.bot.tree.sync(guild=ctx.guild)
+        elif spec == "^":
+            ctx.bot.tree.clear_commands(guild=ctx.guild)
+            await ctx.bot.tree.sync(guild=ctx.guild)
+            synced = []
+        else:
+            synced = await ctx.bot.tree.sync()
+
+        await ctx.send(
+            f"Synced {len(synced)} commands {'globally' if spec is None else 'to the current guild.'}"
+        )
+        return
+
+    ret = 0
+    for guild in guilds:
+        try:
+            await ctx.bot.tree.sync(guild=guild)
+        except discord.HTTPException:
+            pass
+        else:
+            ret += 1
+
+    await ctx.send(f"Synced the tree to {ret}/{len(guilds)}.")
 
 async def server_autocomplete(interaction: discord.Interaction, current: str) -> List[app_commands.Choice[str]]:
     data = []
@@ -50,7 +85,7 @@ async def command_autocomplete(interaction: discord.Interaction, current: str) -
 @bot.hybrid_command(description='If you ever need help')
 async def help(ctx):
     embed = help_embed()
-    await ctx.send(embed=embed, ephemeral=True)
+    await ctx.send(embed=embed)
 
 @bot.hybrid_command(description='List of all available commands')
 @app_commands.autocomplete(command=command_autocomplete)
@@ -59,8 +94,8 @@ async def commands(ctx, command: Optional[str]):
         embed = error_embed('Please enter a valid command name.', 'Invalid command')
         await ctx.send(embed=embed, ephemeral=True)
     else:
-        embed, ephemeral = commands_embed(command)
-        await ctx.send(embed=embed, ephemeral=ephemeral)
+        embed = commands_embed(command)
+        await ctx.send(embed=embed)
 
 @bot.hybrid_command(description='Shows list of all supported servers')
 async def servers(ctx):
@@ -77,7 +112,7 @@ async def link(ctx, riot_id: str, server: str):
         riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
     except SyntaxError as e:
         embed = error_embed(e, 'Invalid input')
-        await ctx.send(embed=embed)
+        await ctx.send(embed=embed, ephemeral=True)
         return
 
     #given riot id and server exist
@@ -107,7 +142,7 @@ async def linked(ctx):
         embed = linked_embed(linked[0], linked[1], linked[2], 'Currently')
     except TypeError or ValueError:
         embed = error_embed(f"No Riot account linked to '{ctx.message.author.name}'", 'Not linked')
-    await ctx.send(embed=embed)
+    await ctx.send(embed=embed, ephemeral=True)
 
 @bot.hybrid_command(description='Delete information linked to your Discord account')
 async def unlink(ctx):
@@ -123,14 +158,14 @@ async def update(ctx, riot_id: Optional[str], server: Optional[str]):
     if riot_id or server:
         if not server or not riot_id:
             embed = error_embed('Please enter both Riot id and server or neither.', 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
         try:
             riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
         except SyntaxError as e:
             embed = error_embed(e, 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
     else:
@@ -139,7 +174,7 @@ async def update(ctx, riot_id: Optional[str], server: Optional[str]):
             riot, server, region, rank = cur.execute('SELECT riot, server, region, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
         except TypeError:
             embed = error_embed(f"No Riot account linked to your discord", 'Nothing linked')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
   
     try:
@@ -147,7 +182,7 @@ async def update(ctx, riot_id: Optional[str], server: Optional[str]):
     except NameError as error:
         conn.commit()
         embed = error_embed(error, 'No games found')
-        await ctx.send(embed=embed)
+        await ctx.send(embed=embed, ephemeral=True)
         return
     
     await update_games(bot.session, cur, data)
@@ -162,18 +197,18 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
 
     if set > settings.CURRENT_SET:
         embed = error_embed(f"{set} is not a valid set number.", 'Invalid Set Number')
-        await ctx.send(embed=embed)
+        await ctx.send(embed=embed, ephemeral=True)
         return
     
     if riot_id or server:
         if not server or not riot_id:
             embed = error_embed('Please enter both Riot id and server or neither.', 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
         if not server in server_list:
             embed = error_embed(f'`{server}` is not supported a server', 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
         server = server_list[server]['server']
@@ -182,7 +217,7 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
             riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
         except Exception as e:
             embed = error_embed(e, 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
 
     else:
@@ -191,14 +226,14 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
             riot, server, icon_id, rank = cur.execute('SELECT riot, server, icon_id, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
         except TypeError:
             embed = error_embed(f"No Riot account linked to your discord", 'Nothing linked')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
 
     try:
         data, x = process_stats(cur, riot, server, count, days, set)
     except IndexError as e:
         embed = error_embed(f"No games from {riot} found. \nMake sure to use /update first.", 'No games found')
-        await ctx.send(embed=embed)
+        await ctx.send(embed=embed, ephemeral=True)
         return
     
     embed = stats_embed(data, author, riot, icon_id, rank)
@@ -210,12 +245,12 @@ async def singlematch(ctx, match_id: Optional[int], riot_id: Optional[str], serv
     if riot_id or server:
         if not server or not riot_id:
             embed = error_embed('Please enter both Riot id and server or neither.', 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
         if not server in server_list:
             embed = error_embed(f'`{server}` is not supported a server', 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
         server = server_list[server]['server']
@@ -224,7 +259,7 @@ async def singlematch(ctx, match_id: Optional[int], riot_id: Optional[str], serv
             riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
         except Exception as e:
             embed = error_embed(e, 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
 
     else:
@@ -233,11 +268,11 @@ async def singlematch(ctx, match_id: Optional[int], riot_id: Optional[str], serv
             riot, server, icon_id, rank = cur.execute('SELECT riot, server, icon_id, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
         except ValueError or TypeError:
             embed = error_embed(f"No Riot account linked to your discord", 'Nothing linked')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
     try:
-        match_ids = cur.execute('SELECT match_id FROM matches WHERE riot = ? AND server = ? ORDER BY timestamp DESC', (riot, server)).fetchall()
+        match_ids = cur.execute('SELECT match_id FROM matches WHERE puuid = ? ORDER BY timestamp DESC', (puuid,)).fetchall()
         match_ids = [id[0] for id in match_ids]
         if len(match_ids) == 0:
             raise IndexError()
@@ -248,7 +283,7 @@ async def singlematch(ctx, match_id: Optional[int], riot_id: Optional[str], serv
         data = process_single_match(cur, riot, server, match_id)
     except IndexError as e:
         embed = error_embed(e, 'Game not found')
-        await ctx.send(embed=embed)
+        await ctx.send(embed=embed, ephemeral=True)
         return
     
     embed = single_match_embed(data, riot, icon_id, rank)
@@ -262,12 +297,12 @@ async def matchhistory(ctx, riot_id: Optional[str], server: Optional[str]):
     if riot_id or server:
         if not server or not riot_id:
             embed = error_embed('Please enter both Riot id and server or neither.', 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
         if not server in server_list:
             embed = error_embed(f'`{server}` is not supported a server', 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
         server = server_list[server]['server']
@@ -276,7 +311,7 @@ async def matchhistory(ctx, riot_id: Optional[str], server: Optional[str]):
             riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
         except Exception as e:
             embed = error_embed(e, 'Invalid input')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
 
     else:
@@ -285,7 +320,7 @@ async def matchhistory(ctx, riot_id: Optional[str], server: Optional[str]):
             riot, server, icon_id, rank = cur.execute('SELECT riot, server, icon_id, rank FROM profile WHERE puuid = ?', (puuid,)).fetchone()
         except ValueError or TypeError:
             embed = error_embed(f"No Riot account linked to your discord", 'Nothing linked')
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed, ephemeral=True)
             return
         
     data = process_history(cur, riot, server)

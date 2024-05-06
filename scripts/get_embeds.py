@@ -35,7 +35,6 @@ def help_embed():
 
 def commands_embed(command):
     if command is None:
-        ephemeral = False
         embed = discord.Embed(title='Winter\'s Claw commands', description='''Use `/commands [command]` for more information on a single command''', color=0x1386ec)
         embed.add_field(name='Stat commands', value='`/stats`  - >  General statistics for your account', inline=False)
         embed.add_field(name='', value='`/singlematch`  - >  Detailed data for a single match', inline=False)
@@ -49,11 +48,10 @@ def commands_embed(command):
                         '`/update`  - >  Download new games from your account into database']:
             embed.add_field(name='', value=command, inline=False)
     else:
-        ephemeral = True
         title, field = ALL_COMMANDS[command]
         embed = discord.Embed(title=title, description='', color=0x1386ec)
         embed.add_field(name='', value=field, inline=False)
-    return embed, ephemeral
+    return embed
 
 def linked_embed(riot, icon_id, rank, text):
     name = riot.replace('%20', ' ')

@@ -122,8 +122,8 @@ async def update_games(session, cur, data):
             units.append(f"{unit['character_id']}/{unit['tier']}/{unit['rarity']}/{'.'.join(unit['itemNames'])}")
 
 
-        cur.execute("""INSERT INTO matches ('riot', 'server', 'set_number', 'timestamp', 'placement', 'gamemode', 'level', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, set_number, timestamp, placement, gamemode, level, time_spent, player_damage, players_eliminated, '-'.join(traits), '-'.join(units), augments))
+        cur.execute("""INSERT INTO matches ('puuid', 'set_number', 'timestamp', 'placement', 'gamemode', 'level', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (puuid, set_number, timestamp, placement, gamemode, level, time_spent, player_damage, players_eliminated, '-'.join(traits), '-'.join(units), augments))
         
     cur.execute("UPDATE profile SET last_processed = ? WHERE puuid = ?", (latest_match, puuid))
 
