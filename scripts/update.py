@@ -5,8 +5,10 @@ from scripts.settings import ranked_tiers as tiers
 async def get_matchids(session, riot, server, region, puuid, cur):
     rank_translation = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 'I': 1, 'II': 2, 'III': 3, 'IV': 4}
 
-
     data = cur.execute("SELECT last_processed FROM profile WHERE puuid = ?", (puuid,)).fetchall()
+    last_processed = ''
+    if len(data) > 0:
+        last_processed = data[0][0]
 
     profile = await api.request(session, f'https://{server}.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/{puuid}?api_key=')
     icon_id = profile['profileIconId']
@@ -51,21 +53,11 @@ async def get_matchids(session, riot, server, region, puuid, cur):
     else:
         rank = ''
 
-    if len(data) == 0:
-
-        cur.execute("""
-            INSERT INTO profile ('riot', 'server', 'region', 'puuid', 'icon_id', 'rank', 'standard', 'pairs', 'turbo')
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, region, puuid, icon_id, rank, ranks['standard'], ranks['pairs'], ranks['turbo']))
-        last_processed = ''
-
-    else:
-        cur.execute("UPDATE profile SET icon_id = ?, rank = ?, standard = ?, pairs = ?, turbo = ? WHERE puuid = ?", (icon_id, rank, ranks['standard'], ranks['pairs'], ranks['turbo'], puuid))
-        last_processed = data[0][0]
-
     start = 0
     match_ids = []
 
-    while True:
+    loop = True
+    while loop:
         resp = await api.request(session, f'https://{region}.api.riotgames.com/tft/match/v1/matches/by-puuid/{puuid}/ids?start={start}&startTime={SET_START_DATE}&count=200&api_key=')
 
         #check if requested list of matches is empty
@@ -75,19 +67,34 @@ async def get_matchids(session, riot, server, region, puuid, cur):
         #reverse list of match ids and also remove all match ids which have been processed in earlier commands
         for match_id in resp:
             if match_id == last_processed:
+                loop = False
                 break
             else:
                 match_ids.insert(0, match_id)
         start += 200
 
     if match_ids == []:
+        last_processed = ''
+    else:
+        last_processed = match_ids[-1]
+
+    if len(data) == 0:
+
+        cur.execute("""
+            INSERT INTO profile ('riot', 'server', 'region', 'puuid', 'icon_id', 'rank', 'standard', 'pairs', 'turbo', 'last_processed')
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (riot, server, region, puuid, icon_id, rank, ranks['standard'], ranks['pairs'], ranks['turbo'], last_processed))
+
+    else:
+        cur.execute("UPDATE profile SET icon_id = ?, rank = ?, standard = ?, pairs = ?, turbo = ?, last_processed = ? WHERE puuid = ?", (icon_id, rank, ranks['standard'], ranks['pairs'], ranks['turbo'], last_processed, puuid))
+
+    if match_ids == []:
         raise NameError(f"No new games from {riot}.")
 
-    data = (region, puuid, riot, server, match_ids[-1], match_ids)
+    data = (region, puuid, riot, server, match_ids)
     return icon_id, len(match_ids), data
 
 async def update_games(session, cur, data):
-    region, puuid, riot, server, latest_match, match_ids = data
+    region, puuid, riot, server, match_ids = data
 
     for match_id in match_ids:
         match = await api.request(session, f'https://{region}.api.riotgames.com/tft/match/v1/matches/{match_id}?api_key=')
@@ -125,6 +132,4 @@ async def update_games(session, cur, data):
         cur.execute("""INSERT INTO matches ('puuid', 'set_number', 'timestamp', 'placement', 'gamemode', 'level', 'time_spent', 'player_damage', 'players_eliminated', 'traits', 'units', 'augments')
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", (puuid, set_number, timestamp, placement, gamemode, level, time_spent, player_damage, players_eliminated, '-'.join(traits), '-'.join(units), augments))
         
-    cur.execute("UPDATE profile SET last_processed = ? WHERE puuid = ?", (latest_match, puuid))
-
     return
