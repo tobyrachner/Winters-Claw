@@ -2,7 +2,7 @@ import time
 from datetime import datetime
 from math import ceil
 
-from scripts.settings import trait_list, unique_traits, augment_list, unit_list, item_list
+from scripts.settings import trait_list, augment_list, item_list
 
 #function to calculate avg placement, top4%, win%, taking a list of placements
 def process_placements(placements, mode):
@@ -337,7 +337,7 @@ def process_single_match(cur, puuid, id=None):
         if trait == '':
             continue
         name, level, num_units = trait.split('/')
-        if name in unique_traits:
+        if 'unique' in trait_list[name]:
             level = '5'
         if name == 'TFT11_Heavenly' and int(level) > 3:
             if int(level) < 6:
@@ -395,7 +395,7 @@ def process_history(cur, puuid, stat_type='general', gamemode=None):
                 if trait == '':
                     continue
                 name, level, num_units = trait.split('/')
-                if name in unique_traits:
+                if 'unique' in trait_list[name]:
                     level = '5'
                 if name == 'TFT11_Heavenly' and int(level) > 3:
                     if int(level) < 6:
