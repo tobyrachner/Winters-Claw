@@ -5,13 +5,13 @@ from scripts.process_data import process_history
 from scripts.get_embeds import history_embed
 
 class HistoryView(View):
-    def __init__(self, cur, author_id, matches, riot, server, icon_id, rank, index=0):
+    def __init__(self, cur, author_id, matches, riot, puuid, icon_id, rank, index=0):
         super().__init__()
         self.cur = cur
         self.author_id = author_id
         self.matches = matches
         self.riot = riot
-        self.server = server
+        self.puuid = puuid
         self.icon_id = icon_id
         self.rank = rank
         self.index = index
@@ -87,7 +87,7 @@ class HistoryView(View):
         if toggle_match_ids:
             self.show_match_ids = not self.show_match_ids
 
-        matches = process_history(self.cur, self.riot, self.server, self.stat_type, self.gamemode)
+        matches = process_history(self.cur, self.puuid, self.stat_type, self.gamemode)
         embed = history_embed(matches, self.riot, self.icon_id, self.rank, stat_type=self.stat_type, index=self.index, show_ids=self.show_match_ids)
 
         await interaction.response.edit_message(embed=embed, view=self)

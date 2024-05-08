@@ -24,7 +24,6 @@ bot = commands.Bot(command_prefix="$", intents=intents)
 @bot.event
 async def on_ready():
     print('online')
-    await bot.tree.sync()
 
 @bot.event
 async def on_message(ctx):
@@ -88,8 +87,11 @@ def get_current_traits():
         entry = {
             'name': trait['display_name'], 
             'image': trait['icon_path'].lower().split('traiticons/')[-1],
-            'emoji': None,
+            'emoji': traits[trait['trait_id']]['emoji'],
         }
+
+        if trait['conditional_trait_sets'][0]['style_name'] == 'kUnique':
+            entry['unique'] = True
 
         if not trait['trait_id'] in traits:
             new[trait['trait_id']] = entry
@@ -335,4 +337,7 @@ async def setup():
 
     print(f'Successfully added {slots_required} abjects! \nYour Bot is now got to go!')
 
-bot.run(settings.TOKEN)
+x, traits = get_current_traits()
+with open('data/traits.json', 'w') as f:
+    json.dump(traits, f, indent=2)
+#bot.run(settings.TOKEN)

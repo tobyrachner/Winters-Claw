@@ -230,14 +230,14 @@ async def stats(ctx, riot_id: Optional[str], server: Optional[str], count: Optio
             return
 
     try:
-        data, x = process_stats(cur, riot, server, count, days, set)
+        data, x = process_stats(cur, puuid, count, days, set)
     except IndexError as e:
         embed = error_embed(f"No games from {riot} found. \nMake sure to use /update first.", 'No games found')
         await ctx.send(embed=embed, ephemeral=True)
         return
     
     embed = stats_embed(data, author, riot, icon_id, rank)
-    view = StatsView(cur, author, ctx.message.author.id, data, riot, server, icon_id, rank, count, days, set)
+    view = StatsView(cur, author, ctx.message.author.id, data, riot, puuid, icon_id, rank, count, days, set)
     view.message = await ctx.send(embed=embed, view=view)
 
 @bot.hybrid_command(description='Show details about specific match. Get match ids from /matchhistory (defaults to most recent match)')
@@ -280,14 +280,14 @@ async def singlematch(ctx, match_id: Optional[int], riot_id: Optional[str], serv
             id_index = match_ids.index(match_id)
         else:
             id_index = 0
-        data = process_single_match(cur, riot, server, match_id)
+        data = process_single_match(cur, puuid, match_id)
     except IndexError as e:
         embed = error_embed(e, 'Game not found')
         await ctx.send(embed=embed, ephemeral=True)
         return
     
     embed = single_match_embed(data, riot, icon_id, rank)
-    view = MatchView(cur, ctx.message.author.id, match_ids, riot, server, icon_id, rank, id_index=id_index)
+    view = MatchView(cur, ctx.message.author.id, match_ids, riot, puuid, icon_id, rank, id_index=id_index)
     view.message = await ctx.send(embed=embed, view=view)
 
 @bot.hybrid_command(description='Shows general information about most recent games played')
@@ -323,9 +323,9 @@ async def matchhistory(ctx, riot_id: Optional[str], server: Optional[str]):
             await ctx.send(embed=embed, ephemeral=True)
             return
         
-    data = process_history(cur, riot, server)
+    data = process_history(cur, puuid)
     embed = history_embed(data, riot, icon_id, rank)
-    view = HistoryView(cur, ctx.message.author.id, data, riot, server, icon_id, rank)
+    view = HistoryView(cur, ctx.message.author.id, data, riot, puuid, icon_id, rank)
     view.message = await ctx.send(embed=embed, view=view)
 
 bot.run(settings.TOKEN)

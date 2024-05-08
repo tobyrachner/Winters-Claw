@@ -58,15 +58,15 @@ def filter_games(matches, count, days):
     # the timestamp is currently not displayed in the final embed but still kept in the function if needed for future use
     return matches, int(ts)
 
-def process_stats(cur, riot, server, count, days, set, display_mode=None, filter='count', descending=True):
+def process_stats(cur, puuid, count, days, set, display_mode=None, filter='count', descending=True):
     if set.is_integer(): set = int(set)
 
     data = {'time_spent': 0, 'player_damage': 0, 'players_eliminated': 0}
     placements = []
     if display_mode:
-        query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, display_mode))
+        query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE puuid = ? AND set_number = ? AND gamemode = ?", (puuid, set, display_mode))
     else:
-        query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
+        query = cur.execute("SELECT timestamp, placement, gamemode, time_spent, player_damage, players_eliminated FROM matches WHERE puuid = ? AND set_number = ?", (puuid, set))
     
     matches = query.fetchall()
 
@@ -98,18 +98,18 @@ def process_stats(cur, riot, server, count, days, set, display_mode=None, filter
         display_mode = 'standard'
     elif not display_mode:
         display_mode = 'rank'
-    cur.execute(f"SELECT {display_mode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
+    cur.execute(f"SELECT {display_mode} FROM profile WHERE puuid = ?", (puuid,))
     rank = cur.fetchone()[0]
     return data, rank
     
-def process_traits(cur, riot, server, count, days, set, display_mode=None, filter='count', descending=True):
+def process_traits(cur, puuid, count, days, set, display_mode=None, filter='count', descending=True):
     if set.is_integer(): set = int(set)
 
     traits_dict = {}
     if display_mode:
-        query = cur.execute("SELECT timestamp, placement, traits, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, display_mode))
+        query = cur.execute("SELECT timestamp, placement, traits, gamemode FROM matches WHERE puuid = ? AND set_number = ? AND gamemode = ?", (puuid, set, display_mode))
     else:
-        query = cur.execute("SELECT timestamp, placement, traits, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
+        query = cur.execute("SELECT timestamp, placement, traits, gamemode FROM matches WHERE puuid = ? AND set_number = ?", (puuid, set))
     matches = query.fetchall()
     
     matches, ts = filter_games(matches, count, days)
@@ -130,7 +130,7 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None, filte
                 continue
             name, level, num_units = trait.split('/')
             level = int(level)
-            if name in unique_traits:
+            if 'unique' in trait_list[name]:
                 level = 5
             if name == 'TFT11_Heavenly' and level > 3:
                 if level < 6:
@@ -159,19 +159,19 @@ def process_traits(cur, riot, server, count, days, set, display_mode=None, filte
         display_mode = 'standard'
     elif not display_mode:
         display_mode = 'rank'
-    cur.execute(f"SELECT {display_mode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
+    cur.execute(f"SELECT {display_mode} FROM profile WHERE puuid = ?", (puuid,))
     rank = cur.fetchone()[0]
 
     return {'count': len(matches), 'traits': traits_dict}, rank
 
-def process_units(cur, riot, server, count, days, set, display_mode=None, filter='count', descending=True):
+def process_units(cur, puuid, count, days, set, display_mode=None, filter='count', descending=True):
     if set.is_integer(): set = int(set)
 
     units_dict = {}
     if display_mode:
-        query = cur.execute("SELECT timestamp, placement, units, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, display_mode))
+        query = cur.execute("SELECT timestamp, placement, units, gamemode FROM matches WHERE puuid = ? AND set_number = ? AND gamemode = ?", (puuid, set, display_mode))
     else:
-        query = cur.execute("SELECT timestamp, placement, units, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
+        query = cur.execute("SELECT timestamp, placement, units, gamemode FROM matches WHERE puuid = ? AND set_number = ?", (puuid, set))
     matches = query.fetchall()
     
     matches, ts = filter_games(matches, count, days)
@@ -240,19 +240,19 @@ def process_units(cur, riot, server, count, days, set, display_mode=None, filter
         display_mode = 'standard'
     elif not display_mode:
         display_mode = 'rank'
-    cur.execute(f"SELECT {display_mode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
+    cur.execute(f"SELECT {display_mode} FROM profile WHERE puuid = ?", (puuid,))
     rank = cur.fetchone()[0]
 
     return {'count': len(matches), 'units': units_dict}, rank
 
-def process_augments(cur, riot, server, count, days, set, display_mode=None, filter='count', descending=True):
+def process_augments(cur, puuid, count, days, set, display_mode=None, filter='count', descending=True):
     if set.is_integer(): set = int(set)
 
     augment_dict = {}
     if display_mode:
-        query = cur.execute("SELECT timestamp, placement, augments, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ? AND gamemode = ?", (riot, server, set, display_mode))
+        query = cur.execute("SELECT timestamp, placement, augments, gamemode FROM matches WHERE puuid = ? AND set_number = ? AND gamemode = ?", (puuid, set, display_mode))
     else:
-        query = cur.execute("SELECT timestamp, placement, augments, gamemode FROM matches WHERE riot = ? AND server = ? AND set_number = ?", (riot, server, set))
+        query = cur.execute("SELECT timestamp, placement, augments, gamemode FROM matches WHERE puuid = ? AND set_number = ?", (puuid, set))
     matches = query.fetchall()
     
     matches, ts = filter_games(matches, count, days)
@@ -293,19 +293,19 @@ def process_augments(cur, riot, server, count, days, set, display_mode=None, fil
         display_mode = 'standard'
     elif not display_mode:
         display_mode = 'rank'
-    cur.execute(f"SELECT {display_mode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
+    cur.execute(f"SELECT {display_mode} FROM profile WHERE puuid = ?", (puuid,))
     rank = cur.fetchone()[0]
 
     return {'count': len(matches), 'augments': augment_dict}, rank
 
-def process_single_match(cur, riot, server, id=None):
+def process_single_match(cur, puuid, id=None):
     if id:
-        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits, timestamp FROM matches WHERE match_id = ? AND riot = ? AND server = ?', (id, riot, server))
+        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits, timestamp FROM matches WHERE match_id = ? AND puuid = ?', (id, puuid))
         match = match.fetchone()
         if match is None:
             raise IndexError('Could not find match with given id')
     else:
-        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits, timestamp FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (riot, server)).fetchone()
+        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits, timestamp FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (puuid,)).fetchone()
 
     data = {'timestamp': int(match[6] / 1000)}
 
@@ -317,7 +317,7 @@ def process_single_match(cur, riot, server, id=None):
 
     if gamemode == 'ranked' or gamemode == 'normal':
         gamemode = 'standard'
-    cur.execute(f"SELECT {gamemode} FROM profile WHERE riot = ? AND server = ?", (riot, server))
+    cur.execute(f"SELECT {gamemode} FROM profile WHERE puuid = ?", (puuid,))
     data['rank'] = cur.fetchone()[0]
 
     data['augments'] = []
@@ -366,11 +366,11 @@ def process_single_match(cur, riot, server, id=None):
 
     return data
 
-def process_history(cur, riot, server, stat_type='general', gamemode=None):
+def process_history(cur, puuid, stat_type='general', gamemode=None):
     if gamemode:
-        matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE gamemode = ? AND riot = ? AND server = ? ORDER BY timestamp DESC', (gamemode, riot, server)).fetchall()
+        matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE gamemode = ? AND puuid = ? ORDER BY timestamp DESC', (gamemode, puuid)).fetchall()
     else:
-        matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (riot, server)).fetchall()
+        matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (puuid,)).fetchall()
     
     if len(matches) == 0:
         raise NameError()

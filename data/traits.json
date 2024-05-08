@@ -12,7 +12,8 @@
   "TFT11_Artist": {
     "name": "Artist",
     "image": "trait_icon_11_artist.tft_set11.png",
-    "emoji": "<:TFT11_Artist:1236035743621714032>"
+    "emoji": "<:TFT11_Artist:1236035743621714032>",
+    "unique": true
   },
   "TFT11_Behemoth": {
     "name": "Behemoth",
@@ -62,7 +63,8 @@
   "TFT11_Great": {
     "name": "Great",
     "image": "trait_icon_11_great.tft_set11.png",
-    "emoji": "<:TFT11_Great:1236035777780121722>"
+    "emoji": "<:TFT11_Great:1236035777780121722>",
+    "unique": true
   },
   "TFT11_Heavenly": {
     "name": "Heavenly",
@@ -82,7 +84,8 @@
   "TFT11_Lovers": {
     "name": "Lovers",
     "image": "trait_icon_11_lovers.tft_set11.png",
-    "emoji": "<:TFT11_Lovers:1236035791483048048>"
+    "emoji": "<:TFT11_Lovers:1236035791483048048>",
+    "unique": true
   },
   "TFT11_Mythic": {
     "name": "Mythic",
@@ -112,7 +115,8 @@
   "TFT11_SpiritWalker": {
     "name": "Spirit Walker",
     "image": "trait_icon_11_spirit_walker.tft_set11.png",
-    "emoji": "<:TFT11_SpiritWalker:1236035809426018376>"
+    "emoji": "<:TFT11_SpiritWalker:1236035809426018376>",
+    "unique": true
   },
   "TFT11_Storyweaver": {
     "name": "Storyweaver",
@@ -127,7 +131,8 @@
   "TFT11_TrickshotAltruist": {
     "name": "Trickshot/Altruist",
     "image": "trait_icon_11_altruist_trickshot.tft_set11.png",
-    "emoji": "<:TFT11_TrickshotAltruist:1236035820318621757>"
+    "emoji": "<:TFT11_TrickshotAltruist:1236035820318621757>",
+    "unique": true
   },
   "TFT11_Umbral": {
     "name": "Umbral",

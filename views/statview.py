@@ -5,7 +5,7 @@ from scripts.process_data import process_stats, process_traits, process_augments
 from views.baseview import View, EditButton, PageButton, NavigationButton
 
 class StatsView(View):
-    def __init__(self, cur, author, author_id, data, riot, server, icon_id, rank, count, days, set):
+    def __init__(self, cur, author, author_id, data, riot, puuid, icon_id, rank, count, days, set):
         super().__init__()
 
         self.cur = cur
@@ -13,7 +13,7 @@ class StatsView(View):
         self.author = author
         self.author_id = author_id
         self.riot = riot
-        self.server = server
+        self.puuid = puuid
         self.icon_id = icon_id
         self.rank = rank
         self.count = count
@@ -160,7 +160,7 @@ class StatsView(View):
         if sort_by is None and descending is None: 
             self.add_default_buttons()
             
-        self.data, self.rank = self.process_function(self.cur, self.riot, self.server, self.count, self.days, self.set, display_mode=self.gamemode, filter=self.sort_by, descending=self.descending)
+        self.data, self.rank = self.process_function(self.cur, self.puuid, self.count, self.days, self.set, display_mode=self.gamemode, filter=self.sort_by, descending=self.descending)
         if not self.rank:
             self.rank = 'Unranked'
 
