@@ -242,7 +242,7 @@ def single_match_embed(data, riot, icon_id, rank):
     embed=discord.Embed(title=riot + ' ' + rank_icon, description='', color=0x1386ec, url=f'')
     embed.set_thumbnail(url=f'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{icon_id}.jpg')
     embed.add_field(name=f"Game Info", 
-                    value=f"""<t:{data['timestamp']}>
+                    value=f"""<t:{data['timestamp']}:R>
 {data['gamemode']}
 Level {data['level']}
 {PLACEMENTS[data['placement']]} Place""", inline=False)
@@ -291,7 +291,7 @@ class HistoryEmbed():
         pass
 
     def general(self, embed, data, index, id):
-        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', value=f'''{id} <t:{data[index]['timestamp']}>
+        embed.add_field(name=PLACEMENTS[data[index]['placement']] + ' Place', value=f'''{id} <t:{data[index]['timestamp']}:R>
 {data[index]['gamemode']}
 Level {data[index]['level']}''', inline=True)
         

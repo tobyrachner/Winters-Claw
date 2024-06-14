@@ -305,7 +305,7 @@ def process_single_match(cur, puuid, id=None):
         if match is None:
             raise IndexError('Could not find match with given id')
     else:
-        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits, timestamp FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (puuid,)).fetchone()
+        match = cur.execute('SELECT gamemode, placement, level, augments, units, traits, timestamp FROM matches WHERE puuid = ? ORDER BY timestamp DESC', (puuid,)).fetchone()
 
     data = {'timestamp': int(match[6] / 1000)}
 
@@ -370,7 +370,7 @@ def process_history(cur, puuid, stat_type='general', gamemode=None):
     if gamemode:
         matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE gamemode = ? AND puuid = ? ORDER BY timestamp DESC', (gamemode, puuid)).fetchall()
     else:
-        matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE riot = ? and server = ? ORDER BY timestamp DESC', (puuid,)).fetchall()
+        matches = cur.execute('SELECT match_id, gamemode, placement, level, timestamp, traits, units, augments FROM matches WHERE puuid = ? ORDER BY timestamp DESC', (puuid,)).fetchall()
     
     if len(matches) == 0:
         raise NameError()
