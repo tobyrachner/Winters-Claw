@@ -112,7 +112,7 @@ async def link(ctx, riot_id: str, server: str):
         riot, server, region, puuid, summoner_id, icon_id, rank = await check_summoner(bot.session, riot_id, server)
     except SyntaxError as e:
         embed = error_embed(e, 'Invalid input')
-        await ctx.send(embed=embed, ephemeral=True)
+        await ctx.send(embed=embed)
         return
 
     #given riot id and server exist
@@ -142,7 +142,7 @@ async def linked(ctx):
         embed = linked_embed(linked[0], linked[1], linked[2], 'Currently')
     except TypeError or ValueError:
         embed = error_embed(f"No Riot account linked to '{ctx.message.author.name}'", 'Not linked')
-    await ctx.send(embed=embed, ephemeral=True)
+    await ctx.send(embed=embed)
 
 @bot.hybrid_command(description='Delete information linked to your Discord account')
 async def unlink(ctx):
