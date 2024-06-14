@@ -2,917 +2,917 @@
   "TFTTutorial_Item_NeedlesslyLargeRod": {
     "name": "Needlessly Large Rod",
     "image": "standard/needlessly_large_rod.png",
-    "emoji": "<:TFTTutorial_Item_NeedlesslyLargeRod:1236037291055775937>"
+    "emoji": null
   },
   "TFTTutorial_Item_RecurveBow": {
     "name": "Recurve Bow",
     "image": "standard/recurve_bow.png",
-    "emoji": "<:TFTTutorial_Item_RecurveBow:1236037294277005433>"
+    "emoji": null
   },
   "TFTTutorial_Item_GuinsoosRageblade": {
     "name": "Guinsoo's Rageblade",
     "image": "standard/guinsoos_rageblade.png",
-    "emoji": "<:TFTTutorial_Item_GuinsoosRageblade:1236037300157153392>"
+    "emoji": null
   },
   "TFT_Item_BFSword": {
     "name": "B.F. Sword",
     "image": "standard/bf_sword.png",
-    "emoji": "<:TFT_Item_BFSword:1236037307275149404>"
+    "emoji": null
   },
   "TFT_Item_Bloodthirster": {
     "name": "Bloodthirster",
     "image": "standard/bloodthirster.png",
-    "emoji": "<:TFT_Item_Bloodthirster:1236037310915805295>"
+    "emoji": null
   },
   "TFT_Item_BrambleVest": {
     "name": "Bramble Vest",
     "image": "standard/bramble_vest.png",
-    "emoji": "<:TFT_Item_BrambleVest:1236037316380983296>"
+    "emoji": null
   },
   "TFT_Item_ChainVest": {
     "name": "Chain Vest",
     "image": "standard/chain_vest.png",
-    "emoji": "<:TFT_Item_ChainVest:1236037319186976860>"
+    "emoji": null
   },
   "TFT_Item_SparringGloves": {
     "name": "Sparring Gloves",
     "image": "standard/sparring_gloves.png",
-    "emoji": "<:TFT_Item_SparringGloves:1236037324647829615>"
+    "emoji": null
   },
   "TFT_Item_Deathblade": {
     "name": "Deathblade",
     "image": "standard/death_blade.png",
-    "emoji": "<:TFT_Item_Deathblade:1236037328288612393>"
+    "emoji": null
   },
   "TFT_Item_DragonsClaw": {
     "name": "Dragon's Claw",
     "image": "standard/dragons_claw.png",
-    "emoji": "<:TFT_Item_DragonsClaw:1236037332210290689>"
+    "emoji": null
   },
   "TFT_Item_EmptyBag": {
     "name": "",
     "image": "placeholders/tft_item_emptyslot.png",
-    "emoji": "<:TFT_Item_EmptyBag:1236037334944710728>"
+    "emoji": null
   },
   "TFT_Item_ForceOfNature": {
     "name": "Tactician's Crown",
     "image": "standard/tacticians_crown.png",
-    "emoji": "<:TFT_Item_ForceOfNature:1236037339889926156>"
+    "emoji": null
   },
   "TFT_Item_ThiefsGloves": {
     "name": "Thief's Gloves",
     "image": "standard/thieves_gloves.png",
-    "emoji": "<:TFT_Item_ThiefsGloves:1236037346420330518>"
+    "emoji": null
   },
   "TFT_Item_ThiefsGloves_Empty": {
     "name": "",
     "image": "placeholders/tft_item_emptyslot.png",
-    "emoji": "<:TFT_Item_EmptyBag:1236037334944710728>"
+    "emoji": null
   },
   "TFT_Item_Shroud": {
     "name": "Shroud of Stillness",
     "image": "tft9_supportitems/shroud_of_stillness.png",
-    "emoji": "<:TFT_Item_Shroud:1236037350463901797>"
+    "emoji": null
   },
   "TFT_Item_FrozenHeart": {
     "name": "Protector's Vow",
     "image": "standard/winters_approach.png",
-    "emoji": "<:TFT_Item_FrozenHeart:1236037353978466345>"
+    "emoji": null
   },
   "TFT_Item_GiantsBelt": {
     "name": "Giant's Belt",
     "image": "standard/gaints_belt.png",
-    "emoji": "<:TFT_Item_GiantsBelt:1236037357216595978>"
+    "emoji": null
   },
   "TFT_Item_MadredsBloodrazor": {
     "name": "Giant Slayer",
     "image": "standard/giant_slayer.png",
-    "emoji": "<:TFT_Item_MadredsBloodrazor:1236037361532538931>"
+    "emoji": null
   },
   "TFT_Item_GuardianAngel": {
     "name": "Edge of Night",
     "image": "standard/edge_of_night.png",
-    "emoji": "<:TFT_Item_GuardianAngel:1236037364929921075>"
+    "emoji": null
   },
   "TFT_Item_GuinsoosRageblade": {
     "name": "Guinsoo's Rageblade",
     "image": "standard/guinsoos_rageblade.png",
-    "emoji": "<:TFTTutorial_Item_GuinsoosRageblade:1236037300157153392>"
+    "emoji": null
   },
   "TFT_Item_UnstableConcoction": {
     "name": "Hand Of Justice",
     "image": "standard/hand_of_justice.png",
-    "emoji": "<:TFT_Item_UnstableConcoction:1236037368918573146>"
+    "emoji": null
   },
   "TFT_Item_HextechGunblade": {
     "name": "Hextech Gunblade",
     "image": "standard/hextech_gunblade.png",
-    "emoji": "<:TFT_Item_HextechGunblade:1236037372592783411>"
+    "emoji": null
   },
   "TFT_Item_Chalice": {
     "name": "Chalice of Power",
     "image": "tft9_supportitems/chalice_of_power.png",
-    "emoji": "<:TFT_Item_Chalice:1236037379031306312>"
+    "emoji": null
   },
   "TFT_Item_InfinityEdge": {
     "name": "Infinity Edge",
     "image": "standard/infinity_edge.png",
-    "emoji": "<:TFT_Item_InfinityEdge:1236037382327894107>"
+    "emoji": null
   },
   "TFT_Item_IonicSpark": {
     "name": "Ionic Spark",
     "image": "standard/ionic_spark.png",
-    "emoji": "<:TFT_Item_IonicSpark:1236037385205317673>"
+    "emoji": null
   },
   "TFT_Item_JeweledGauntlet": {
     "name": "Jeweled Gauntlet",
     "image": "standard/jeweled_guantlet.png",
-    "emoji": "<:TFT_Item_JeweledGauntlet:1236037389709873255>"
+    "emoji": null
   },
   "TFT_Item_LastWhisper": {
     "name": "Last Whisper",
     "image": "standard/last_whisper.png",
-    "emoji": "<:TFT_Item_LastWhisper:1236037396588531712>"
+    "emoji": null
   },
   "TFT_Item_LocketOfTheIronSolari": {
     "name": "Locket of the Iron Solari",
     "image": "tft9_supportitems/locket_of_the_iron_solari.png",
-    "emoji": "<:TFT_Item_LocketOfTheIronSolari:1236037404675145788>"
+    "emoji": null
   },
   "TFT_Item_ArchangelsStaff": {
     "name": "Archangel's Staff",
     "image": "standard/archangel_staff.png",
-    "emoji": "<:TFT_Item_ArchangelsStaff:1236037408815059074>"
+    "emoji": null
   },
   "TFT_Item_Spatula": {
     "name": "Spatula",
     "image": "standard/spatula.png",
-    "emoji": "<:TFT_Item_Spatula:1236037412581412976>"
+    "emoji": null
   },
   "TFT_Item_Quicksilver": {
     "name": "Quicksilver",
     "image": "standard/quicksilver.png",
-    "emoji": "<:TFT_Item_Quicksilver:1236037415362232391>"
+    "emoji": null
   },
   "TFT_Item_Morellonomicon": {
     "name": "Morellonomicon",
     "image": "standard/morellonomicon.png",
-    "emoji": "<:TFT_Item_Morellonomicon:1236037418797498399>"
+    "emoji": null
   },
   "TFT_Item_NeedlesslyLargeRod": {
     "name": "Needlessly Large Rod",
     "image": "standard/needlessly_large_rod.png",
-    "emoji": "<:TFTTutorial_Item_NeedlesslyLargeRod:1236037291055775937>"
+    "emoji": null
   },
   "TFT_Item_NegatronCloak": {
     "name": "Negatron Cloak",
     "image": "standard/negatron_cloak.png",
-    "emoji": "<:TFT_Item_NegatronCloak:1236037422689550366>"
+    "emoji": null
   },
   "TFT_Item_PowerGauntlet": {
     "name": "Guardbreaker",
     "image": "standard/stridebreaker.png",
-    "emoji": "<:TFT_Item_PowerGauntlet:1236037426817011724>"
+    "emoji": null
   },
   "TFT_Item_RabadonsDeathcap": {
     "name": "Rabadon's Deathcap",
     "image": "standard/rabadons_deathcap.png",
-    "emoji": "<:TFT_Item_RabadonsDeathcap:1236037431325757490>"
+    "emoji": null
   },
   "TFT_Item_RapidFireCannon": {
     "name": "Red Buff",
     "image": "standard/redbuff.png",
-    "emoji": "<:TFT_Item_RapidFireCannon:1236037437973725349>"
+    "emoji": null
   },
   "TFT_Item_RecurveBow": {
     "name": "Recurve Bow",
     "image": "standard/recurve_bow.png",
-    "emoji": "<:TFTTutorial_Item_RecurveBow:1236037294277005433>"
+    "emoji": null
   },
   "TFT_Item_RedBuff": {
     "name": "Sunfire Cape",
     "image": "standard/sunfire_cape.png",
-    "emoji": "<:TFT_Item_RedBuff:1236037448094584902>"
+    "emoji": null
   },
   "TFT_Item_Redemption": {
     "name": "Redemption",
     "image": "standard/redemption.png",
-    "emoji": "<:TFT_Item_Redemption:1236037451349233767>"
+    "emoji": null
   },
   "TFT_Item_RunaansHurricane": {
     "name": "Runaan's Hurricane",
     "image": "standard/runaans_hurricane.png",
-    "emoji": "<:TFT_Item_RunaansHurricane:1236037456701427763>"
+    "emoji": null
   },
   "TFT_Item_SpearOfShojin": {
     "name": "Spear of Shojin",
     "image": "standard/spear_of_shojin.png",
-    "emoji": "<:TFT_Item_SpearOfShojin:1236037462044967005>"
+    "emoji": null
   },
   "TFT_Item_StatikkShiv": {
     "name": "Statikk Shiv",
     "image": "standard/statikk_shiv.png",
-    "emoji": "<:TFT_Item_StatikkShiv:1236037465211404418>"
+    "emoji": null
   },
   "TFT_Item_GargoyleStoneplate": {
     "name": "Gargoyle Stoneplate",
     "image": "standard/gargoyle_stoneplate.png",
-    "emoji": "<:TFT_Item_GargoyleStoneplate:1236037468357136514>"
+    "emoji": null
   },
   "TFT_Item_TearOfTheGoddess": {
     "name": "Tear of the Goddess",
     "image": "standard/tear_of_the_goddess.png",
-    "emoji": "<:TFT_Item_TearOfTheGoddess:1236037473369329734>"
+    "emoji": null
   },
   "TFT_Item_TitanicHydra": {
     "name": "Zz'Rot Portal",
     "image": "standard/zzrot_portal.png",
-    "emoji": "<:TFT_Item_TitanicHydra:1236037478847086634>"
+    "emoji": null
   },
   "TFT_Item_TitansResolve": {
     "name": "Titan's Resolve",
     "image": "standard/titans_resolve.png",
-    "emoji": "<:TFT_Item_TitansResolve:1236037481804333166>"
+    "emoji": null
   },
   "TFT_Item_WarmogsArmor": {
     "name": "Warmog's Armor",
     "image": "standard/warmogs_armor.png",
-    "emoji": "<:TFT_Item_WarmogsArmor:1236037485138808882>"
+    "emoji": null
   },
   "TFT_Item_ZekesHerald": {
     "name": "Zeke's Herald",
     "image": "tft9_supportitems/zekes_herald.png",
-    "emoji": "<:TFT_Item_ZekesHerald:1236037491014897695>"
+    "emoji": null
   },
   "TFT_Item_Zephyr": {
     "name": "Zephyr",
     "image": "tft9_supportitems/zephyr.png",
-    "emoji": "<:TFT_Item_Zephyr:1236037496756764764>"
+    "emoji": null
   },
   "TFT_Consumable_ItemRemover": {
     "name": "Magnetic Remover",
     "image": "consumables/tft_item_consumable_itemremover.png",
-    "emoji": "<:TFT_Consumable_ItemRemover:1236037501714698330>"
+    "emoji": null
   },
   "TFT_Consumable_ItemReroller": {
     "name": "Reforger",
     "image": "consumables/tft_item_consumable_itemreroller.png",
-    "emoji": "<:TFT_Consumable_ItemReroller:1236037509281222806>"
+    "emoji": null
   },
   "TFT_Item_DebugBase": {
     "name": "MissingNo",
     "image": "augments/du_augment_mysterygift.png",
-    "emoji": "<:TFT_Item_DebugBase:1236037515354439742>"
+    "emoji": null
   },
   "TFT4_Item_OrnnAnimaVisage": {
     "name": "Anima Visage",
     "image": "ornn_items/tft4_ornnitem_tank_t3_spiritvisage.png",
-    "emoji": "<:TFT4_Item_OrnnAnimaVisage:1236037520387473410>"
+    "emoji": null
   },
   "TFT4_Item_OrnnDeathsDefiance": {
     "name": "Death's Defiance",
     "image": "ornn_items/tft4_ornnitem_fighter_t3_deathsdance.png",
-    "emoji": "<:TFT4_Item_OrnnDeathsDefiance:1236037525319975064>"
+    "emoji": null
   },
   "TFT4_Item_OrnnEternalWinter": {
     "name": "Eternal Winter",
     "image": "ornn_items/tft4_ornnitem_mage_t4_everfrost.png",
-    "emoji": "<:TFT4_Item_OrnnEternalWinter:1236037530416054292>"
+    "emoji": null
   },
   "TFT4_Item_OrnnTheCollector": {
     "name": "Gold Collector",
     "image": "ornn_items/tft4_ornnitem_marksman_t3_thecollector.png",
-    "emoji": "<:TFT4_Item_OrnnTheCollector:1236037534409293846>"
+    "emoji": null
   },
   "TFT4_Item_OrnnInfinityForce": {
     "name": "Infinity Force",
     "image": "ornn_items/tft4_ornnitem_fighter_t4_trinityforce.png",
-    "emoji": "<:TFT4_Item_OrnnInfinityForce:1236037538158874644>"
+    "emoji": null
   },
   "TFT4_Item_OrnnMuramana": {
     "name": "Manazane",
     "image": "ornn_items/tft4_ornnitem_marksman_t3_muramana.png",
-    "emoji": "<:TFT4_Item_OrnnMuramana:1236037541325443082>"
+    "emoji": null
   },
   "TFT4_Item_OrnnObsidianCleaver": {
     "name": "Obsidian Cleaver",
     "image": "tft9_supportitems/obsidian_cleaver.png",
-    "emoji": "<:TFT4_Item_OrnnObsidianCleaver:1236037547088416849>"
+    "emoji": null
   },
   "TFT4_Item_OrnnRanduinsSanctum": {
     "name": "Randuin's Omen",
     "image": "tft9_supportitems/randuins_sanctum_support.png",
-    "emoji": "<:TFT4_Item_OrnnRanduinsSanctum:1236037550934589533>"
+    "emoji": null
   },
   "TFT4_Item_OrnnZhonyasParadox": {
     "name": "Zhonya's Paradox",
     "image": "ornn_items/tft4_ornnitem_mage_t3_zhonyashourglass.png",
-    "emoji": "<:TFT4_Item_OrnnZhonyasParadox:1236037556722995302>"
+    "emoji": null
   },
   "TFT5_Item_TrapClawRadiant": {
     "name": "Willbreaker",
     "image": "radiant/stridebreaker-radiant.png",
-    "emoji": "<:TFT5_Item_TrapClawRadiant:1236037562397622392>"
+    "emoji": null
   },
   "TFT5_Item_BloodthirsterRadiant": {
     "name": "Blessed Bloodthirster",
     "image": "radiant/bloodthirster_radiant.png",
-    "emoji": "<:TFT5_Item_BloodthirsterRadiant:1236037567019880469>"
+    "emoji": null
   },
   "TFT5_Item_IonicSparkRadiant": {
     "name": "Covalent Spark",
     "image": "radiant/ionic_spark_radiant.png",
-    "emoji": "<:TFT5_Item_IonicSparkRadiant:1236037571516170360>"
+    "emoji": null
   },
   "TFT5_Item_GiantSlayerRadiant": {
     "name": "Demonslayer",
     "image": "radiant/giant_slayer_radiant.png",
-    "emoji": "<:TFT5_Item_GiantSlayerRadiant:1236037576171851867>"
+    "emoji": null
   },
   "TFT5_Item_DragonsClawRadiant": {
     "name": "Dragon's Will",
     "image": "radiant/dragons_claw_radiant.png",
-    "emoji": "<:TFT5_Item_DragonsClawRadiant:1236037580521214043>"
+    "emoji": null
   },
   "TFT5_Item_GargoyleStoneplateRadiant": {
     "name": "Dvarapala Stoneplate",
     "image": "radiant/gargoyle_stoneplate_radiant.png",
-    "emoji": "<:TFT5_Item_GargoyleStoneplateRadiant:1236037585244262442>"
+    "emoji": null
   },
   "TFT5_Item_LastWhisperRadiant": {
     "name": "Eternal Whisper",
     "image": "radiant/last_whisper_radiant.png",
-    "emoji": "<:TFT5_Item_LastWhisperRadiant:1236037590851915799>"
+    "emoji": null
   },
   "TFT5_Item_HandOfJusticeRadiant": {
     "name": "Fist of Fairness",
     "image": "radiant/hand_of_justice_radiant.png",
-    "emoji": "<:TFT5_Item_HandOfJusticeRadiant:1236037596275020018>"
+    "emoji": null
   },
   "TFT5_Item_FrozenHeartRadiant": {
     "name": "Bulwark's Oath",
     "image": "radiant/fimbulwinter_radiant.png",
-    "emoji": "<:TFT5_Item_FrozenHeartRadiant:1236037600620318720>"
+    "emoji": null
   },
   "TFT5_Item_JeweledGauntletRadiant": {
     "name": "Glamorous Gauntlet",
     "image": "radiant/jeweled_gauntlet_radiant.png",
-    "emoji": "<:TFT5_Item_JeweledGauntletRadiant:1236037605288579096>"
+    "emoji": null
   },
   "TFT5_Item_GuardianAngelRadiant": {
     "name": "Brink of Dawn",
     "image": "radiant/edge_of_night_radiant.png",
-    "emoji": "<:TFT5_Item_GuardianAngelRadiant:1236037610196176896>"
+    "emoji": null
   },
   "TFT5_Item_GuinsoosRagebladeRadiant": {
     "name": "Guinsoo's Reckoning",
     "image": "radiant/guinsoos_rageblade_radiant.png",
-    "emoji": "<:TFT5_Item_GuinsoosRagebladeRadiant:1236037615828992041>"
+    "emoji": null
   },
   "TFT5_Item_HextechGunbladeRadiant": {
     "name": "Hextech Lifeblade",
     "image": "radiant/hextech_gunblade_radiant.png",
-    "emoji": "<:TFT5_Item_HextechGunbladeRadiant:1236037619452743783>"
+    "emoji": null
   },
   "TFT5_Item_DeathbladeRadiant": {
     "name": "Luminous Deathblade",
     "image": "radiant/death_blade_radiant.png",
-    "emoji": "<:TFT5_Item_DeathbladeRadiant:1236037628084748348>"
+    "emoji": null
   },
   "TFT5_Item_MorellonomiconRadiant": {
     "name": "More More-ellonomicon",
     "image": "radiant/morellonomicon_radiant.png",
-    "emoji": "<:TFT5_Item_MorellonomiconRadiant:1236037633470238830>"
+    "emoji": null
   },
   "TFT5_Item_QuicksilverRadiant": {
     "name": "Quickestsilver",
     "image": "radiant/quicksilver_radiant.png",
-    "emoji": "<:TFT5_Item_QuicksilverRadiant:1236037638478106705>"
+    "emoji": null
   },
   "TFT5_Item_RabadonsDeathcapRadiant": {
     "name": "Rabadon's Ascended Deathcap",
     "image": "radiant/rabadons_deathcap_radiant.png",
-    "emoji": "<:TFT5_Item_RabadonsDeathcapRadiant:1236037642932457482>"
+    "emoji": null
   },
   "TFT5_Item_RedemptionRadiant": {
     "name": "Absolution",
     "image": "radiant/redemption_radiant.png",
-    "emoji": "<:TFT5_Item_RedemptionRadiant:1236037647458107434>"
+    "emoji": null
   },
   "TFT5_Item_RapidFirecannonRadiant": {
     "name": "Crest of Cinders",
     "image": "radiant/redbuff_radiant.png",
-    "emoji": "<:TFT5_Item_RapidFirecannonRadiant:1236037652650922127>"
+    "emoji": null
   },
   "TFT5_Item_ThiefsGlovesRadiant": {
     "name": "Rascal's Gloves",
     "image": "radiant/thieves_gloves_radiant.png",
-    "emoji": "<:TFT5_Item_ThiefsGlovesRadiant:1236037658325680158>"
+    "emoji": null
   },
   "TFT5_Item_BrambleVestRadiant": {
     "name": "Rosethorn Vest",
     "image": "radiant/bramble_vest_radiant.png",
-    "emoji": "<:TFT5_Item_BrambleVestRadiant:1236037662268194894>"
+    "emoji": null
   },
   "TFT5_Item_RunaansHurricaneRadiant": {
     "name": "Runaan's Tempest",
     "image": "radiant/runaans_hurricane_radiant.png",
-    "emoji": "<:TFT5_Item_RunaansHurricaneRadiant:1236037666357907466>"
+    "emoji": null
   },
   "TFT5_Item_SpearOfShojinRadiant": {
     "name": "Spear of Hirana",
     "image": "radiant/spear_of_shojin_radiant.png",
-    "emoji": "<:TFT5_Item_SpearOfShojinRadiant:1236037671525154826>"
+    "emoji": null
   },
   "TFT5_Item_StatikkShivRadiant": {
     "name": "Statikk's Favor",
     "image": "radiant/statikk_shiv_radiant.png",
-    "emoji": "<:TFT5_Item_StatikkShivRadiant:1236037675585241088>"
+    "emoji": null
   },
   "TFT5_Item_SunfireCapeRadiant": {
     "name": "Sunlight Cape",
     "image": "radiant/sunfire_cape_radiant.png",
-    "emoji": "<:TFT5_Item_SunfireCapeRadiant:1236037679779414017>"
+    "emoji": null
   },
   "TFT5_Item_TitansResolveRadiant": {
     "name": "Titan's Vow",
     "image": "radiant/titans_resolve_radiant.png",
-    "emoji": "<:TFT5_Item_TitansResolveRadiant:1236037684468645910>"
+    "emoji": null
   },
   "TFT5_Item_ArchangelsStaffRadiant": {
     "name": "Urf-Angel's Staff",
     "image": "radiant/archangel_staff_radiant.png",
-    "emoji": "<:TFT5_Item_ArchangelsStaffRadiant:1236037688981979240>"
+    "emoji": null
   },
   "TFT5_Item_WarmogsArmorRadiant": {
     "name": "Warmog's Pride",
     "image": "radiant/warmogs_armor_radiant.png",
-    "emoji": "<:TFT5_Item_WarmogsArmorRadiant:1236037693163573329>"
+    "emoji": null
   },
   "TFT5_Item_InfinityEdgeRadiant": {
     "name": "Zenith Edge",
     "image": "radiant/infinity_edge_radiant.png",
-    "emoji": "<:TFT5_Item_InfinityEdgeRadiant:1236037698041413692>"
+    "emoji": null
   },
   "TFT5_Item_ZzRotPortalRadiant": {
     "name": "Zz'Rot Portal",
     "image": "tft9_supportitems/zzrot_portal.png",
-    "emoji": "<:TFT5_Item_ZzRotPortalRadiant:1236037700797071522>"
+    "emoji": null
   },
   "TFT_Item_DebugDamage": {
     "name": "Portable Pain",
     "image": "augments/tft6_augment_brawlerveterans.png",
-    "emoji": "<:TFT_Item_DebugDamage:1236037709034950728>"
+    "emoji": null
   },
   "TFT_Item_DebugMana": {
     "name": "The Tears of My Enemies",
     "image": "augments/du_augment_solarpower.png",
-    "emoji": "<:TFT_Item_DebugMana:1236037715011571772>"
+    "emoji": null
   },
   "TFT_Item_DebugStun": {
     "name": "Hammer to the Face",
     "image": "augments/tft6_augment_clockworkoverclock.png",
-    "emoji": "<:TFT_Item_DebugStun:1236037720204247040>"
+    "emoji": null
   },
   "TFT_Item_DebugUnitID": {
     "name": "Do You Know Who I Am?",
     "image": "augments/tft6_augment_experimentalemblem.png",
-    "emoji": "<:TFT_Item_DebugUnitID:1236037724448751797>"
+    "emoji": null
   },
   "TFT7_Item_ShimmerscaleHeartOfGold": {
     "name": "Needlessly Big Gem",
     "image": "tft9_supportitems/needlessy_large_gem.png",
-    "emoji": "<:TFT7_Item_ShimmerscaleHeartOfGold:1236037728722751638>"
+    "emoji": null
   },
   "TFT9_Item_OrnnHullbreaker": {
     "name": "Hullcrusher",
     "image": "ornn_items/tft9_ornnitem_hullbreaker.png",
-    "emoji": "<:TFT9_Item_OrnnHullbreaker:1236037735089700934>"
+    "emoji": null
   },
   "TFT9_Item_OrnnTrickstersGlass": {
     "name": "Trickster's Glass",
     "image": "ornn_items/tft9_ornnitem_trickstersglass.png",
-    "emoji": "<:TFT9_Item_OrnnTrickstersGlass:1236037739921539214>"
+    "emoji": null
   },
   "TFT9_Item_OrnnDeathfireGrasp": {
     "name": "Deathfire Grasp",
     "image": "ornn_items/tft9_ornnitem_deathfiregrasp.png",
-    "emoji": "<:TFT9_Item_OrnnDeathfireGrasp:1236037744036151327>"
+    "emoji": null
   },
   "TFT9_Item_OrnnHorizonFocus": {
     "name": "Sniper's Focus",
     "image": "ornn_items/tft9_ornnitem_snipersfocus.png",
-    "emoji": "<:TFT9_Item_OrnnHorizonFocus:1236037751074328709>"
+    "emoji": null
   },
   "TFT_Item_UnusableSlot": {
     "name": "Unusable Slot",
     "image": "placeholders/tft_item_unusableslot.png",
-    "emoji": "<:TFT_Item_UnusableSlot:1236037761182466190>"
+    "emoji": null
   },
   "TFT_Item_BlankSlot": {
     "name": "",
     "image": "placeholders/tft_item_emptyslot.png",
-    "emoji": "<:TFT_Item_EmptyBag:1236037334944710728>"
+    "emoji": null
   },
   "TFT_Item_SpectralGauntlet": {
     "name": "Evenshroud",
     "image": "standard/evenshroud.png",
-    "emoji": "<:TFT_Item_SpectralGauntlet:1236037768891600928>"
+    "emoji": null
   },
   "TFT5_Item_SpectralGauntletRadiant": {
     "name": "Equinox",
     "image": "radiant/evenshroud_radiant.png",
-    "emoji": "<:TFT5_Item_SpectralGauntletRadiant:1236037775032057876>"
+    "emoji": null
   },
   "TFT_Item_Crownguard": {
     "name": "Crownguard",
     "image": "standard/crownguard.png",
-    "emoji": "<:TFT_Item_Crownguard:1236037778203213937>"
+    "emoji": null
   },
   "TFT5_Item_CrownguardRadiant": {
     "name": "Royal Crownshield",
     "image": "radiant/crownguard_radiant.png",
-    "emoji": "<:TFT5_Item_CrownguardRadiant:1236037782896378037>"
+    "emoji": null
   },
   "TFT_Item_NightHarvester": {
     "name": "Steadfast Heart",
     "image": "standard/behemoth.png",
-    "emoji": "<:TFT_Item_NightHarvester:1236037786814119957>"
+    "emoji": null
   },
   "TFT7_Item_ShimmerscaleHeartOfGold_HR": {
     "name": "Needlessly Big Gem",
     "image": "traits/set7_shimmerscale/shimmerscale_heartofgold_base.png",
-    "emoji": "<:TFT7_Item_ShimmerscaleHeartOfGold_HR:1236037792933351536>"
+    "emoji": null
   },
   "TFT5_Item_NightHarvesterRadiant": {
     "name": "Legacy of the Colossus",
     "image": "radiant/behemoth_radiant.png",
-    "emoji": "<:TFT5_Item_NightHarvesterRadiant:1236037801548447876>"
+    "emoji": null
   },
   "TFT_Item_SteraksGage": {
     "name": "Sterak's Gage",
     "image": "standard/steraks_gage.png",
-    "emoji": "<:TFT_Item_SteraksGage:1236037806552514660>"
+    "emoji": null
   },
   "TFT5_Item_SteraksGageRadiant": {
     "name": "Sterak's Megashield",
     "image": "radiant/steraks_gage_radiant.png",
-    "emoji": "<:TFT5_Item_SteraksGageRadiant:1236037810624921690>"
+    "emoji": null
   },
   "TFT_Item_BlueBuff": {
     "name": "Blue Buff",
     "image": "standard/blue_buff.png",
-    "emoji": "<:TFT_Item_BlueBuff:1236037813611528295>"
+    "emoji": null
   },
   "TFT5_Item_BlueBuffRadiant": {
     "name": "Blue Blessing",
     "image": "radiant/blue_buff_radiant.png",
-    "emoji": "<:TFT5_Item_BlueBuffRadiant:1236037818334183434>"
+    "emoji": null
   },
   "TFT_Item_AdaptiveHelm": {
     "name": "Adaptive Helm",
     "image": "standard/adaptive_helm.png",
-    "emoji": "<:TFT_Item_AdaptiveHelm:1236037821400219781>"
+    "emoji": null
   },
   "TFT5_Item_AdaptiveHelmRadiant": {
     "name": "Jak'sho the Protean",
     "image": "radiant/adaptive_helm_radiant.png",
-    "emoji": "<:TFT5_Item_AdaptiveHelmRadiant:1236037826932379698>"
+    "emoji": null
   },
   "TFT_Item_Leviathan": {
     "name": "Nashor's Tooth",
     "image": "standard/nashors_tooth.png",
-    "emoji": "<:TFT_Item_Leviathan:1236037830208258148>"
+    "emoji": null
   },
   "TFT5_Item_LeviathanRadiant": {
     "name": "The Baron's Gift",
     "image": "radiant/nashors_tooth_radiant.png",
-    "emoji": "<:TFT5_Item_LeviathanRadiant:1236037834478190744>"
+    "emoji": null
   },
   "TFT_Item_AegisOfTheLegion": {
     "name": "Aegis of the Legion",
     "image": "tft9_supportitems/aegis.png",
-    "emoji": "<:TFT_Item_AegisOfTheLegion:1236037838089490452>"
+    "emoji": null
   },
   "TFT_Item_RadiantVirtue": {
     "name": "Virtue of the Martyr",
     "image": "tft9_supportitems/radiant_virtue.png",
-    "emoji": "<:TFT_Item_RadiantVirtue:1236037842002513992>"
+    "emoji": null
   },
   "TFT_Item_BansheesVeil": {
     "name": "Banshee's Veil",
     "image": "tft9_supportitems/banshees_veil.png",
-    "emoji": "<:TFT_Item_BansheesVeil:1236037846054211644>"
+    "emoji": null
   },
   "TFT9_Item_OrnnPrototypeForge": {
     "name": "Blacksmith's Gloves",
     "image": "ornn_items/tft9_ornnitem_blacksmithsgloves.png",
-    "emoji": "<:TFT9_Item_OrnnPrototypeForge:1236037850726928405>"
+    "emoji": null
   },
   "TFT_Item_DebugShield": {
     "name": "Pengu's Protection",
     "image": "augments/du_augment_speedysupport.png",
-    "emoji": "<:TFT_Item_DebugShield:1236037875838226433>"
+    "emoji": null
   },
   "TFT_Item_DebugCrit": {
     "name": "Critical Hit!",
     "image": "augments/tft6_augment_enchanterinfinitycane.png",
-    "emoji": "<:TFT_Item_DebugCrit:1236037879776415807>"
+    "emoji": null
   },
   "TFT7_Item_ShimmerscaleGamblersBlade": {
     "name": "Gambler's Blade",
     "image": "ornn_items/tft10_gamblersblade.png",
-    "emoji": "<:TFT7_Item_ShimmerscaleGamblersBlade:1236037883282980966>"
+    "emoji": null
   },
   "TFT7_Item_ShimmerscaleDeterminedInvestor": {
     "name": "Determined Investor",
     "image": "traits/set7_shimmerscale/shimmerscale_determinedinvestor_base.png",
-    "emoji": "<:TFT7_Item_ShimmerscaleDeterminedInvestor:1236037887879942205>"
+    "emoji": null
   },
   "TFT7_Item_ShimmerscaleDiamondHands": {
     "name": "Diamond Hands",
     "image": "ornn_items/tft10_diamondhands.png",
-    "emoji": "<:TFT7_Item_ShimmerscaleDiamondHands:1236037891927445535>"
+    "emoji": null
   },
   "TFT7_Item_ShimmerscaleGamblersBlade_HR": {
     "name": "Gambler's Blade",
     "image": "ornn_items/tft10_gamblersblade.png",
-    "emoji": "<:TFT7_Item_ShimmerscaleGamblersBlade:1236037883282980966>"
+    "emoji": null
   },
   "TFT_Item_DebugDamageAmp": {
     "name": "Damage Amp",
     "image": "augments/du_augment_bulkshipping.png",
-    "emoji": "<:TFT_Item_DebugDamageAmp:1236037897350680597>"
+    "emoji": null
   },
   "TFT11_Item_ThiefsGlovesSupport": {
     "name": "Accomplice's Gloves",
     "image": "standard/thieves_gloves.png",
-    "emoji": "<:TFT_Item_ThiefsGloves:1236037346420330518>"
+    "emoji": null
   },
   "TFT_Item_EternalFlame": {
     "name": "The Eternal Flame",
     "image": "tft9_supportitems/eternal_flame.png",
-    "emoji": "<:TFT_Item_EternalFlame:1236037901884850177>"
+    "emoji": null
   },
   "TFT_Item_SupportKnightsVow": {
     "name": "Knight's Vow",
     "image": "tft9_supportitems/knights_vow.png",
-    "emoji": "<:TFT_Item_SupportKnightsVow:1236037905793679462>"
+    "emoji": null
   },
   "TFT_Item_Moonstone": {
     "name": "Moonstone Renewer",
     "image": "tft9_supportitems/moonstone.png",
-    "emoji": "<:TFT_Item_Moonstone:1236037910906535997>"
+    "emoji": null
   },
   "TFT_Item_Spite": {
     "name": "Spite",
     "image": "tft9_supportitems/spite.png",
-    "emoji": "<:TFT_Item_Spite:1236037915671400569>"
+    "emoji": null
   },
   "TFT_Item_UnstableTreasureChest": {
     "name": "Unstable Treasure Chest",
     "image": "tft9_supportitems/unstable_treasure_chest.png",
-    "emoji": "<:TFT_Item_UnstableTreasureChest:1236037920054444093>"
+    "emoji": null
   },
   "TFT_Item_Artifact_TalismanOfAscension": {
     "name": "Talisman Of Ascension",
     "image": "ornn_items/tft_item_artifact_talismanofascension.png",
-    "emoji": "<:TFT_Item_Artifact_TalismanOfAscension:1236037923317485689>"
+    "emoji": null
   },
   "TFT_Item_Artifact_CursedVampiricScepter": {
     "name": "Corrupt Vampiric Scepter",
     "image": "ornn_items/tft_item_artifact_cursedvampiricscepter.png",
-    "emoji": "<:TFT_Item_Artifact_CursedVampiricScepter:1236037927713116250>"
+    "emoji": null
   },
   "TFT_Item_Artifact_Fishbones": {
     "name": "Fishbones",
     "image": "ornn_items/tft_item_artifact_fishbones.png",
-    "emoji": "<:TFT_Item_Artifact_Fishbones:1236037933488930888>"
+    "emoji": null
   },
   "TFT_Item_Artifact_SuspiciousTrenchCoat": {
     "name": "Suspicious Trench Coat",
     "image": "ornn_items/tft_item_artifact_suspicioustrenchcoat.png",
-    "emoji": "<:TFT_Item_Artifact_SuspiciousTrenchCoat:1236037947527135263>"
+    "emoji": null
   },
   "TFT_Item_Artifact_HorizonFocus": {
     "name": "Horizon Focus",
     "image": "ornn_items/tft_item_artifact_horizonfocus.png",
-    "emoji": "<:TFT_Item_Artifact_HorizonFocus:1236037952870682756>"
+    "emoji": null
   },
   "TFT_Item_Artifact_Mittens": {
     "name": "Mittens",
     "image": "ornn_items/tft_item_artifact_mittens.png",
-    "emoji": "<:TFT_Item_Artifact_Mittens:1236037957052272693>"
+    "emoji": null
   },
   "TFT_Item_Artifact_UnendingDespair": {
     "name": "Unending Despair",
     "image": "ornn_items/tft_item_artifact_unendingdespair.png",
-    "emoji": "<:TFT_Item_Artifact_UnendingDespair:1236037962081239141>"
+    "emoji": null
   },
   "TFT_Item_Artifact_RapidFirecannon": {
     "name": "Rapid Firecannon",
     "image": "ornn_items/tft_item_artifact_rapidfirecannon.png",
-    "emoji": "<:TFT_Item_Artifact_RapidFirecannon:1236037966095450134>"
+    "emoji": null
   },
   "TFT_Item_Artifact_InnervatingLocket": {
     "name": "Innervating Locket",
     "image": "ornn_items/tft_item_artifact_innervatinglocket.png",
-    "emoji": "<:TFT_Item_Artifact_InnervatingLocket:1236037972361613454>"
+    "emoji": null
   },
   "TFT_Item_Artifact_LudensTempest": {
     "name": "Luden's Tempest",
     "image": "ornn_items/tft_item_artifact_ludenstempest.png",
-    "emoji": "<:TFT_Item_Artifact_LudensTempest:1236037979202388048>"
+    "emoji": null
   },
   "TFT_Item_Artifact_SilvermereDawn": {
     "name": "Silvermere Dawn",
     "image": "ornn_items/tft_item_artifact_silvermeredawn.png",
-    "emoji": "<:TFT_Item_Artifact_SilvermereDawn:1236037984130957393>"
+    "emoji": null
   },
   "TFT_Item_Artifact_ProwlersClaw": {
     "name": "Prowler's Claw",
     "image": "ornn_items/tft_item_artifact_prowlersclaw.png",
-    "emoji": "<:TFT_Item_Artifact_ProwlersClaw:1236037988610347161>"
+    "emoji": null
   },
   "TFT_Item_Artifact_SpectralCutlass": {
     "name": "Spectral Cutlass",
     "image": "ornn_items/tft_item_artifact_spectralcutlass.png",
-    "emoji": "<:TFT_Item_Artifact_SpectralCutlass:1236037994021130310>"
+    "emoji": null
   },
   "TFT_Item_Artifact_BlightingJewel": {
     "name": "Blighting Jewel",
     "image": "ornn_items/tft_item_artifact_blightingjewel.png",
-    "emoji": "<:TFT_Item_Artifact_BlightingJewel:1236037997473042493>"
+    "emoji": null
   },
   "TFT_Item_Artifact_WitsEnd": {
     "name": "Wit's End",
     "image": "ornn_items/tft_item_artifact_witsend.png",
-    "emoji": "<:TFT_Item_Artifact_WitsEnd:1236038001533128856>"
+    "emoji": null
   },
   "TFT_Item_Artifact_ForbiddenIdol": {
     "name": "Forbidden Idol",
     "image": "ornn_items/tft_item_artifact_forbiddenidol.png",
-    "emoji": "<:TFT_Item_Artifact_ForbiddenIdol:1236038005299351633>"
+    "emoji": null
   },
   "TFT_Item_Artifact_LichBane": {
     "name": "Lich Bane",
     "image": "ornn_items/tft_item_artifact_lichbane.png",
-    "emoji": "<:TFT_Item_Artifact_LichBane:1236038009397444749>"
+    "emoji": null
   },
   "TFT_Item_Artifact_LightshieldCrest": {
     "name": "Lightshield Crest",
     "image": "ornn_items/tft_item_artifact_lightshieldcrest.png",
-    "emoji": "<:TFT_Item_Artifact_LightshieldCrest:1236038012778057850>"
+    "emoji": null
   },
   "TFT_Item_Artifact_SeekersArmguard": {
     "name": "Seeker's Armguard",
     "image": "ornn_items/tft_item_artifact_seekersarmguard.png",
-    "emoji": "<:TFT_Item_Artifact_SeekersArmguard:1236038016812711988>"
+    "emoji": null
   },
   "TFT11_Item_InkshadowOx": {
     "name": "Tattoo of Vitality",
-    "image": "tft11_inkshadowitems/tft11_inkshadow_vitality.tft_set11.png",
-    "emoji": "<:TFT11_Item_InkshadowOx:1236038021292359791>"
+    "image": "tft11_inkshadowitems/tft11_inkshadow_vitality.png",
+    "emoji": null
   },
   "TFT11_Item_InkshadowSnake": {
     "name": "Tattoo of Toxin",
-    "image": "tft11_inkshadowitems/tft11_inkshadow_toxin.tft_set11.png",
-    "emoji": "<:TFT11_Item_InkshadowSnake:1236038024014594090>"
+    "image": "tft11_inkshadowitems/tft11_inkshadow_toxin.png",
+    "emoji": null
   },
   "TFT11_Item_InkshadowPig": {
     "name": "Tattoo of Protection",
-    "image": "tft11_inkshadowitems/tft11_inkshadow_protection.tft_set11.png",
-    "emoji": "<:TFT11_Item_InkshadowPig:1236038027352997949>"
+    "image": "tft11_inkshadowitems/tft11_inkshadow_protection.png",
+    "emoji": null
   },
   "TFT11_Item_InkshadowRat": {
     "name": "Tattoo of Bombardment",
-    "image": "tft11_inkshadowitems/tft11_inkshadow_bombardment.tft_set11.png",
-    "emoji": "<:TFT11_Item_InkshadowRat:1236038032449212486>"
+    "image": "tft11_inkshadowitems/tft11_inkshadow_bombardment.png",
+    "emoji": null
   },
   "TFT11_Item_InkshadowHorse": {
     "name": "Tattoo of Force",
-    "image": "tft11_inkshadowitems/tft11_inkshadow_force.tft_set11.png",
-    "emoji": "<:TFT11_Item_InkshadowHorse:1236038036714815499>"
+    "image": "tft11_inkshadowitems/tft11_inkshadow_force.png",
+    "emoji": null
   },
   "TFT11_Item_InkshadowTiger": {
     "name": "Tattoo of Fury",
-    "image": "tft11_inkshadowitems/tft11_inkshadow_fury.tft_set11.png",
-    "emoji": "<:TFT11_Item_InkshadowTiger:1236038041252925511>"
+    "image": "tft11_inkshadowitems/tft11_inkshadow_fury.png",
+    "emoji": null
   },
   "TFT11_Item_AltruistEmblemItem": {
     "name": "Altruist Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_altruist.png",
-    "emoji": "<:TFT11_Item_AltruistEmblemItem:1236038045426389086>"
+    "emoji": null
   },
   "TFT11_Item_BehemothEmblemItem": {
     "name": "Behemoth Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_behemoth.png",
-    "emoji": "<:TFT11_Item_BehemothEmblemItem:1236038050941894716>"
+    "emoji": null
   },
   "TFT11_Item_BruiserEmblemItem": {
     "name": "Bruiser Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_bruiser.png",
-    "emoji": "<:TFT11_Item_BruiserEmblemItem:1236038056398553168>"
+    "emoji": null
   },
   "TFT11_Item_DragonlordEmblemItem": {
     "name": "Dragonlord Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_dragonlord.png",
-    "emoji": "<:TFT11_Item_DragonlordEmblemItem:1236038060899303484>"
+    "emoji": null
   },
   "TFT11_Item_ChallengerEmblemItem": {
     "name": "Duelist Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_duelist.png",
-    "emoji": "<:TFT11_Item_ChallengerEmblemItem:1236038065059926076>"
+    "emoji": null
   },
   "TFT11_Item_DryadEmblemItem": {
     "name": "Dryad Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_dryad.png",
-    "emoji": "<:TFT11_Item_DryadEmblemItem:1236038070621573192>"
+    "emoji": null
   },
   "TFT11_Item_FatedEmblemItem": {
     "name": "Fated Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_fated.png",
-    "emoji": "<:TFT11_Item_FatedEmblemItem:1236038074102841345>"
+    "emoji": null
   },
   "TFT11_Item_FortuneEmblemItem": {
     "name": "Fortune Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_fortune.png",
-    "emoji": "<:TFT11_Item_FortuneEmblemItem:1236038078074720380>"
+    "emoji": null
   },
   "TFT11_Item_GhostlyEmblemItem": {
     "name": "Ghostly Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_ghostly.png",
-    "emoji": "<:TFT11_Item_GhostlyEmblemItem:1236038082600374425>"
+    "emoji": null
   },
   "TFT11_Item_WardenEmblemItem": {
     "name": "Warden Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_warden.png",
-    "emoji": "<:TFT11_Item_WardenEmblemItem:1236038087667224728>"
+    "emoji": null
   },
   "TFT11_Item_HeavenlyEmblemItem": {
     "name": "Heavenly Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_heavenly.png",
-    "emoji": "<:TFT11_Item_HeavenlyEmblemItem:1236038090984783953>"
+    "emoji": null
   },
   "TFT11_Item_InkShadowEmblemItem": {
     "name": "Inkshadow Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_inkshadow.png",
-    "emoji": "<:TFT11_Item_InkShadowEmblemItem:1236038095468761189>"
+    "emoji": null
   },
   "TFT11_Item_InvokerEmblemItem": {
     "name": "Invoker Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_invoker.png",
-    "emoji": "<:TFT11_Item_InvokerEmblemItem:1236038101042860114>"
+    "emoji": null
   },
   "TFT11_Item_MythicEmblemItem": {
     "name": "Mythic Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_mythic.png",
-    "emoji": "<:TFT11_Item_MythicEmblemItem:1236038104754815086>"
+    "emoji": null
   },
   "TFT11_Item_PorcelainEmblemItem": {
     "name": "Porcelain Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_porcelain.png",
-    "emoji": "<:TFT11_Item_PorcelainEmblemItem:1236038108353532095>"
+    "emoji": null
   },
   "TFT11_Item_ReaperEmblemItem": {
     "name": "Reaper Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_reaper.png",
-    "emoji": "<:TFT11_Item_ReaperEmblemItem:1236038112451493959>"
+    "emoji": null
   },
   "TFT11_Item_SageEmblemItem": {
     "name": "Sage Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_sage.png",
-    "emoji": "<:TFT11_Item_SageEmblemItem:1236038117446651915>"
+    "emoji": null
   },
   "TFT11_Item_SniperEmblemItem": {
     "name": "Sniper Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_sniper.png",
-    "emoji": "<:TFT11_Item_SniperEmblemItem:1236038121624178839>"
+    "emoji": null
   },
   "TFT11_Item_SpellslingerEmblemItem": {
     "name": "Arcanist Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_arcanist.png",
-    "emoji": "<:TFT11_Item_SpellslingerEmblemItem:1236038125818744874>"
+    "emoji": null
   },
   "TFT11_Item_StoryweaverEmblemItem": {
     "name": "Storyweaver Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_skyweaver.png",
-    "emoji": "<:TFT11_Item_StoryweaverEmblemItem:1236038131313147924>"
+    "emoji": null
   },
   "TFT11_Item_UmbralEmblemItem": {
     "name": "Umbral Emblem",
     "image": "traits/spatula/set11/tft_set11_emblem_umbral.png",
-    "emoji": "<:TFT11_Item_UmbralEmblemItem:1236038134760738936>"
+    "emoji": null
   },
   "TFT_Item_Blank": {
     "name": "",
     "image": "standard/transparent.png",
-    "emoji": "<:TFT_Item_Blank:1236038138749521940>"
+    "emoji": null
   },
   "TFT6_Augment_ItemGrabBag1": {
     "name": "Item Grab Bag I",
     "image": "/lol-game-data/assets/assets/maps/tft/icons/augments/hexcore/itemgrabbag1.png",
-    "emoji": "<:TFT6_Augment_ItemGrabBag1:1236036438542516255>"
+    "emoji": null
   },
   "TFT_Assist_ItemArmoryCompleted": {
     "name": "Completed Item Anvil",
@@ -932,6 +932,151 @@
   "TFT_Assist_ItemArmoryOrnn": {
     "name": "Artifact Anvil",
     "image": "/lol-game-data/assets/assets/characters/tft_armorykeyornn/hud/icons2d/tft_armorykeyornn_square.png",
+    "emoji": null
+  },
+  "TFT_Item_DebugFirstHit": {
+    "name": "Ace",
+    "image": "augments/tft6_augment_yordlesmallbutmighty.png",
+    "emoji": null
+  },
+  "TFT_Item_DebugTaunt": {
+    "name": "Taunt",
+    "image": "augments/du_augment_copycat.png",
+    "emoji": null
+  },
+  "TFT_Item_Artifact_CursedBlade": {
+    "name": "Cursed Blade",
+    "image": "ornn_items/tft_item_artifact_cursedblade.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitImperialActivator": {
+    "name": "Imperial",
+    "image": "traits/tftevent5yr/5year_traitarmory_imperial.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitPhantomActivator": {
+    "name": "Phantom",
+    "image": "traits/tftevent5yr/5year_traitarmory_phantom.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitHellionActivator": {
+    "name": "Hellion",
+    "image": "traits/tftevent5yr/5year_traitarmory_hellion.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitJazzActivator": {
+    "name": "Jazz",
+    "image": "traits/tftevent5yr/5year_traitarmory_jazz.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitMechPilotActivator": {
+    "name": "Mech-Pilot",
+    "image": "traits/tftevent5yr/5year_traitarmory_mechpilot.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitGlacialActivator": {
+    "name": "Glacial",
+    "image": "traits/tftevent5yr/5year_traitarmory_glacial.png",
+    "emoji": null
+  },
+  "TFTEvent5YR_Item_GlacialMallet": {
+    "name": "Glacial Mallet",
+    "image": "events/5yr/tftevent5yr_item_glacialmallet.tft_event_5thyear.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitBossActivator": {
+    "name": "The Boss",
+    "image": "traits/tftevent5yr/5year_traitarmory_boss.png",
+    "emoji": null
+  },
+  "TFTEvent5YR_Item_BossKnuckles": {
+    "name": "Boss Knuckles",
+    "image": "events/5yr/tftevent5yr_item_bossknuckles.tft_event_5thyear.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitMascotActivator": {
+    "name": "Mascot",
+    "image": "traits/tftevent5yr/5year_traitarmory_mascot.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitElderwoodActivator": {
+    "name": "Elderwood",
+    "image": "traits/tftevent5yr/5year_traitarmory_elderwood.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitTrainerActivator": {
+    "name": "Trainer",
+    "image": "traits/tftevent5yr/5year_traitarmory_trainers.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitRebelActivator": {
+    "name": "Rebel",
+    "image": "traits/tftevent5yr/5year_traitarmory_rebel.png",
+    "emoji": null
+  },
+  "TFTEvent5YR_Item_TrainerSnax": {
+    "name": "Delicious Snax",
+    "image": "events/5yr/tftevent5yr_item_trainersnax.tft_event_5thyear.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitSocialiteActivator": {
+    "name": "Socialite",
+    "image": "traits/tftevent5yr/5year_traitarmory_socialite.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitDiscoActivator": {
+    "name": "Disco",
+    "image": "traits/tftevent5yr/5year_traitarmory_disco.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitShurimaActivator": {
+    "name": "Shurima",
+    "image": "traits/tftevent5yr/5year_traitarmory_shurima.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitYordleActivator": {
+    "name": "Yordle",
+    "image": "traits/tftevent5yr/5year_traitarmory_yordle.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitMountainActivator": {
+    "name": "Mountain",
+    "image": "traits/tftevent5yr/5year_traitarmory_mountain.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitShimmerscaleActivator": {
+    "name": "Shimmerscale",
+    "image": "traits/tftevent5yr/5year_traitarmory_shimmerscale.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitCovenActivator": {
+    "name": "Coven",
+    "image": "traits/tftevent5yr/5year_traitarmory_coven.png",
+    "emoji": null
+  },
+  "TFTEvent5YR_Item_ShimmerscaleCrownOfChampions": {
+    "name": "Crown Of Champions",
+    "image": "traits/set7_shimmerscale/shimmerscale_crownofchampions_base.png",
+    "emoji": null
+  },
+  "TFTEvent5YR_Item_ShimmerscaleDravensAxe": {
+    "name": "Draven's Axe",
+    "image": "traits/set7_shimmerscale/shimmerscale_dravensaxe_base.png",
+    "emoji": null
+  },
+  "TFTEvent5YR_Item_ShimmerscaleGoldmancersStaff": {
+    "name": "Goldmancer's Staff",
+    "image": "traits/set7_shimmerscale/shimmerscale_goldmancersstaff_base.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitLaserCorpsActivator": {
+    "name": "LaserCorps",
+    "image": "traits/tftevent5yr/5year_traitarmory_lasercorps.png",
+    "emoji": null
+  },
+  "TFTEvent_5YR_Item_TraitBilgewaterActivator": {
+    "name": "Bilgewater",
+    "image": "traits/tftevent5yr/5year_traitarmory_bilgewater.png",
     "emoji": null
   }
 }

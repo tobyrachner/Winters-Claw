@@ -9,32 +9,9 @@ import json
 import os
 import dotenv
 from math import ceil
-from time import sleep
 from io import BytesIO
 
-import discord
-from discord.ext import commands
-
 from scripts import settings
-
-intents = discord.Intents.all()
-bot = commands.Bot(command_prefix="$", intents=intents)
-
-
-@bot.event
-async def on_ready():
-    print('online')
-
-@bot.event
-async def on_message(ctx):
-    if ctx.content == 'wc emoji_setup':
-        await setup()
-
-    if ctx.content == 'wc clear_emoji':
-        await ctx.channel.send('clearing emoji...')
-        for id in settings.guild_ids:
-            for emoji in bot.get_guild(id).emojis:
-                await emoji.delete()
 
 
 def get_current_units():
@@ -160,7 +137,7 @@ def get_current_items():
 
     return new, items
 
-async def get_guild_ids(slots):
+async def get_guild_ids(bot, slots):
     print('in guild')
     guild_ids = []
 
@@ -202,7 +179,7 @@ async def get_guild_ids(slots):
         if errors:
             print('Following server IDs are invalid, already in use or the Bot is not added to the servers: \n' + ', '.join(errors))
 
-async def add_emoji(type, new, total_count, duplicates, added_emoji, guild_ids, translated):
+async def add_emoji(bot, type, new, total_count, duplicates, added_emoji, guild_ids, translated):
     img_path = settings.setup[type]
     new_objects = new[type].copy()
 
@@ -258,7 +235,7 @@ async def add_emoji(type, new, total_count, duplicates, added_emoji, guild_ids, 
 
     return new, total_count, duplicates, translated
 
-def get_emoji_ids(guild_ids, new, duplicates, translated):
+def get_emoji_ids(bot, guild_ids, new, duplicates, translated):
     for id in guild_ids:
         guild = bot.get_guild(id)
         print('Guild:', guild.name)
@@ -279,7 +256,7 @@ def get_emoji_ids(guild_ids, new, duplicates, translated):
 
     return new
 
-async def setup():
+async def setup(bot):
     new = {}
     data = {}
     duplicates = {}
@@ -297,7 +274,7 @@ async def setup():
 
     print(f'Adding {slots_required} objects')
 
-    guild_ids = await get_guild_ids(slots_required)
+    guild_ids = await get_guild_ids(bot, slots_required)
     if guild_ids == 'cancelled':
         print('successfully cancelled process')
         return
@@ -309,11 +286,11 @@ async def setup():
             added_emoji = json.load(f)
 
     for type in ['traits', 'units', 'augments', 'items']:
-        new, total_count, duplicates, translated = await add_emoji(type, new, total_count, duplicates, added_emoji, guild_ids, translated)
+        new, total_count, duplicates, translated = await add_emoji(bot, type, new, total_count, duplicates, added_emoji, guild_ids, translated)
 
     print('Successfully added all emojis. Just finishing up...')
     
-    new = get_emoji_ids(guild_ids, new, duplicates, translated)
+    new = get_emoji_ids(bot, guild_ids, new, duplicates, translated)
 
     for type in new:
         for object in new[type]:
@@ -330,7 +307,7 @@ async def setup():
     dotenv.load_dotenv()
     old_guild_ids = os.getenv('GUILD_IDS')
     if not old_guild_ids == '':
-        guild_ids = old_guild_ids + ', '.join(guild_ids) + ', '
+        guild_ids = old_guild_ids + ', '.join([str(x) for x in guild_ids]) + ', '
     print(guild_ids)
     dotenv.set_key(env_file, 'GUILD_IDS', guild_ids)
 

@@ -1,7 +1,7 @@
 {
   "TFT11_Altruist": {
     "name": "Altruist",
-    "image": "trait_icon_11_altruist.tft_set11.png",
+    "image": "trait_icon_11_altruist.png",
     "emoji": "<:TFT11_Altruist:1236035738097684542>"
   },
   "TFT11_Arcanist": {
@@ -11,13 +11,13 @@
   },
   "TFT11_Artist": {
     "name": "Artist",
-    "image": "trait_icon_11_artist.tft_set11.png",
+    "image": "trait_icon_11_artist.png",
     "emoji": "<:TFT11_Artist:1236035743621714032>",
     "unique": true
   },
   "TFT11_Behemoth": {
     "name": "Behemoth",
-    "image": "trait_icon_11_behemoth.tft_set11.png",
+    "image": "trait_icon_11_behemoth.png",
     "emoji": "<:TFT11_Behemoth:1236035747149119711>"
   },
   "TFT11_Bruiser": {
@@ -27,12 +27,12 @@
   },
   "TFT11_Dragonlord": {
     "name": "Dragonlord",
-    "image": "trait_icon_11_dragonlord.tft_set11.png",
+    "image": "trait_icon_11_dragonlord.png",
     "emoji": "<:TFT11_Dragonlord:1236035753335586817>"
   },
   "TFT11_Dryad": {
     "name": "Dryad",
-    "image": "trait_icon_11_dryad.tft_set11.png",
+    "image": "trait_icon_11_dryad.png",
     "emoji": "<:TFT11_Dryad:1236035757207191586>"
   },
   "TFT11_Duelist": {
@@ -42,12 +42,12 @@
   },
   "TFT11_Exalted": {
     "name": "Exalted",
-    "image": "trait_icon_11_exalted.tft_set11.png",
+    "image": "trait_icon_11_exalted.png",
     "emoji": "<:TFT11_Exalted:1236035763104252016>"
   },
   "TFT11_Fated": {
     "name": "Fated",
-    "image": "trait_icon_11_fated.tft_set11.png",
+    "image": "trait_icon_11_fated.png",
     "emoji": "<:TFT11_Fated:1236035766438723794>"
   },
   "TFT11_Fortune": {
@@ -57,23 +57,23 @@
   },
   "TFT11_Ghostly": {
     "name": "Ghostly",
-    "image": "trait_icon_11_ghostly.tft_set11.png",
+    "image": "trait_icon_11_ghostly.png",
     "emoji": "<:TFT11_Ghostly:1236035775078858803>"
   },
   "TFT11_Great": {
     "name": "Great",
-    "image": "trait_icon_11_great.tft_set11.png",
+    "image": "trait_icon_11_great.png",
     "emoji": "<:TFT11_Great:1236035777780121722>",
     "unique": true
   },
   "TFT11_Heavenly": {
     "name": "Heavenly",
-    "image": "trait_icon_11_heavenly.tft_set11.png",
+    "image": "trait_icon_11_heavenly.png",
     "emoji": "<:TFT11_Heavenly:1236035780963467274>"
   },
   "TFT11_InkShadow": {
     "name": "Inkshadow",
-    "image": "trait_icon_11_ink_shadow.tft_set11.png",
+    "image": "trait_icon_11_ink_shadow.png",
     "emoji": "<:TFT11_InkShadow:1236035783601688687>"
   },
   "TFT11_Invoker": {
@@ -83,28 +83,28 @@
   },
   "TFT11_Lovers": {
     "name": "Lovers",
-    "image": "trait_icon_11_lovers.tft_set11.png",
+    "image": "trait_icon_11_lovers.png",
     "emoji": "<:TFT11_Lovers:1236035791483048048>",
     "unique": true
   },
   "TFT11_Mythic": {
     "name": "Mythic",
-    "image": "trait_icon_11_mythic.tft_set11.png",
+    "image": "trait_icon_11_mythic.png",
     "emoji": "<:TFT11_Mythic:1236035794448416851>"
   },
   "TFT11_Porcelain": {
     "name": "Porcelain",
-    "image": "trait_icon_11_porcelain.tft_set11.png",
+    "image": "trait_icon_11_porcelain.png",
     "emoji": "<:TFT11_Porcelain:1236035797304606841>"
   },
   "TFT11_Reaper": {
     "name": "Reaper",
-    "image": "trait_icon_11_reaper.tft_set11.png",
+    "image": "trait_icon_11_reaper.png",
     "emoji": "<:TFT11_Reaper:1236035800156737588>"
   },
   "TFT11_Sage": {
     "name": "Sage",
-    "image": "trait_icon_11_sage.tft_set11.png",
+    "image": "trait_icon_11_sage.png",
     "emoji": "<:TFT11_Sage:1236035803000475669>"
   },
   "TFT11_Sniper": {
@@ -114,13 +114,13 @@
   },
   "TFT11_SpiritWalker": {
     "name": "Spirit Walker",
-    "image": "trait_icon_11_spirit_walker.tft_set11.png",
+    "image": "trait_icon_11_spirit_walker.png",
     "emoji": "<:TFT11_SpiritWalker:1236035809426018376>",
     "unique": true
   },
   "TFT11_Storyweaver": {
     "name": "Storyweaver",
-    "image": "trait_icon_11_storyweaver.tft_set11.png",
+    "image": "trait_icon_11_storyweaver.png",
     "emoji": "<:TFT11_Storyweaver:1236035812605431831>"
   },
   "TFT11_Trickshot": {
@@ -130,18 +130,18 @@
   },
   "TFT11_TrickshotAltruist": {
     "name": "Trickshot/Altruist",
-    "image": "trait_icon_11_altruist_trickshot.tft_set11.png",
+    "image": "trait_icon_11_altruist_trickshot.png",
     "emoji": "<:TFT11_TrickshotAltruist:1236035820318621757>",
     "unique": true
   },
   "TFT11_Umbral": {
     "name": "Umbral",
-    "image": "trait_icon_11_umbral.tft_set11.png",
+    "image": "trait_icon_11_umbral.png",
     "emoji": "<:TFT11_Umbral:1236035823712079952>"
   },
   "TFT11_Warden": {
     "name": "Warden",
-    "image": "trait_icon_11_warden.tft_set11.png",
+    "image": "trait_icon_11_warden.png",
     "emoji": "<:TFT11_Warden:1236035826664607744>"
   }
 }
