@@ -2,1251 +2,1251 @@
   "TFTTutorial_Augment_BackRowAS1": {
     "name": "Swift Strike",
     "image": "tutorial-swift-strike-i.png",
-    "emoji": null
+    "emoji": "<:TFTTutorial_Augment_BackRowAS1:1236036069049499709>"
   },
   "TFTTutorial_Augment_FrontRowHealth1": {
     "name": "Bulwark",
     "image": "tutorial-bulwark-i.png",
-    "emoji": null
+    "emoji": "<:FrontRowHealth1:1236036073835073587>"
   },
   "TFTTutorial_Augment_FrontRowMana1": {
     "name": "Splash Zone",
     "image": "tutorial-splash-zone-i.png",
-    "emoji": null
+    "emoji": "<:FrontRowMana1:1236036078805188740>"
   },
   "TFTTutorial_Augment_WithItemAS2": {
     "name": "Elite Vanguard",
     "image": "tutorial-elite-vanguard-ii.png",
-    "emoji": null
+    "emoji": "<:TFTTutorial_Augment_WithItemAS2:1236036083570053331>"
   },
   "TFTTutorial_Augment_WithItemHealth2": {
     "name": "Cybernetic Mass",
     "image": "cybernetic-bulk-ii.png",
-    "emoji": null
+    "emoji": "<:WithItemHealth2:1236036088384983120>"
   },
   "TFTTutorial_Augment_WithoutItemAS2": {
     "name": "Unhindered",
     "image": "unladen-airspeed-velocity-ii.png",
-    "emoji": null
+    "emoji": "<:WithoutItemAS2:1236036092747059200>"
   },
   "TFT6_Augment_SalvageBin": {
     "name": "Salvage Bin",
     "image": "salvage2.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_SalvageBin:1236036097310457866>"
   },
   "TFT6_Augment_SlowAndSteady": {
     "name": "March of Progress",
     "image": "slowandsteady3.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_SlowAndSteady:1236036101940973669>"
   },
   "TFT6_Augment_PortableForge": {
     "name": "Portable Forge",
     "image": "portableforge2.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_PortableForge:1236036106017837151>"
   },
   "TFT6_Augment_BinaryAirdrop": {
     "name": "Binary Airdrop",
     "image": "binaryairdrop3.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_BinaryAirdrop:1236036110409273354>"
   },
   "TFT6_Augment_Recombobulator": {
     "name": "Recombobulator",
     "image": "recombobulator-i.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_Recombobulator:1236036114452709466>"
   },
   "TFT9_Augment_JeweledLotus": {
     "name": "Jeweled Lotus II",
     "image": "jeweled-lotus-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_JeweledLotus:1236036119288746147>"
   },
   "TFT6_Augment_ThreesCompany": {
     "name": "Three's Company",
     "image": "threes-company-ii.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_ThreesCompany:1236036124678426737>"
   },
   "TFT7_Augment_LivingForge": {
     "name": "Living Forge",
     "image": "living-forge-iii.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_LivingForge:1236036129682231368>"
   },
   "TFT7_Augment_BirthdayPresents": {
     "name": "Birthday Present",
     "image": "golden-gifts-iii.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_BirthdayPresents:1236036135025905755>"
   },
   "TFT6_Augment_GachaAddict": {
     "name": "Prismatic Ticket",
     "image": "goldenticket3.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_GachaAddict:1236036139031199826>"
   },
   "TFT9_Augment_YoungAndWildAndFree": {
     "name": "Young and Wild and Free",
     "image": "young-and-wild-and-free-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_YoungAndWildAndFree:1236036143305195550>"
   },
   "TFT9_Augment_CyberneticBulk2": {
     "name": "Cybernetic Bulk II",
     "image": "cybernetic-bulk-ii.png",
-    "emoji": null
+    "emoji": "<:WithItemHealth2:1236036088384983120>"
   },
   "TFT9_Augment_PhreakyFriday": {
     "name": "Phreaky Friday",
     "image": "phreaky-friday-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PhreakyFriday:1236036147319406689>"
   },
   "TFT9_Augment_CyberneticBulk1": {
     "name": "Cybernetic Bulk I",
     "image": "cybernetic-bulk-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_CyberneticBulk1:1236036152033808394>"
   },
   "TFT9_Augment_CapriciousForge": {
     "name": "Capricious Forge",
     "image": "prototype-forge-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_CapriciousForge:1236036156823437433>"
   },
   "TFT9_Augment_CyberneticBulk3": {
     "name": "Cybernetic Bulk III",
     "image": "cybernetic-bulk-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_CyberneticBulk3:1236036161177387049>"
   },
   "TFT9_Augment_StarterKit": {
     "name": "Starter Kit",
     "image": "starter-kit-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_StarterKit:1236036165447188492>"
   },
   "TFT9_Augment_LongTimeCrafting": {
     "name": "Latent Forge",
     "image": "long-time-crafting-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_LongTimeCrafting:1236036169884500028>"
   },
   "TFT9_Augment_Formation2": {
     "name": "Unified Resistance II",
     "image": "red-rover-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Formation2:1236036174200442973>"
   },
   "TFT9_Augment_TonsOfStats": {
     "name": "Tons of Stats!",
     "image": "tons-of-stats-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_TonsOfStats:1236036179003179019>"
   },
   "TFT9_Augment_Formation1": {
     "name": "Unified Resistance I",
     "image": "red-rover-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Formation1:1236036183130112062>"
   },
   "TFT9_Augment_SilverSpoon": {
     "name": "Silver Spoon",
     "image": "silver-spoon-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_SilverSpoon:1236036187894976593>"
   },
   "TFT9_Augment_CustomerIsAlwaysRight": {
     "name": "Component Buffet",
     "image": "the-customer-is-always-right-i.png",
-    "emoji": null
+    "emoji": "<:CustomerIsAlwaysRight:1236036193246904503>"
   },
   "TFT9_Augment_IronAssets": {
     "name": "Iron Assets",
     "image": "iron-assets-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_IronAssets:1236036197592203355>"
   },
   "TFT9_Augment_StarsAreBorn": {
     "name": "Stars are Born",
     "image": "stars-are-born-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_StarsAreBorn:1236036201723465739>"
   },
   "TFT9_Augment_OneTwosThree": {
     "name": "Ones Twos Three",
     "image": "threes-company-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_OneTwosThree:1236036205993394176>"
   },
   "TFT9_Augment_MissedConnections": {
     "name": "Missed Connections",
     "image": "missed-connections-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_MissedConnections:1236036210674110595>"
   },
   "TFT9_Augment_RollTheDice": {
     "name": "Roll The Dice",
     "image": "roll-the-dice-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_RollTheDice:1236036217200447622>"
   },
   "TFT9_Augment_Sleightofhand": {
     "name": "Sleight of Hand",
     "image": "sleight-of-hand-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Sleightofhand:1236036221659250800>"
   },
   "TFT9_Augment_ACutAbove": {
     "name": "A Cut Above",
     "image": "a-cut-above-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_ACutAbove:1236036226121728041>"
   },
   "TFT9_Augment_Idealism": {
     "name": "Idealism",
     "image": "idealism-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Idealism:1236036230324424724>"
   },
   "TFT9_Augment_HealingOrbsI": {
     "name": "Healing Orbs I",
     "image": "healing-orbs-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_HealingOrbsI:1236036234384506891>"
   },
   "TFT9_Augment_HealingOrbsII": {
     "name": "Healing Orbs II",
     "image": "healing-orbs-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_HealingOrbsII:1236036239543631942>"
   },
   "TFT9_Augment_GargantuanResolve": {
     "name": "Gargantuan Resolve",
     "image": "gargantuan-resolve-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_GargantuanResolve:1236036243968757822>"
   },
   "TFT9_Augment_GiftsFromTheFallen": {
     "name": "Gifts from the Fallen",
     "image": "gifts-from-the-fallen-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_GiftsFromTheFallen:1236036249366822923>"
   },
   "TFT9_Augment_HedgeFund": {
     "name": "Hedge Fund",
     "image": "richgetricher3.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_HedgeFund:1236036253628104745>"
   },
   "TFT9_Augment_HedgeFundPlus": {
     "name": "Hedge Fund+",
     "image": "richgetricher3.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_HedgeFund:1236036253628104745>"
   },
   "TFT9_Augment_Martyr": {
     "name": "Martyr",
     "image": "martyr-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Martyr:1236036257868677262>"
   },
   "TFT9_Augment_LongDistanceRelationship2": {
     "name": "Long Distance Pals",
     "image": "long-distance-relationship-ii.png",
-    "emoji": null
+    "emoji": "<:LongDistanceRelationship2:1236036263593644153>"
   },
   "TFT9_Augment_GreaterJeweledLotus": {
     "name": "Jeweled Lotus III",
     "image": "jeweled-lotus-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_GreaterJeweledLotus:1236036267985211455>"
   },
   "TFT9_Augment_BronzeTicket": {
     "name": "Silver Ticket",
     "image": "goldenticket1.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BronzeTicket:1236036273496653926>"
   },
   "TFT9_Augment_BuildingACollection": {
     "name": "Buried Treasures I",
     "image": "buried-treasures-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BuildingACollection:1236036277430784030>"
   },
   "TFT9_Augment_BuildingACollectionPlus": {
     "name": "Buried Treasures II",
     "image": "buried-treasures-ii.png",
-    "emoji": null
+    "emoji": "<:BuildingACollectionPlus:1236036281666895922>"
   },
   "TFT9_Augment_BuildingACollectionPlusPlus": {
     "name": "Buried Treasures III",
     "image": "buried-treasures-iii.png",
-    "emoji": null
+    "emoji": "<:BuildingACollectionPlusPlus:1236036286163193917>"
   },
   "TFT9_Augment_KnowYourEnemy": {
     "name": "Know Your Enemy",
     "image": "know-your-enemy-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_KnowYourEnemy:1236036291192422430>"
   },
   "TFT6_Augment_TinyTitans": {
     "name": "Tiny Titans",
     "image": "tiny-titans-i.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_TinyTitans:1236036295759892511>"
   },
   "TFT6_Augment_MetabolicAccelerator": {
     "name": "Metabolic Accelerator",
     "image": "metabolicaccel2.png",
-    "emoji": null
+    "emoji": "<:MetabolicAccelerator:1236036300415434822>"
   },
   "TFT9_Augment_Harmacist1": {
     "name": "Harmacist I",
     "image": "harmacist-1-2-3-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Harmacist1:1236036304207347795>"
   },
   "TFT9_Augment_Harmacist2": {
     "name": "Harmacist II",
     "image": "harmacist-1-2-3-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Harmacist2:1236036308720422994>"
   },
   "TFT9_Augment_Harmacist3": {
     "name": "Harmacist III",
     "image": "harmacist-1-2-3-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Harmacist3:1236036312960598077>"
   },
   "TFT6_Augment_PandorasItems": {
     "name": "Pandora's Items",
     "image": "pandora1.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_PandorasItems:1236036317171679273>"
   },
   "TFT9_Augment_PandorasRadiantBox": {
     "name": "Pandora's Items III",
     "image": "pandora3.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PandorasRadiantBox:1236036321772835005>"
   },
   "TFT9_Augment_PandorasItems2": {
     "name": "Pandora's Items II",
     "image": "pandora2.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PandorasItems2:1236036327577882644>"
   },
   "TFT9_Augment_WhatDoesntKillYou": {
     "name": "What Doesn't Kill You",
     "image": "what-doesn_t-kill-you-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_WhatDoesntKillYou:1236036332237881429>"
   },
   "TFT9_Augment_ArmyBuilding": {
     "name": "Team Building",
     "image": "building-an-army-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_ArmyBuilding:1236036336692105246>"
   },
   "TFT9_Augment_RiskyMoves": {
     "name": "Risky Moves",
     "image": "risky-moves-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_RiskyMoves:1236036342467788871>"
   },
   "TFT9_Augment_NotToday": {
     "name": "Not Today",
     "image": "not-today-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_NotToday:1236036347513274390>"
   },
   "TFT6_Augment_OneTwoFive": {
     "name": "One, Two, Five!",
     "image": "one-two-five-i.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_OneTwoFive:1236036351820828813>"
   },
   "TFT9_Augment_PumpingUp": {
     "name": "Pumping Up I",
     "image": "pumping-up-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PumpingUp:1236036356648472641>"
   },
   "TFT9_Augment_PumpingUp2": {
     "name": "Pumping Up II",
     "image": "pumping-up-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PumpingUp2:1236036361753202779>"
   },
   "TFT9_Augment_PumpingUp3": {
     "name": "Pumping Up III",
     "image": "pumping-up-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PumpingUp3:1236036366903804058>"
   },
   "TFT9_Augment_TiniestTitan": {
     "name": "Tiniest Titan",
     "image": "tiniest-titaniii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_TiniestTitan:1236036371278467157>"
   },
   "TFT6_Augment_TradeSector": {
     "name": "Trade Sector",
     "image": "trade2.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_TradeSector:1236036379746631740>"
   },
   "TFT6_Augment_MaxLevel10": {
     "name": "Level Up!",
     "image": "levelup3.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_MaxLevel10:1236036384419217408>"
   },
   "TFT9_Augment_YouHaveMySword": {
     "name": "You Have My Sword",
     "image": "you-have-my-sword-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_YouHaveMySword:1236036389016174734>"
   },
   "TFT9_Augment_YouHaveMyBow": {
     "name": "You Have My Bow",
     "image": "you-have-my-bow-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_YouHaveMyBow:1236036396368793682>"
   },
   "TFT9_Augment_OldMansWalkingStick": {
     "name": "Magic Wand",
     "image": "old-man_s-walking-stick-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_OldMansWalkingStick:1236036401355821116>"
   },
   "TFT9_Augment_EscortQuest": {
     "name": "Escort Quest",
     "image": "escort-quest-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_EscortQuest:1236036405692465295>"
   },
   "TFT9_Augment_ThreesACrowd": {
     "name": "Three's a Crowd",
     "image": "three_s-a-crowd-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_ThreesACrowd:1236036411128287273>"
   },
   "TFT9_Augment_TwoHealthy": {
     "name": "Two Healthy",
     "image": "two-healthy-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_TwoHealthy:1236036418090827937>"
   },
   "TFT9_Augment_RedBuff": {
     "name": "Blistering Strikes",
     "image": "red-buff-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_RedBuff:1236036422398382200>"
   },
   "TFT9_Augment_LearningFromExperience2": {
     "name": "Patient Study",
     "image": "learning-from-experience-ii.png",
-    "emoji": null
+    "emoji": "<:LearningFromExperience2:1236036427008184331>"
   },
   "TFT6_Augment_RadiantRelics": {
     "name": "Radiant Relics",
     "image": "radiantrelic-iii.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_RadiantRelics:1236036431680635034>"
   },
   "TFT6_Augment_ItemGrabBag1": {
     "name": "Item Grab Bag I",
     "image": "itemgrabbag1.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_ItemGrabBag1:1236036438542516255>"
   },
   "TFT9_Augment_CombatCaster": {
     "name": "Combat Caster",
     "image": "combat-caster-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_CombatCaster:1236036443252592692>"
   },
   "TFT9_Augment_BlindingSpeed": {
     "name": "Blinding Speed",
     "image": "berserk-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BlindingSpeed:1236036448059130046>"
   },
   "TFT9_Augment_ImpenetrableBulwark": {
     "name": "Impenetrable Bulwark",
     "image": "standbehind3.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_ImpenetrableBulwark:1236036452773527662>"
   },
   "TFT9_Augment_UnleashedArcana": {
     "name": "Unleashed Arcana",
     "image": "lifelonglearner3.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_UnleashedArcana:1236036458293493801>"
   },
   "TFT9_Augment_OverwhelmingForce": {
     "name": "Overwhelming Force",
     "image": "eagle-eye-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_OverwhelmingForce:1236036463779385394>"
   },
   "TFT7_Augment_LategameSpecialist": {
     "name": "Lategame Specialist",
     "image": "late-game-specialist-i.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_LategameSpecialist:1236036468594708490>"
   },
   "TFT6_Augment_TheGoldenEgg": {
     "name": "The Golden Egg",
     "image": "the-golden-egg-iii.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_TheGoldenEgg:1236036472876961945>"
   },
   "TFT9_Augment_HighEndSector": {
     "name": "Shopping Spree",
     "image": "trade3.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_HighEndSector:1236036479743037470>"
   },
   "TFT9_Augment_BardPlaybook1": {
     "name": "Caretaker's Ally",
     "image": "caretaker_s-chosen-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BardPlaybook1:1236036483970895873>"
   },
   "TFT9_Augment_BardPlaybook2": {
     "name": "Caretaker's Favor",
     "image": "caretaker_s-chosen-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BardPlaybook2:1236036488735756299>"
   },
   "TFT9_Augment_BardPlaybook3": {
     "name": "Caretaker's Chosen",
     "image": "caretaker_s-chosen-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BardPlaybook3:1236036494960099398>"
   },
   "TFT9_Augment_PhreakyFridayPlus": {
     "name": "Phreaky Friday +",
     "image": "phreaky-friday-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PhreakyFriday:1236036147319406689>"
   },
   "TFT9_Augment_HedgeFundPlusPlus": {
     "name": "Hedge Fund++",
     "image": "richgetricher3.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_HedgeFund:1236036253628104745>"
   },
   "TFT8_Augment_SalvageBinPlus": {
     "name": "Salvage Bin+",
     "image": "salvage2.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_SalvageBin:1236036097310457866>"
   },
   "TFT10_Augment_CrashTestDummies": {
     "name": "Crash Test Dummies",
     "image": "crash-test-dummies-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_CrashTestDummies:1236036501348024321>"
   },
   "TFT10_Augment_LuckyStreak": {
     "name": "Lucky Streak",
     "image": "lucky-streak-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_LuckyStreak:1236036507102609462>"
   },
   "TFT7_Augment_BestFriends1": {
     "name": "Best Friends I",
     "image": "best-friends-i.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_BestFriends1:1236036512089378947>"
   },
   "TFT7_Augment_BestFriends2": {
     "name": "Best Friends II",
     "image": "best-friends-ii.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_BestFriends2:1236036516996714638>"
   },
   "TFT10_Augment_LearningToSpell": {
     "name": "Learning to Spell",
     "image": "learning-to-spell-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_LearningToSpell:1236036522981982339>"
   },
   "TFT6_Augment_Keepers1": {
     "name": "Keepers I",
     "image": "keepers-i.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_Keepers1:1236036527721812038>"
   },
   "TFT10_Augment_HeavyHitters": {
     "name": "Heavy Hitters",
     "image": "heavy-hitters-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_HeavyHitters:1236036533765673121>"
   },
   "TFT6_Augment_Keepers2": {
     "name": "Keepers II",
     "image": "keepers-ii.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_Keepers2:1236036538287132764>"
   },
   "TFT10_Augment_BigGains": {
     "name": "Big Gains",
     "image": "big-gains-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_BigGains:1236036542552608778>"
   },
   "TFT10_Augment_InspiringEpitaph": {
     "name": "Inspiring Epitaph",
     "image": "inspiring-epitaph-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_InspiringEpitaph:1236036548600795267>"
   },
   "TFT6_Augment_ForceOfNature": {
     "name": "New Recruit",
     "image": "newrecruit3.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_ForceOfNature:1236036553264992276>"
   },
   "TFT10_Augment_ShockTreatment": {
     "name": "Shock Treatment",
     "image": "shock-treatment-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_ShockTreatment:1236036558801342516>"
   },
   "TFT10_Augment_LowInterestRates": {
     "name": "Low Interest Rates",
     "image": "low-interest-rates-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_LowInterestRates:1236036564157730991>"
   },
   "TFT10_Augment_SwitchingGears": {
     "name": "Switching Gears",
     "image": "switching-gears-i.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_SwitchingGears:1236036572256800831>"
   },
   "TFT10_Augment_HeroicGrabBag": {
     "name": "Heroic Grab Bag",
     "image": "heroic-grab-bag-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_HeroicGrabBag:1236036576400638062>"
   },
   "TFT10_Augment_FullyAdapted": {
     "name": "Fully Adapted",
     "image": "fully-adapted-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_FullyAdapted:1236036580548939934>"
   },
   "TFT9_Augment_Commander_FinalAscension": {
     "name": "Final Ascension",
     "image": "ascension3.png",
-    "emoji": null
+    "emoji": "<:FinalAscension:1236036584764346420>"
   },
   "TFT9_Augment_Commander_PartialAscension": {
     "name": "Partial Ascension",
     "image": "ascension1.png",
-    "emoji": null
+    "emoji": "<:PartialAscension:1236036589755568321>"
   },
   "TFT9_Augment_Commander_Ascension": {
     "name": "Ascension",
     "image": "ascension2.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_Commander_Ascension:1236036594927009813>"
   },
   "TFT6_Augment_ClearMind": {
     "name": "Clear Mind",
     "image": "clearmind2.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_ClearMind:1236036603030405281>"
   },
   "TFT7_Augment_ClutteredMind": {
     "name": "Cluttered Mind",
     "image": "dizzy-ii.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_ClutteredMind:1236036607484891217>"
   },
   "TFT10_Augment_GoingLong": {
     "name": "Going Long",
     "image": "going-long-iii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_GoingLong:1236036612127854724>"
   },
   "TFT10_Augment_Scapegoat": {
     "name": "Scapegoat",
     "image": "the-scapegoat-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_Scapegoat:1236036617073070122>"
   },
   "TFT10_Augment_GoodForSomethingSilver": {
     "name": "Good For Something I",
     "image": "good-for-something-i.png",
-    "emoji": null
+    "emoji": "<:GoodForSomethingSilver:1236036621627818117>"
   },
   "TFT10_Augment_CrownGuarded": {
     "name": "Crown Guarded",
     "image": "crown-guarded-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_CrownGuarded:1236036625922916495>"
   },
   "TFT10_Augment_SilverVeil": {
     "name": "Silver Veil",
     "image": "the-silver-veil-i.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_SilverVeil:1236036632289742919>"
   },
   "TFT10_Augment_HelpIsOnTheWay": {
     "name": "Help Is On The Way",
     "image": "help-is-on-the-way-i.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_HelpIsOnTheWay:1236036636891156481>"
   },
   "TFT10_Augment_Stimpack": {
     "name": "Stimpack",
     "image": "stimpack-i.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_Stimpack:1236036642582691861>"
   },
   "TFT9_Augment_SupportCache": {
     "name": "Support Cache",
     "image": "support-cache-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_SupportCache:1236036648123502592>"
   },
   "TFT9_Augment_StationarySupport2": {
     "name": "Stationary Support II",
     "image": "stationary-support-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_StationarySupport2:1236036653232160809>"
   },
   "TFT7_Augment_LuckyGloves": {
     "name": "Lucky Gloves",
     "image": "lucky-gloves-iii.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_LuckyGloves:1236036658810585240>"
   },
   "TFT7_Augment_LuckyGlovesPlus": {
     "name": "Lucky Gloves+",
     "image": "lucky-gloves-iii.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_LuckyGloves:1236036658810585240>"
   },
   "TFT9_Augment_StationarySupport3": {
     "name": "Stationary Support III",
     "image": "stationary-support-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_StationarySupport3:1236036663751217253>"
   },
   "TFT9_Augment_TiniestTitanPlus": {
     "name": "Tiniest Titan+",
     "image": "tiniest-titaniii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_TiniestTitan:1236036371278467157>"
   },
   "TFT9_Augment_BalancedBudget2": {
     "name": "Balanced Budget",
     "image": "balanced-budget-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BalancedBudget2:1236036668621066271>"
   },
   "TFT9_Augment_Commander_TeamingUp2": {
     "name": "Teaming Up II",
     "image": "teaming-up-ii.png",
-    "emoji": null
+    "emoji": "<:TeamingUp2:1236036673586987008>"
   },
   "TFT9_Augment_Commander_TeamingUp1": {
     "name": "Teaming Up I",
     "image": "teaming-up-i.png",
-    "emoji": null
+    "emoji": "<:TeamingUp1:1236036677626105948>"
   },
   "TFT9_Augment_StationarySupport1": {
     "name": "Stationary Support I",
     "image": "stationary-support-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_StationarySupport1:1236036681610694787>"
   },
   "TFT9_Augment_Commander_RollingForDays": {
     "name": "Rolling For Days I",
     "image": "rolling-for-days-i.png",
-    "emoji": null
+    "emoji": "<:RollingForDays:1236036686358777937>"
   },
   "TFT9_Augment_BigGrabBag": {
     "name": "Big Grab Bag",
     "image": "grab-bag-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BigGrabBag:1236036690632511508>"
   },
   "TFT10_Augment_LittleBuddies": {
     "name": "Little Buddies",
     "image": "little-buddies-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_LittleBuddies:1236036695753887847>"
   },
   "TFT9_Augment_BalancedBudgetPlus": {
     "name": "Balanced Budget+",
     "image": "balanced-budget-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_BalancedBudget2:1236036668621066271>"
   },
   "TFT6_Augment_Distancing": {
     "name": "Exiles I",
     "image": "exiles1.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_Distancing:1236036700312961176>"
   },
   "TFT6_Augment_Featherweights1": {
     "name": "Featherweights I",
     "image": "featherweights1.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_Featherweights1:1236036703869993061>"
   },
   "TFT6_Augment_TriForce1": {
     "name": "Tri Force I",
     "image": "tri-force-i.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_TriForce1:1236036708626333827>"
   },
   "TFT6_Augment_Traitless2": {
     "name": "Built Different II",
     "image": "builtdifferent2.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_Traitless2:1236036715035234397>"
   },
   "TFT6_Augment_Diversify2": {
     "name": "Stand United II",
     "image": "standunited2.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_Diversify2:1236036719556558888>"
   },
   "TFT7_Augment_BandOfThieves1": {
     "name": "Band of Thieves I",
     "image": "bandthieves1.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_BandOfThieves1:1236036726200336384>"
   },
   "TFT9_Augment_WanderingTrainer": {
     "name": "Wandering Trainer II",
     "image": "wandering-trainer-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_WanderingTrainer:1236036730361090152>"
   },
   "TFT11_Augment_TooMuchCandy": {
     "name": "Too Much Candy",
     "image": "toomuchcandy_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_TooMuchCandy:1236036737143410831>"
   },
   "TFT_Augment_BranchingOut": {
     "name": "Branching Out",
     "image": "branching-out-i.png",
-    "emoji": null
+    "emoji": "<:TFT_Augment_BranchingOut:1236036742247612457>"
   },
   "TFT11_Augment_WanderingTrainerGold": {
     "name": "Wandering Trainer I",
     "image": "wandering-trainer-ii.png",
-    "emoji": null
+    "emoji": "<:WanderingTrainerGold:1236036750086766713>"
   },
   "TFT11_Augment_DragonSpirit": {
     "name": "Dragon's Spirit",
     "image": "dragonsspirit_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_DragonSpirit:1236036754667208844>"
   },
   "TFT11_Augment_RainingGold": {
     "name": "Raining Gold",
     "image": "raininggold_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_RainingGold:1236036759356178493>"
   },
   "TFT11_Augment_RainingGoldPlus": {
     "name": "Raining Gold+",
     "image": "raininggold_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_RainingGold:1236036759356178493>"
   },
   "TFT11_Augment_GoldenRemover": {
     "name": " The Golden Remover",
     "image": "goldenremover_i.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_GoldenRemover:1236036766603939961>"
   },
   "TFT11_Augment_BaBoom": {
     "name": "Ba-BOOM!",
     "image": "baboom_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_BaBoom:1236036770856964149>"
   },
   "TFT11_Augment_PickOfTheLitter": {
     "name": "Pick of the Litter",
     "image": "pickofthelitter_i.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_PickOfTheLitter:1236036776418611244>"
   },
   "TFT11_Augment_PickOfTheLitter_Plus": {
     "name": "Pick of the Litter+",
     "image": "pickofthelitter_i.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_PickOfTheLitter:1236036776418611244>"
   },
   "TFT6_Augment_CyberneticUplink2": {
     "name": "Cybernetic Uplink II",
     "image": "cybernetic-uplink-ii.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_CyberneticUplink2:1236036781904891998>"
   },
   "TFT6_Augment_CyberneticUplink3": {
     "name": "Cybernetic Uplink III",
     "image": "cybernetic-uplink-iii.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_CyberneticUplink3:1236036785822503017>"
   },
   "TFT11_Augment_AltruistCrest": {
     "name": "Altruist Crest",
     "image": "crest_altruist_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_AltruistCrest:1236036791887331480>"
   },
   "TFT11_Augment_AltruistCrown": {
     "name": "Altruist Crown",
     "image": "crown_altruist_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_AltruistCrown:1236036796781957313>"
   },
   "TFT11_Augment_ArcanistCrest": {
     "name": "Arcanist Crest",
     "image": "crest_arcanist_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_ArcanistCrest:1236036800758284310>"
   },
   "TFT11_Augment_ArcanistCrown": {
     "name": "Arcanist Crown",
     "image": "crown_arcanist_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_ArcanistCrown:1236036806122803361>"
   },
   "TFT11_Augment_BehemothCrest": {
     "name": "Behemoth Crest",
     "image": "crest_behemoth_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_BehemothCrest:1236036809893478481>"
   },
   "TFT11_Augment_BehemothCrown": {
     "name": "Behemoth Crown",
     "image": "crown_behemoth_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_BehemothCrown:1236036814633177109>"
   },
   "TFT11_Augment_BrawlerCrest": {
     "name": "Bruiser Crest",
     "image": "crest_bruiser_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_BrawlerCrest:1236036819754418187>"
   },
   "TFT11_Augment_BrawlerCrown": {
     "name": "Bruiser Crown",
     "image": "crown_bruiser_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_BrawlerCrown:1236036825244635217>"
   },
   "TFT11_Augment_DragonlordCrest": {
     "name": "Dragonlord Crest",
     "image": "crest_dragonlord_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_DragonlordCrest:1236036830466539632>"
   },
   "TFT11_Augment_DragonlordCrown": {
     "name": "Dragonlord Crown",
     "image": "crown_dragonlord_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_DragonlordCrown:1236036835407298561>"
   },
   "TFT11_Augment_DryadCrest": {
     "name": "Dryad Crest",
     "image": "crest_dryad_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_DryadCrest:1236036840507572274>"
   },
   "TFT11_Augment_DryadCrown": {
     "name": "Dryad Crown",
     "image": "crown_dryad_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_DryadCrown:1236036863613997146>"
   },
   "TFT11_Augment_DuelistCrest": {
     "name": "Duelist Crest",
     "image": "crest_duelist_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_DuelistCrest:1236036882002088017>"
   },
   "TFT11_Augment_DuelistCrown": {
     "name": "Duelist Crown",
     "image": "crown_duelist_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_DuelistCrown:1236036894035280012>"
   },
   "TFT11_Augment_FatedCrest": {
     "name": "Fated Crest",
     "image": "crest_fated_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_FatedCrest:1236036900523872367>"
   },
   "TFT11_Augment_FatedCrown": {
     "name": "Fated Crown",
     "image": "crown_fated_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_FatedCrown:1236036907662708766>"
   },
   "TFT11_Augment_FortuneCrest": {
     "name": "Fortune Crest",
     "image": "crest_fortune_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_FortuneCrest:1236036914713329664>"
   },
   "TFT11_Augment_FortuneCrown": {
     "name": "Fortune Crown",
     "image": "crown_fortune_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_FortuneCrown:1236036920975298571>"
   },
   "TFT11_Augment_GhostlyCrest": {
     "name": "Ghostly Crest",
     "image": "crest_ghostly_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_GhostlyCrest:1236036927375802408>"
   },
   "TFT11_Augment_GhostlyCrown": {
     "name": "Ghostly Crown",
     "image": "crown_ghostly_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_GhostlyCrown:1236036933843550309>"
   },
   "TFT11_Augment_HeavenlyCrest": {
     "name": "Heavenly Crest",
     "image": "crest_heavenly_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_HeavenlyCrest:1236036938486644756>"
   },
   "TFT11_Augment_HeavenlyCrown": {
     "name": "Heavenly Crown",
     "image": "crown_heavenly_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_HeavenlyCrown:1236036943670808636>"
   },
   "TFT11_Augment_InkshadowCrest": {
     "name": "Inkshadow Crest",
     "image": "crest_inkshadow_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_InkshadowCrest:1236036949551349920>"
   },
   "TFT11_Augment_InkshadowCrown": {
     "name": "Inkshadow Crown",
     "image": "crown_inkshadow_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_InkshadowCrown:1236036956732002415>"
   },
   "TFT11_Augment_InvokerCrest": {
     "name": "Invoker Crest",
     "image": "crest_invoker_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_InvokerCrest:1236036962834452542>"
   },
   "TFT11_Augment_InvokerCrown": {
     "name": "Invoker Crown",
     "image": "crown_invoker_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_InvokerCrown:1236036968740028536>"
   },
   "TFT11_Augment_MythicCrest": {
     "name": "Mythic Crest",
     "image": "crest_mythic_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_MythicCrest:1236036975199518800>"
   },
   "TFT11_Augment_MythicCrown": {
     "name": "Mythic Crown",
     "image": "crown_mythic_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_MythicCrown:1236036980962361356>"
   },
   "TFT11_Augment_PorcelainCrest": {
     "name": "Porcelain Crest",
     "image": "crest_porcelain_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_PorcelainCrest:1236036988830744718>"
   },
   "TFT11_Augment_PorcelainCrown": {
     "name": "Porcelain Crown",
     "image": "crown_porcelain_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_PorcelainCrown:1236036994216230983>"
   },
   "TFT11_Augment_ReaperCrest": {
     "name": "Reaper Crest",
     "image": "crest_reaper_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_ReaperCrest:1236037001321513071>"
   },
   "TFT11_Augment_ReaperCrown": {
     "name": "Reaper Crown",
     "image": "crown_reaper_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_ReaperCrown:1236037007000469526>"
   },
   "TFT11_Augment_SageCrest": {
     "name": "Sage Crest",
     "image": "crest_sage_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_SageCrest:1236037012843134976>"
   },
   "TFT11_Augment_SageCrown": {
     "name": "Sage Crown",
     "image": "crown_sage_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_SageCrown:1236037017939214508>"
   },
   "TFT11_Augment_SniperCrest": {
     "name": "Sniper Crest",
     "image": "crest_sniper_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_SniperCrest:1236037023781879980>"
   },
   "TFT11_Augment_SniperCrown": {
     "name": "Sniper Crown",
     "image": "crown_sniper_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_SniperCrown:1236037030019072012>"
   },
   "TFT11_Augment_StoryweaverCrest": {
     "name": "Storyweaver Crest",
     "image": "crest_storyweaver_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_StoryweaverCrest:1236037035173744650>"
   },
   "TFT11_Augment_StoryweaverCrown": {
     "name": "Storyweaver Crown",
     "image": "crown_storyweaver_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_StoryweaverCrown:1236037040408236142>"
   },
   "TFT11_Augment_UmbralCrest": {
     "name": "Umbral Crest",
     "image": "crest_umbral_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_UmbralCrest:1236037046297170010>"
   },
   "TFT11_Augment_UmbralCrown": {
     "name": "Umbral Crown",
     "image": "crown_umbral_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_UmbralCrown:1236037056036212876>"
   },
   "TFT11_Augment_WardenCrest": {
     "name": "Warden Crest",
     "image": "crest_warden_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_WardenCrest:1236037062361354360>"
   },
   "TFT11_Augment_WardenCrown": {
     "name": "Warden Crown",
     "image": "crown_warden_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_WardenCrown:1236037068212408512>"
   },
   "TFT11_Augment_Buildabud": {
     "name": "Build a Bud!",
     "image": "buildabud_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Buildabud:1236037072645783683>"
   },
   "TFT11_Augment_SharingIsCaring": {
     "name": "Sharing Is Caring",
     "image": "sharingiscaring_i.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_SharingIsCaring:1236037078928719914>"
   },
   "TFT11_Augment_Reinfourcement": {
     "name": "ReinFOURcement",
     "image": "reinfourcement_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Reinfourcement:1236037083836059719>"
   },
   "TFT11_Augment_Epoch": {
     "name": "Epoch",
     "image": "epoch_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Epoch:1236037089250902078>"
   },
   "TFT11_Augment_TinyButDeadly": {
     "name": "Tiny, but Deadly",
     "image": "tinybutdeadly_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_TinyButDeadly:1236037095030657145>"
   },
   "TFT11_Augment_OverEncumbered": {
     "name": "Over Encumbered",
     "image": "overencumbered_i.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_OverEncumbered:1236037100571459735>"
   },
   "TFT11_Augment_FineVintage": {
     "name": "Fine Vintage",
     "image": "finevintage_i.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_FineVintage:1236037106099556383>"
   },
   "TFT11_Augment_BloodBank": {
     "name": "Lunch Money",
     "image": "bloodbank_i.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_BloodBank:1236037111426318467>"
   },
   "TFT11_Augment_ScoreboardScrapper": {
     "name": "Scoreboard Scrapper",
     "image": "scoreboardscrapper_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_ScoreboardScrapper:1236037117155475516>"
   },
   "TFT11_Augment_Accomplice": {
     "name": "Accomplice",
     "image": "accomplice_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Accomplice:1236037122461536286>"
   },
   "TFT11_Augment_Slammin": {
     "name": "Slammin'",
     "image": "slammin_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Slammin:1236037127398101053>"
   },
   "TFT11_Augment_Calltochaos": {
     "name": "Call to Chaos",
     "image": "calltochaos_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Calltochaos:1236037132787912715>"
   },
   "TFT11_Augment_Prizefighter": {
     "name": "Prizefighter",
     "image": "prizefighter_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Prizefighter:1236037138555080836>"
   },
   "TFT11_Augment_DynamicDuo": {
     "name": "Dynamic Duo",
     "image": "dynamicduo_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_DynamicDuo:1236037144401936534>"
   },
   "TFT11_Augment_Dragonlord": {
     "name": "Enter the Dragon",
     "image": "enterthedragon_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Dragonlord:1236037150198337648>"
   },
   "TFT11_Augment_Ghostly": {
     "name": "Haunted House",
     "image": "hauntedhouse_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Ghostly:1236037155256537109>"
   },
   "TFT11_Augment_Heavenly": {
     "name": "Divine Rolls",
     "image": "divinerolls_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Heavenly:1236037159346245753>"
   },
   "TFT11_Augment_TwoforOne": {
     "name": "Two for One",
     "image": "twoforone_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_TwoforOne:1236037165474123817>"
   },
   "TFT11_Augment_RadiantRefactor": {
     "name": "Radiant Refactor",
     "image": "radiantrefactor_iii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_RadiantRefactor:1236037171182305311>"
   },
   "TFT11_Augment_Storyweaver": {
     "name": "Call to Adventure",
     "image": "calltoadventure_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Storyweaver:1236037176748150956>"
   },
   "TFT11_Augment_Slammin_Plus": {
     "name": "Slammin'+",
     "image": "slammin_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Slammin:1236037127398101053>"
   },
   "TFT11_Augment_Sniper": {
     "name": "Long Shot",
     "image": "longshot_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Sniper:1236037183996166144>"
   },
   "TFT11_Augment_Sage": {
     "name": "The Road Less Traveled",
     "image": "theroadlesstraveled_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Sage:1236037188068573227>"
   },
   "TFT11_Augment_Porcelain": {
     "name": "Boiling Point",
     "image": "boilingpoint_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Porcelain:1236037192216871023>"
   },
   "TFT11_Augment_Invoker": {
     "name": "Mana Shield",
     "image": "manashield_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Invoker:1236037198290358393>"
   },
   "TFT11_Augment_Reaper": {
     "name": "Grim Harvest",
     "image": "grimharvest_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Reaper:1236037202690179154>"
   },
   "TFT11_Augment_Exalted": {
     "name": "Venerable Piggy Bank",
     "image": "venerablepiggybank_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Exalted:1236037207374958724>"
   },
   "TFT11_Augment_Mythic": {
     "name": "It's Going to be Epic",
     "image": "goingtobeepic_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Mythic:1236037213549105284>"
   },
   "TFT11_Augment_KobukoCarry": {
     "name": "Lucky Paws",
     "image": "luckypaws_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_KobukoCarry:1236037222034313236>"
   },
   "TFT11_Augment_Trickshot": {
     "name": "Lucky Ricochet",
     "image": "luckyricochet_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Trickshot:1236037227021205595>"
   },
   "TFT11_Augment_Warden": {
     "name": "Spirit Guardians",
     "image": "spiritguardians_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Warden:1236037232104575036>"
   },
   "TFT11_Augment_GarenCarry": {
     "name": "Storied Champion",
     "image": "storiedchampion_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_GarenCarry:1236037239218241607>"
   },
   "TFT11_Augment_Umbral": {
     "name": "Wrath of the Moon",
     "image": "wrathofthemoon_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Umbral:1236037246822514873>"
   },
   "TFT11_Augment_ShenCarry": {
     "name": "Ethereal Blades",
     "image": "etherealblades_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_ShenCarry:1236037250513375305>"
   },
   "TFT11_Augment_YorickCarry": {
     "name": "Midnight Siphon",
     "image": "midnightsiphon_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_YorickCarry:1236037259749490701>"
   },
   "TFT11_Augment_Behemoth": {
     "name": "Raid Boss",
     "image": "raidboss_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Behemoth:1236037264484860027>"
   },
   "TFT11_Augment_Dryad": {
     "name": "Mulched",
     "image": "mulched_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Dryad:1236037269861830756>"
   },
   "TFT11_Augment_Bruiser": {
     "name": "Well Fed",
     "image": "wellfed_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Bruiser:1236037277012983881>"
   },
   "TFT11_Augment_Duelist": {
     "name": "Extended Duel",
     "image": "gadget-expert-ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Duelist:1236037281563803689>"
   },
   "TFT11_Augment_EpochPlus": {
     "name": "Epoch+",
     "image": "epoch_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Epoch:1236037089250902078>"
   },
   "TFT11_Augment_NeekoCarry": {
     "name": "Drop Blossom!",
     "image": "dropblossom_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_NeekoCarry:1236037288148992011>"
   },
   "TFT11_Augment_ShenCarryPlus": {
     "name": "Ethereal Blades+",
     "image": "etherealblades_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_ShenCarry:1236037250513375305>"
   },
   "TFT11_Augment_NeekoCarryPlus": {
     "name": "Drop Blossom!+",
     "image": "dropblossom_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_NeekoCarry:1236037288148992011>"
   },
   "TFT11_Augment_YorickCarryPlus": {
     "name": "Midnight Siphon+",
     "image": "midnightsiphon_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_YorickCarry:1236037259749490701>"
   },
   "TFT7_Augment_LivingForgeHR": {
     "name": "Living Forge",
     "image": "living-forge-iii.png",
-    "emoji": null
+    "emoji": "<:TFT7_Augment_LivingForge:1236036129682231368>"
   },
   "TFT9_Augment_PhreakyFridayHR": {
     "name": "Phreaky Friday",
     "image": "phreaky-friday-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PhreakyFriday:1236036147319406689>"
   },
   "TFT9_Augment_LongTimeCraftingHR": {
     "name": "Latent Forge",
     "image": "long-time-crafting-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_LongTimeCrafting:1236036169884500028>"
   },
   "TFT9_Augment_ACutAboveHR": {
     "name": "A Cut Above",
     "image": "a-cut-above-ii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_ACutAbove:1236036226121728041>"
   },
   "TFT9_Augment_ArmyBuildingHR": {
     "name": "Team Building",
     "image": "building-an-army-i.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_ArmyBuilding:1236036336692105246>"
   },
   "TFT9_Augment_PhreakyFridayPlusHR": {
     "name": "Phreaky Friday +",
     "image": "phreaky-friday-iii.png",
-    "emoji": null
+    "emoji": "<:TFT9_Augment_PhreakyFriday:1236036147319406689>"
   },
   "TFT10_Augment_LuckyStreak_HR": {
     "name": "Lucky Streak",
     "image": "lucky-streak-ii.png",
-    "emoji": null
+    "emoji": "<:TFT10_Augment_LuckyStreak:1236036507102609462>"
   },
   "TFT6_Augment_TheGoldenEggHR": {
     "name": "The Golden Egg",
     "image": "the-golden-egg-iii.png",
-    "emoji": null
+    "emoji": "<:TFT6_Augment_TheGoldenEgg:1236036472876961945>"
   },
   "TFT11_Augment_Arcanist": {
     "name": "Mind Over Matter",
     "image": "mindovermatter_ii.png",
-    "emoji": null
+    "emoji": "<:TFT11_Augment_Arcanist:1251097472219086889>"
   }
 }

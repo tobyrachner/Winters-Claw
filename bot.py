@@ -6,7 +6,7 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 
-from setup import setup
+from setup import setup, recover_from_added_emoji, recover_from_discord
 from scripts import settings
 from scripts.get_embeds import *
 from scripts.check_input import *
@@ -76,6 +76,19 @@ async def update_data(ctx: commands.Context) -> None:
     print('updating data')
     await ctx.send('Updating data...')
     await setup(bot)
+    await ctx.send('Done!')
+
+@bot.command()
+@commands.guild_only()
+@commands.is_owner()
+async def recover_emoji_ids(ctx: commands.Context, recovery_type) -> None:
+    if recovery_type == 'discord':
+        recover_from_discord()
+    elif recovery_type == 'added':
+        recover_from_added_emoji()
+    else:
+        await ctx.send('Please enter a valid recovery type. (discord, added)')
+        return
     await ctx.send('Done!')
 
 async def server_autocomplete(interaction: discord.Interaction, current: str) -> List[app_commands.Choice[str]]:

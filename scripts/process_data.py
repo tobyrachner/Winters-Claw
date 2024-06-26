@@ -359,6 +359,12 @@ def process_single_match(cur, puuid, id=None):
         for item in items.split('.'):
             if item == '':
                 continue
+            if not item in item_list:
+                print('MISSING', item)
+                with open('missing_data.txt', 'r+') as f:
+                    if 'item: ' + item + '\n' not in f.readlines():
+                        f.write('item: ' + item + '\n')
+                    continue
             processed_items.append(item)
         units[name] = {'level': level, 'items': processed_items, 'rarity': rarity}
 

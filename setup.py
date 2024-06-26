@@ -13,6 +13,20 @@ from io import BytesIO
 
 from scripts import settings
 
+import discord
+from discord.ext import commands
+from discord import app_commands
+
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix="$", intents=intents)
+
+@bot.event
+async def on_message(ctx):
+    # a development way to easily use and test recovery commands
+    # all commands here are also available from the main file
+
+    if ctx.content == 'wc emoji_setup':
+        recover_from_discord(bot)
 
 def get_current_units():
     if 'units.json' in os.listdir('data/'):
@@ -228,10 +242,8 @@ async def add_emoji(bot, type, new, total_count, duplicates, added_emoji, guild_
                 guild_slots -= 1
                 print(total_count, guild_slots, '-', guild_objects[object]['name'])
 
-                #sleep(5.1)  # waiting to avoid discord rate limit
             except Exception as e:
                 print(e)
-                break
 
     return new, total_count, duplicates, translated
 
@@ -247,7 +259,7 @@ def get_emoji_ids(bot, guild_ids, new, duplicates, translated):
 
             for type in new:
                 if name in new[type]:
-                    new[type][name]['emoji'] =f'<:{name}:{emoji.id}>'
+                    new[type][name]['emoji'] = f'<:{name}:{emoji.id}>'
     
     for object in duplicates:
         for type in new:
@@ -317,4 +329,86 @@ async def setup(bot):
 x, traits = get_current_traits()
 with open('data/traits.json', 'w') as f:
     json.dump(traits, f, indent=2)
+
+def recover_from_added_emoji():
+    # if an error occurs during the setup process, emojis might be added to discord but not saved in the intended json files.
+    # if emoji ids are saved in data/added_emoji.json, they can be added to the intended json files with this function.
+
+    with open('data/added_emoji.json', 'r') as f:
+        added_emoji = json.load(f)
+
+    not_added = []
+
+    for name in ['traits', 'units', 'augments', 'items']:	
+        with open(f'data/{name}.json', 'r') as f:
+            data = json.load(f)
+
+            for object in data:
+                if not data[object]['emoji']:
+                    try:
+                        data[object]['emoji'] = added_emoji[data[object]['image']]
+                    except KeyError:
+                        if len(object) > 32:
+                            try:
+                                data[object]['emoji'] = added_emoji[data[object[-32:]]['image']]
+                                continue
+                            except KeyError:
+                                pass
+                        not_added.append(object)
+
+        with open(f'data/{name}.json', 'w') as f:
+            json.dump(data, f, indent=2)
+
+    print('Could not add the following emojis: \n' + ', '.join(not_added))
+
+def recover_from_discord(bot):
+    # if emojis are added to discord but not saved in data/added_emoji.json, use this function to recover emoji ids.
+
+    # store all item paths in data/added_emoji.json with null as value
+    # loop over json files to convert image paths to internal names
+    # loop over all discord emoji servers 
+        # check if any emoji names are part of any internal names
+        # if so, add emoji id to data/added_emoji.json 
+    # save data/added_emoji.json
+    # run recover_from_added_emoji()
+
+    with open('data/added_emoji.json', 'r') as f:
+        added_emoji = json.load(f)
+
+    to_recover = set()
+
+    for emoji in added_emoji:
+        if not added_emoji[emoji]:
+            to_recover.add(emoji)
+
+    internal_names = {}
+
+    for name in ['traits', 'units', 'augments', 'items']:    
+        with open(f'data/{name}.json', 'r') as f:
+            data = json.load(f)
+
+        for object in data:
+            if data[object]['image'] in to_recover:
+                name = object
+                if len(name) > 32:
+                    name = object.split('_')[-1]
+                    if len(name) > 32:
+                        name = name[:32]
+                internal_names[name] = data[object]['image']
+
+    for id in settings.guild_ids:
+        guild = bot.get_guild(id)
+        
+        print('Guild:', guild.name)
+        
+        for emoji in guild.emojis:
+            if emoji.name in internal_names:
+                print('recovering', emoji.name)
+                added_emoji[internal_names[emoji.name]] = f'<:{emoji.name}:{emoji.id}>'
+
+    with open('data/added_emoji.json', 'w') as f:
+        json.dump(added_emoji, f, indent=2)
+
+    recover_from_added_emoji()
+
 #bot.run(settings.TOKEN)
