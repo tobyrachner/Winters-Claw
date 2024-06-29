@@ -143,5 +143,111 @@
     "name": "Warden",
     "image": "trait_icon_11_warden.png",
     "emoji": "<:TFT11_Warden:1236035826664607744>"
+  },
+  "TFTEvent5YR_Bilgewater": {
+    "name": "Bilgewater",
+    "image": "trait_icon_9_bilgewater.png",
+    "emoji": "<:TFTEvent5YR_Bilgewater:1256559714464960543>"
+  },
+  "TFTEvent5YR_Boss": {
+    "name": "The Boss",
+    "image": "trait_icon_4_theboss.png",
+    "emoji": "<:TFTEvent5YR_Boss:1256559716222631966>"
+  },
+  "TFTEvent5YR_Coven": {
+    "name": "Coven",
+    "image": "trait_icon_5_coven.png",
+    "emoji": "<:TFTEvent5YR_Coven:1256559717774528603>"
+  },
+  "TFTEvent5YR_Disco": {
+    "name": "Disco",
+    "image": "trait_icon_10_funk.png",
+    "emoji": "<:TFTEvent5YR_Disco:1256559719460372491>"
+  },
+  "TFTEvent5YR_Elderwood": {
+    "name": "Elderwood",
+    "image": "trait_icon_4_wilderness.png",
+    "emoji": "<:TFTEvent5YR_Elderwood:1256559721020788818>"
+  },
+  "TFTEvent5YR_Glacial": {
+    "name": "Glacial",
+    "image": "trait_icon_2_glacial.png",
+    "emoji": "<:TFTEvent5YR_Glacial:1256559722488664199>"
+  },
+  "TFTEvent5YR_Hellion": {
+    "name": "Hellion",
+    "image": "trait_icon_5_hellion.png",
+    "emoji": "<:TFTEvent5YR_Hellion:1256559724392878140>"
+  },
+  "TFTEvent5YR_Imperial": {
+    "name": "Imperial",
+    "image": "trait_icon_6_imperial.png",
+    "emoji": "<:TFTEvent5YR_Imperial:1256559725416415253>"
+  },
+  "TFTEvent5YR_Jazz": {
+    "name": "Jazz",
+    "image": "trait_icon_10_jazz.png",
+    "emoji": "<:TFTEvent5YR_Jazz:1256559727203319858>"
+  },
+  "TFTEvent5YR_LaserCorps": {
+    "name": "LaserCorps",
+    "image": "trait_icon_8_lasercorps.png",
+    "emoji": "<:TFTEvent5YR_LaserCorps:1256559729094692986>"
+  },
+  "TFTEvent5YR_Mascot": {
+    "name": "Mascot",
+    "image": "trait_icon_8_mascot.png",
+    "emoji": "<:TFTEvent5YR_Mascot:1256559730797711481>"
+  },
+  "TFTEvent5YR_MechPilot": {
+    "name": "Mech-Pilot",
+    "image": "trait_icon_3_mechpilot.png",
+    "emoji": "<:TFTEvent5YR_MechPilot:1256559732584616017>"
+  },
+  "TFTEvent5YR_Mountain": {
+    "name": "Mountain",
+    "image": "trait_icon_2_mountain.png",
+    "emoji": "<:TFTEvent5YR_Mountain:1256559740977283093>"
+  },
+  "TFTEvent5YR_Phantom": {
+    "name": "Phantom",
+    "image": "trait_icon_phantom.png",
+    "emoji": "<:TFTEvent5YR_Phantom:1256559742638100571>"
+  },
+  "TFTEvent5YR_Rebel": {
+    "name": "Rebel",
+    "image": "trait_icon_3_rebel.png",
+    "emoji": "<:TFTEvent5YR_Rebel:1256559743732940823>"
+  },
+  "TFTEvent5YR_Shimmerscale": {
+    "name": "Shimmerscale",
+    "image": "trait_icon_7_shimmerscale.png",
+    "emoji": "<:TFTEvent5YR_Shimmerscale:1256559745045889045>"
+  },
+  "TFTEvent5YR_Shurima": {
+    "name": "Shurima",
+    "image": "trait_icon_9_shurima.png",
+    "emoji": "<:TFTEvent5YR_Shurima:1256559747381858398>"
+  },
+  "TFTEvent5YR_Socialite": {
+    "name": "Socialite",
+    "image": "trait_icon_6_socialite.png",
+    "emoji": "<:TFTEvent5YR_Socialite:1256559748879482982>"
+  },
+  "TFTEvent5YR_Trainer": {
+    "name": "Trainer",
+    "image": "trait_icon_7_trainers.png",
+    "emoji": "<:TFTEvent5YR_Trainer:1256559750217334816>"
+  },
+  "TFTEvent5YR_Yordle": {
+    "name": "Yordle",
+    "image": "trait_icon_6_yordle.png",
+    "emoji": "<:TFTEvent5YR_Yordle:1256559752079474699>"
+  },
+  "TFTEvent5YR_YordleLord": {
+    "name": "Yordle-Lord",
+    "image": "trait_icon_6_yordlelord.png",
+    "emoji": "<:TFTEvent5YR_YordleLord:1256559753245495298>",
+    "unique": true
   }
 }

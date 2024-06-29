@@ -45,16 +45,15 @@ def get_current_units():
 
     new = {}
     for unit in supported:
-        entry = {
-            'name': unit['character_record']['display_name'], 
-            'image': unit['character_record']['squareIconPath'].lower().split('characters/')[-1],
-            'emoji': None,
-        }
-
         if not unit['name'] in units:
-            new[unit['name']] = entry
+            entry = {
+                'name': unit['character_record']['display_name'], 
+                'image': unit['character_record']['squareIconPath'].lower().split('characters/')[-1],
+                'emoji': None,
+            }
 
-        units[unit['name']] = entry
+            new[unit['name']] = entry
+            units[unit['name']] = entry
         
     return new, units
 
@@ -70,24 +69,23 @@ def get_current_traits():
     supported = []
     for trait in trait_data:
         set_num = trait['set'].split('Set')[1]
-        if set_num.isnumeric() and int(set_num) >= settings.MIN_SUPPORTED_SET:
+        if set_num.isnumeric() and int(set_num) >= settings.MIN_SUPPORTED_SET or 'Event' in trait['trait_id']:
             supported.append(trait)
 
     new = {}
     for trait in supported:
-        entry = {
-            'name': trait['display_name'], 
-            'image': trait['icon_path'].lower().split('traiticons/')[-1],
-            'emoji': traits[trait['trait_id']]['emoji'],
-        }
-
-        if trait['conditional_trait_sets'][0]['style_name'] == 'kUnique':
-            entry['unique'] = True
-
         if not trait['trait_id'] in traits:
-            new[trait['trait_id']] = entry
+            entry = {
+                'name': trait['display_name'], 
+                'image': trait['icon_path'].lower().split('traiticons/')[-1],
+                'emoji': None,
+            }
 
-        traits[trait['trait_id']] = entry
+            if trait['conditional_trait_sets'][0]['style_name'] == 'kUnique':
+                entry['unique'] = True
+
+            new[trait['trait_id']] = entry
+            traits[trait['trait_id']] = entry
 
     return new, traits
 
@@ -108,16 +106,15 @@ def get_current_augments():
 
     new = {}
     for augment in augment_list:
-        entry = {
-            'name': augment['name'], 
-            'image': augment['squareIconPath'].lower().split('hexcore/')[-1],
-            'emoji': None,
-        }
-
         if not augment['nameId'] in augments:
-            new[augment['nameId']] = entry
+            entry = {
+                'name': augment['name'], 
+                'image': augment['squareIconPath'].lower().split('hexcore/')[-1],
+                'emoji': None,
+            }
 
-        augments[augment['nameId']] = entry
+            new[augment['nameId']] = entry
+            augments[augment['nameId']] = entry
 
     return new, augments
 
@@ -138,16 +135,15 @@ def get_current_items():
 
     new = {}
     for item in item_list:
-        entry = {
-            'name': item['name'], 
-            'image': item['squareIconPath'].lower().split('item_icons/')[-1],
-            'emoji': None,
-        }
-
         if not item['nameId'] in items:
-            new[item['nameId']] = entry
+            entry = {
+                'name': item['name'], 
+                'image': item['squareIconPath'].lower().split('item_icons/')[-1],
+                'emoji': None,
+            }
 
-        items[item['nameId']] = entry
+            new[item['nameId']] = entry
+            items[item['nameId']] = entry
 
     return new, items
 
@@ -325,10 +321,6 @@ async def setup(bot):
 
 
     print(f'Successfully added {slots_required} abjects! \nYour Bot is now got to go!')
-
-x, traits = get_current_traits()
-with open('data/traits.json', 'w') as f:
-    json.dump(traits, f, indent=2)
 
 def recover_from_added_emoji():
     # if an error occurs during the setup process, emojis might be added to discord but not saved in the intended json files.
