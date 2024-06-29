@@ -74,7 +74,8 @@ async def get_matchids(session, riot, server, region, puuid, cur):
         start += 200
 
     if match_ids == []:
-        last_processed = ''
+        if not last_processed:
+            last_processed = ''
     else:
         last_processed = match_ids[-1]
 
