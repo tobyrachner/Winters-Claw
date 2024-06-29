@@ -17,7 +17,7 @@ ALL_COMMANDS = {'help': ['`/help`', 'Offers general help'],
 
 
 def error_embed(message, error_type):
-    embed=discord.Embed(title=error_type, description=message, color=0x7011d0,)
+    embed=discord.Embed(title=error_type, description=message, color=0x1386ec)
     embed.set_thumbnail(url='https://wintersclaw-lol.vercel.app/poro.png')
     embed.timestamp = datetime.datetime.utcnow()
     return embed
